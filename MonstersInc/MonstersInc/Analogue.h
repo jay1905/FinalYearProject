@@ -10,6 +10,8 @@
 #define MonstersInc_Analogue_h
 
 #include "cocos2d.h"
+#include "Box2D.h"
+#include "PhysicsSprite.h"
 
 class Analogue
 {
@@ -20,5 +22,9 @@ public:
    private:
     cocos2d::CCSprite* solidAnalogMove;
     cocos2d::CCSprite* solidAnalogShoot;
+    cocos2d::CCSprite* smallAnalogMove;
+    cocos2d::CCSprite* smallAnalogShoot;
+    
+   // cocos2d::CCMenuItemImage * test;
 };
 #endif
