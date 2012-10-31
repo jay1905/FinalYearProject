@@ -33,12 +33,14 @@ HelloWorld::HelloWorld()
     
    addChild(parent, 0, kTagParentNode);
   
-    
+    jaime = CCSprite::create("hotdog.png");
+    jaime->setPosition(CCPointMake(30, 30));
+    addChild(jaime);
     
     
     analog = new Analogue(this);
-   // addChild(analog);
-    
+    //this->addChild(analog);
+       
     
     player= new Player(this);
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Zombie2.png", 100);
@@ -242,6 +244,7 @@ void HelloWorld::addNewSpriteAtPosition(CCPoint p)
     body->CreateFixture(&fixtureDef);
     
     sprite->setPhysicsBody(body);
+   
 }
 
 
@@ -292,6 +295,8 @@ void HelloWorld::ccTouchesEnded(CCSet* touches, CCEvent* event)
         location = CCDirector::sharedDirector()->convertToGL(location);
         
         addNewSpriteAtPosition( location );
+         jaime->setPosition(CCPointMake(300, 300));
+        
         
     }
 }

@@ -12,19 +12,20 @@
 #include "cocos2d.h"
 #include "Box2D.h"
 #include "PhysicsSprite.h"
+#include "JoyStick.h"
 
-class Analogue
+class Analogue:cocos2d::CCLayer
 {
 public:
     Analogue(cocos2d::CCLayer *layer);
     
-    void update();
-   private:
+    void move();
+   //private:
     cocos2d::CCSprite* solidAnalogMove;
     cocos2d::CCSprite* solidAnalogShoot;
     cocos2d::CCSprite* smallAnalogMove;
     cocos2d::CCSprite* smallAnalogShoot;
-    
+    JoyStick *joy;
    // cocos2d::CCMenuItemImage * test;
 };
 #endif

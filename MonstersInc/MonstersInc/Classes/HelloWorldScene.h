@@ -31,14 +31,15 @@ public:
     PhysicsSprite *jaimeSprite;
 
      void menuCloseCallback(CCObject* pSender);
- 
+    Analogue * analog;
+
 private:
     b2World* world;
     cocos2d::CCTexture2D* m_pSpriteTexture; // weak ref
     cocos2d::CCPoint location;
     Player *player;
-    Analogue * analog;
-
+    cocos2d::CCSprite *jaime;
+   
 };
 
 #endif // __HELLOWORLD_SCENE_H__
