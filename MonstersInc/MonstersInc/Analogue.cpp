@@ -14,27 +14,62 @@ USING_NS_CC;
 
 using namespace cocos2d;
 
-Analogue::Analogue(cocos2d::CCLayer *layer)
+Analogue::Analogue(CCPoint point)
 {
      CCSize s = CCDirector::sharedDirector()->getWinSize();
  
-     
-    cocos2d::CCMenuItemImage* test = CCMenuItemImage::create("BigCircle.png", "BigCircle.png",layer, menu_selector(Analogue::move) );
-  //  test->setPosition(100, 500);
-    CCMenu * menu = CCMenu::create(test,NULL);
-    menu->setPosition(ccp(100,95));
-    menu->setOpacity(50);
-    layer->addChild(menu);
-  
-   // layer->addChild(this);
-    joy = new JoyStick(layer);
-    //this->addChild(joy);
+    solidAnalog= CCSprite::create("SmallCircle.png");
+    solidAnalog->setPosition(point);
+    addChild(solidAnalog);
+    
+    bigAnalog = CCSprite::create("BigCircle.png");
+    bigAnalog->setPosition(point);
+    bigAnalog->setOpacity(50);
+    addChild(bigAnalog);
+    
+
+//    this->setTouchEnabled(true);
 
 }
-void Analogue::move(){
+void Analogue::move(CCSet* touches){
    
     
-    this->joy->moveMe();
-    //joy->setPosition(ccp(50, 50));
-   // joy->stick->setPosition(ccp(50, 50));
+ 
+    solidAnalog->setPosition(CCPoint(location.x, location.y));
+
+           
 }
+void Analogue::onEnter(){
+    //CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, 0, true);
+    CCDirector::sharedDirector()->getTouchDispatcher();
+    CCNode::onEnter();
+}
+
+void Analogue::onExit(){
+    CCDirector::sharedDirector()->end();
+    //CCTouchDispatcher::sharedDispatcher()->removeDelegate(this);
+}
+bool Analogue::ccTouchBegan(CCTouch* touch, CCEvent* event){
+    /* if you return true then ccTouchEnded will called */
+    /* if you return false then ccTouchEnded will not be called, and the event will go the parent layer */
+    CCPoint point = touch->locationInView();
+    point = CCDirector::sharedDirector()->convertToGL(point);
+    solidAnalog->setPosition(CCPoint(point.x, point.y));
+
+    return CCRect::CCRectContainsPoint(rect(), point);
+}
+void Analogue::ccTouchMoved(CCTouch* touch, CCEvent* event){
+    //CCLOG(“Fish ccTouchMoved”);
+    /* do your stuff here */
+}
+void Analogue::ccTouchEnded(CCTouch* touch, CCEvent* event){
+    //CCLOG(“Fish ccTouchEnded”);
+    /* do your stuff here */
+}
+CCRect Analogue::rect(){
+    CCRect c = CCRectMake( bigAnalog->getPosition().x,  bigAnalog->getPosition().y ,  bigAnalog->getTextureRect().size.width * bigAnalog->getScaleX() ,   bigAnalog->getTextureRect().size.height * bigAnalog->getScaleY());
+                      
+}
+
+
+

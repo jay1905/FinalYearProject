@@ -14,18 +14,24 @@
 #include "PhysicsSprite.h"
 #include "JoyStick.h"
 
-class Analogue:cocos2d::CCLayer
+class Analogue:public cocos2d::CCLayer, cocos2d::CCTargetedTouchDelegate
 {
 public:
-    Analogue(cocos2d::CCLayer *layer);
+    Analogue(cocos2d::CCPoint point);
+
+    cocos2d::CCSprite* solidAnalog;
+    cocos2d::CCSprite* bigAnalog;
+    void move(cocos2d::CCSet* touches);
+    cocos2d::CCPoint location;
     
-    void move();
-   //private:
-    cocos2d::CCSprite* solidAnalogMove;
-    cocos2d::CCSprite* solidAnalogShoot;
-    cocos2d::CCSprite* smallAnalogMove;
-    cocos2d::CCSprite* smallAnalogShoot;
-    JoyStick *joy;
-   // cocos2d::CCMenuItemImage * test;
-};
+    
+    virtual void onEnter();
+    virtual void onExit();
+    virtual bool ccTouchBegan(cocos2d::CCTouch* touch, cocos2d::CCEvent* event);
+    virtual void ccTouchMoved(cocos2d::CCTouch* touch, cocos2d::CCEvent* event);
+    virtual void ccTouchEnded(cocos2d::CCTouch* touch, cocos2d::CCEvent* event);
+    
+    bool containsTouchLocation(cocos2d::CCTouch* touch);
+    cocos2d::CCRect rect();
+   };
 #endif

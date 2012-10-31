@@ -329,40 +329,82 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Analogue.cpp"
-         timestampString = "373391987.703485"
+         timestampString = "373403833.451473"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
-         landmarkName = "Analogue::move()"
+         startingLineNumber = "38"
+         endingLineNumber = "38"
+         landmarkName = "Analogue::move(CCSet* touches)"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Analogue.cpp"
-         timestampString = "373392726.767445"
+         timestampString = "373404510.746371"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "37"
-         endingLineNumber = "37"
-         landmarkName = "Analogue::move()"
+         startingLineNumber = "56"
+         endingLineNumber = "56"
+         landmarkName = "Analogue::ccTouchBegan(CCTouch* touch, CCEvent* event)"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Analogue.cpp"
-         timestampString = "373392895.349426"
+         timestampString = "373404510.746371"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39"
-         landmarkName = "Analogue::move()"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
+         landmarkName = "Analogue::ccTouchMoved(CCTouch* touch, CCEvent* event)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/Analogue.cpp"
+         timestampString = "373404510.746371"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "66"
+         endingLineNumber = "66"
+         landmarkName = "Analogue::ccTouchEnded(CCTouch* touch, CCEvent* event)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/Analogue.cpp"
+         timestampString = "373404568.972127"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "44"
+         endingLineNumber = "44"
+         landmarkName = "Analogue::onEnter()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/Analogue.cpp"
+         timestampString = "373404570.84447"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "49"
+         endingLineNumber = "49"
+         landmarkName = "Analogue::onExit()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

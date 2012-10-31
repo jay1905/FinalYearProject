@@ -13,7 +13,7 @@
 //#include "Box2D.h"
 //#include "PhysicsSprite.h"
 
-class JoyStick
+class JoyStick:public cocos2d::CCLayer
 {
 public:
     
