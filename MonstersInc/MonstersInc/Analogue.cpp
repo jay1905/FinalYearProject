@@ -10,66 +10,143 @@
 #include "Analogue.h"
 
 
-USING_NS_CC;
+#define JOYSTICK_OFFSET_X 5.0f
+#define JOYSTICK_OFFSET_Y 5.0f
+
+#define JOYSTICK_RADIUS 64.0f
+
+#define THUMB_RADIUS 26.0f
+
 
 using namespace cocos2d;
 
-Analogue::Analogue(CCPoint point)
+static CCPoint convertCoordinate(CCPoint point){
+    return CCDirector::sharedDirector()->convertToGL(point);
+}
+
+static bool isPointInCircle(CCPoint point, CCPoint center, float radius){
+    float dx = (point.x - center.x);
+    float dy = (point.y - center.y);
+    return (radius >= sqrt((dx*dx)+(dy*dy)));
+}
+
+Analogue::Analogue()
 {
      CCSize s = CCDirector::sharedDirector()->getWinSize();
  
-    solidAnalog= CCSprite::create("SmallCircle.png");
-    solidAnalog->setPosition(point);
-    addChild(solidAnalog);
+       
+    init();
+
+
+}
+bool Analogue::init()
+{
+    bool bRet = false;
+    do 
+    {
+        
+        kCenter=CCPoint(JOYSTICK_RADIUS + JOYSTICK_OFFSET_X,
+                        JOYSTICK_RADIUS + JOYSTICK_OFFSET_Y);
+        //////////////////////////////////////////////////////////////////////////
+        // super init first
+        //////////////////////////////////////////////////////////////////////////
+        
+        CC_BREAK_IF(!CCLayer::init());
+        
+        //////////////////////////////////////////////////////////////////////////
+        // add your codes below...
+        //////////////////////////////////////////////////////////////////////////
+        
+        this->setTouchEnabled(true);
+        velocity = CCPointZero;
+        
+        CCSprite *bg = CCSprite::spriteWithFile("BigCircle.png");
+        bg->setPosition(kCenter);
+        bg->setOpacity(50);
+        
+        this->addChild(bg,0);
+        
+        thumb = CCSprite::spriteWithFile("SmallCircle.png");
+        thumb->setPosition(kCenter);
+        thumb->setOpacity(50);
+        this->addChild(thumb,1);
+        
+        bRet=true;
+        
+    }while(0);
     
-    bigAnalog = CCSprite::create("BigCircle.png");
-    bigAnalog->setPosition(point);
-    bigAnalog->setOpacity(50);
-    addChild(bigAnalog);
+    return bRet;
+}
+void Analogue::updateVelocity(CCPoint point)
+{
+    // calculate Angle and length
+    float dx = point.x - kCenter.x;
+    float dy = point.y - kCenter.y;
     
-
-//    this->setTouchEnabled(true);
-
-}
-void Analogue::move(CCSet* touches){
-   
+    float distance = sqrt(dx*dx + dy*dy);
+    float angle = atan2(dy,dx); // in radians
     
- 
-    solidAnalog->setPosition(CCPoint(location.x, location.y));
+    if(distance > JOYSTICK_RADIUS){
+        dx = cos(angle) * JOYSTICK_RADIUS;
+        dy = sin(angle) * JOYSTICK_RADIUS;
+    }
+    
+    velocity = CCPointMake(dx/JOYSTICK_RADIUS, dy/JOYSTICK_RADIUS);
+    
+    if(distance>THUMB_RADIUS)
+    {
+        point.x = kCenter.x + cos(angle) * THUMB_RADIUS;
+        point.y = kCenter.y + sin(angle) * THUMB_RADIUS;
+    }
+    
+    thumb->setPosition(point);
+}
 
-           
-}
-void Analogue::onEnter(){
-    //CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, 0, true);
-    CCDirector::sharedDirector()->getTouchDispatcher();
-    CCNode::onEnter();
+void Analogue::resetJoystick()
+{
+    this->updateVelocity(kCenter);
 }
 
-void Analogue::onExit(){
-    CCDirector::sharedDirector()->end();
-    //CCTouchDispatcher::sharedDispatcher()->removeDelegate(this);
+bool Analogue::handleLastTouch()
+{
+    bool wasPressed = isPressed;
+    if(wasPressed){
+        this->resetJoystick();
+        isPressed = false;
+    }
+    return (wasPressed ? true : false);
 }
-bool Analogue::ccTouchBegan(CCTouch* touch, CCEvent* event){
-    /* if you return true then ccTouchEnded will called */
-    /* if you return false then ccTouchEnded will not be called, and the event will go the parent layer */
+
+void Analogue::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
+{
+    CCTouch *touch = (CCTouch*)pTouches->anyObject();
     CCPoint point = touch->locationInView();
-    point = CCDirector::sharedDirector()->convertToGL(point);
-    solidAnalog->setPosition(CCPoint(point.x, point.y));
-
-    return CCRect::CCRectContainsPoint(rect(), point);
-}
-void Analogue::ccTouchMoved(CCTouch* touch, CCEvent* event){
-    //CCLOG(“Fish ccTouchMoved”);
-    /* do your stuff here */
-}
-void Analogue::ccTouchEnded(CCTouch* touch, CCEvent* event){
-    //CCLOG(“Fish ccTouchEnded”);
-    /* do your stuff here */
-}
-CCRect Analogue::rect(){
-    CCRect c = CCRectMake( bigAnalog->getPosition().x,  bigAnalog->getPosition().y ,  bigAnalog->getTextureRect().size.width * bigAnalog->getScaleX() ,   bigAnalog->getTextureRect().size.height * bigAnalog->getScaleY());
-                      
+    point = convertCoordinate(point);
+    
+    if(isPointInCircle(point,kCenter,JOYSTICK_RADIUS)){
+        isPressed = true;
+        this->updateVelocity(point);
+    }
 }
 
+void Analogue::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
+{
+    if(isPressed){
+        CCTouch *touch = (CCTouch*)pTouches->anyObject();
+        CCPoint point = touch->locationInView();
+        point = convertCoordinate(point);
+        this->updateVelocity(point);
+    }
+}
+
+void Analogue::ccTouchCancelled( CCTouch *pTouch, CCEvent *pEvent )
+{
+    this->handleLastTouch();
+}
+
+void Analogue::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )
+{
+    this->handleLastTouch();
+}
 
 

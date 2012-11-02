@@ -14,24 +14,34 @@
 #include "PhysicsSprite.h"
 #include "JoyStick.h"
 
-class Analogue:public cocos2d::CCLayer, cocos2d::CCTargetedTouchDelegate
+class Analogue:public cocos2d::CCLayer//, cocos2d::CCTargetedTouchDelegate
 {
 public:
-    Analogue(cocos2d::CCPoint point);
+    Analogue();
 
-    cocos2d::CCSprite* solidAnalog;
-    cocos2d::CCSprite* bigAnalog;
-    void move(cocos2d::CCSet* touches);
-    cocos2d::CCPoint location;
+    
+    virtual bool init();  
+    cocos2d::CCPoint getVelocity(){return velocity;}
+   
     
     
-    virtual void onEnter();
-    virtual void onExit();
-    virtual bool ccTouchBegan(cocos2d::CCTouch* touch, cocos2d::CCEvent* event);
-    virtual void ccTouchMoved(cocos2d::CCTouch* touch, cocos2d::CCEvent* event);
-    virtual void ccTouchEnded(cocos2d::CCTouch* touch, cocos2d::CCEvent* event);
     
-    bool containsTouchLocation(cocos2d::CCTouch* touch);
-    cocos2d::CCRect rect();
+private:
+    
+    cocos2d::CCPoint kCenter;
+    cocos2d::CCSprite *thumb;
+    bool isPressed;
+    
+    cocos2d::CCPoint velocity;
+    
+    void updateVelocity(cocos2d::CCPoint point);
+    void resetJoystick();
+    bool handleLastTouch();
+    void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+    void ccTouchesMoved(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+    void ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+    void ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+    
+    
    };
 #endif

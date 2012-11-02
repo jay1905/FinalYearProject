@@ -38,7 +38,7 @@ HelloWorld::HelloWorld()
     addChild(jaime);
     
     
-    analog = new Analogue(CCPoint(100, 95));
+    analog = new Analogue();
     this->addChild(analog);
        
     
