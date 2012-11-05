@@ -207,13 +207,13 @@
 		E0300EE1162F06370075BBBE /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0300EE0162F06370075BBBE /* HttpClient.cpp */; };
 		E0300EEA162F06370075BBBE /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0300EE9162F06370075BBBE /* AppDelegate.cpp */; };
 		E0300EED162F06370075BBBE /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0300EEC162F06370075BBBE /* HelloWorldScene.cpp */; };
+		E083C84016480725002EE487 /* BigCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C83F16480725002EE487 /* BigCircle.png */; };
+		E083C84316482EE4002EE487 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E083C84216482EE4002EE487 /* Enemy.cpp */; };
 		E08730CE16398B1300C4935D /* Analogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08730CD16398B1300C4935D /* Analogue.cpp */; };
-		E08730D61639D1F800C4935D /* BigCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08730D51639D1F800C4935D /* BigCircle.png */; };
 		E0882F891635E11D00DCE071 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F881635E11D00DCE071 /* Player.cpp */; };
 		E0882F8C1635E34A00DCE071 /* PhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */; };
 		E08B334016404CBD002048EF /* Zombie2.png in Resources */ = {isa = PBXBuildFile; fileRef = E08B333F16404CBD002048EF /* Zombie2.png */; };
 		E08B334216404EBE002048EF /* SmallCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08B334116404EBE002048EF /* SmallCircle.png */; };
-		E08B334A16417855002048EF /* JoyStick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B334916417855002048EF /* JoyStick.cpp */; };
 		E08B4B8E16305A3E002B3858 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B2E16305A3E002B3858 /* b2BroadPhase.cpp */; };
 		E08B4B8F16305A3E002B3858 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B3016305A3E002B3858 /* b2CollideCircle.cpp */; };
 		E08B4B9016305A3E002B3858 /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B3116305A3E002B3858 /* b2CollideEdge.cpp */; };
@@ -711,17 +711,17 @@
 		E0300EE9162F06370075BBBE /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		E0300EEB162F06370075BBBE /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		E0300EEC162F06370075BBBE /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		E083C83F16480725002EE487 /* BigCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BigCircle.png; path = Resources/BigCircle.png; sourceTree = "<group>"; };
+		E083C84116482EC5002EE487 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		E083C84216482EE4002EE487 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
 		E08730CC16398AFD00C4935D /* Analogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analogue.h; sourceTree = "<group>"; };
 		E08730CD16398B1300C4935D /* Analogue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Analogue.cpp; sourceTree = "<group>"; };
-		E08730D51639D1F800C4935D /* BigCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BigCircle.png; path = ../../../Desktop/BigCircle.png; sourceTree = "<group>"; };
 		E0882F871635E10400DCE071 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		E0882F881635E11D00DCE071 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E0882F8A1635E32400DCE071 /* PhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsSprite.cpp; sourceTree = "<group>"; };
 		E08B333F16404CBD002048EF /* Zombie2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zombie2.png; path = Resources/Zombie2.png; sourceTree = "<group>"; };
 		E08B334116404EBE002048EF /* SmallCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SmallCircle.png; path = Resources/SmallCircle.png; sourceTree = "<group>"; };
-		E08B33471641783C002048EF /* JoyStick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoyStick.h; sourceTree = "<group>"; };
-		E08B334916417855002048EF /* JoyStick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JoyStick.cpp; sourceTree = "<group>"; };
 		E08B4B2C16305A3E002B3858 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		E08B4B2E16305A3E002B3858 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2BroadPhase.cpp; sourceTree = "<group>"; };
 		E08B4B2F16305A3E002B3858 /* b2BroadPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2BroadPhase.h; sourceTree = "<group>"; };
@@ -891,9 +891,9 @@
 		E0300C4B162F06340075BBBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E083C83F16480725002EE487 /* BigCircle.png */,
 				E08B334116404EBE002048EF /* SmallCircle.png */,
 				E08B333F16404CBD002048EF /* Zombie2.png */,
-				E08730D51639D1F800C4935D /* BigCircle.png */,
 				E0AECB971630919900C1FD48 /* blocks.png */,
 				E0AECB981630919900C1FD48 /* drink.png */,
 				E0AECB991630919900C1FD48 /* hamburger.png */,
@@ -1745,8 +1745,8 @@
 				E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */,
 				E08730CC16398AFD00C4935D /* Analogue.h */,
 				E08730CD16398B1300C4935D /* Analogue.cpp */,
-				E08B33471641783C002048EF /* JoyStick.h */,
-				E08B334916417855002048EF /* JoyStick.cpp */,
+				E083C84116482EC5002EE487 /* Enemy.h */,
+				E083C84216482EE4002EE487 /* Enemy.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1977,9 +1977,9 @@
 				E0AECBA61630919900C1FD48 /* icecream3.png in Resources */,
 				E0AECBA71630919900C1FD48 /* orange.png in Resources */,
 				E0AECBA81630919900C1FD48 /* shapedefs.plist in Resources */,
-				E08730D61639D1F800C4935D /* BigCircle.png in Resources */,
 				E08B334016404CBD002048EF /* Zombie2.png in Resources */,
 				E08B334216404EBE002048EF /* SmallCircle.png in Resources */,
+				E083C84016480725002EE487 /* BigCircle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2217,7 +2217,7 @@
 				E0882F891635E11D00DCE071 /* Player.cpp in Sources */,
 				E0882F8C1635E34A00DCE071 /* PhysicsSprite.cpp in Sources */,
 				E08730CE16398B1300C4935D /* Analogue.cpp in Sources */,
-				E08B334A16417855002048EF /* JoyStick.cpp in Sources */,
+				E083C84316482EE4002EE487 /* Enemy.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

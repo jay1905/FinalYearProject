@@ -38,8 +38,12 @@ HelloWorld::HelloWorld()
     addChild(jaime);
     
     
-    analog = new Analogue();
+    analog = new Analogue(CCPoint(100, 95));
     this->addChild(analog);
+    
+    analog2 = new Analogue(CCPoint(s.width-100, 95));
+    this->addChild(analog2);
+    
        
     
     player= new Player(this);

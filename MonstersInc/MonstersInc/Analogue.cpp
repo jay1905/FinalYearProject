@@ -13,9 +13,9 @@
 #define JOYSTICK_OFFSET_X 5.0f
 #define JOYSTICK_OFFSET_Y 5.0f
 
-#define JOYSTICK_RADIUS 64.0f
+#define JOYSTICK_RADIUS 96.0f
 
-#define THUMB_RADIUS 26.0f
+#define THUMB_RADIUS 70.0f
 
 
 using namespace cocos2d;
@@ -23,58 +23,36 @@ using namespace cocos2d;
 static CCPoint convertCoordinate(CCPoint point){
     return CCDirector::sharedDirector()->convertToGL(point);
 }
-
 static bool isPointInCircle(CCPoint point, CCPoint center, float radius){
     float dx = (point.x - center.x);
     float dy = (point.y - center.y);
     return (radius >= sqrt((dx*dx)+(dy*dy)));
 }
-
-Analogue::Analogue()
+Analogue::Analogue(CCPoint centre)
 {
      CCSize s = CCDirector::sharedDirector()->getWinSize();
- 
-       
+    kCenter=centre;
     init();
-
-
 }
 bool Analogue::init()
 {
     bool bRet = false;
     do 
-    {
-        
-        kCenter=CCPoint(JOYSTICK_RADIUS + JOYSTICK_OFFSET_X,
-                        JOYSTICK_RADIUS + JOYSTICK_OFFSET_Y);
-        //////////////////////////////////////////////////////////////////////////
-        // super init first
-        //////////////////////////////////////////////////////////////////////////
-        
+    { 
         CC_BREAK_IF(!CCLayer::init());
-        
-        //////////////////////////////////////////////////////////////////////////
-        // add your codes below...
-        //////////////////////////////////////////////////////////////////////////
-        
         this->setTouchEnabled(true);
-        velocity = CCPointZero;
-        
+        velocity = CCPointZero;         
         CCSprite *bg = CCSprite::spriteWithFile("BigCircle.png");
         bg->setPosition(kCenter);
         bg->setOpacity(50);
-        
         this->addChild(bg,0);
-        
         thumb = CCSprite::spriteWithFile("SmallCircle.png");
         thumb->setPosition(kCenter);
         thumb->setOpacity(50);
         this->addChild(thumb,1);
-        
         bRet=true;
         
     }while(0);
-    
     return bRet;
 }
 void Analogue::updateVelocity(CCPoint point)
@@ -82,23 +60,19 @@ void Analogue::updateVelocity(CCPoint point)
     // calculate Angle and length
     float dx = point.x - kCenter.x;
     float dy = point.y - kCenter.y;
-    
     float distance = sqrt(dx*dx + dy*dy);
     float angle = atan2(dy,dx); // in radians
-    
     if(distance > JOYSTICK_RADIUS){
         dx = cos(angle) * JOYSTICK_RADIUS;
         dy = sin(angle) * JOYSTICK_RADIUS;
     }
-    
     velocity = CCPointMake(dx/JOYSTICK_RADIUS, dy/JOYSTICK_RADIUS);
-    
     if(distance>THUMB_RADIUS)
     {
         point.x = kCenter.x + cos(angle) * THUMB_RADIUS;
         point.y = kCenter.y + sin(angle) * THUMB_RADIUS;
     }
-    
+    direction= CCPoint(kCenter.x-point.x, kCenter.y-point.y);
     thumb->setPosition(point);
 }
 

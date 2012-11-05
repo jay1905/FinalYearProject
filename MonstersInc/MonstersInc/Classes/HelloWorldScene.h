@@ -32,6 +32,7 @@ public:
 
      void menuCloseCallback(CCObject* pSender);
     Analogue * analog;
+    Analogue * analog2;
 
 private:
     b2World* world;

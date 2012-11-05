@@ -12,18 +12,18 @@
 #include "cocos2d.h"
 #include "Box2D.h"
 #include "PhysicsSprite.h"
-#include "JoyStick.h"
+
 
 class Analogue:public cocos2d::CCLayer//, cocos2d::CCTargetedTouchDelegate
 {
 public:
-    Analogue();
+    Analogue(cocos2d::CCPoint centre);
 
     
     virtual bool init();  
     cocos2d::CCPoint getVelocity(){return velocity;}
    
-    
+    cocos2d::CCPoint getDirection(){return direction;}
     
     
 private:
@@ -33,6 +33,7 @@ private:
     bool isPressed;
     
     cocos2d::CCPoint velocity;
+    cocos2d::CCPoint direction;
     
     void updateVelocity(cocos2d::CCPoint point);
     void resetJoystick();
