@@ -47,7 +47,7 @@ HelloWorld::HelloWorld()
     
     
     
-    
+    /////////////////////////////////////////////////////////////////animation
     
     cocos2d::CCAnimation * anim = CCAnimation::animation();
     anim->addSpriteFrameWithFileName("GreenZombie1.png");
@@ -61,7 +61,7 @@ HelloWorld::HelloWorld()
     pSprite->setPosition(CCPoint(500, 300));
     this->addChild(pSprite);
     pSprite->runAction(jumpAct);
-
+    /////////////////////////////////////////////////////////////////////animation
     
     
     
@@ -149,24 +149,10 @@ void HelloWorld::initPhysics()
     b2Vec2 gravity;
     gravity.Set(0.0f, 0.0f);
     world = new b2World(gravity);
-    
     // Do we want to let bodies sleep?
     world->SetAllowSleeping(true);
-    
     world->SetContinuousPhysics(true);
-    
-    //     m_debugDraw = new GLESDebugDraw( PTM_RATIO );
-    //     world->SetDebugDraw(m_debugDraw);
-    
-    uint32 flags = 0;
-    flags += b2Draw::e_shapeBit;
-    //        flags += b2Draw::e_jointBit;
-    //        flags += b2Draw::e_aabbBit;
-    //        flags += b2Draw::e_pairBit;
-    //        flags += b2Draw::e_centerOfMassBit;
-    //m_debugDraw->SetFlags(flags);
-    
-    
+
     // Define the ground body.
     b2BodyDef groundBodyDef;
     groundBodyDef.position.Set(0, 0); // bottom-left corner
