@@ -215,6 +215,7 @@
 		E083C85216499073002EE487 /* GreenZombie4.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C84E16499073002EE487 /* GreenZombie4.png */; };
 		E083C8581649AF68002EE487 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C8571649AF68002EE487 /* Player.png */; };
 		E083C85B1649B9F2002EE487 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E083C85A1649B9F1002EE487 /* Bullet.cpp */; };
+		E083C85E1649BA60002EE487 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E083C85D1649BA60002EE487 /* Base.cpp */; };
 		E08730CE16398B1300C4935D /* Analogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08730CD16398B1300C4935D /* Analogue.cpp */; };
 		E0882F891635E11D00DCE071 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F881635E11D00DCE071 /* Player.cpp */; };
 		E0882F8C1635E34A00DCE071 /* PhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */; };
@@ -727,6 +728,8 @@
 		E083C8571649AF68002EE487 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player.png; path = Resources/Player.png; sourceTree = "<group>"; };
 		E083C8591649B9E1002EE487 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
 		E083C85A1649B9F1002EE487 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
+		E083C85C1649BA52002EE487 /* Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
+		E083C85D1649BA60002EE487 /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
 		E08730CC16398AFD00C4935D /* Analogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analogue.h; sourceTree = "<group>"; };
 		E08730CD16398B1300C4935D /* Analogue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Analogue.cpp; sourceTree = "<group>"; };
 		E0882F871635E10400DCE071 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -1767,6 +1770,8 @@
 				E083C84216482EE4002EE487 /* Enemy.cpp */,
 				E083C8591649B9E1002EE487 /* Bullet.h */,
 				E083C85A1649B9F1002EE487 /* Bullet.cpp */,
+				E083C85C1649BA52002EE487 /* Base.h */,
+				E083C85D1649BA60002EE487 /* Base.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2244,6 +2249,7 @@
 				E08730CE16398B1300C4935D /* Analogue.cpp in Sources */,
 				E083C84316482EE4002EE487 /* Enemy.cpp in Sources */,
 				E083C85B1649B9F2002EE487 /* Bullet.cpp in Sources */,
+				E083C85E1649BA60002EE487 /* Base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
