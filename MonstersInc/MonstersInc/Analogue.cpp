@@ -72,7 +72,8 @@ void Analogue::updateVelocity(CCPoint point)
         point.x = kCenter.x + cos(angle) * THUMB_RADIUS;
         point.y = kCenter.y + sin(angle) * THUMB_RADIUS;
     }
-    direction= CCPoint(kCenter.x-point.x, kCenter.y-point.y);
+    direction= b2Vec2(kCenter.x-point.x, kCenter.y-point.y);
+    //direction.Normalize();
     thumb->setPosition(point);
 }
 

@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "PhysicsSprite.h"
 #include "Analogue.h"
+#include "Enemy.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -39,6 +40,7 @@ private:
     cocos2d::CCTexture2D* m_pSpriteTexture; // weak ref
     cocos2d::CCPoint location;
     Player *player;
+    Enemy *enemy;
     cocos2d::CCSprite *jaime;
    
 };

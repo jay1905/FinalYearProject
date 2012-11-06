@@ -33,9 +33,9 @@ HelloWorld::HelloWorld()
     
    addChild(parent, 0, kTagParentNode);
   
-    jaime = CCSprite::create("hotdog.png");
-    jaime->setPosition(CCPointMake(30, 30));
-    addChild(jaime);
+   // jaime = CCSprite::create("hotdog.png");
+   // jaime->setPosition(CCPointMake(30, 30));
+    //addChild(jaime);
     
     
     analog = new Analogue(CCPoint(100, 95));
@@ -44,27 +44,38 @@ HelloWorld::HelloWorld()
     analog2 = new Analogue(CCPoint(s.width-100, 95));
     this->addChild(analog2);
     
-       
     
-    player= new Player(this);
-    CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Zombie2.png", 100);
-    addChild(hello);
-    player->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 103, 215));
-    player->autorelease();
-    hello->addChild(player);
-    b2BodyDef hellobodyDef;
-    hellobodyDef.type = b2_dynamicBody;
-    hellobodyDef.position.Set(10,10);
-    b2Body *hellobody = world->CreateBody(&hellobodyDef);
-    b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox(1.5f, 3.2f);//These are mid points for our 1m box
-    b2FixtureDef hellofixtureDef;
-    hellofixtureDef.shape = &dynamicBox;    
-    hellofixtureDef.density = 1.0f;
-    hellofixtureDef.friction = 1.8f;
-    hellobody->CreateFixture(&hellofixtureDef);
-    player->setPhysicsBody(hellobody);
+    
+    
+    
+    
+    cocos2d::CCAnimation * anim = CCAnimation::animation();
+    anim->addSpriteFrameWithFileName("GreenZombie1.png");
+    anim->addSpriteFrameWithFileName("GreenZombie2.png");
+    anim->addSpriteFrameWithFileName("GreenZombie3.png");
+    anim->addSpriteFrameWithFileName("GreenZombie4.png");
+    anim->setDelayPerUnit(.5f);
+    CCAnimate *theAnim = cocos2d::CCAnimate::actionWithAnimation(anim);// CCAnimate::a  actionWithDuration(1.8f,anim,true); 
+    CCAction *jumpAct = CCRepeatForever::create(theAnim);
+    cocos2d::CCSprite*  pSprite=CCSprite::spriteWithFile("GreenZombie1.png");//  createWithSpriteFrame((CCSpriteFrame*) anim->getFrames()->objectAtIndex(0));
+    pSprite->setPosition(CCPoint(500, 300));
+    this->addChild(pSprite);
+    pSprite->runAction(jumpAct);
 
+    
+    
+    
+    CCSpriteBatchNode *enemy1 = CCSpriteBatchNode::create("GreenZombie1.png", 100);
+    addChild(enemy1);
+    enemy = new Enemy(enemy1,world);
+    enemy1->addChild(enemy);
+
+    
+    
+    CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
+    addChild(hello);
+    player= new Player(hello,world);
+    hello->addChild(player);
  
     
     
@@ -261,7 +272,8 @@ void HelloWorld::update(float dt)
     
     int velocityIterations = 8;
     int positionIterations = 1;
-    
+   // enemy->move(analog->getDirection());
+    player->update(analog->getDirection());
     // Instruct the world to perform a single step of simulation. It is
     // generally best to keep the time step and iterations fixed.
     world->Step(dt, velocityIterations, positionIterations);
@@ -298,8 +310,8 @@ void HelloWorld::ccTouchesEnded(CCSet* touches, CCEvent* event)
         
         location = CCDirector::sharedDirector()->convertToGL(location);
         
-        addNewSpriteAtPosition( location );
-         jaime->setPosition(CCPointMake(300, 300));
+      //  addNewSpriteAtPosition( location );
+        // jaime->setPosition(CCPointMake(300, 300));
         
         
     }

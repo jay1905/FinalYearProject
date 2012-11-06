@@ -209,6 +209,12 @@
 		E0300EED162F06370075BBBE /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0300EEC162F06370075BBBE /* HelloWorldScene.cpp */; };
 		E083C84016480725002EE487 /* BigCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C83F16480725002EE487 /* BigCircle.png */; };
 		E083C84316482EE4002EE487 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E083C84216482EE4002EE487 /* Enemy.cpp */; };
+		E083C84F16499073002EE487 /* GreenZombie1.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C84B16499073002EE487 /* GreenZombie1.png */; };
+		E083C85016499073002EE487 /* GreenZombie2.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C84C16499073002EE487 /* GreenZombie2.png */; };
+		E083C85116499073002EE487 /* GreenZombie3.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C84D16499073002EE487 /* GreenZombie3.png */; };
+		E083C85216499073002EE487 /* GreenZombie4.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C84E16499073002EE487 /* GreenZombie4.png */; };
+		E083C8581649AF68002EE487 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C8571649AF68002EE487 /* Player.png */; };
+		E083C85B1649B9F2002EE487 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E083C85A1649B9F1002EE487 /* Bullet.cpp */; };
 		E08730CE16398B1300C4935D /* Analogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08730CD16398B1300C4935D /* Analogue.cpp */; };
 		E0882F891635E11D00DCE071 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F881635E11D00DCE071 /* Player.cpp */; };
 		E0882F8C1635E34A00DCE071 /* PhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */; };
@@ -714,6 +720,13 @@
 		E083C83F16480725002EE487 /* BigCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BigCircle.png; path = Resources/BigCircle.png; sourceTree = "<group>"; };
 		E083C84116482EC5002EE487 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		E083C84216482EE4002EE487 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		E083C84B16499073002EE487 /* GreenZombie1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenZombie1.png; path = Resources/GreenZombie1.png; sourceTree = "<group>"; };
+		E083C84C16499073002EE487 /* GreenZombie2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenZombie2.png; path = Resources/GreenZombie2.png; sourceTree = "<group>"; };
+		E083C84D16499073002EE487 /* GreenZombie3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenZombie3.png; path = Resources/GreenZombie3.png; sourceTree = "<group>"; };
+		E083C84E16499073002EE487 /* GreenZombie4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenZombie4.png; path = Resources/GreenZombie4.png; sourceTree = "<group>"; };
+		E083C8571649AF68002EE487 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player.png; path = Resources/Player.png; sourceTree = "<group>"; };
+		E083C8591649B9E1002EE487 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
+		E083C85A1649B9F1002EE487 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		E08730CC16398AFD00C4935D /* Analogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analogue.h; sourceTree = "<group>"; };
 		E08730CD16398B1300C4935D /* Analogue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Analogue.cpp; sourceTree = "<group>"; };
 		E0882F871635E10400DCE071 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -891,6 +904,11 @@
 		E0300C4B162F06340075BBBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E083C8571649AF68002EE487 /* Player.png */,
+				E083C84B16499073002EE487 /* GreenZombie1.png */,
+				E083C84C16499073002EE487 /* GreenZombie2.png */,
+				E083C84D16499073002EE487 /* GreenZombie3.png */,
+				E083C84E16499073002EE487 /* GreenZombie4.png */,
 				E083C83F16480725002EE487 /* BigCircle.png */,
 				E08B334116404EBE002048EF /* SmallCircle.png */,
 				E08B333F16404CBD002048EF /* Zombie2.png */,
@@ -1747,6 +1765,8 @@
 				E08730CD16398B1300C4935D /* Analogue.cpp */,
 				E083C84116482EC5002EE487 /* Enemy.h */,
 				E083C84216482EE4002EE487 /* Enemy.cpp */,
+				E083C8591649B9E1002EE487 /* Bullet.h */,
+				E083C85A1649B9F1002EE487 /* Bullet.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1980,6 +2000,11 @@
 				E08B334016404CBD002048EF /* Zombie2.png in Resources */,
 				E08B334216404EBE002048EF /* SmallCircle.png in Resources */,
 				E083C84016480725002EE487 /* BigCircle.png in Resources */,
+				E083C84F16499073002EE487 /* GreenZombie1.png in Resources */,
+				E083C85016499073002EE487 /* GreenZombie2.png in Resources */,
+				E083C85116499073002EE487 /* GreenZombie3.png in Resources */,
+				E083C85216499073002EE487 /* GreenZombie4.png in Resources */,
+				E083C8581649AF68002EE487 /* Player.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2218,6 +2243,7 @@
 				E0882F8C1635E34A00DCE071 /* PhysicsSprite.cpp in Sources */,
 				E08730CE16398B1300C4935D /* Analogue.cpp in Sources */,
 				E083C84316482EE4002EE487 /* Enemy.cpp in Sources */,
+				E083C85B1649B9F2002EE487 /* Bullet.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

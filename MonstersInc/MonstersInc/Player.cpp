@@ -13,42 +13,31 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
-Player::Player(cocos2d::CCLayer* layer){
+Player::Player(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     
-    lay = layer;
-    CCMenuItemImage *icecream = CCMenuItemImage::create("icecream.png","icecream2.png",this,  menu_selector(Player::drawStuf));
-    icecream->setPosition( ccp( 400, 100) );
-    // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(icecream, NULL);
-    pMenu->setPosition( ccp(400,100));
-    layer->addChild(pMenu, 1);
-    //pMenu->release();
+   
+    this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 54, 44));
+    this->autorelease();
+    bodyDef.type=b2_dynamicBody;
+    bodyDef.position.Set(15, 15);
+    body=world->CreateBody(&bodyDef);
+    float x=54/32;
+    float y = 44/32;
+    dynamicBox.SetAsBox(x/1.8, y/1.8);
+    fixyureDef.shape=&dynamicBox;
+    fixyureDef.density=1.0f;
+    fixyureDef.friction=2.0f;
+    body->CreateFixture(&fixyureDef);
+    this->setPhysicsBody(body);
     
 }
-void Player::update(){
+void Player::update(b2Vec2 direction){
     
-    
+     this->m_pBody->SetLinearVelocity(direction);
 
 }
 void Player::drawStuf(){
     
-    
-    
-//    pSprite = CCSprite::create("HelloWorld.png");
-//    
-//    // position the sprite on the center of the screen
-//    pSprite->setPosition( ccp(300,400) );
-//    
-//    // add the sprite as a child to this layer
-//    lay->addChild(pSprite, 0);
 
-   
-    //this->getBody()->setPosition(ccp(400, 600));
-   // this->m_pBody->SetLinearVelocity(b2Vec2(0.0f, 5.0f));
-    //this->m_pBody->ApplyAngularImpulse(90.0f);
-    //this->m_pBody->ApplyTorque(30.0f);
-    //this->m_pBody->ApplyForce(b2Vec2(0, 10), b2Vec2(0, 20));
-    this->m_pBody->ApplyForceToCenter(b2Vec2(0, 50000));
-    this->m_pBody->SetBullet(true);
     
 }

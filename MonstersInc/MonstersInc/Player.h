@@ -18,21 +18,20 @@
 class Player: public PhysicsSprite
 {
 public:
-    Player(cocos2d::CCLayer *layer);
+    Player(cocos2d::CCSpriteBatchNode *hello,b2World* world);
     
     
-    void update();
+    void update(b2Vec2 direction);
     void drawStuf();
 
 private:
   
-    cocos2d::CCTexture2D* JaimeTexture;
-  //PhysicsSprite *jaimeSprite;
-    cocos2d::CCSprite* pSprite;
-    cocos2d::CCSprite* test;
-
-    b2World* world;
-    cocos2d::CCLayer *lay;
+    b2BodyDef bodyDef;
+    b2Body* body;
+    b2PolygonShape dynamicBox;
+    b2FixtureDef fixyureDef;
+    cocos2d::CCAnimation * anim;    
+    cocos2d::CCAnimate *theAnim ;
 
 
 };
