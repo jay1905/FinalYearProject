@@ -219,6 +219,8 @@
 		E08730CE16398B1300C4935D /* Analogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08730CD16398B1300C4935D /* Analogue.cpp */; };
 		E0882F891635E11D00DCE071 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F881635E11D00DCE071 /* Player.cpp */; };
 		E0882F8C1635E34A00DCE071 /* PhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */; };
+		E08AB018164B09AB006DFD76 /* castle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB017164B09AB006DFD76 /* castle.png */; };
+		E08AB01B164B09B0006DFD76 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB01A164B09B0006DFD76 /* Bullet.png */; };
 		E08B334016404CBD002048EF /* Zombie2.png in Resources */ = {isa = PBXBuildFile; fileRef = E08B333F16404CBD002048EF /* Zombie2.png */; };
 		E08B334216404EBE002048EF /* SmallCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08B334116404EBE002048EF /* SmallCircle.png */; };
 		E08B4B8E16305A3E002B3858 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B2E16305A3E002B3858 /* b2BroadPhase.cpp */; };
@@ -737,6 +739,8 @@
 		E0882F881635E11D00DCE071 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E0882F8A1635E32400DCE071 /* PhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsSprite.cpp; sourceTree = "<group>"; };
+		E08AB017164B09AB006DFD76 /* castle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = castle.png; path = Resources/castle.png; sourceTree = "<group>"; };
+		E08AB01A164B09B0006DFD76 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bullet.png; path = Resources/Bullet.png; sourceTree = "<group>"; };
 		E08B333F16404CBD002048EF /* Zombie2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zombie2.png; path = Resources/Zombie2.png; sourceTree = "<group>"; };
 		E08B334116404EBE002048EF /* SmallCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SmallCircle.png; path = Resources/SmallCircle.png; sourceTree = "<group>"; };
 		E08B4B2C16305A3E002B3858 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
@@ -910,6 +914,8 @@
 		E0300C4B162F06340075BBBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E08AB01A164B09B0006DFD76 /* Bullet.png */,
+				E08AB017164B09AB006DFD76 /* castle.png */,
 				E083C8571649AF68002EE487 /* Player.png */,
 				E083C84B16499073002EE487 /* GreenZombie1.png */,
 				E083C84C16499073002EE487 /* GreenZombie2.png */,
@@ -2014,6 +2020,8 @@
 				E083C85216499073002EE487 /* GreenZombie4.png in Resources */,
 				E083C8581649AF68002EE487 /* Player.png in Resources */,
 				E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */,
+				E08AB018164B09AB006DFD76 /* castle.png in Resources */,
+				E08AB01B164B09B0006DFD76 /* Bullet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

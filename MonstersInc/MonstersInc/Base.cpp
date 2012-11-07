@@ -16,13 +16,14 @@ using namespace CocosDenshion;
 Base::Base(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     
     
-    this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 54, 44));
+    this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 404, 134));
     this->autorelease();
     bodyDef.type=b2_staticBody;
     bodyDef.position.Set(15, 15);
     body=world->CreateBody(&bodyDef);
-    float x=54/32;
-    float y = 44/32;
+    body->SetTransform(b2Vec2(30, 12), -1.56);
+    float x=404/32;
+    float y = 134/32;
     dynamicBox.SetAsBox(x/1.8, y/1.8);
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=1.0f;

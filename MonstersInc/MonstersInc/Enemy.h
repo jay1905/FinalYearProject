@@ -23,7 +23,7 @@ public:
     
     void update();
     void drawStuf();
-    void move(b2Vec2 direction);
+    void move();
     
 private:
    
@@ -34,6 +34,8 @@ private:
     b2FixtureDef fixyureDef;
     cocos2d::CCAnimation * anim;    
     cocos2d::CCAnimate *theAnim ;
+    
+    float speed;
     
     
 };

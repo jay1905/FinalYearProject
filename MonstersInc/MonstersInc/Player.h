@@ -32,6 +32,7 @@ private:
     b2FixtureDef fixyureDef;
     cocos2d::CCAnimation * anim;    
     cocos2d::CCAnimate *theAnim ;
+    float speed;
 
 
 };

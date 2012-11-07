@@ -73,7 +73,7 @@ void Analogue::updateVelocity(CCPoint point)
         point.y = kCenter.y + sin(angle) * THUMB_RADIUS;
     }
     direction= b2Vec2(kCenter.x-point.x, kCenter.y-point.y);
-    //direction.Normalize();
+    direction.Normalize();
     thumb->setPosition(point);
 }
 
@@ -94,13 +94,37 @@ bool Analogue::handleLastTouch()
 
 void Analogue::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
 {
-    CCTouch *touch = (CCTouch*)pTouches->anyObject();
-    CCPoint point = touch->locationInView();
-    point = convertCoordinate(point);
     
-    if(isPointInCircle(point,kCenter,JOYSTICK_RADIUS)){
-        isPressed = true;
-        this->updateVelocity(point);
+    CCArray *allTouches =   this->allTouchesFromSet(pTouches);
+
+    if (allTouches->count() > 1)
+    {
+        CCObject *fingerOne = allTouches->objectAtIndex(0);
+        CCObject *fingerTwo = allTouches->objectAtIndex(1);
+      
+        CCPoint  pointOne = CCDirector::sharedDirector()->convertToGL(pointOne);
+        CCPoint  pointTwo = CCDirector::sharedDirector()->convertToGL(pointTwo);
+
+
+        if(isPointInCircle(pointOne,kCenter,JOYSTICK_RADIUS)){
+            isPressed = true;
+            this->updateVelocity(pointOne);
+        }
+        else if(isPointInCircle(pointTwo,kCenter,JOYSTICK_RADIUS)){
+            isPressed = true;
+            this->updateVelocity(pointTwo);
+        }
+    }
+    else
+    {
+            CCTouch *touch = (CCTouch*)pTouches->anyObject();
+            CCPoint point = touch->locationInView();
+            point = convertCoordinate(point);
+    
+            if(isPointInCircle(point,kCenter,JOYSTICK_RADIUS)){
+                    isPressed = true;
+                    this->updateVelocity(point);
+            }
     }
 }
 
@@ -124,4 +148,15 @@ void Analogue::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )
     this->handleLastTouch();
 }
 
-
+CCArray* Analogue::allTouchesFromSet(CCSet *touches)
+{
+    CCArray *arr = new CCArray;
+    
+    CCSetIterator it;
+    
+	for( it = touches->begin(); it != touches->end(); it++) 
+    {
+        arr->addObject((CCTouch *)*it);
+    }
+    return arr;
+}

@@ -22,6 +22,7 @@ enum {
 HelloWorld::HelloWorld()
 {
     setTouchEnabled( true );
+    
     setAccelerometerEnabled( true );
     
     CCSize s = CCDirector::sharedDirector()->getWinSize();
@@ -47,21 +48,20 @@ HelloWorld::HelloWorld()
     
     
     
-    /////////////////////////////////////////////////////////////////animation
-    
-    cocos2d::CCAnimation * anim = CCAnimation::animation();
-    anim->addSpriteFrameWithFileName("GreenZombie1.png");
-    anim->addSpriteFrameWithFileName("GreenZombie2.png");
-    anim->addSpriteFrameWithFileName("GreenZombie3.png");
-    anim->addSpriteFrameWithFileName("GreenZombie4.png");
-    anim->setDelayPerUnit(.5f);
-    CCAnimate *theAnim = cocos2d::CCAnimate::actionWithAnimation(anim);// CCAnimate::a  actionWithDuration(1.8f,anim,true); 
-    CCAction *jumpAct = CCRepeatForever::create(theAnim);
-    cocos2d::CCSprite*  pSprite=CCSprite::spriteWithFile("GreenZombie1.png");//  createWithSpriteFrame((CCSpriteFrame*) anim->getFrames()->objectAtIndex(0));
-    pSprite->setPosition(CCPoint(500, 300));
-    this->addChild(pSprite);
-    pSprite->runAction(jumpAct);
-    /////////////////////////////////////////////////////////////////////animation
+///////////////////////////////////////////////////////////////////animation
+//    cocos2d::CCAnimation * anim = CCAnimation::animation();
+//    anim->addSpriteFrameWithFileName("GreenZombie1.png");
+//    anim->addSpriteFrameWithFileName("GreenZombie2.png");
+//    anim->addSpriteFrameWithFileName("GreenZombie3.png");
+//    anim->addSpriteFrameWithFileName("GreenZombie4.png");
+//    anim->setDelayPerUnit(.5f);
+//    CCAnimate *theAnim = cocos2d::CCAnimate::actionWithAnimation(anim);// CCAnimate::a  actionWithDuration(1.8f,anim,true); 
+//    CCAction *jumpAct = CCRepeatForever::create(theAnim);
+//    cocos2d::CCSprite*  pSprite=CCSprite::spriteWithFile("GreenZombie1.png");//  createWithSpriteFrame((CCSpriteFrame*) anim->getFrames()->objectAtIndex(0));
+//    pSprite->setPosition(CCPoint(500, 300));
+//    this->addChild(pSprite);
+//    pSprite->runAction(jumpAct);
+///////////////////////////////////////////////////////////////////////animation
     
     
     
@@ -75,60 +75,59 @@ HelloWorld::HelloWorld()
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
     addChild(hello);
     player= new Player(hello,world);
+    player->setPosition(CCPoint(400, 400));
     hello->addChild(player);
- 
+    
+    CCSpriteBatchNode *castle = CCSpriteBatchNode::create("castle.png", 100);
+    addChild(castle);
+    base = new Base(castle,world);
+    castle->addChild(base);
     
     
-    CCSpriteBatchNode *jaimesNode = CCSpriteBatchNode::create("orange.png", 100);
-    JaimeTexture = jaimesNode->getTexture();
-    addChild(jaimesNode, 0, jaimesfinished);
-    CCNode* jaimeparent = getChildByTag(jaimesfinished);
-    jaimeSprite = new PhysicsSprite();
-    jaimeSprite->initWithTexture(JaimeTexture, CCRectMake(0,0,58,59));
-    jaimeSprite->autorelease();
-    jaimeparent->addChild(jaimeSprite);
-    b2BodyDef bodyDef;
-    bodyDef.type = b2_dynamicBody;
-    bodyDef.position.Set(500/64, 600/64);
-    b2Body *body = world->CreateBody(&bodyDef);
-    b2CircleShape circle;
-    circle.m_radius =0.85f;
-    b2FixtureDef fixtureDef;
-    fixtureDef.shape = &circle;    
-    fixtureDef.density = 1.0f;
-    fixtureDef.friction = 1.8f;
-    body->CreateFixture(&fixtureDef);
-    jaimeSprite->setPhysicsBody(body);
+//    CCSpriteBatchNode *jaimesNode = CCSpriteBatchNode::create("orange.png", 100);
+//    JaimeTexture = jaimesNode->getTexture();
+//    addChild(jaimesNode, 0, jaimesfinished);
+//    CCNode* jaimeparent = getChildByTag(jaimesfinished);
+//    jaimeSprite = new PhysicsSprite();
+//    jaimeSprite->initWithTexture(JaimeTexture, CCRectMake(0,0,58,59));
+//    jaimeSprite->autorelease();
+//    jaimeparent->addChild(jaimeSprite);
+//    b2BodyDef bodyDef;
+//    bodyDef.type = b2_dynamicBody;
+//    bodyDef.position.Set(500/64, 600/64);
+//    b2Body *body = world->CreateBody(&bodyDef);
+//    b2CircleShape circle;
+//    circle.m_radius =0.85f;
+//    b2FixtureDef fixtureDef;
+//    fixtureDef.shape = &circle;    
+//    fixtureDef.density = 1.0f;
+//    fixtureDef.friction = 1.8f;
+//    body->CreateFixture(&fixtureDef);
+//    jaimeSprite->setPhysicsBody(body);
 
     
-    
-    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
-                                                          "CloseNormal.png",
-                                                          "CloseSelected.png",
-                                                          this,
-                                                          menu_selector(HelloWorld::move) );
-    pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width - 20, 20) );
-    
-    // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
-    pMenu->setPosition( CCPointZero );
-    this->addChild(pMenu, 1);
+//    
+//    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
+//                                                          "CloseNormal.png",
+//                                                          "CloseSelected.png",
+//                                                          this,
+//                                                          menu_selector(HelloWorld::move) );
+//    pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width - 20, 20) );
+//    
+//    // create menu, it's an autorelease object
+//    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
+//    pMenu->setPosition( CCPointZero );
+//    this->addChild(pMenu, 1);
 
-    
-    
-    addNewSpriteAtPosition(ccp(200, 200));
-
-    
-    
-    
-    
-    
-    
-    
-    CCLabelTTF *label = CCLabelTTF::create("Tap screen", "Marker Felt", 32);
-    addChild(label, 0);
-    label->setColor(ccc3(0,0,255));
-    label->setPosition(ccp( s.width/2, s.height-50));
+//    
+//    
+//    addNewSpriteAtPosition(ccp(200, 200));
+//
+//       
+//    CCLabelTTF *label = CCLabelTTF::create("Tap screen", "Marker Felt", 32);
+//    addChild(label, 0);
+//    label->setColor(ccc3(0,0,255));
+//    label->setPosition(ccp( s.width/2, s.height-50));
     
     scheduleUpdate();
 }
@@ -260,6 +259,7 @@ void HelloWorld::update(float dt)
     int positionIterations = 1;
    // enemy->move(analog->getDirection());
     player->update(analog->getDirection());
+    enemy->move();
     // Instruct the world to perform a single step of simulation. It is
     // generally best to keep the time step and iterations fixed.
     world->Step(dt, velocityIterations, positionIterations);

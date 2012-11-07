@@ -35,6 +35,9 @@ private:
     cocos2d::CCPoint velocity;
     b2Vec2 direction;
     
+    
+    cocos2d::CCArray* allTouchesFromSet(cocos2d::CCSet *touches);
+    
     void updateVelocity(cocos2d::CCPoint point);
     void resetJoystick();
     bool handleLastTouch();

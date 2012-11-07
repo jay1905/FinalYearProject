@@ -8,6 +8,7 @@
 #include "PhysicsSprite.h"
 #include "Analogue.h"
 #include "Enemy.h"
+#include "Base.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -41,6 +42,7 @@ private:
     cocos2d::CCPoint location;
     Player *player;
     Enemy *enemy;
+    Base *base;
     cocos2d::CCSprite *jaime;
    
 };
