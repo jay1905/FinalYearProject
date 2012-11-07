@@ -266,6 +266,7 @@
 		E08B4BB816305A3E002B3858 /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8716305A3E002B3858 /* b2WeldJoint.cpp */; };
 		E08B4BB916305A3E002B3858 /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8916305A3E002B3858 /* b2WheelJoint.cpp */; };
 		E08B4BBA16305A3E002B3858 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8C16305A3E002B3858 /* b2Rope.cpp */; };
+		E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = E09094C9164AABAE00E744D8 /* License.mobileprovision */; };
 		E0AECBA01630919900C1FD48 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB971630919900C1FD48 /* blocks.png */; };
 		E0AECBA11630919900C1FD48 /* drink.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB981630919900C1FD48 /* drink.png */; };
 		E0AECBA21630919900C1FD48 /* hamburger.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB991630919900C1FD48 /* hamburger.png */; };
@@ -829,6 +830,7 @@
 		E08B4B8A16305A3E002B3858 /* b2WheelJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2WheelJoint.h; sourceTree = "<group>"; };
 		E08B4B8C16305A3E002B3858 /* b2Rope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2Rope.cpp; sourceTree = "<group>"; };
 		E08B4B8D16305A3E002B3858 /* b2Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Rope.h; sourceTree = "<group>"; };
+		E09094C9164AABAE00E744D8 /* License.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = License.mobileprovision; sourceTree = "<group>"; };
 		E0AECB971630919900C1FD48 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		E0AECB981630919900C1FD48 /* drink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drink.png; path = Resources/drink.png; sourceTree = "<group>"; };
 		E0AECB991630919900C1FD48 /* hamburger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hamburger.png; path = Resources/hamburger.png; sourceTree = "<group>"; };
@@ -863,6 +865,7 @@
 		E0300C2B162F06330075BBBE = {
 			isa = PBXGroup;
 			children = (
+				E09094C9164AABAE00E744D8 /* License.mobileprovision */,
 				E0300C4A162F06330075BBBE /* MonstersInc */,
 				E0300C39162F06330075BBBE /* Frameworks */,
 				E0300C37162F06330075BBBE /* Products */,
@@ -2010,6 +2013,7 @@
 				E083C85116499073002EE487 /* GreenZombie3.png in Resources */,
 				E083C85216499073002EE487 /* GreenZombie4.png in Resources */,
 				E083C8581649AF68002EE487 /* Player.png in Resources */,
+				E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
