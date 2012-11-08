@@ -19,11 +19,12 @@
 class Bullet: public PhysicsSprite
 {
 public:
-    Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world);
+    Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos);
     
     
     void update(b2Vec2 direction);
     void drawStuf();
+    float timetolive;
     
 private:
     
@@ -33,6 +34,7 @@ private:
     b2FixtureDef fixyureDef;
     cocos2d::CCAnimation * anim;    
     cocos2d::CCAnimate *theAnim ;
+    float speed;
     
     
 };

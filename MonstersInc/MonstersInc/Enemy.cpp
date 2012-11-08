@@ -25,7 +25,7 @@ Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world){
     float y = 64/32;
     dynamicBox.SetAsBox(x/1.8, y/1.8);
     fixyureDef.shape=&dynamicBox;
-    fixyureDef.density=1.0f;
+    fixyureDef.density=0.0f;
     fixyureDef.friction=0.0f;
     body->CreateFixture(&fixyureDef);
     this->setPhysicsBody(body);

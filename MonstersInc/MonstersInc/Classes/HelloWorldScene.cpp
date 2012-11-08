@@ -75,7 +75,7 @@ HelloWorld::HelloWorld()
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
     addChild(hello);
     player= new Player(hello,world);
-    player->setPosition(CCPoint(400, 400));
+   // player->setPosition(CCPoint(400, 400));
     hello->addChild(player);
     
     CCSpriteBatchNode *castle = CCSpriteBatchNode::create("castle.png", 100);
@@ -83,7 +83,9 @@ HelloWorld::HelloWorld()
     base = new Base(castle,world);
     castle->addChild(base);
     
-    
+//    bulletSprite=CCSpriteBatchNode::create("Bullet", 100);
+//    addChild(bulletSprite);
+//    
 //    CCSpriteBatchNode *jaimesNode = CCSpriteBatchNode::create("orange.png", 100);
 //    JaimeTexture = jaimesNode->getTexture();
 //    addChild(jaimesNode, 0, jaimesfinished);
@@ -260,6 +262,23 @@ void HelloWorld::update(float dt)
    // enemy->move(analog->getDirection());
     player->update(analog->getDirection());
     enemy->move();
+    
+    if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
+        
+        bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
+        addChild(bulletSprite);
+        Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
+      
+        b->update(analog2->getDirection());
+        bulletSprite->addChild(b);
+      //  bullets->addObject(b);
+        
+    }
+//    for (int i=0; i<bullets->capacity(); i++) {
+//        bullets->objectAtIndex(i);
+//    }
+    
+    
     // Instruct the world to perform a single step of simulation. It is
     // generally best to keep the time step and iterations fixed.
     world->Step(dt, velocityIterations, positionIterations);

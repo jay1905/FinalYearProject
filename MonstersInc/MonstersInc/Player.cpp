@@ -25,13 +25,13 @@ Player::Player(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     float y = 44/32;
     dynamicBox.SetAsBox(x/1.8, y/1.8);
     fixyureDef.shape=&dynamicBox;
-    fixyureDef.density=1.0f;
+    fixyureDef.density=0.0f;
     fixyureDef.friction=0.0f;
     body->CreateFixture(&fixyureDef);
     this->setPhysicsBody(body);
     speed = 5 ;
     m_pBody->SetLinearVelocity(b2Vec2(0, 0));
-    
+       
 }
 void Player::update(b2Vec2 direction){
     
@@ -42,6 +42,10 @@ void Player::update(b2Vec2 direction){
 }
 void Player::drawStuf(){
     
-
     
+    
+}
+b2Vec2 Player::returnpos(){
+    
+    return m_pBody->GetPosition();
 }

@@ -15,6 +15,7 @@
 
 
 
+
 class Player: public PhysicsSprite
 {
 public:
@@ -23,7 +24,7 @@ public:
     
     void update(b2Vec2 direction);
     void drawStuf();
-
+    b2Vec2 returnpos();
 private:
   
     b2BodyDef bodyDef;
@@ -33,8 +34,7 @@ private:
     cocos2d::CCAnimation * anim;    
     cocos2d::CCAnimate *theAnim ;
     float speed;
-
-
+   
 };
 
 #endif

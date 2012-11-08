@@ -13,26 +13,29 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
-Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world){
+Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos){
     
     
-    this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 54, 44));
+    this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 11, 7));
     this->autorelease();
     bodyDef.type=b2_dynamicBody;
-    bodyDef.position.Set(15, 15);
+    bodyDef.position.Set(pos.x, pos.y);
     body=world->CreateBody(&bodyDef);
-    float x=54/32;
-    float y = 44/32;
-    dynamicBox.SetAsBox(x/1.8, y/1.8);
+    float x=11/32;
+    float y = 7/32;
+    dynamicBox.SetAsBox(.2, .2);
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=1.0f;
     fixyureDef.friction=2.0f;
     body->CreateFixture(&fixyureDef);
     this->setPhysicsBody(body);
+    speed = 30;
+    timetolive=60;
     
 }
 void Bullet::update(b2Vec2 direction){
     
+    direction=b2Vec2(direction.x*speed,direction.y*speed);
     this->m_pBody->SetLinearVelocity(direction);
     
 }

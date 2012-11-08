@@ -50,6 +50,7 @@ bool Analogue::init()
         thumb->setPosition(kCenter);
         thumb->setOpacity(50);
         this->addChild(thumb,1);
+        direction= b2Vec2(0, 0);
         bRet=true;
         
     }while(0);

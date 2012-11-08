@@ -9,6 +9,7 @@
 #include "Analogue.h"
 #include "Enemy.h"
 #include "Base.h"
+#include "Bullet.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -44,6 +45,8 @@ private:
     Enemy *enemy;
     Base *base;
     cocos2d::CCSprite *jaime;
+    cocos2d::CCArray *bullets;
+    cocos2d::CCSpriteBatchNode *bulletSprite;
    
 };
 
