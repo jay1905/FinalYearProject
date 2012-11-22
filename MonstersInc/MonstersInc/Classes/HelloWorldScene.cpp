@@ -44,7 +44,7 @@ HelloWorld::HelloWorld()
     
     analog2 = new Analogue(CCPoint(s.width-100, 95));
     this->addChild(analog2);
-    
+    bullets=new CCArray();
     
     
     
@@ -271,12 +271,20 @@ void HelloWorld::update(float dt)
       
         b->update(analog2->getDirection());
         bulletSprite->addChild(b);
-      //  bullets->addObject(b);
+        bullets->addObject(b);
         
     }
-//    for (int i=0; i<bullets->capacity(); i++) {
-//        bullets->objectAtIndex(i);
-//    }
+    if(bullets->count()!=0){
+        for (int i=0; i<bullets->count(); i++) {
+       
+            Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
+            //b is not updating
+            if(b->timetolive > 60){
+            
+                int hey=10;
+            }
+        }
+    }
     
     
     // Instruct the world to perform a single step of simulation. It is
