@@ -46,7 +46,8 @@ HelloWorld::HelloWorld()
     this->addChild(analog2);
     bullets=new CCArray();
     
-    
+    bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
+    addChild(bulletSprite);
     
 ///////////////////////////////////////////////////////////////////animation
 //    cocos2d::CCAnimation * anim = CCAnimation::animation();
@@ -264,24 +265,21 @@ void HelloWorld::update(float dt)
     enemy->move();
     
     if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
-        
-        bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
-        addChild(bulletSprite);
+        //addChild(bulletSprite);
+
         Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
-      
-        b->update(analog2->getDirection());
+        b->fire(analog2->getDirection());
         bulletSprite->addChild(b);
         bullets->addObject(b);
-        
     }
     if(bullets->count()!=0){
-        for (int i=0; i<bullets->count(); i++) {
-       
+        for (int i=0; i<bullets->count(); i++){
             Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
-            //b is not updating
-            if(b->timetolive > 60){
-            
-                int hey=10;
+            b->update();
+            if(b->timetolive > 60*4){
+                bullets->removeObjectAtIndex(i);
+                world->DestroyBody(b->m_pBody);
+               // b->removeChild(b, true);
             }
         }
     }

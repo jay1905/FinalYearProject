@@ -33,10 +33,16 @@ Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos){
     timetolive=60;
     
 }
-void Bullet::update(b2Vec2 direction){
+void Bullet::update(){
+    
+    timetolive++;
+    
+}
+void Bullet::fire(b2Vec2 direction){
     
     direction=b2Vec2(direction.x*speed,direction.y*speed);
     this->m_pBody->SetLinearVelocity(direction);
+    
     
 }
 void Bullet::drawStuf(){
