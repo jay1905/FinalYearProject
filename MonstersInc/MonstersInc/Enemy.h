@@ -18,7 +18,7 @@
 class Enemy: public PhysicsSprite
 {
 public:
-    Enemy(cocos2d::CCSpriteBatchNode *hello,b2World* world);
+    Enemy(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos,float speed);
     
     
     void update();

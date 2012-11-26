@@ -26,6 +26,7 @@ public:
     void drawStuf();
     void fire(b2Vec2 direction);
     float timetolive;
+    cocos2d::CCSpriteBatchNode *sprite;
     
 private:
     

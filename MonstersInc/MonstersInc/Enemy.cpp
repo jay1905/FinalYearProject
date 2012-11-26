@@ -13,13 +13,13 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
-Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world){
+Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 pos,float spd){
     
 
     this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 59, 64));
     this->autorelease();
     bodyDef.type=b2_dynamicBody;
-    bodyDef.position.Set(1, 15);
+    bodyDef.position.Set(pos.x,pos.y);
     body=world->CreateBody(&bodyDef);
     float x=59/32;
     float y = 64/32;
@@ -29,7 +29,7 @@ Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world){
     fixyureDef.friction=0.0f;
     body->CreateFixture(&fixyureDef);
     this->setPhysicsBody(body);
-    speed =1;
+    speed =spd;
        
 
 }

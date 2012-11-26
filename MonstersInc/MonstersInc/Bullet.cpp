@@ -15,14 +15,12 @@ using namespace CocosDenshion;
 
 Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos){
     
-    
-    this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 11, 7));
+    sprite=hello;
+    this->initWithTexture(sprite->getTexture(), CCRectMake(0, 0, 11, 7));
     this->autorelease();
     bodyDef.type=b2_dynamicBody;
     bodyDef.position.Set(pos.x, pos.y);
     body=world->CreateBody(&bodyDef);
-    float x=11/32;
-    float y = 7/32;
     dynamicBox.SetAsBox(.2, .2);
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=1.0f;

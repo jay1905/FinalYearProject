@@ -43,6 +43,7 @@ private:
     cocos2d::CCPoint location;
     Player *player;
     Enemy *enemy;
+    Enemy *enemy2;
     Base *base;
     cocos2d::CCSprite *jaime;
     cocos2d::CCArray *bullets;

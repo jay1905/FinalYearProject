@@ -268,6 +268,7 @@
 		E08B4BB816305A3E002B3858 /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8716305A3E002B3858 /* b2WeldJoint.cpp */; };
 		E08B4BB916305A3E002B3858 /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8916305A3E002B3858 /* b2WheelJoint.cpp */; };
 		E08B4BBA16305A3E002B3858 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8C16305A3E002B3858 /* b2Rope.cpp */; };
+		E08CDB8B16641A3D0003BADF /* Gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08CDB8A16641A3D0003BADF /* Gun.cpp */; };
 		E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = E09094C9164AABAE00E744D8 /* License.mobileprovision */; };
 		E0AECBA01630919900C1FD48 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB971630919900C1FD48 /* blocks.png */; };
 		E0AECBA11630919900C1FD48 /* drink.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB981630919900C1FD48 /* drink.png */; };
@@ -834,6 +835,8 @@
 		E08B4B8A16305A3E002B3858 /* b2WheelJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2WheelJoint.h; sourceTree = "<group>"; };
 		E08B4B8C16305A3E002B3858 /* b2Rope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2Rope.cpp; sourceTree = "<group>"; };
 		E08B4B8D16305A3E002B3858 /* b2Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Rope.h; sourceTree = "<group>"; };
+		E08CDB8816641A2D0003BADF /* Gun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gun.h; sourceTree = "<group>"; };
+		E08CDB8A16641A3D0003BADF /* Gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gun.cpp; sourceTree = "<group>"; };
 		E09094C9164AABAE00E744D8 /* License.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = License.mobileprovision; sourceTree = "<group>"; };
 		E0AECB971630919900C1FD48 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		E0AECB981630919900C1FD48 /* drink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drink.png; path = Resources/drink.png; sourceTree = "<group>"; };
@@ -1781,6 +1784,8 @@
 				E083C85A1649B9F1002EE487 /* Bullet.cpp */,
 				E083C85C1649BA52002EE487 /* Base.h */,
 				E083C85D1649BA60002EE487 /* Base.cpp */,
+				E08CDB8816641A2D0003BADF /* Gun.h */,
+				E08CDB8A16641A3D0003BADF /* Gun.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2262,6 +2267,7 @@
 				E083C84316482EE4002EE487 /* Enemy.cpp in Sources */,
 				E083C85B1649B9F2002EE487 /* Bullet.cpp in Sources */,
 				E083C85E1649BA60002EE487 /* Base.cpp in Sources */,
+				E08CDB8B16641A3D0003BADF /* Gun.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

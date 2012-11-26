@@ -46,8 +46,7 @@ HelloWorld::HelloWorld()
     this->addChild(analog2);
     bullets=new CCArray();
     
-    bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
-    addChild(bulletSprite);
+    
     
 ///////////////////////////////////////////////////////////////////animation
 //    cocos2d::CCAnimation * anim = CCAnimation::animation();
@@ -68,9 +67,14 @@ HelloWorld::HelloWorld()
     
     CCSpriteBatchNode *enemy1 = CCSpriteBatchNode::create("GreenZombie1.png", 100);
     addChild(enemy1);
-    enemy = new Enemy(enemy1,world);
+    enemy = new Enemy(enemy1,world,b2Vec2(10, 10),1);
     enemy1->addChild(enemy);
 
+    
+    CCSpriteBatchNode *enemyblack = CCSpriteBatchNode::create("GreenZombie2.png", 100);
+    addChild(enemyblack);
+    enemy2 = new Enemy(enemyblack,world,b2Vec2(10, 15),1.5);
+    enemyblack->addChild(enemy2);
     
     
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
@@ -263,10 +267,11 @@ void HelloWorld::update(float dt)
    // enemy->move(analog->getDirection());
     player->update(analog->getDirection());
     enemy->move();
-    
+    enemy2->move();
+    ///////////////////////////////////////////////////////////////////////////////////
     if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
-        //addChild(bulletSprite);
-
+        bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
+        addChild(bulletSprite);
         Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
         b->fire(analog2->getDirection());
         bulletSprite->addChild(b);
@@ -279,11 +284,11 @@ void HelloWorld::update(float dt)
             if(b->timetolive > 60*4){
                 bullets->removeObjectAtIndex(i);
                 world->DestroyBody(b->m_pBody);
-               // b->removeChild(b, true);
+                b->removeChild(b, true);
             }
         }
     }
-    
+    ///////////////////////////////////////////////////////////////////////////////////
     
     // Instruct the world to perform a single step of simulation. It is
     // generally best to keep the time step and iterations fixed.
