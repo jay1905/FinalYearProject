@@ -20,15 +20,16 @@ Player::Player(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     this->autorelease();
     bodyDef.type=b2_dynamicBody;
     bodyDef.position.Set(30, 19);
-    body=world->CreateBody(&bodyDef);
+    playerbody=world->CreateBody(&bodyDef);
     float x=54/32;
     float y = 44/32;
     dynamicBox.SetAsBox(x/1.8, y/1.8);
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=0.0f;
     fixyureDef.friction=0.0f;
-    body->CreateFixture(&fixyureDef);
-    this->setPhysicsBody(body);
+    fixyureDef.filter.groupIndex=-1;
+    playerbody->CreateFixture(&fixyureDef);
+    this->setPhysicsBody(playerbody);
     speed = 5 ;
     m_pBody->SetLinearVelocity(b2Vec2(0, 0));
        

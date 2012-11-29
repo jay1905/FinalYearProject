@@ -126,10 +126,7 @@ HelloWorld::HelloWorld()
 //    pMenu->setPosition( CCPointZero );
 //    this->addChild(pMenu, 1);
 
-//    
-//    
-//    addNewSpriteAtPosition(ccp(200, 200));
-//
+
 //       
 //    CCLabelTTF *label = CCLabelTTF::create("Tap screen", "Marker Felt", 32);
 //    addChild(label, 0);
@@ -268,6 +265,12 @@ void HelloWorld::update(float dt)
     player->update(analog->getDirection());
     enemy->move();
     enemy2->move();
+    char* s=(char*)enemy->m_pBody->GetUserData();
+    if(!strcmp(s,"Hello!")){
+        
+        int yes=1;
+        
+    }
     ///////////////////////////////////////////////////////////////////////////////////
     if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
         bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
@@ -280,8 +283,8 @@ void HelloWorld::update(float dt)
     if(bullets->count()!=0){
         for (int i=0; i<bullets->count(); i++){
             Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
-            b->update();
-            if(b->timetolive > 60*4){
+            b->update(player->m_pBody);
+            if(b->timetolive > 60*2){
                 bullets->removeObjectAtIndex(i);
                 world->DestroyBody(b->m_pBody);
                 b->removeChild(b, true);

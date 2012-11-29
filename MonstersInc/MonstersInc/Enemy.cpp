@@ -20,13 +20,17 @@ Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 pos,float s
     this->autorelease();
     bodyDef.type=b2_dynamicBody;
     bodyDef.position.Set(pos.x,pos.y);
+    char *c ="Hello!";
+    
     body=world->CreateBody(&bodyDef);
+    body->SetUserData((void*)c);
     float x=59/32;
     float y = 64/32;
     dynamicBox.SetAsBox(x/1.8, y/1.8);
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=0.0f;
     fixyureDef.friction=0.0f;
+    
     body->CreateFixture(&fixyureDef);
     this->setPhysicsBody(body);
     speed =spd;

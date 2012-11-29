@@ -9,6 +9,19 @@
 #ifndef MonstersInc_Gun_h
 #define MonstersInc_Gun_h
 
+#include "cocos2d.h"
 
-
+class Gun{
+    
+public:
+    Gun();
+    
+private:
+    float damage;
+    float fireRate;
+    float reloadSpeed;
+    
+    
+    
+};
 #endif

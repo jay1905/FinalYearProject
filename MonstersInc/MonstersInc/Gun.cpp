@@ -7,3 +7,16 @@
 //
 
 #include <iostream>
+#include "Gun.h"
+
+
+
+using namespace cocos2d;
+
+Gun::Gun(){
+    
+    
+    
+    
+    
+}

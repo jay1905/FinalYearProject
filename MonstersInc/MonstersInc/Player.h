@@ -28,7 +28,7 @@ public:
 private:
   
     b2BodyDef bodyDef;
-    b2Body* body;
+    b2Body* playerbody;
     b2PolygonShape dynamicBox;
     b2FixtureDef fixyureDef;
     cocos2d::CCAnimation * anim;    
