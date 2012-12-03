@@ -27,7 +27,8 @@ public:
     void fire(b2Vec2 direction);
     float timetolive;
     cocos2d::CCSpriteBatchNode *sprite;
-    
+    void destroy(){timetolive=500;}
+   
 private:
     
     b2BodyDef bodyDef;

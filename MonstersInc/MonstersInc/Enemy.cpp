@@ -20,8 +20,7 @@ Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 pos,float s
     this->autorelease();
     bodyDef.type=b2_dynamicBody;
     bodyDef.position.Set(pos.x,pos.y);
-    char *c ="Hello!";
-    
+    char *c ="Enemy";
     body=world->CreateBody(&bodyDef);
     body->SetUserData((void*)c);
     float x=59/32;

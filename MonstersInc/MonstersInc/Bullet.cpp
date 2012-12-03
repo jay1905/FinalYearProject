@@ -21,6 +21,10 @@ Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos){
     bodyDef.type=b2_dynamicBody;
     bodyDef.position.Set(pos.x, pos.y);
     body=world->CreateBody(&bodyDef);
+    char *c ="Bullet";
+    
+    //body->SetUserData((void*)c);
+   
     dynamicBox.SetAsBox(.2, .2);
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=1.0f;
@@ -30,14 +34,12 @@ Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos){
     this->setPhysicsBody(body);
     speed = 30;
     timetolive=60;
+    body->SetUserData((void*)c);
     
 }
 void Bullet::update(b2Body* b){
     
     timetolive++;
-   // if(body->GetContactList()->other==b){
-        
-   // }
     
 }
 void Bullet::fire(b2Vec2 direction){
@@ -52,3 +54,10 @@ void Bullet::drawStuf(){
     
     
 }
+//void Bullet::destroy(){
+    
+    
+//    timetolive++;
+    
+    
+//}

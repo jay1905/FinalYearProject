@@ -47,6 +47,7 @@ HelloWorld::HelloWorld()
     bullets=new CCArray();
     
     
+    world->SetContactListener(&mycontact);
     
 ///////////////////////////////////////////////////////////////////animation
 //    cocos2d::CCAnimation * anim = CCAnimation::animation();
@@ -271,6 +272,7 @@ void HelloWorld::update(float dt)
         int yes=1;
         
     }
+    
     ///////////////////////////////////////////////////////////////////////////////////
     if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
         bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
@@ -289,6 +291,14 @@ void HelloWorld::update(float dt)
                 world->DestroyBody(b->m_pBody);
                 b->removeChild(b, true);
             }
+        }
+    }
+    if(bullets->count()!=0){
+        for (int i=0; i<bullets->count(); i++){
+            Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
+           
+            
+            
         }
     }
     ///////////////////////////////////////////////////////////////////////////////////

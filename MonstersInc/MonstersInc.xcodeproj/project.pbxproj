@@ -270,6 +270,7 @@
 		E08B4BBA16305A3E002B3858 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8C16305A3E002B3858 /* b2Rope.cpp */; };
 		E08CDB8B16641A3D0003BADF /* Gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08CDB8A16641A3D0003BADF /* Gun.cpp */; };
 		E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = E09094C9164AABAE00E744D8 /* License.mobileprovision */; };
+		E0A65974166D0D8000A21872 /* MyContactListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A65973166D0D8000A21872 /* MyContactListener.cpp */; };
 		E0AECBA01630919900C1FD48 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB971630919900C1FD48 /* blocks.png */; };
 		E0AECBA11630919900C1FD48 /* drink.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB981630919900C1FD48 /* drink.png */; };
 		E0AECBA21630919900C1FD48 /* hamburger.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB991630919900C1FD48 /* hamburger.png */; };
@@ -838,6 +839,8 @@
 		E08CDB8816641A2D0003BADF /* Gun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gun.h; sourceTree = "<group>"; };
 		E08CDB8A16641A3D0003BADF /* Gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gun.cpp; sourceTree = "<group>"; };
 		E09094C9164AABAE00E744D8 /* License.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = License.mobileprovision; sourceTree = "<group>"; };
+		E0A65971166D0D5E00A21872 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
+		E0A65973166D0D8000A21872 /* MyContactListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyContactListener.cpp; sourceTree = "<group>"; };
 		E0AECB971630919900C1FD48 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		E0AECB981630919900C1FD48 /* drink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drink.png; path = Resources/drink.png; sourceTree = "<group>"; };
 		E0AECB991630919900C1FD48 /* hamburger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hamburger.png; path = Resources/hamburger.png; sourceTree = "<group>"; };
@@ -1786,6 +1789,8 @@
 				E083C85D1649BA60002EE487 /* Base.cpp */,
 				E08CDB8816641A2D0003BADF /* Gun.h */,
 				E08CDB8A16641A3D0003BADF /* Gun.cpp */,
+				E0A65971166D0D5E00A21872 /* MyContactListener.h */,
+				E0A65973166D0D8000A21872 /* MyContactListener.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2268,6 +2273,7 @@
 				E083C85B1649B9F2002EE487 /* Bullet.cpp in Sources */,
 				E083C85E1649BA60002EE487 /* Base.cpp in Sources */,
 				E08CDB8B16641A3D0003BADF /* Gun.cpp in Sources */,
+				E0A65974166D0D8000A21872 /* MyContactListener.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
