@@ -23,6 +23,8 @@ public:
     virtual cocos2d::CCAffineTransform nodeToParentTransform(void);
     b2Body getBody();
     b2Body* m_pBody;    // strong ref
+    std::string name;
+    float timetolive;
 
 private:
    };

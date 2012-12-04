@@ -17,7 +17,7 @@ using namespace cocos2d;
 PhysicsSprite::PhysicsSprite()
 : m_pBody(NULL)
 {
-    
+    name = "object";
 }
 
 void PhysicsSprite::setPhysicsBody(b2Body * body)

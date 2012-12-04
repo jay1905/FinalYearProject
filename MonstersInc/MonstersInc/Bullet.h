@@ -25,9 +25,10 @@ public:
     void update(b2Body* b);
     void drawStuf();
     void fire(b2Vec2 direction);
-    float timetolive;
+    
     cocos2d::CCSpriteBatchNode *sprite;
     void destroy(){timetolive=500;}
+    std::string typeName;
    
 private:
     

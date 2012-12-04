@@ -11,11 +11,12 @@
 #include "cocos2d.h"
 #include "Box2D.h"
 #include "Bullet.h"
+#include "PhysicsSprite.h"
 
 class MyContactListener : public b2ContactListener{
     
     void BeginContact(b2Contact* contact) {
-        
+       
         //check if fixture A was a ball
         void* bodyUserData = contact->GetFixtureA()->GetBody()->GetUserData();
         if ( bodyUserData ){
@@ -25,16 +26,16 @@ class MyContactListener : public b2ContactListener{
                 int i=0;
             }
         }
+        
         bodyUserData = contact->GetFixtureB()->GetBody()->GetUserData();
-        b2Fixture* fixtureB =contact->GetFixtureB();
         if ( bodyUserData ){
-            //static_cast<Ball*>( bodyUserData )->startContact();
-            char* str=(char*)contact->GetFixtureB()->GetBody()->GetUserData();
-         
-            if(!strcmp(str,"Bullet")){
-                
-                Bullet * bul =(Bullet*)bodyUserData;
-                bul->timetolive=500;
+
+            PhysicsSprite *p =(PhysicsSprite*)contact->GetFixtureB()->GetBody()->GetUserData();
+            
+            std::string hell= p->name;
+            cocos2d::CCString st=p->name;
+            if(hell=="bullet"){
+               p->timetolive=500;
             }
         }
     }
