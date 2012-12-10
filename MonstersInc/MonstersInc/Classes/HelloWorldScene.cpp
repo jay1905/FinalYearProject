@@ -34,9 +34,9 @@ HelloWorld::HelloWorld()
     
    addChild(parent, 0, kTagParentNode);
   
-   // jaime = CCSprite::create("hotdog.png");
-   // jaime->setPosition(CCPointMake(30, 30));
-    //addChild(jaime);
+    jaime = CCSprite::create("backgrounddetailed1.png");
+    jaime->setPosition(CCPointMake(0, 0));
+    addChild(jaime);
     
     
     analog = new Analogue(CCPoint(100, 95));
@@ -49,6 +49,14 @@ HelloWorld::HelloWorld()
     
     world->SetContactListener(&mycontact);
     
+    eManager = new EnemyManager(world,this);
+    eManager->addEnemy();
+    eManager->addEnemy();
+    eManager->addEnemy();
+    eManager->addEnemy();
+    eManager->addEnemy();
+    eManager->addPikachu();
+    eManager->addAxeBaby();
 ///////////////////////////////////////////////////////////////////animation
 //    cocos2d::CCAnimation * anim = CCAnimation::animation();
 //    anim->addSpriteFrameWithFileName("GreenZombie1.png");
@@ -66,16 +74,15 @@ HelloWorld::HelloWorld()
     
     
     
-    CCSpriteBatchNode *enemy1 = CCSpriteBatchNode::create("GreenZombie1.png", 100);
-    addChild(enemy1);
-    enemy = new Enemy(enemy1,world,b2Vec2(10, 10),1);
-    enemy1->addChild(enemy);
-
+   // CCSpriteBatchNode *enemy1 = CCSpriteBatchNode::create("GreenZombie1.png", 100);
+    //enemy = new Enemy(enemy1,world,b2Vec2(10, 10),1);
+    //addChild(enemy);
+  
     
-    CCSpriteBatchNode *enemyblack = CCSpriteBatchNode::create("GreenZombie2.png", 100);
-    addChild(enemyblack);
-    enemy2 = new Enemy(enemyblack,world,b2Vec2(10, 15),1.5);
-    enemyblack->addChild(enemy2);
+    //CCSpriteBatchNode *enemyblack = CCSpriteBatchNode::create("GreenZombie2.png", 100);
+    //addChild(enemyblack);
+    //enemy2 = new Enemy(enemyblack,world,b2Vec2(10, 15),1.5);
+    //enemyblack->addChild(enemy2);
     
     
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
@@ -264,14 +271,10 @@ void HelloWorld::update(float dt)
     int positionIterations = 1;
    // enemy->move(analog->getDirection());
     player->update(analog->getDirection());
-    enemy->move();
-    enemy2->move();
-    char* s=(char*)enemy->m_pBody->GetUserData();
-    if(!strcmp(s,"Hello!")){
-        
-        int yes=1;
-        
-    }
+    eManager->update();
+   // enemy->move();
+   // enemy2->move();
+   
     
     ///////////////////////////////////////////////////////////////////////////////////
     if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
@@ -293,15 +296,7 @@ void HelloWorld::update(float dt)
             }
         }
     }
-    if(bullets->count()!=0){
-        for (int i=0; i<bullets->count(); i++){
-            Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
-           
-            
-            
-        }
-    }
-    ///////////////////////////////////////////////////////////////////////////////////
+      ///////////////////////////////////////////////////////////////////////////////////
     
     // Instruct the world to perform a single step of simulation. It is
     // generally best to keep the time step and iterations fixed.

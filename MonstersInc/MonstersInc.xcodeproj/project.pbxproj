@@ -219,6 +219,16 @@
 		E08730CE16398B1300C4935D /* Analogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08730CD16398B1300C4935D /* Analogue.cpp */; };
 		E0882F891635E11D00DCE071 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F881635E11D00DCE071 /* Player.cpp */; };
 		E0882F8C1635E34A00DCE071 /* PhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */; };
+		E088CD49167659C0006786C0 /* backgrounddetailed1.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD48167659C0006786C0 /* backgrounddetailed1.png */; };
+		E088CD4D16765C58006786C0 /* EnemyManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E088CD4C16765C58006786C0 /* EnemyManager.cpp */; };
+		E088CD5616767EBD006786C0 /* axeBaby1.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD4E16767EBD006786C0 /* axeBaby1.png */; };
+		E088CD5716767EBD006786C0 /* axeBaby2.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD4F16767EBD006786C0 /* axeBaby2.png */; };
+		E088CD5816767EBD006786C0 /* axeBaby3.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD5016767EBD006786C0 /* axeBaby3.png */; };
+		E088CD5916767EBD006786C0 /* axeBaby4.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD5116767EBD006786C0 /* axeBaby4.png */; };
+		E088CD5A16767EBD006786C0 /* axeBabyAttack.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD5216767EBD006786C0 /* axeBabyAttack.png */; };
+		E088CD5B16767EBD006786C0 /* pikachu1.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD5316767EBD006786C0 /* pikachu1.png */; };
+		E088CD5C16767EBD006786C0 /* pikachu2.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD5416767EBD006786C0 /* pikachu2.png */; };
+		E088CD5D16767EBD006786C0 /* pikachu3.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD5516767EBD006786C0 /* pikachu3.png */; };
 		E08AB018164B09AB006DFD76 /* castle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB017164B09AB006DFD76 /* castle.png */; };
 		E08AB01B164B09B0006DFD76 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB01A164B09B0006DFD76 /* Bullet.png */; };
 		E08B334016404CBD002048EF /* Zombie2.png in Resources */ = {isa = PBXBuildFile; fileRef = E08B333F16404CBD002048EF /* Zombie2.png */; };
@@ -741,6 +751,17 @@
 		E0882F881635E11D00DCE071 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E0882F8A1635E32400DCE071 /* PhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsSprite.cpp; sourceTree = "<group>"; };
+		E088CD48167659C0006786C0 /* backgrounddetailed1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgrounddetailed1.png; path = Resources/backgrounddetailed1.png; sourceTree = "<group>"; };
+		E088CD4B16765C44006786C0 /* EnemyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyManager.h; sourceTree = "<group>"; };
+		E088CD4C16765C58006786C0 /* EnemyManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyManager.cpp; sourceTree = "<group>"; };
+		E088CD4E16767EBD006786C0 /* axeBaby1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = axeBaby1.png; path = Resources/axeBaby1.png; sourceTree = "<group>"; };
+		E088CD4F16767EBD006786C0 /* axeBaby2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = axeBaby2.png; path = Resources/axeBaby2.png; sourceTree = "<group>"; };
+		E088CD5016767EBD006786C0 /* axeBaby3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = axeBaby3.png; path = Resources/axeBaby3.png; sourceTree = "<group>"; };
+		E088CD5116767EBD006786C0 /* axeBaby4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = axeBaby4.png; path = Resources/axeBaby4.png; sourceTree = "<group>"; };
+		E088CD5216767EBD006786C0 /* axeBabyAttack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = axeBabyAttack.png; path = Resources/axeBabyAttack.png; sourceTree = "<group>"; };
+		E088CD5316767EBD006786C0 /* pikachu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pikachu1.png; path = Resources/pikachu1.png; sourceTree = "<group>"; };
+		E088CD5416767EBD006786C0 /* pikachu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pikachu2.png; path = Resources/pikachu2.png; sourceTree = "<group>"; };
+		E088CD5516767EBD006786C0 /* pikachu3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pikachu3.png; path = Resources/pikachu3.png; sourceTree = "<group>"; };
 		E08AB017164B09AB006DFD76 /* castle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = castle.png; path = Resources/castle.png; sourceTree = "<group>"; };
 		E08AB01A164B09B0006DFD76 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bullet.png; path = Resources/Bullet.png; sourceTree = "<group>"; };
 		E08B333F16404CBD002048EF /* Zombie2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zombie2.png; path = Resources/Zombie2.png; sourceTree = "<group>"; };
@@ -921,6 +942,15 @@
 			isa = PBXGroup;
 			children = (
 				E08AB01A164B09B0006DFD76 /* Bullet.png */,
+				E088CD4E16767EBD006786C0 /* axeBaby1.png */,
+				E088CD4F16767EBD006786C0 /* axeBaby2.png */,
+				E088CD5016767EBD006786C0 /* axeBaby3.png */,
+				E088CD5116767EBD006786C0 /* axeBaby4.png */,
+				E088CD5216767EBD006786C0 /* axeBabyAttack.png */,
+				E088CD5316767EBD006786C0 /* pikachu1.png */,
+				E088CD5416767EBD006786C0 /* pikachu2.png */,
+				E088CD5516767EBD006786C0 /* pikachu3.png */,
+				E088CD48167659C0006786C0 /* backgrounddetailed1.png */,
 				E08AB017164B09AB006DFD76 /* castle.png */,
 				E083C8571649AF68002EE487 /* Player.png */,
 				E083C84B16499073002EE487 /* GreenZombie1.png */,
@@ -1791,6 +1821,8 @@
 				E08CDB8A16641A3D0003BADF /* Gun.cpp */,
 				E0A65971166D0D5E00A21872 /* MyContactListener.h */,
 				E0A65973166D0D8000A21872 /* MyContactListener.cpp */,
+				E088CD4B16765C44006786C0 /* EnemyManager.h */,
+				E088CD4C16765C58006786C0 /* EnemyManager.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2032,6 +2064,15 @@
 				E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */,
 				E08AB018164B09AB006DFD76 /* castle.png in Resources */,
 				E08AB01B164B09B0006DFD76 /* Bullet.png in Resources */,
+				E088CD49167659C0006786C0 /* backgrounddetailed1.png in Resources */,
+				E088CD5616767EBD006786C0 /* axeBaby1.png in Resources */,
+				E088CD5716767EBD006786C0 /* axeBaby2.png in Resources */,
+				E088CD5816767EBD006786C0 /* axeBaby3.png in Resources */,
+				E088CD5916767EBD006786C0 /* axeBaby4.png in Resources */,
+				E088CD5A16767EBD006786C0 /* axeBabyAttack.png in Resources */,
+				E088CD5B16767EBD006786C0 /* pikachu1.png in Resources */,
+				E088CD5C16767EBD006786C0 /* pikachu2.png in Resources */,
+				E088CD5D16767EBD006786C0 /* pikachu3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2274,6 +2315,7 @@
 				E083C85E1649BA60002EE487 /* Base.cpp in Sources */,
 				E08CDB8B16641A3D0003BADF /* Gun.cpp in Sources */,
 				E0A65974166D0D8000A21872 /* MyContactListener.cpp in Sources */,
+				E088CD4D16765C58006786C0 /* EnemyManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,27 +17,53 @@ class MyContactListener : public b2ContactListener{
     
     void BeginContact(b2Contact* contact) {
        
-        //check if fixture A was a ball
+       
+       
         void* bodyUserData = contact->GetFixtureA()->GetBody()->GetUserData();
-        if ( bodyUserData ){
-            //static_cast<Ball*>( bodyUserData )->startContact();
-            char* str=(char*)contact->GetFixtureA()->GetBody()->GetUserData();
-            if(!strcmp(str,"Bullet")){
-                int i=0;
-            }
-        }
+        PhysicsSprite *p1;// =(PhysicsSprite*)contact->GetFixtureB()->GetBody()->GetUserData();
+        PhysicsSprite *p2;// =(PhysicsSprite*)contact->GetFixtureB()->GetBody()->GetUserData();
         
+        
+        if ( bodyUserData ){
+                   
+            p1 =(PhysicsSprite*)contact->GetFixtureA()->GetBody()->GetUserData();
+            p2 =(PhysicsSprite*)contact->GetFixtureB()->GetBody()->GetUserData();
+            std::string name1= p1->name;
+            std::string name2= p2->name;
+            
+            if(name1=="bullet"&& name2=="Enemy"){
+                
+                p1->timetolive=500;
+                p2->health-=20;
+            }
+            else if(name2=="bullet"&&name1=="Enemy"){
+                
+                p1->health-=20;
+                p2->timetolive=500;
+                
+            }
+            else if (name1=="bullet"){
+                
+                p1->timetolive=500;
+                
+            }
+            else if (name2=="bullet"){
+                
+                p2->timetolive=500;
+                
+            }
+            
+        
+        }
         bodyUserData = contact->GetFixtureB()->GetBody()->GetUserData();
         if ( bodyUserData ){
 
-            PhysicsSprite *p =(PhysicsSprite*)contact->GetFixtureB()->GetBody()->GetUserData();
             
-            std::string hell= p->name;
-            cocos2d::CCString st=p->name;
-            if(hell=="bullet"){
-               p->timetolive=500;
-            }
+            
+           
         }
+        
+        
     }
     
     void EndContact(b2Contact* contact) {

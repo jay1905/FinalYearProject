@@ -28,7 +28,6 @@ public:
     
     cocos2d::CCSpriteBatchNode *sprite;
     void destroy(){timetolive=500;}
-    std::string typeName;
    
 private:
     

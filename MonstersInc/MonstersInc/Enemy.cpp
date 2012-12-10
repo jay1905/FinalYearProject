@@ -13,18 +13,19 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
-Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 pos,float spd){
+Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 pos,float spd,b2Vec2 size){
     
 
-    this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 59, 64));
+    this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, size.x, size.y));
     this->autorelease();
     bodyDef.type=b2_dynamicBody;
     bodyDef.position.Set(pos.x,pos.y);
-    char *c ="Enemy";
+    name="Enemy";
+    health= 100;
     body=world->CreateBody(&bodyDef);
-    body->SetUserData((void*)c);
-    float x=59/32;
-    float y = 64/32;
+    
+    float x=size.x/32;
+    float y =size.y/32;
     dynamicBox.SetAsBox(x/1.8, y/1.8);
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=0.0f;
@@ -33,6 +34,7 @@ Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 pos,float s
     body->CreateFixture(&fixyureDef);
     this->setPhysicsBody(body);
     speed =spd;
+    body->SetUserData(this);
        
 
 }

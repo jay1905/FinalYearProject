@@ -22,6 +22,7 @@ Base::Base(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     bodyDef.position.Set(15, 15);
     body=world->CreateBody(&bodyDef);
     body->SetTransform(b2Vec2(30, 12), -1.56);
+    name="base";
     float x=404/32;
     float y = 134/32;
     dynamicBox.SetAsBox(x/1.8, y/1.8);
@@ -29,6 +30,7 @@ Base::Base(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     fixyureDef.density=1.0f;
     fixyureDef.friction=2.0f;
     body->CreateFixture(&fixyureDef);
+    body->SetUserData(this);
     this->setPhysicsBody(body);
     
 }

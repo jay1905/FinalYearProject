@@ -25,6 +25,7 @@ public:
     b2Body* m_pBody;    // strong ref
     std::string name;
     float timetolive;
+    float health;
 
 private:
    };
