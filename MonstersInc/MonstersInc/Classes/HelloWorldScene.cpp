@@ -34,8 +34,8 @@ HelloWorld::HelloWorld()
     
     addChild(parent, 0, kTagParentNode);
   
-    jaime = CCSprite::create("backgrounddetailed1.png");
-    jaime->setPosition(CCPointMake(0, 0));
+    jaime = CCSprite::create("game_background.png");
+    jaime->setPosition(CCPointMake(500, 380));
     addChild(jaime);
     
     
@@ -45,7 +45,9 @@ HelloWorld::HelloWorld()
     analog2 = new Analogue(CCPoint(s.width-100, 95));
     this->addChild(analog2);
     bullets=new CCArray();
-    
+    tutorialLevel = new Tutorial();
+    tutorialLevel->init();
+    addChild(tutorialLevel);
     
     world->SetContactListener(&mycontact);
     
@@ -99,12 +101,8 @@ HelloWorld::HelloWorld()
 //    this->addChild(pMenu, 1);
 
 
-//       
-//    CCLabelTTF *label = CCLabelTTF::create("Tap screen", "Marker Felt", 32);
-//    addChild(label, 0);
-//    label->setColor(ccc3(0,0,255));
-//    label->setPosition(ccp( s.width/2, s.height-50));
-    
+       
+        
     scheduleUpdate();
 }
 

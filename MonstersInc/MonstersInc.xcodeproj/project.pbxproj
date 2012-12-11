@@ -207,7 +207,6 @@
 		E0300EE1162F06370075BBBE /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0300EE0162F06370075BBBE /* HttpClient.cpp */; };
 		E0300EEA162F06370075BBBE /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0300EE9162F06370075BBBE /* AppDelegate.cpp */; };
 		E0300EED162F06370075BBBE /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0300EEC162F06370075BBBE /* HelloWorldScene.cpp */; };
-		E083C84016480725002EE487 /* BigCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C83F16480725002EE487 /* BigCircle.png */; };
 		E083C84316482EE4002EE487 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E083C84216482EE4002EE487 /* Enemy.cpp */; };
 		E083C84F16499073002EE487 /* GreenZombie1.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C84B16499073002EE487 /* GreenZombie1.png */; };
 		E083C85016499073002EE487 /* GreenZombie2.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C84C16499073002EE487 /* GreenZombie2.png */; };
@@ -219,7 +218,6 @@
 		E08730CE16398B1300C4935D /* Analogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08730CD16398B1300C4935D /* Analogue.cpp */; };
 		E0882F891635E11D00DCE071 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F881635E11D00DCE071 /* Player.cpp */; };
 		E0882F8C1635E34A00DCE071 /* PhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */; };
-		E088CD49167659C0006786C0 /* backgrounddetailed1.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD48167659C0006786C0 /* backgrounddetailed1.png */; };
 		E088CD4D16765C58006786C0 /* EnemyManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E088CD4C16765C58006786C0 /* EnemyManager.cpp */; };
 		E088CD5616767EBD006786C0 /* axeBaby1.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD4E16767EBD006786C0 /* axeBaby1.png */; };
 		E088CD5716767EBD006786C0 /* axeBaby2.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD4F16767EBD006786C0 /* axeBaby2.png */; };
@@ -232,8 +230,11 @@
 		E08AB018164B09AB006DFD76 /* castle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB017164B09AB006DFD76 /* castle.png */; };
 		E08AB01B164B09B0006DFD76 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB01A164B09B0006DFD76 /* Bullet.png */; };
 		E08AE83816779528005AA3AE /* Tutorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08AE83716779528005AA3AE /* Tutorial.cpp */; };
+		E08AE83F1677C70B005AA3AE /* backgrounddetailed1.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AE83E1677C70B005AA3AE /* backgrounddetailed1.png */; };
+		E08AE8431677D03C005AA3AE /* game_background.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AE8421677D03C005AA3AE /* game_background.png */; };
+		E08AE8451677D12B005AA3AE /* BigCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AE8441677D12B005AA3AE /* BigCircle.png */; };
+		E08AE8471677D12F005AA3AE /* SmallCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AE8461677D12F005AA3AE /* SmallCircle.png */; };
 		E08B334016404CBD002048EF /* Zombie2.png in Resources */ = {isa = PBXBuildFile; fileRef = E08B333F16404CBD002048EF /* Zombie2.png */; };
-		E08B334216404EBE002048EF /* SmallCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08B334116404EBE002048EF /* SmallCircle.png */; };
 		E08B4B8E16305A3E002B3858 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B2E16305A3E002B3858 /* b2BroadPhase.cpp */; };
 		E08B4B8F16305A3E002B3858 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B3016305A3E002B3858 /* b2CollideCircle.cpp */; };
 		E08B4B9016305A3E002B3858 /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B3116305A3E002B3858 /* b2CollideEdge.cpp */; };
@@ -734,7 +735,6 @@
 		E0300EE9162F06370075BBBE /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		E0300EEB162F06370075BBBE /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		E0300EEC162F06370075BBBE /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
-		E083C83F16480725002EE487 /* BigCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BigCircle.png; path = Resources/BigCircle.png; sourceTree = "<group>"; };
 		E083C84116482EC5002EE487 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		E083C84216482EE4002EE487 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
 		E083C84B16499073002EE487 /* GreenZombie1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenZombie1.png; path = Resources/GreenZombie1.png; sourceTree = "<group>"; };
@@ -752,7 +752,6 @@
 		E0882F881635E11D00DCE071 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E0882F8A1635E32400DCE071 /* PhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsSprite.cpp; sourceTree = "<group>"; };
-		E088CD48167659C0006786C0 /* backgrounddetailed1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgrounddetailed1.png; path = Resources/backgrounddetailed1.png; sourceTree = "<group>"; };
 		E088CD4B16765C44006786C0 /* EnemyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyManager.h; sourceTree = "<group>"; };
 		E088CD4C16765C58006786C0 /* EnemyManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyManager.cpp; sourceTree = "<group>"; };
 		E088CD4E16767EBD006786C0 /* axeBaby1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = axeBaby1.png; path = Resources/axeBaby1.png; sourceTree = "<group>"; };
@@ -767,8 +766,11 @@
 		E08AB01A164B09B0006DFD76 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bullet.png; path = Resources/Bullet.png; sourceTree = "<group>"; };
 		E08AE836167794FB005AA3AE /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
 		E08AE83716779528005AA3AE /* Tutorial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tutorial.cpp; sourceTree = "<group>"; };
+		E08AE83E1677C70B005AA3AE /* backgrounddetailed1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgrounddetailed1.png; path = Resources/backgrounddetailed1.png; sourceTree = "<group>"; };
+		E08AE8421677D03C005AA3AE /* game_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_background.png; path = Resources/game_background.png; sourceTree = "<group>"; };
+		E08AE8441677D12B005AA3AE /* BigCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BigCircle.png; path = Resources/BigCircle.png; sourceTree = "<group>"; };
+		E08AE8461677D12F005AA3AE /* SmallCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SmallCircle.png; path = Resources/SmallCircle.png; sourceTree = "<group>"; };
 		E08B333F16404CBD002048EF /* Zombie2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zombie2.png; path = Resources/Zombie2.png; sourceTree = "<group>"; };
-		E08B334116404EBE002048EF /* SmallCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SmallCircle.png; path = Resources/SmallCircle.png; sourceTree = "<group>"; };
 		E08B4B2C16305A3E002B3858 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		E08B4B2E16305A3E002B3858 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2BroadPhase.cpp; sourceTree = "<group>"; };
 		E08B4B2F16305A3E002B3858 /* b2BroadPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2BroadPhase.h; sourceTree = "<group>"; };
@@ -947,21 +949,22 @@
 				E08AB01A164B09B0006DFD76 /* Bullet.png */,
 				E088CD4E16767EBD006786C0 /* axeBaby1.png */,
 				E088CD4F16767EBD006786C0 /* axeBaby2.png */,
+				E08AE83E1677C70B005AA3AE /* backgrounddetailed1.png */,
 				E088CD5016767EBD006786C0 /* axeBaby3.png */,
+				E08AE8421677D03C005AA3AE /* game_background.png */,
 				E088CD5116767EBD006786C0 /* axeBaby4.png */,
 				E088CD5216767EBD006786C0 /* axeBabyAttack.png */,
 				E088CD5316767EBD006786C0 /* pikachu1.png */,
 				E088CD5416767EBD006786C0 /* pikachu2.png */,
+				E08AE8441677D12B005AA3AE /* BigCircle.png */,
 				E088CD5516767EBD006786C0 /* pikachu3.png */,
-				E088CD48167659C0006786C0 /* backgrounddetailed1.png */,
 				E08AB017164B09AB006DFD76 /* castle.png */,
 				E083C8571649AF68002EE487 /* Player.png */,
+				E08AE8461677D12F005AA3AE /* SmallCircle.png */,
 				E083C84B16499073002EE487 /* GreenZombie1.png */,
 				E083C84C16499073002EE487 /* GreenZombie2.png */,
 				E083C84D16499073002EE487 /* GreenZombie3.png */,
 				E083C84E16499073002EE487 /* GreenZombie4.png */,
-				E083C83F16480725002EE487 /* BigCircle.png */,
-				E08B334116404EBE002048EF /* SmallCircle.png */,
 				E08B333F16404CBD002048EF /* Zombie2.png */,
 				E0AECB971630919900C1FD48 /* blocks.png */,
 				E0AECB981630919900C1FD48 /* drink.png */,
@@ -2059,8 +2062,6 @@
 				E0AECBA71630919900C1FD48 /* orange.png in Resources */,
 				E0AECBA81630919900C1FD48 /* shapedefs.plist in Resources */,
 				E08B334016404CBD002048EF /* Zombie2.png in Resources */,
-				E08B334216404EBE002048EF /* SmallCircle.png in Resources */,
-				E083C84016480725002EE487 /* BigCircle.png in Resources */,
 				E083C84F16499073002EE487 /* GreenZombie1.png in Resources */,
 				E083C85016499073002EE487 /* GreenZombie2.png in Resources */,
 				E083C85116499073002EE487 /* GreenZombie3.png in Resources */,
@@ -2069,7 +2070,6 @@
 				E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */,
 				E08AB018164B09AB006DFD76 /* castle.png in Resources */,
 				E08AB01B164B09B0006DFD76 /* Bullet.png in Resources */,
-				E088CD49167659C0006786C0 /* backgrounddetailed1.png in Resources */,
 				E088CD5616767EBD006786C0 /* axeBaby1.png in Resources */,
 				E088CD5716767EBD006786C0 /* axeBaby2.png in Resources */,
 				E088CD5816767EBD006786C0 /* axeBaby3.png in Resources */,
@@ -2078,6 +2078,10 @@
 				E088CD5B16767EBD006786C0 /* pikachu1.png in Resources */,
 				E088CD5C16767EBD006786C0 /* pikachu2.png in Resources */,
 				E088CD5D16767EBD006786C0 /* pikachu3.png in Resources */,
+				E08AE83F1677C70B005AA3AE /* backgrounddetailed1.png in Resources */,
+				E08AE8431677D03C005AA3AE /* game_background.png in Resources */,
+				E08AE8451677D12B005AA3AE /* BigCircle.png in Resources */,
+				E08AE8471677D12F005AA3AE /* SmallCircle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

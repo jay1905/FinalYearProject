@@ -11,6 +11,7 @@
 
 
 #include "cocos2d.h"
+#include "Box2D.h"
 
 
 class Tutorial: public cocos2d::CCLayer
@@ -26,7 +27,11 @@ public:
     
 private:
     
-    
+    cocos2d::CCLabelTTF *label ;//= CCLabelTTF::create("Tap screen", "Marker Felt", 32);
+    //    addChild(label, 0);
+    //    label->setColor(ccc3(0,0,255));
+    //    label->setPosition(ccp( s.width/2, s.height-50));
+
     
     
     

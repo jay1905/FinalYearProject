@@ -20,6 +20,8 @@ private:
     float damage;
     float fireRate;
     float reloadSpeed;
+    float ammoCapacity;
+    float currentAmmo;
     
     
     

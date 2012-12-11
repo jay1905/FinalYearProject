@@ -12,6 +12,7 @@
 #include "Bullet.h"
 #include "MyContactListener.h"
 #include "EnemyManager.h"
+#include "Tutorial.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -52,6 +53,7 @@ private:
     cocos2d::CCSpriteBatchNode *bulletSprite;
     MyContactListener mycontact;
     EnemyManager *eManager;
+    Tutorial* tutorialLevel;
     
    
 };
