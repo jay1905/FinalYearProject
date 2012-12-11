@@ -32,7 +32,7 @@ HelloWorld::HelloWorld()
     CCSpriteBatchNode *parent = CCSpriteBatchNode::create("blocks.png", 100);
     m_pSpriteTexture = parent->getTexture();
     
-   addChild(parent, 0, kTagParentNode);
+    addChild(parent, 0, kTagParentNode);
   
     jaime = CCSprite::create("backgrounddetailed1.png");
     jaime->setPosition(CCPointMake(0, 0));
@@ -74,51 +74,15 @@ HelloWorld::HelloWorld()
     
     
     
-   // CCSpriteBatchNode *enemy1 = CCSpriteBatchNode::create("GreenZombie1.png", 100);
-    //enemy = new Enemy(enemy1,world,b2Vec2(10, 10),1);
-    //addChild(enemy);
-  
-    
-    //CCSpriteBatchNode *enemyblack = CCSpriteBatchNode::create("GreenZombie2.png", 100);
-    //addChild(enemyblack);
-    //enemy2 = new Enemy(enemyblack,world,b2Vec2(10, 15),1.5);
-    //enemyblack->addChild(enemy2);
-    
-    
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
-    addChild(hello);
     player= new Player(hello,world);
-   // player->setPosition(CCPoint(400, 400));
-    hello->addChild(player);
+    addChild(player);
     
     CCSpriteBatchNode *castle = CCSpriteBatchNode::create("castle.png", 100);
-    addChild(castle);
     base = new Base(castle,world);
-    castle->addChild(base);
+    addChild(base);
     
-//    bulletSprite=CCSpriteBatchNode::create("Bullet", 100);
-//    addChild(bulletSprite);
-//    
-//    CCSpriteBatchNode *jaimesNode = CCSpriteBatchNode::create("orange.png", 100);
-//    JaimeTexture = jaimesNode->getTexture();
-//    addChild(jaimesNode, 0, jaimesfinished);
-//    CCNode* jaimeparent = getChildByTag(jaimesfinished);
-//    jaimeSprite = new PhysicsSprite();
-//    jaimeSprite->initWithTexture(JaimeTexture, CCRectMake(0,0,58,59));
-//    jaimeSprite->autorelease();
-//    jaimeparent->addChild(jaimeSprite);
-//    b2BodyDef bodyDef;
-//    bodyDef.type = b2_dynamicBody;
-//    bodyDef.position.Set(500/64, 600/64);
-//    b2Body *body = world->CreateBody(&bodyDef);
-//    b2CircleShape circle;
-//    circle.m_radius =0.85f;
-//    b2FixtureDef fixtureDef;
-//    fixtureDef.shape = &circle;    
-//    fixtureDef.density = 1.0f;
-//    fixtureDef.friction = 1.8f;
-//    body->CreateFixture(&fixtureDef);
-//    jaimeSprite->setPhysicsBody(body);
+
 
     
 //    
@@ -214,7 +178,7 @@ void HelloWorld::draw()
 
 void HelloWorld::move(){
     
-    //jaimeSprite->m_pBody->ApplyForce(b2Vec2(0, 500), b2Vec2(20, 20));
+  
     jaimeSprite->m_pBody->ApplyTorque(700);
     
     
@@ -272,8 +236,7 @@ void HelloWorld::update(float dt)
    // enemy->move(analog->getDirection());
     player->update(analog->getDirection());
     eManager->update();
-   // enemy->move();
-   // enemy2->move();
+
    
     
     ///////////////////////////////////////////////////////////////////////////////////

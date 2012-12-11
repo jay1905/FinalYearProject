@@ -19,11 +19,12 @@ Player::Player(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 54, 44));
     this->autorelease();
     bodyDef.type=b2_dynamicBody;
-    bodyDef.position.Set(30, 19);
+    bodyDef.position.Set(20, 19);
     playerbody=world->CreateBody(&bodyDef);
     float x=54/32;
     float y = 44/32;
     dynamicBox.SetAsBox(x/1.8, y/1.8);
+    name="player";
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=0.0f;
     fixyureDef.friction=0.0f;
@@ -32,6 +33,7 @@ Player::Player(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     this->setPhysicsBody(playerbody);
     speed = 5 ;
     m_pBody->SetLinearVelocity(b2Vec2(0, 0));
+    playerbody->SetUserData(this);
        
 }
 void Player::update(b2Vec2 direction){

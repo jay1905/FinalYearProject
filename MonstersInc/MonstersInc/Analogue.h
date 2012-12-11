@@ -29,6 +29,7 @@ public:
 private:
     
     cocos2d::CCPoint kCenter;
+    cocos2d::CCSprite *bg;
     cocos2d::CCSprite *thumb;
     bool isPressed;
     

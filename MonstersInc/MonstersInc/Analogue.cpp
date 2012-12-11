@@ -42,13 +42,13 @@ bool Analogue::init()
         CC_BREAK_IF(!CCLayer::init());
         this->setTouchEnabled(true);
         velocity = CCPointZero;         
-        CCSprite *bg = CCSprite::spriteWithFile("BigCircle.png");
+        bg = CCSprite::spriteWithFile("BigCircle.png");
         bg->setPosition(kCenter);
-        bg->setOpacity(50);
+        bg->setOpacity(0);
         this->addChild(bg,0);
         thumb = CCSprite::spriteWithFile("SmallCircle.png");
         thumb->setPosition(kCenter);
-        thumb->setOpacity(50);
+        thumb->setOpacity(0);
         this->addChild(thumb,1);
         direction= b2Vec2(0, 0);
         bRet=true;
@@ -100,11 +100,14 @@ void Analogue::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
 
     if (allTouches->count() > 1)
     {
-        CCObject *fingerOne = allTouches->objectAtIndex(0);
-        CCObject *fingerTwo = allTouches->objectAtIndex(1);
+        CCTouch *fingerOne = static_cast<CCTouch* >(allTouches->objectAtIndex(0));
+        CCTouch *fingerTwo = static_cast<CCTouch* >(allTouches->objectAtIndex(1));
       
-        CCPoint  pointOne = CCDirector::sharedDirector()->convertToGL(pointOne);
-        CCPoint  pointTwo = CCDirector::sharedDirector()->convertToGL(pointTwo);
+        
+        CCPoint  pointOne =fingerOne->locationInView();//CCDirector::sharedDirector()->convertToGL(pointOne);
+        CCPoint  pointTwo =fingerTwo->locationInView(); //CCDirector::sharedDirector()->convertToGL(pointTwo);
+        pointOne= convertCoordinate(pointOne);
+        pointTwo= convertCoordinate(pointTwo);
 
 
         if(isPointInCircle(pointOne,kCenter,JOYSTICK_RADIUS)){
@@ -118,12 +121,15 @@ void Analogue::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
     }
     else
     {
+        
             CCTouch *touch = (CCTouch*)pTouches->anyObject();
             CCPoint point = touch->locationInView();
             point = convertCoordinate(point);
     
             if(isPointInCircle(point,kCenter,JOYSTICK_RADIUS)){
                     isPressed = true;
+                    bg->setOpacity(50);
+                    thumb->setOpacity(50);
                     this->updateVelocity(point);
             }
     }
@@ -132,10 +138,45 @@ void Analogue::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
 void Analogue::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
 {
     if(isPressed){
-        CCTouch *touch = (CCTouch*)pTouches->anyObject();
-        CCPoint point = touch->locationInView();
-        point = convertCoordinate(point);
-        this->updateVelocity(point);
+        
+        CCArray *allTouches =   this->allTouchesFromSet(pTouches);
+        
+        if (allTouches->count() > 1)
+        {
+            CCTouch *fingerOne = static_cast<CCTouch* >(allTouches->objectAtIndex(0));
+            CCTouch *fingerTwo = static_cast<CCTouch* >(allTouches->objectAtIndex(1));
+            
+            
+            CCPoint  pointOne =fingerOne->locationInView();//CCDirector::sharedDirector()->convertToGL(pointOne);
+            CCPoint  pointTwo =fingerTwo->locationInView(); //CCDirector::sharedDirector()->convertToGL(pointTwo);
+            pointOne= convertCoordinate(pointOne);
+            pointTwo= convertCoordinate(pointTwo);
+
+            
+            if(isPointInCircle(pointOne,kCenter,JOYSTICK_RADIUS)){
+                isPressed = true;
+                this->updateVelocity(pointOne);
+            }
+            if(isPointInCircle(pointTwo,kCenter,JOYSTICK_RADIUS)){
+                isPressed = true;
+                this->updateVelocity(pointTwo);
+            }
+        }
+        else{
+
+            CCTouch *touch = (CCTouch*)pTouches->anyObject();
+            CCPoint point = touch->locationInView();
+            point = convertCoordinate(point);
+            
+            if(isPointInCircle(point,kCenter,JOYSTICK_RADIUS)){
+                isPressed = true;
+                this->updateVelocity(point);
+            }
+            if(isPointInCircle(point,kCenter,JOYSTICK_RADIUS)){
+                isPressed = true;
+                this->updateVelocity(point);
+            }
+        }
     }
 }
 
@@ -147,6 +188,8 @@ void Analogue::ccTouchCancelled( CCTouch *pTouch, CCEvent *pEvent )
 void Analogue::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )
 {
     this->handleLastTouch();
+    bg->setOpacity(0);
+    thumb->setOpacity(0);
 }
 
 CCArray* Analogue::allTouchesFromSet(CCSet *touches)
@@ -154,7 +197,7 @@ CCArray* Analogue::allTouchesFromSet(CCSet *touches)
     CCArray *arr = new CCArray;
     
     CCSetIterator it;
-    
+
 	for( it = touches->begin(); it != touches->end(); it++) 
     {
         arr->addObject((CCTouch *)*it);

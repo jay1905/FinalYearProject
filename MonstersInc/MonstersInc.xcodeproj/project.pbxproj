@@ -231,6 +231,7 @@
 		E088CD5D16767EBD006786C0 /* pikachu3.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD5516767EBD006786C0 /* pikachu3.png */; };
 		E08AB018164B09AB006DFD76 /* castle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB017164B09AB006DFD76 /* castle.png */; };
 		E08AB01B164B09B0006DFD76 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB01A164B09B0006DFD76 /* Bullet.png */; };
+		E08AE83816779528005AA3AE /* Tutorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08AE83716779528005AA3AE /* Tutorial.cpp */; };
 		E08B334016404CBD002048EF /* Zombie2.png in Resources */ = {isa = PBXBuildFile; fileRef = E08B333F16404CBD002048EF /* Zombie2.png */; };
 		E08B334216404EBE002048EF /* SmallCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08B334116404EBE002048EF /* SmallCircle.png */; };
 		E08B4B8E16305A3E002B3858 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B2E16305A3E002B3858 /* b2BroadPhase.cpp */; };
@@ -764,6 +765,8 @@
 		E088CD5516767EBD006786C0 /* pikachu3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pikachu3.png; path = Resources/pikachu3.png; sourceTree = "<group>"; };
 		E08AB017164B09AB006DFD76 /* castle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = castle.png; path = Resources/castle.png; sourceTree = "<group>"; };
 		E08AB01A164B09B0006DFD76 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bullet.png; path = Resources/Bullet.png; sourceTree = "<group>"; };
+		E08AE836167794FB005AA3AE /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
+		E08AE83716779528005AA3AE /* Tutorial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tutorial.cpp; sourceTree = "<group>"; };
 		E08B333F16404CBD002048EF /* Zombie2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zombie2.png; path = Resources/Zombie2.png; sourceTree = "<group>"; };
 		E08B334116404EBE002048EF /* SmallCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SmallCircle.png; path = Resources/SmallCircle.png; sourceTree = "<group>"; };
 		E08B4B2C16305A3E002B3858 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
@@ -1823,6 +1826,8 @@
 				E0A65973166D0D8000A21872 /* MyContactListener.cpp */,
 				E088CD4B16765C44006786C0 /* EnemyManager.h */,
 				E088CD4C16765C58006786C0 /* EnemyManager.cpp */,
+				E08AE836167794FB005AA3AE /* Tutorial.h */,
+				E08AE83716779528005AA3AE /* Tutorial.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2316,6 +2321,7 @@
 				E08CDB8B16641A3D0003BADF /* Gun.cpp in Sources */,
 				E0A65974166D0D8000A21872 /* MyContactListener.cpp in Sources */,
 				E088CD4D16765C58006786C0 /* EnemyManager.cpp in Sources */,
+				E08AE83816779528005AA3AE /* Tutorial.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,8 +22,8 @@ public:
     
     // returns a Scene that contains the HelloWorld as the only child
     static cocos2d::CCScene* scene();
-    CREATE_FUNC(HelloWorld);
-        void initPhysics();
+    //CREATE_FUNC(HelloWorld);
+    void initPhysics();
     // adds a new sprite at a given coordinate
     void addNewSpriteAtPosition(cocos2d::CCPoint p);
     
