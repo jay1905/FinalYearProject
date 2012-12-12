@@ -227,6 +227,13 @@
 		E088CD5B16767EBD006786C0 /* pikachu1.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD5316767EBD006786C0 /* pikachu1.png */; };
 		E088CD5C16767EBD006786C0 /* pikachu2.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD5416767EBD006786C0 /* pikachu2.png */; };
 		E088CD5D16767EBD006786C0 /* pikachu3.png in Resources */ = {isa = PBXBuildFile; fileRef = E088CD5516767EBD006786C0 /* pikachu3.png */; };
+		E08922F61679062800121FB8 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08922F51679062800121FB8 /* MainMenu.cpp */; };
+		E08922FB1679155E00121FB8 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08922FA1679155E00121FB8 /* Level.cpp */; };
+		E08922FD1679220100121FB8 /* monsters-inc.png in Resources */ = {isa = PBXBuildFile; fileRef = E08922FC1679220100121FB8 /* monsters-inc.png */; };
+		E08923011679274900121FB8 /* MonstersInc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E08923001679274900121FB8 /* MonstersInc.jpg */; };
+		E0892303167927FD00121FB8 /* Tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = E0892302167927FD00121FB8 /* Tutorial.png */; };
+		E089230616792A1B00121FB8 /* Level1.png in Resources */ = {isa = PBXBuildFile; fileRef = E089230416792A1B00121FB8 /* Level1.png */; };
+		E089230716792A1B00121FB8 /* Level2.png in Resources */ = {isa = PBXBuildFile; fileRef = E089230516792A1B00121FB8 /* Level2.png */; };
 		E08AB018164B09AB006DFD76 /* castle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB017164B09AB006DFD76 /* castle.png */; };
 		E08AB01B164B09B0006DFD76 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB01A164B09B0006DFD76 /* Bullet.png */; };
 		E08AE83816779528005AA3AE /* Tutorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08AE83716779528005AA3AE /* Tutorial.cpp */; };
@@ -762,6 +769,15 @@
 		E088CD5316767EBD006786C0 /* pikachu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pikachu1.png; path = Resources/pikachu1.png; sourceTree = "<group>"; };
 		E088CD5416767EBD006786C0 /* pikachu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pikachu2.png; path = Resources/pikachu2.png; sourceTree = "<group>"; };
 		E088CD5516767EBD006786C0 /* pikachu3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pikachu3.png; path = Resources/pikachu3.png; sourceTree = "<group>"; };
+		E08922F31679061400121FB8 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
+		E08922F51679062800121FB8 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
+		E08922F71679143000121FB8 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		E08922FA1679155E00121FB8 /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Level.cpp; sourceTree = "<group>"; };
+		E08922FC1679220100121FB8 /* monsters-inc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "monsters-inc.png"; path = "Resources/monsters-inc.png"; sourceTree = "<group>"; };
+		E08923001679274900121FB8 /* MonstersInc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = MonstersInc.jpg; path = Resources/MonstersInc.jpg; sourceTree = "<group>"; };
+		E0892302167927FD00121FB8 /* Tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tutorial.png; path = Resources/Tutorial.png; sourceTree = "<group>"; };
+		E089230416792A1B00121FB8 /* Level1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Level1.png; path = Resources/Level1.png; sourceTree = "<group>"; };
+		E089230516792A1B00121FB8 /* Level2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Level2.png; path = Resources/Level2.png; sourceTree = "<group>"; };
 		E08AB017164B09AB006DFD76 /* castle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = castle.png; path = Resources/castle.png; sourceTree = "<group>"; };
 		E08AB01A164B09B0006DFD76 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bullet.png; path = Resources/Bullet.png; sourceTree = "<group>"; };
 		E08AE836167794FB005AA3AE /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
@@ -955,6 +971,7 @@
 				E088CD5116767EBD006786C0 /* axeBaby4.png */,
 				E088CD5216767EBD006786C0 /* axeBabyAttack.png */,
 				E088CD5316767EBD006786C0 /* pikachu1.png */,
+				E08922FC1679220100121FB8 /* monsters-inc.png */,
 				E088CD5416767EBD006786C0 /* pikachu2.png */,
 				E08AE8441677D12B005AA3AE /* BigCircle.png */,
 				E088CD5516767EBD006786C0 /* pikachu3.png */,
@@ -970,6 +987,7 @@
 				E0AECB981630919900C1FD48 /* drink.png */,
 				E0AECB991630919900C1FD48 /* hamburger.png */,
 				E0AECB9A1630919900C1FD48 /* hotdog.png */,
+				E08923001679274900121FB8 /* MonstersInc.jpg */,
 				E0AECB9B1630919900C1FD48 /* icecream.png */,
 				E0AECB9C1630919900C1FD48 /* icecream2.png */,
 				E0AECB9D1630919900C1FD48 /* icecream3.png */,
@@ -978,9 +996,12 @@
 				E0300C4C162F06340075BBBE /* CloseNormal.png */,
 				E0300C4E162F06340075BBBE /* CloseSelected.png */,
 				E0300C50162F06340075BBBE /* Default.png */,
+				E0892302167927FD00121FB8 /* Tutorial.png */,
 				E0300C52162F06340075BBBE /* HelloWorld.png */,
 				E0300C54162F06340075BBBE /* Icon-72.png */,
 				E0300C56162F06340075BBBE /* Icon-Small-50.png */,
+				E089230416792A1B00121FB8 /* Level1.png */,
+				E089230516792A1B00121FB8 /* Level2.png */,
 				E0300C58162F06340075BBBE /* Icon-Small.png */,
 				E0300C5A162F06340075BBBE /* Icon-Small@2x.png */,
 				E0300C5C162F06340075BBBE /* Icon.png */,
@@ -1831,6 +1852,10 @@
 				E088CD4C16765C58006786C0 /* EnemyManager.cpp */,
 				E08AE836167794FB005AA3AE /* Tutorial.h */,
 				E08AE83716779528005AA3AE /* Tutorial.cpp */,
+				E08922F31679061400121FB8 /* MainMenu.h */,
+				E08922F51679062800121FB8 /* MainMenu.cpp */,
+				E08922F71679143000121FB8 /* Level.h */,
+				E08922FA1679155E00121FB8 /* Level.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2082,6 +2107,11 @@
 				E08AE8431677D03C005AA3AE /* game_background.png in Resources */,
 				E08AE8451677D12B005AA3AE /* BigCircle.png in Resources */,
 				E08AE8471677D12F005AA3AE /* SmallCircle.png in Resources */,
+				E08922FD1679220100121FB8 /* monsters-inc.png in Resources */,
+				E08923011679274900121FB8 /* MonstersInc.jpg in Resources */,
+				E0892303167927FD00121FB8 /* Tutorial.png in Resources */,
+				E089230616792A1B00121FB8 /* Level1.png in Resources */,
+				E089230716792A1B00121FB8 /* Level2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2326,6 +2356,8 @@
 				E0A65974166D0D8000A21872 /* MyContactListener.cpp in Sources */,
 				E088CD4D16765C58006786C0 /* EnemyManager.cpp in Sources */,
 				E08AE83816779528005AA3AE /* Tutorial.cpp in Sources */,
+				E08922F61679062800121FB8 /* MainMenu.cpp in Sources */,
+				E08922FB1679155E00121FB8 /* Level.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@
 #include "Bullet.h"
 #include "MyContactListener.h"
 #include "EnemyManager.h"
-#include "Tutorial.h"
+//#include "MainMenu.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -32,9 +32,6 @@ public:
     virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     void update(float dt);
     void move();
-    
-    cocos2d::CCTexture2D* JaimeTexture;
-    PhysicsSprite *jaimeSprite;
 
      void menuCloseCallback(CCObject* pSender);
     Analogue * analog;
@@ -53,8 +50,7 @@ private:
     cocos2d::CCSpriteBatchNode *bulletSprite;
     MyContactListener mycontact;
     EnemyManager *eManager;
-    Tutorial* tutorialLevel;
-    
+       
    
 };
 

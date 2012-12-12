@@ -12,6 +12,9 @@
 
 #include "cocos2d.h"
 #include "Box2D.h"
+#include "Analogue.h"
+#include "Player.h"
+#include "Bullet.h"
 
 
 class Tutorial: public cocos2d::CCLayer
@@ -19,21 +22,32 @@ class Tutorial: public cocos2d::CCLayer
     
 public:
     
-    
+    Tutorial();
+     static cocos2d::CCScene* scene();
     void init();
     
-    
+    void update(float t);
+    void createBounds();
+    void exit();
     
     
 private:
-    
-    cocos2d::CCLabelTTF *label ;//= CCLabelTTF::create("Tap screen", "Marker Felt", 32);
-    //    addChild(label, 0);
-    //    label->setColor(ccc3(0,0,255));
-    //    label->setPosition(ccp( s.width/2, s.height-50));
+    b2World* world;
 
-    
-    
+    cocos2d::CCLabelTTF *label;
+    cocos2d::CCLabelTTF *label2;
+    cocos2d::CCLabelTTF *label3;
+    cocos2d::CCLabelTTF *label4;
+    cocos2d::CCLabelTTF *label5;
+    cocos2d::CCMenuItemImage *pCloseItem;
+    Analogue * analog;
+    Analogue * analog2;
+    Player *player;
+    cocos2d::CCArray *bullets;
+    cocos2d::CCSpriteBatchNode *bulletSprite;
+    cocos2d::CCSize s ;
+
+
     
 };
 

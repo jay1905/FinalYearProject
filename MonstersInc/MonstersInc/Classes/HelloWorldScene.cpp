@@ -26,7 +26,6 @@ HelloWorld::HelloWorld()
     setAccelerometerEnabled( true );
     
     CCSize s = CCDirector::sharedDirector()->getWinSize();
-    // init physics
     this->initPhysics();
     
     CCSpriteBatchNode *parent = CCSpriteBatchNode::create("blocks.png", 100);
@@ -45,10 +44,10 @@ HelloWorld::HelloWorld()
     analog2 = new Analogue(CCPoint(s.width-100, 95));
     this->addChild(analog2);
     bullets=new CCArray();
-    tutorialLevel = new Tutorial();
-    tutorialLevel->init();
-    addChild(tutorialLevel);
     
+
+    
+
     world->SetContactListener(&mycontact);
     
     eManager = new EnemyManager(world,this);
@@ -84,22 +83,6 @@ HelloWorld::HelloWorld()
     base = new Base(castle,world);
     addChild(base);
     
-
-
-    
-//    
-//    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
-//                                                          "CloseNormal.png",
-//                                                          "CloseSelected.png",
-//                                                          this,
-//                                                          menu_selector(HelloWorld::move) );
-//    pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width - 20, 20) );
-//    
-//    // create menu, it's an autorelease object
-//    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
-//    pMenu->setPosition( CCPointZero );
-//    this->addChild(pMenu, 1);
-
 
        
         
@@ -177,8 +160,7 @@ void HelloWorld::draw()
 void HelloWorld::move(){
     
   
-    jaimeSprite->m_pBody->ApplyTorque(700);
-    
+      
     
 }
 void HelloWorld::addNewSpriteAtPosition(CCPoint p)
