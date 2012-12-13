@@ -19,7 +19,7 @@ Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 pos,float s
     this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, size.x, size.y));
     this->autorelease();
     bodyDef.type=b2_dynamicBody;
-    bodyDef.position.Set(pos.x,pos.y);
+    bodyDef.position.Set(pos.x/32,pos.y/32);
     name="Enemy";
     health= 100;
     body=world->CreateBody(&bodyDef);
@@ -38,10 +38,13 @@ Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 pos,float s
        
 
 }
-void Enemy::move(){
+void Enemy::move(b2Vec2 playerPos){
     
-    this->m_pBody->SetLinearVelocity(b2Vec2(this->getPosition().x+speed, this->getPosition().y));
-    this->m_pBody->SetAngularVelocity(0);
+ 
+    b2Vec2 dir = b2Vec2(m_pBody->GetPosition().x-playerPos.x, m_pBody->GetPosition().y-playerPos.y);
+    dir.Normalize();
+    this->m_pBody->SetLinearVelocity(b2Vec2(-dir.x*speed, -dir.y*speed));
+   
     
 }
 void Enemy::update(){
@@ -54,5 +57,13 @@ void Enemy::drawStuf(){
     
     
  
+    
+}
+void Enemy::setPosition(b2Vec2 pos){
+    
+    
+   
+    
+    
     
 }

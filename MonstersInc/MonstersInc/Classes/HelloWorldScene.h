@@ -13,6 +13,7 @@
 #include "MyContactListener.h"
 #include "EnemyManager.h"
 //#include "MainMenu.h"
+#include "Gun.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -32,6 +33,7 @@ public:
     virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     void update(float dt);
     void move();
+    void exitMainMenu();
 
      void menuCloseCallback(CCObject* pSender);
     Analogue * analog;
@@ -50,7 +52,20 @@ private:
     cocos2d::CCSpriteBatchNode *bulletSprite;
     MyContactListener mycontact;
     EnemyManager *eManager;
-       
+    Gun *gun;
+    int firecount;
+    int enemyCount;
+    cocos2d::CCLabelTTF *win;
+    cocos2d::CCLabelTTF *win2;
+    cocos2d::CCLabelTTF *loose;
+
+    
+    
+    cocos2d::CCLabelTTF *label;
+    cocos2d::CCLabelTTF *label2;
+    cocos2d::CCLabelTTF *label3;
+    cocos2d::CCLabelTTF *label4;
+    cocos2d::CCMenuItemImage * pCloseItem ;   
    
 };
 

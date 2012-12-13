@@ -232,8 +232,6 @@
 		E08922FD1679220100121FB8 /* monsters-inc.png in Resources */ = {isa = PBXBuildFile; fileRef = E08922FC1679220100121FB8 /* monsters-inc.png */; };
 		E08923011679274900121FB8 /* MonstersInc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E08923001679274900121FB8 /* MonstersInc.jpg */; };
 		E0892303167927FD00121FB8 /* Tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = E0892302167927FD00121FB8 /* Tutorial.png */; };
-		E089230616792A1B00121FB8 /* Level1.png in Resources */ = {isa = PBXBuildFile; fileRef = E089230416792A1B00121FB8 /* Level1.png */; };
-		E089230716792A1B00121FB8 /* Level2.png in Resources */ = {isa = PBXBuildFile; fileRef = E089230516792A1B00121FB8 /* Level2.png */; };
 		E08AB018164B09AB006DFD76 /* castle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB017164B09AB006DFD76 /* castle.png */; };
 		E08AB01B164B09B0006DFD76 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB01A164B09B0006DFD76 /* Bullet.png */; };
 		E08AE83816779528005AA3AE /* Tutorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08AE83716779528005AA3AE /* Tutorial.cpp */; };
@@ -288,8 +286,10 @@
 		E08B4BB916305A3E002B3858 /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8916305A3E002B3858 /* b2WheelJoint.cpp */; };
 		E08B4BBA16305A3E002B3858 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8C16305A3E002B3858 /* b2Rope.cpp */; };
 		E08CDB8B16641A3D0003BADF /* Gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08CDB8A16641A3D0003BADF /* Gun.cpp */; };
+		E08DFB5A1679CCD800184E11 /* Level2.png in Resources */ = {isa = PBXBuildFile; fileRef = E08DFB591679CCD800184E11 /* Level2.png */; };
+		E08DFB5C1679CCE000184E11 /* Level1.png in Resources */ = {isa = PBXBuildFile; fileRef = E08DFB5B1679CCE000184E11 /* Level1.png */; };
+		E08DFB5E1679CD1700184E11 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = E08DFB5D1679CD1700184E11 /* Play.png */; };
 		E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = E09094C9164AABAE00E744D8 /* License.mobileprovision */; };
-		E0A65974166D0D8000A21872 /* MyContactListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A65973166D0D8000A21872 /* MyContactListener.cpp */; };
 		E0AECBA01630919900C1FD48 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB971630919900C1FD48 /* blocks.png */; };
 		E0AECBA11630919900C1FD48 /* drink.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB981630919900C1FD48 /* drink.png */; };
 		E0AECBA21630919900C1FD48 /* hamburger.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB991630919900C1FD48 /* hamburger.png */; };
@@ -776,8 +776,6 @@
 		E08922FC1679220100121FB8 /* monsters-inc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "monsters-inc.png"; path = "Resources/monsters-inc.png"; sourceTree = "<group>"; };
 		E08923001679274900121FB8 /* MonstersInc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = MonstersInc.jpg; path = Resources/MonstersInc.jpg; sourceTree = "<group>"; };
 		E0892302167927FD00121FB8 /* Tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tutorial.png; path = Resources/Tutorial.png; sourceTree = "<group>"; };
-		E089230416792A1B00121FB8 /* Level1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Level1.png; path = Resources/Level1.png; sourceTree = "<group>"; };
-		E089230516792A1B00121FB8 /* Level2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Level2.png; path = Resources/Level2.png; sourceTree = "<group>"; };
 		E08AB017164B09AB006DFD76 /* castle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = castle.png; path = Resources/castle.png; sourceTree = "<group>"; };
 		E08AB01A164B09B0006DFD76 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bullet.png; path = Resources/Bullet.png; sourceTree = "<group>"; };
 		E08AE836167794FB005AA3AE /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
@@ -880,9 +878,11 @@
 		E08B4B8D16305A3E002B3858 /* b2Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Rope.h; sourceTree = "<group>"; };
 		E08CDB8816641A2D0003BADF /* Gun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gun.h; sourceTree = "<group>"; };
 		E08CDB8A16641A3D0003BADF /* Gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gun.cpp; sourceTree = "<group>"; };
+		E08DFB591679CCD800184E11 /* Level2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Level2.png; path = Resources/Level2.png; sourceTree = "<group>"; };
+		E08DFB5B1679CCE000184E11 /* Level1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Level1.png; path = Resources/Level1.png; sourceTree = "<group>"; };
+		E08DFB5D1679CD1700184E11 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Play.png; path = Resources/Play.png; sourceTree = "<group>"; };
 		E09094C9164AABAE00E744D8 /* License.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = License.mobileprovision; sourceTree = "<group>"; };
 		E0A65971166D0D5E00A21872 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
-		E0A65973166D0D8000A21872 /* MyContactListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyContactListener.cpp; sourceTree = "<group>"; };
 		E0AECB971630919900C1FD48 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		E0AECB981630919900C1FD48 /* drink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drink.png; path = Resources/drink.png; sourceTree = "<group>"; };
 		E0AECB991630919900C1FD48 /* hamburger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hamburger.png; path = Resources/hamburger.png; sourceTree = "<group>"; };
@@ -976,6 +976,9 @@
 				E08AE8441677D12B005AA3AE /* BigCircle.png */,
 				E088CD5516767EBD006786C0 /* pikachu3.png */,
 				E08AB017164B09AB006DFD76 /* castle.png */,
+				E08DFB5D1679CD1700184E11 /* Play.png */,
+				E08DFB5B1679CCE000184E11 /* Level1.png */,
+				E08DFB591679CCD800184E11 /* Level2.png */,
 				E083C8571649AF68002EE487 /* Player.png */,
 				E08AE8461677D12F005AA3AE /* SmallCircle.png */,
 				E083C84B16499073002EE487 /* GreenZombie1.png */,
@@ -1000,8 +1003,6 @@
 				E0300C52162F06340075BBBE /* HelloWorld.png */,
 				E0300C54162F06340075BBBE /* Icon-72.png */,
 				E0300C56162F06340075BBBE /* Icon-Small-50.png */,
-				E089230416792A1B00121FB8 /* Level1.png */,
-				E089230516792A1B00121FB8 /* Level2.png */,
 				E0300C58162F06340075BBBE /* Icon-Small.png */,
 				E0300C5A162F06340075BBBE /* Icon-Small@2x.png */,
 				E0300C5C162F06340075BBBE /* Icon.png */,
@@ -1847,7 +1848,6 @@
 				E08CDB8816641A2D0003BADF /* Gun.h */,
 				E08CDB8A16641A3D0003BADF /* Gun.cpp */,
 				E0A65971166D0D5E00A21872 /* MyContactListener.h */,
-				E0A65973166D0D8000A21872 /* MyContactListener.cpp */,
 				E088CD4B16765C44006786C0 /* EnemyManager.h */,
 				E088CD4C16765C58006786C0 /* EnemyManager.cpp */,
 				E08AE836167794FB005AA3AE /* Tutorial.h */,
@@ -2110,8 +2110,9 @@
 				E08922FD1679220100121FB8 /* monsters-inc.png in Resources */,
 				E08923011679274900121FB8 /* MonstersInc.jpg in Resources */,
 				E0892303167927FD00121FB8 /* Tutorial.png in Resources */,
-				E089230616792A1B00121FB8 /* Level1.png in Resources */,
-				E089230716792A1B00121FB8 /* Level2.png in Resources */,
+				E08DFB5A1679CCD800184E11 /* Level2.png in Resources */,
+				E08DFB5C1679CCE000184E11 /* Level1.png in Resources */,
+				E08DFB5E1679CD1700184E11 /* Play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2353,7 +2354,6 @@
 				E083C85B1649B9F2002EE487 /* Bullet.cpp in Sources */,
 				E083C85E1649BA60002EE487 /* Base.cpp in Sources */,
 				E08CDB8B16641A3D0003BADF /* Gun.cpp in Sources */,
-				E0A65974166D0D8000A21872 /* MyContactListener.cpp in Sources */,
 				E088CD4D16765C58006786C0 /* EnemyManager.cpp in Sources */,
 				E08AE83816779528005AA3AE /* Tutorial.cpp in Sources */,
 				E08922F61679062800121FB8 /* MainMenu.cpp in Sources */,

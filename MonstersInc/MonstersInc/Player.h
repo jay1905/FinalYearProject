@@ -25,6 +25,7 @@ public:
     void update(b2Vec2 direction);
     void drawStuf();
     b2Vec2 returnpos();
+    float coins;
 private:
   
     b2BodyDef bodyDef;

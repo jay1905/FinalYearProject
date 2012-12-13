@@ -15,14 +15,15 @@ class Gun{
     
 public:
     Gun();
-    
-private:
     float damage;
-    float fireRate;
+    int fireRate;
     float reloadSpeed;
     float ammoCapacity;
     float currentAmmo;
+
     
+private:
+      
     
     
 };

@@ -20,9 +20,8 @@ class MyContactListener : public b2ContactListener{
        
        
         void* bodyUserData = contact->GetFixtureA()->GetBody()->GetUserData();
-        PhysicsSprite *p1;// =(PhysicsSprite*)contact->GetFixtureB()->GetBody()->GetUserData();
-        PhysicsSprite *p2;// =(PhysicsSprite*)contact->GetFixtureB()->GetBody()->GetUserData();
-        
+        PhysicsSprite *p1;
+        PhysicsSprite *p2;        
         
         if ( bodyUserData ){
                    
@@ -42,6 +41,14 @@ class MyContactListener : public b2ContactListener{
                 p2->timetolive=500;
                 
             }
+            else if(name1=="player"&&name2=="Enemy"){
+                
+                p1->health-=8;
+            }
+            else if(name1=="Enemy"&&name2=="player"){
+                
+                p2->health-=8;
+            }
             else if (name1=="bullet"){
                 
                 p1->timetolive=500;
@@ -53,13 +60,21 @@ class MyContactListener : public b2ContactListener{
                 
             }
             
+            
         
         }
         bodyUserData = contact->GetFixtureB()->GetBody()->GetUserData();
         if ( bodyUserData ){
 
-            
-            
+            p2 =(PhysicsSprite*)contact->GetFixtureB()->GetBody()->GetUserData();
+          
+            std::string name2= p2->name;
+
+            if (name2=="bullet"){
+                
+                p2->timetolive=500;
+                
+            }
            
         }
         

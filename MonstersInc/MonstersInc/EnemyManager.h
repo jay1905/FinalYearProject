@@ -23,19 +23,24 @@ public:
     
     
     void update();
-    void addEnemy();
+    void addEnemy(b2Vec2 pos);
     void addPikachu();
     void addAxeBaby();
-    
+    void moveEnemy(b2Vec2 pos);
+    void destroy();
     
     
     std::vector<Enemy*> enemys;
-    
+    int coins;
+    int EnemyCount;
+    int enemyCurrent;
     
 private:
     
     b2World * world;
     cocos2d::CCLayer * layer;
+    int count;
+    
     
     
 };

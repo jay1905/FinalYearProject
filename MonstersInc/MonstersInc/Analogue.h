@@ -24,13 +24,13 @@ public:
     cocos2d::CCPoint getVelocity(){return velocity;}
    
     b2Vec2 getDirection(){return -direction;}
-    
+    cocos2d::CCSprite *bg;
+    cocos2d::CCSprite *thumb;
     
 private:
     
     cocos2d::CCPoint kCenter;
-    cocos2d::CCSprite *bg;
-    cocos2d::CCSprite *thumb;
+   
     bool isPressed;
     
     cocos2d::CCPoint velocity;

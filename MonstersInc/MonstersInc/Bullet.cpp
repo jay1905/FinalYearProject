@@ -51,10 +51,3 @@ void Bullet::drawStuf(){
     
     
 }
-//void Bullet::destroy(){
-    
-    
-//    timetolive++;
-    
-    
-//}

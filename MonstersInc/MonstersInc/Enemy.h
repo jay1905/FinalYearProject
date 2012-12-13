@@ -23,7 +23,8 @@ public:
     
     void update();
     void drawStuf();
-    void move();
+    void move(b2Vec2 playerPos);
+    void setPosition(b2Vec2 pos);
     
 private:
    

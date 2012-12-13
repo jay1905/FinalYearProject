@@ -15,10 +15,24 @@ EnemyManager::EnemyManager(b2World* w,cocos2d::CCLayer* lay){
     
     world= w;
     layer = lay;
-    
+    coins=0;
+    count=0;
+    EnemyCount=0;
+    enemyCurrent=0;
     
 }
 void EnemyManager::update(){
+   
+    if(count>120){
+        
+        addEnemy(b2Vec2(20, 400));
+        count=0;
+    }
+    count++;
+    
+    
+}
+void EnemyManager::destroy(){
     
     for(int i = 0; i<enemys.size();i++){
         
@@ -28,19 +42,31 @@ void EnemyManager::update(){
             //enemys[i]->removeChild(enemys[i], true);
             layer->removeChild(enemys[i], true);
             enemys.erase(enemys.begin()+i);
-            
+            coins+=10;
+            enemyCurrent--;
         }
-        
-        
+    
     }
+    
+}
+void EnemyManager::moveEnemy(b2Vec2 pos){
+    
+     for(int i = 0; i<enemys.size();i++){
+      
+         
+         enemys[i]->move(pos);
+         
+     }
     
     
 }
-void EnemyManager::addEnemy(){
+void EnemyManager::addEnemy(b2Vec2 pos){
     
+    EnemyCount++;
+    enemyCurrent++;
    
     CCSpriteBatchNode *enemy1 = CCSpriteBatchNode::create("GreenZombie1.png", 100);
-    Enemy * enemy = new Enemy(enemy1,world,b2Vec2(10, 10),1,b2Vec2(59,64));
+    Enemy * enemy = new Enemy(enemy1,world,b2Vec2(pos.x, pos.y),2,b2Vec2(59,64));
     layer->addChild(enemy);
     enemys.push_back(enemy);
     

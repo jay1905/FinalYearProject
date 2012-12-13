@@ -23,11 +23,11 @@ void MainMenu::init(){
     
     
     
-    pCloseItem = CCMenuItemImage::create("CloseNormal.png","CloseSelected.png",this,menu_selector(MainMenu::tutorialLevel));
-    pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width - 20, 20));
-    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
-    pMenu->setPosition( CCPointZero );
-    addChild(pMenu, 1);
+//    pCloseItem = CCMenuItemImage::create("CloseNormal.png","CloseSelected.png",this,menu_selector(MainMenu::tutorialLevel));
+//    pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width - 20, 20));
+//    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
+//    pMenu->setPosition( CCPointZero );
+//    addChild(pMenu, 1);
 
     
     tutorial=CCMenuItemImage::create("Tutorial.png", "Tutorial.png", this, menu_selector(MainMenu::tutorialLevel));
@@ -36,7 +36,7 @@ void MainMenu::init(){
     tut->setPosition(CCPointZero);
     addChild(tut,1);
     
-    level1btn=CCMenuItemImage::create("level1.png", "level1.png", this, menu_selector(MainMenu::level1));
+    level1btn=CCMenuItemImage::create("Level1.png", "Level1.png", this, menu_selector(MainMenu::level1));
     level1btn->setPosition(CCPoint(100, 400));
     CCMenu *lev1=CCMenu::create(level1btn,NULL);
     lev1->setPosition(CCPointZero);
@@ -44,14 +44,14 @@ void MainMenu::init(){
     
     
     
-    level2btn=CCMenuItemImage::create("level2.png", "level2.png", this, menu_selector(MainMenu::level2));
-    level2btn->setPosition(CCPoint(100, 300));
-    CCMenu *lev2=CCMenu::create(level2btn,NULL);
-    lev2->setPosition(CCPointZero);
-    addChild(lev2,1);
+//    level2btn=CCMenuItemImage::create("Level2.png", "Level2.png", this, menu_selector(MainMenu::level2));
+//    level2btn->setPosition(CCPoint(100, 300));
+//    CCMenu *lev2=CCMenu::create(level2btn,NULL);
+//    lev2->setPosition(CCPointZero);
+//    addChild(lev2,1);
     
     jaime = CCSprite::create("MonstersInc.jpg");
-    jaime->setPosition(CCPointMake(500, 380));
+    jaime->setPosition(CCPointMake(510, 380));
     addChild(jaime);
     
     
