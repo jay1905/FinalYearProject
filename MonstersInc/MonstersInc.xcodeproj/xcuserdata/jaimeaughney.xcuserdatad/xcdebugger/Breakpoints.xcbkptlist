@@ -79,11 +79,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Classes/HelloWorldScene.h"
-         timestampString = "377095183.380873"
+         timestampString = "379267859.39433"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "26"
-         endingLineNumber = "26">
+         startingLineNumber = "27"
+         endingLineNumber = "27">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -123,9 +123,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "205"
-         endingLineNumber = "205"
-         landmarkName = "Analogue::allTouchesFromSet(CCSet *touches)"
-         landmarkType = "5">
+         endingLineNumber = "205">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -165,9 +163,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "90"
-         endingLineNumber = "90"
-         landmarkName = "EndContact(b2Contact* contact)"
-         landmarkType = "5">
+         endingLineNumber = "90">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -192,24 +188,8 @@
          timestampString = "377089556.806451"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "83"
-         endingLineNumber = "83"
-         landmarkName = "class MyContactListener"
-         landmarkType = "3">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "MonstersInc/MyContactListener.h"
-         timestampString = "377089556.806451"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
          startingLineNumber = "82"
-         endingLineNumber = "82"
-         landmarkName = "BeginContact(b2Contact* contact)"
-         landmarkType = "5">
+         endingLineNumber = "82">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -221,9 +201,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "190"
-         endingLineNumber = "190"
-         landmarkName = "Analogue::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
-         landmarkType = "5">
+         endingLineNumber = "190">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -250,7 +228,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "126"
          endingLineNumber = "126"
-         landmarkName = "Analogue::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkName = "Analogue::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -278,7 +256,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "156"
          endingLineNumber = "156"
-         landmarkName = "Analogue::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkName = "Analogue::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -306,7 +284,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "168"
          endingLineNumber = "168"
-         landmarkName = "Analogue::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkName = "Analogue::allTouchesFromSet(CCSet *touches)"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -329,11 +307,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "377098104.81946"
+         timestampString = "379268666.450567"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "134"
-         endingLineNumber = "134"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
          landmarkName = "HelloWorld::HelloWorld()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -385,11 +363,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "377098104.81946"
+         timestampString = "379268666.450567"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "269"
-         endingLineNumber = "269"
+         startingLineNumber = "278"
+         endingLineNumber = "278"
          landmarkName = "HelloWorld::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>

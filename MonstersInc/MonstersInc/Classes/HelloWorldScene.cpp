@@ -56,6 +56,15 @@ HelloWorld::HelloWorld()
     eManager = new EnemyManager(world,this);
     eManager->addEnemy(b2Vec2(200, 300));
 
+    
+    
+    CCSpriteBatchNode * ash= CCSpriteBatchNode::create("ash1.png", 100);
+    
+    human= new Human();
+    human->initialize(ash, world, b2Vec2(200, 200), 20, b2Vec2(19, 23), "human");
+    addChild(human);
+    
+    
 
 ///////////////////////////////////////////////////////////////////animation
 //    cocos2d::CCAnimation * anim = CCAnimation::animation();

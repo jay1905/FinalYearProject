@@ -14,6 +14,7 @@
 #include "EnemyManager.h"
 //#include "MainMenu.h"
 #include "Gun.h"
+#include "Human.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -38,6 +39,7 @@ public:
      void menuCloseCallback(CCObject* pSender);
     Analogue * analog;
     Analogue * analog2;
+    Human *human;
 
 private:
     b2World* world;
@@ -50,6 +52,7 @@ private:
     cocos2d::CCSprite *jaime;
     cocos2d::CCArray *bullets;
     cocos2d::CCSpriteBatchNode *bulletSprite;
+  
     MyContactListener mycontact;
     EnemyManager *eManager;
     Gun *gun;
