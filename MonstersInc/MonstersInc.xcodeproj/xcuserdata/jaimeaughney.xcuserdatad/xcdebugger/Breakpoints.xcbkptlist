@@ -79,11 +79,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Classes/HelloWorldScene.h"
-         timestampString = "379267859.39433"
+         timestampString = "379883318.815391"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "27"
-         endingLineNumber = "27">
+         startingLineNumber = "28"
+         endingLineNumber = "28">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -307,11 +307,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "379268666.450567"
+         timestampString = "379883318.815391"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "143"
-         endingLineNumber = "143"
+         startingLineNumber = "145"
+         endingLineNumber = "145"
          landmarkName = "HelloWorld::HelloWorld()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -363,12 +363,96 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "379268666.450567"
+         timestampString = "379883318.815391"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "278"
-         endingLineNumber = "278"
+         startingLineNumber = "280"
+         endingLineNumber = "280"
          landmarkName = "HelloWorld::update(float dt)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/BaseButton.cpp"
+         timestampString = "379891865.503069"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
+         landmarkName = "BaseButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/BaseButton.cpp"
+         timestampString = "379891865.503069"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "77"
+         endingLineNumber = "77"
+         landmarkName = "BaseButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/BaseButton.cpp"
+         timestampString = "379891865.503069"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
+         landmarkName = "BaseButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/BaseButton.cpp"
+         timestampString = "379891865.503069"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
+         landmarkName = "BaseButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/BaseButton.cpp"
+         timestampString = "379891865.503069"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
+         landmarkName = "BaseButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/BaseButton.cpp"
+         timestampString = "379891865.503069"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
+         landmarkName = "BaseButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

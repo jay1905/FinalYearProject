@@ -15,6 +15,7 @@
 //#include "MainMenu.h"
 #include "Gun.h"
 #include "Human.h"
+#include "BaseButton.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -49,6 +50,7 @@ private:
     Enemy *enemy;
     Enemy *enemy2;
     Base *base;
+    BaseButton *baseButton;
     cocos2d::CCSprite *jaime;
     cocos2d::CCArray *bullets;
     cocos2d::CCSpriteBatchNode *bulletSprite;

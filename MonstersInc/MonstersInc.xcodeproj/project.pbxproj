@@ -232,6 +232,8 @@
 		E08922FD1679220100121FB8 /* monsters-inc.png in Resources */ = {isa = PBXBuildFile; fileRef = E08922FC1679220100121FB8 /* monsters-inc.png */; };
 		E08923011679274900121FB8 /* MonstersInc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E08923001679274900121FB8 /* MonstersInc.jpg */; };
 		E0892303167927FD00121FB8 /* Tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = E0892302167927FD00121FB8 /* Tutorial.png */; };
+		E08955F616A489B6000361A4 /* BaseButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08955F516A489B6000361A4 /* BaseButton.cpp */; };
+		E08955F816A495D6000361A4 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = E08955F716A495D6000361A4 /* red.png */; };
 		E08AB018164B09AB006DFD76 /* castle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB017164B09AB006DFD76 /* castle.png */; };
 		E08AB01B164B09B0006DFD76 /* Bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = E08AB01A164B09B0006DFD76 /* Bullet.png */; };
 		E08AD24B169B2601000E2AF6 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08AD24A169B2601000E2AF6 /* Human.cpp */; };
@@ -781,11 +783,14 @@
 		E08922FC1679220100121FB8 /* monsters-inc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "monsters-inc.png"; path = "Resources/monsters-inc.png"; sourceTree = "<group>"; };
 		E08923001679274900121FB8 /* MonstersInc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = MonstersInc.jpg; path = Resources/MonstersInc.jpg; sourceTree = "<group>"; };
 		E0892302167927FD00121FB8 /* Tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tutorial.png; path = Resources/Tutorial.png; sourceTree = "<group>"; };
+		E08955F316A489A5000361A4 /* BaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
+		E08955F516A489B6000361A4 /* BaseButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseButton.cpp; sourceTree = "<group>"; };
+		E08955F716A495D6000361A4 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red.png; path = Resources/red.png; sourceTree = "<group>"; };
 		E08AB017164B09AB006DFD76 /* castle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = castle.png; path = Resources/castle.png; sourceTree = "<group>"; };
 		E08AB01A164B09B0006DFD76 /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bullet.png; path = Resources/Bullet.png; sourceTree = "<group>"; };
 		E08AD248169B25F2000E2AF6 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
 		E08AD24A169B2601000E2AF6 /* Human.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Human.cpp; sourceTree = "<group>"; };
-		E08AD24C169B2639000E2AF6 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Entity.h; sourceTree = "<group>"; };
+		E08AD24C169B2639000E2AF6 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		E08AD24D169B2654000E2AF6 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 		E08AD24F169B2D43000E2AF6 /* ash1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ash1.png; path = Resources/ash1.png; sourceTree = "<group>"; };
 		E08AD250169B2D43000E2AF6 /* ash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ash2.png; path = Resources/ash2.png; sourceTree = "<group>"; };
@@ -976,6 +981,7 @@
 			isa = PBXGroup;
 			children = (
 				E08AD24F169B2D43000E2AF6 /* ash1.png */,
+				E08955F716A495D6000361A4 /* red.png */,
 				E08AD250169B2D43000E2AF6 /* ash2.png */,
 				E08AB01A164B09B0006DFD76 /* Bullet.png */,
 				E088CD4E16767EBD006786C0 /* axeBaby1.png */,
@@ -1877,6 +1883,8 @@
 				E08AD24D169B2654000E2AF6 /* Entity.cpp */,
 				E08AD253169B3361000E2AF6 /* Tower.h */,
 				E08AD254169B336B000E2AF6 /* Tower.cpp */,
+				E08955F316A489A5000361A4 /* BaseButton.h */,
+				E08955F516A489B6000361A4 /* BaseButton.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2136,6 +2144,7 @@
 				E08DFB5E1679CD1700184E11 /* Play.png in Resources */,
 				E08AD251169B2D43000E2AF6 /* ash1.png in Resources */,
 				E08AD252169B2D43000E2AF6 /* ash2.png in Resources */,
+				E08955F816A495D6000361A4 /* red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2384,6 +2393,7 @@
 				E08AD24B169B2601000E2AF6 /* Human.cpp in Sources */,
 				E08AD24E169B2654000E2AF6 /* Entity.cpp in Sources */,
 				E08AD255169B336C000E2AF6 /* Tower.cpp in Sources */,
+				E08955F616A489B6000361A4 /* BaseButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

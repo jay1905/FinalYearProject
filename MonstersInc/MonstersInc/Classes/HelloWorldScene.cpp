@@ -87,10 +87,12 @@ HelloWorld::HelloWorld()
     player= new Player(hello,world);
     addChild(player);
     
-//    CCSpriteBatchNode *castle = CCSpriteBatchNode::create("castle.png", 100);
-//    base = new Base(castle,world);
-//    addChild(base);
-//    
+    CCSpriteBatchNode *castle = CCSpriteBatchNode::create("castle.png", 100);
+    base = new Base(castle,world);
+    addChild(base);
+    baseButton= new BaseButton(CCPoint(892, 580));
+    addChild(baseButton);
+    
     
     label = CCLabelTTF::create("health:", "Marker Felt", 32);
     addChild(label, 1);

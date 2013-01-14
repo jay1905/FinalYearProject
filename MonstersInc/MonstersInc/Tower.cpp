@@ -27,3 +27,9 @@ void Tower::move(){
     
     
 }
+void Tower::Shoot(){
+    
+    
+    
+    
+}

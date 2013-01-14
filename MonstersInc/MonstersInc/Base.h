@@ -35,7 +35,8 @@ private:
     cocos2d::CCAnimation * anim;    
     cocos2d::CCAnimate *theAnim ;
     
-    
+ 
+   
 };
 
 #endif

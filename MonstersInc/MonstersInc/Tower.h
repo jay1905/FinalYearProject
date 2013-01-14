@@ -20,7 +20,7 @@ public:
     
     Tower();
     void move();
-    
+    void Shoot();
     
 private:
     

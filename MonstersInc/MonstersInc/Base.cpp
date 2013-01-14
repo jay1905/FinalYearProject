@@ -13,11 +13,12 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
+
 Base::Base(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     
     
     this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 404, 134));
-    this->autorelease();
+    //this->autorelease();
     bodyDef.type=b2_staticBody;
     bodyDef.position.Set(15, 15);
     body=world->CreateBody(&bodyDef);
@@ -32,6 +33,10 @@ Base::Base(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     body->CreateFixture(&fixyureDef);
     body->SetUserData(this);
     this->setPhysicsBody(body);
+    
+   
+
+
     
 }
 void Base::update(b2Vec2 direction){
