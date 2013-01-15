@@ -24,7 +24,8 @@ public:
     
 private:
     
-    
+    float damage;
+    float range;
     
     
     

@@ -12,10 +12,10 @@
 #include "Bullet.h"
 #include "MyContactListener.h"
 #include "EnemyManager.h"
-//#include "MainMenu.h"
 #include "Gun.h"
 #include "Human.h"
 #include "BaseButton.h"
+#include "Tower.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {

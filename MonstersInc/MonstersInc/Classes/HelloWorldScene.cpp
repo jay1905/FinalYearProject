@@ -64,6 +64,11 @@ HelloWorld::HelloWorld()
     human->initialize(ash, world, b2Vec2(200, 200), 20, b2Vec2(19, 23), "human");
     addChild(human);
     
+    Tower *t = new Tower();
+    CCSpriteBatchNode * tow= CCSpriteBatchNode::create("blocks.png", 100);
+    t->initialize(tow, world,  b2Vec2(200, 600), 20, b2Vec2(64, 64), "tower");
+    addChild(t);
+    
     
 
 ///////////////////////////////////////////////////////////////////animation
@@ -86,6 +91,7 @@ HelloWorld::HelloWorld()
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
     player= new Player(hello,world);
     addChild(player);
+   //player->setFlipX(true);
     
     CCSpriteBatchNode *castle = CCSpriteBatchNode::create("castle.png", 100);
     base = new Base(castle,world);
@@ -289,23 +295,13 @@ void HelloWorld::update(float dt)
             win->setOpacity(100);
             win2->setOpacity(100);
             pCloseItem->setOpacity(100);
-
-        
         }
-        
-        
     }
-    
     if(player->health<=0){
-        
-        
-        
         loose->setOpacity(100);
         win2->setOpacity(100);
         pCloseItem->setOpacity(100);
-
-        
-        
+    
     }
     else{
         
@@ -325,6 +321,12 @@ void HelloWorld::update(float dt)
                 
             }
             firecount++;
+            if(analog2->getDirection().x<0){
+                player->setFlipX(false);
+            }
+            else{
+                player->setFlipX(true);
+            }
         }
     }
     char coin[100];

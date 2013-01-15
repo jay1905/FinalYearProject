@@ -28,3 +28,10 @@ void Human::move(){
     
     
 }
+void Human::build(){
+    
+    
+}
+void Human::defend(){
+    
+}

@@ -21,7 +21,8 @@ public:
     
     Human();
     void move();
-    
+    void build();
+    void defend();
     
 private:
     

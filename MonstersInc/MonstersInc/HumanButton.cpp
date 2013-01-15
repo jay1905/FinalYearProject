@@ -1,20 +1,21 @@
 //
-//  BaseButton.cpp
+//  HumanButton.cpp
 //  MonstersInc
 //
-//  Created by Jaime Aughney on 14/01/2013.
+//  Created by Jaime Aughney on 15/01/2013.
 //  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
+
 #include <iostream>
 
-#include "BaseButton.h"
+#include "HumanButton.h"
 #define JOYSTICK_OFFSET_X 5.0f
 #define JOYSTICK_OFFSET_Y 5.0f
 #define JOYSTICK_RADIUS 96.0f
 #define THUMB_RADIUS 70.0f
-#define SQUARE_WIDTH 134.0f
-#define SQUARE_HEIGHT 404.0f
+#define SQUARE_WIDTH 57.0f
+#define SQUARE_HEIGHT 57.0f
 using namespace cocos2d;
 static CCPoint convertCoordinate(CCPoint point){
     return CCDirector::sharedDirector()->convertToGL(point);
@@ -22,7 +23,7 @@ static CCPoint convertCoordinate(CCPoint point){
 static bool isPointInSquare(CCPoint point, CCPoint pos, float radius){
     if(point.x>pos.x&&point.x<pos.x+(SQUARE_WIDTH)){
         
-    
+        
         if(point.y<pos.y&&point.y>pos.y-(SQUARE_HEIGHT)){
             
             return true;
@@ -31,13 +32,13 @@ static bool isPointInSquare(CCPoint point, CCPoint pos, float radius){
     }
     return false;
 }
-BaseButton::BaseButton(CCPoint pos)
+HumanButton::HumanButton(CCPoint pos)
 {
     CCSize s = CCDirector::sharedDirector()->getWinSize();
     position=pos;
     init();
 }
-bool BaseButton::init()
+bool HumanButton::init()
 {
     bool bRet = false;
     do 
@@ -45,22 +46,21 @@ bool BaseButton::init()
         CC_BREAK_IF(!CCLayer::init());
         this->setTouchEnabled(true);
         velocity = CCPointZero;         
-        bg = CCSprite::spriteWithFile("red.png");
-        bg->setPosition(CCPoint(67+position.x,position.y-202));
-        bg->setOpacity(0);
+        bg = CCSprite::spriteWithFile("Icon.png");
+        bg->setPosition(CCPoint(position.x+(SQUARE_WIDTH /2),position.y-(SQUARE_HEIGHT/2)));
+        bg->setOpacity(50);
         this->addChild(bg,0);
         direction= b2Vec2(0, 0);
         bRet=true;
-        hb=new HumanButton(CCPoint(position.x, position.y));
-        this->addChild(hb);
+        
     }while(0);
     return bRet;
 }
 
-void BaseButton::resetJoystick()
+void HumanButton::resetJoystick()
 {
 }
-bool BaseButton::handleLastTouch()
+bool HumanButton::handleLastTouch()
 {
     bool wasPressed = isPressed;
     if(wasPressed){
@@ -69,21 +69,21 @@ bool BaseButton::handleLastTouch()
     }
     return (wasPressed ? true : false);
 }
-void BaseButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
+void HumanButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
 {
     CCArray *allTouches =   this->allTouchesFromSet(pTouches);
-      
-        CCTouch *touch = (CCTouch*)pTouches->anyObject();
-        CCPoint point = touch->locationInView();
-        point = convertCoordinate(point);
-        if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
-            isPressed = true;
-             bg->setOpacity(100);
-                   
+    
+    CCTouch *touch = (CCTouch*)pTouches->anyObject();
+    CCPoint point = touch->locationInView();
+    point = convertCoordinate(point);
+    if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
+        isPressed = true;
+        bg->setOpacity(100);
+        
         
     }
 }
-void BaseButton::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
+void HumanButton::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
 {
     if(isPressed){
         CCArray *allTouches =   this->allTouchesFromSet(pTouches);
@@ -97,10 +97,10 @@ void BaseButton::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
             pointTwo= convertCoordinate(pointTwo);
             if(isPointInSquare(pointOne,position,JOYSTICK_RADIUS)){
                 isPressed = true;
-                           }
+            }
             if(isPointInSquare(pointTwo,position,JOYSTICK_RADIUS)){
                 isPressed = true;
-               
+                
             }
         }
         else{
@@ -109,26 +109,26 @@ void BaseButton::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
             point = convertCoordinate(point);
             if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
                 isPressed = true;
-               
+                
             }
             if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
                 isPressed = true;
-               
+                
             }
         }
     }
 }
-void BaseButton::ccTouchCancelled( CCTouch *pTouch, CCEvent *pEvent )
+void HumanButton::ccTouchCancelled( CCTouch *pTouch, CCEvent *pEvent )
 {
     this->handleLastTouch();
 }
-void BaseButton::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )
+void HumanButton::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )
 {
     this->handleLastTouch();
-     //bg->setOpacity(60);
+    bg->setOpacity(10);
     // thumb->setOpacity(0);
 }
-CCArray* BaseButton::allTouchesFromSet(CCSet *touches)
+CCArray* HumanButton::allTouchesFromSet(CCSet *touches)
 {
     CCArray *arr = new CCArray;
     CCSetIterator it;

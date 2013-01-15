@@ -1,22 +1,20 @@
 //
-//  BaseButton.h
+//  HumanButton.h
 //  MonstersInc
 //
-//  Created by Jaime Aughney on 14/01/2013.
+//  Created by Jaime Aughney on 15/01/2013.
 //  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
-#ifndef MonstersInc_BaseButton_h
-#define MonstersInc_BaseButton_h
-
+#ifndef MonstersInc_HumanButton_h
+#define MonstersInc_HumanButton_h
 #include "cocos2d.h"
 #include "Box2D.h"
-#include "HumanButton.h"
 
-class BaseButton:public cocos2d::CCLayer//, cocos2d::CCTargetedTouchDelegate
+class HumanButton:public cocos2d::CCLayer//, cocos2d::CCTargetedTouchDelegate
 {
 public:
-    BaseButton(cocos2d::CCPoint centre);
+    HumanButton(cocos2d::CCPoint centre);
     
     
     virtual bool init();  
@@ -34,11 +32,11 @@ private:
     
     cocos2d::CCPoint velocity;
     b2Vec2 direction;
-    HumanButton* hb;
+    
     
     cocos2d::CCArray* allTouchesFromSet(cocos2d::CCSet *touches);
     
-  
+    
     void resetJoystick();
     bool handleLastTouch();
     void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
@@ -50,3 +48,5 @@ private:
 };
 
 #endif
+
+
