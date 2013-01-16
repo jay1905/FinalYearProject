@@ -297,6 +297,11 @@
 		E08DFB5A1679CCD800184E11 /* Level2.png in Resources */ = {isa = PBXBuildFile; fileRef = E08DFB591679CCD800184E11 /* Level2.png */; };
 		E08DFB5C1679CCE000184E11 /* Level1.png in Resources */ = {isa = PBXBuildFile; fileRef = E08DFB5B1679CCE000184E11 /* Level1.png */; };
 		E08DFB5E1679CD1700184E11 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = E08DFB5D1679CD1700184E11 /* Play.png */; };
+		E08FC6C716A7409C001E3BA2 /* assaultRifle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C316A7409C001E3BA2 /* assaultRifle.png */; };
+		E08FC6C816A7409C001E3BA2 /* handGun.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C416A7409C001E3BA2 /* handGun.png */; };
+		E08FC6C916A7409C001E3BA2 /* tower1.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C516A7409C001E3BA2 /* tower1.png */; };
+		E08FC6CA16A7409C001E3BA2 /* weaponBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C616A7409C001E3BA2 /* weaponBackground.png */; };
+		E08FC6CE16A7455B001E3BA2 /* WeaponSelectButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08FC6CD16A7455B001E3BA2 /* WeaponSelectButton.cpp */; };
 		E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = E09094C9164AABAE00E744D8 /* License.mobileprovision */; };
 		E0AECBA01630919900C1FD48 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB971630919900C1FD48 /* blocks.png */; };
 		E0AECBA11630919900C1FD48 /* drink.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB981630919900C1FD48 /* drink.png */; };
@@ -902,6 +907,12 @@
 		E08DFB591679CCD800184E11 /* Level2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Level2.png; path = Resources/Level2.png; sourceTree = "<group>"; };
 		E08DFB5B1679CCE000184E11 /* Level1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Level1.png; path = Resources/Level1.png; sourceTree = "<group>"; };
 		E08DFB5D1679CD1700184E11 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Play.png; path = Resources/Play.png; sourceTree = "<group>"; };
+		E08FC6C316A7409C001E3BA2 /* assaultRifle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = assaultRifle.png; path = Resources/assaultRifle.png; sourceTree = "<group>"; };
+		E08FC6C416A7409C001E3BA2 /* handGun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = handGun.png; path = Resources/handGun.png; sourceTree = "<group>"; };
+		E08FC6C516A7409C001E3BA2 /* tower1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tower1.png; path = Resources/tower1.png; sourceTree = "<group>"; };
+		E08FC6C616A7409C001E3BA2 /* weaponBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = weaponBackground.png; path = Resources/weaponBackground.png; sourceTree = "<group>"; };
+		E08FC6CC16A74538001E3BA2 /* WeaponSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponSelectButton.h; sourceTree = "<group>"; };
+		E08FC6CD16A7455B001E3BA2 /* WeaponSelectButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponSelectButton.cpp; sourceTree = "<group>"; };
 		E09094C9164AABAE00E744D8 /* License.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = License.mobileprovision; sourceTree = "<group>"; };
 		E0A65971166D0D5E00A21872 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
 		E0AECB971630919900C1FD48 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
@@ -1021,6 +1032,10 @@
 				E0AECB9E1630919900C1FD48 /* orange.png */,
 				E0AECB9F1630919900C1FD48 /* shapedefs.plist */,
 				E0300C4C162F06340075BBBE /* CloseNormal.png */,
+				E08FC6C316A7409C001E3BA2 /* assaultRifle.png */,
+				E08FC6C416A7409C001E3BA2 /* handGun.png */,
+				E08FC6C516A7409C001E3BA2 /* tower1.png */,
+				E08FC6C616A7409C001E3BA2 /* weaponBackground.png */,
 				E0300C4E162F06340075BBBE /* CloseSelected.png */,
 				E0300C50162F06340075BBBE /* Default.png */,
 				E0892302167927FD00121FB8 /* Tutorial.png */,
@@ -1890,6 +1905,8 @@
 				E08955F516A489B6000361A4 /* BaseButton.cpp */,
 				E088769216A5E78C00023C48 /* HumanButton.h */,
 				E088769416A5E79E00023C48 /* HumanButton.cpp */,
+				E08FC6CC16A74538001E3BA2 /* WeaponSelectButton.h */,
+				E08FC6CD16A7455B001E3BA2 /* WeaponSelectButton.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2150,6 +2167,10 @@
 				E08AD251169B2D43000E2AF6 /* ash1.png in Resources */,
 				E08AD252169B2D43000E2AF6 /* ash2.png in Resources */,
 				E08955F816A495D6000361A4 /* red.png in Resources */,
+				E08FC6C716A7409C001E3BA2 /* assaultRifle.png in Resources */,
+				E08FC6C816A7409C001E3BA2 /* handGun.png in Resources */,
+				E08FC6C916A7409C001E3BA2 /* tower1.png in Resources */,
+				E08FC6CA16A7409C001E3BA2 /* weaponBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2400,6 +2421,7 @@
 				E08AD255169B336C000E2AF6 /* Tower.cpp in Sources */,
 				E08955F616A489B6000361A4 /* BaseButton.cpp in Sources */,
 				E088769516A5E79E00023C48 /* HumanButton.cpp in Sources */,
+				E08FC6CE16A7455B001E3BA2 /* WeaponSelectButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

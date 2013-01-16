@@ -11,6 +11,7 @@
 #include "SimpleAudioEngine.h"
 #include "MainMenu.h"
 
+
 using namespace cocos2d;
 using namespace CocosDenshion;
 
@@ -49,7 +50,8 @@ HelloWorld::HelloWorld()
     firecount=20;
     enemyCount=0;
 
-    
+    WeaponSelectButton * wep= new WeaponSelectButton(CCPoint(500, 750));
+    addChild(wep);
 
     world->SetContactListener(&mycontact);
     
@@ -65,8 +67,9 @@ HelloWorld::HelloWorld()
     addChild(human);
     
     Tower *t = new Tower();
-    CCSpriteBatchNode * tow= CCSpriteBatchNode::create("blocks.png", 100);
-    t->initialize(tow, world,  b2Vec2(200, 600), 20, b2Vec2(64, 64), "tower");
+    CCSpriteBatchNode * tow= CCSpriteBatchNode::create("tower1.png", 100);
+    t->initialize(tow, world,  b2Vec2(200, 600), 20, b2Vec2(97, 67), "tower");
+    
     addChild(t);
     
     

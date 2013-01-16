@@ -21,12 +21,13 @@ public:
     Entity();
     
     void initialize(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos,float speed,b2Vec2 size,  std::string name);
-
-private:
+    b2FixtureDef fixyureDef;
     b2BodyDef bodyDef;
+private:
+    
     b2Body* body;
     b2PolygonShape dynamicBox;
-    b2FixtureDef fixyureDef;
+    
     cocos2d::CCAnimation * anim;    
     cocos2d::CCAnimate *theAnim ;
     float speed;

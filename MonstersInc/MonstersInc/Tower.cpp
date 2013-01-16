@@ -15,8 +15,8 @@ using namespace cocos2d;
 Tower::Tower(){
     
     
-    
-    
+    fixyureDef.density=1.0f;
+    bodyDef.type=b2_staticBody;
     
 }
 

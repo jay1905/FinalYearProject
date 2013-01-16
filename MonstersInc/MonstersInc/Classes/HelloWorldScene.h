@@ -16,6 +16,7 @@
 #include "Human.h"
 #include "BaseButton.h"
 #include "Tower.h"
+#include "WeaponSelectButton.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
