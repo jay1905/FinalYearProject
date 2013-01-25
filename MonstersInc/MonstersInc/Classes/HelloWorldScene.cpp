@@ -47,10 +47,11 @@ HelloWorld::HelloWorld()
     this->addChild(analog2);
     bullets=new CCArray();
     gun =new Gun();
+    assaultgun= new AssaultRifle();
     firecount=20;
     enemyCount=0;
 
-    WeaponSelectButton * wep= new WeaponSelectButton(CCPoint(500, 750));
+    wep= new WeaponSelectButton(CCPoint(500, 750));
     addChild(wep);
 
     world->SetContactListener(&mycontact);
@@ -60,17 +61,12 @@ HelloWorld::HelloWorld()
 
     
     
-    CCSpriteBatchNode * ash= CCSpriteBatchNode::create("ash1.png", 100);
+//    CCSpriteBatchNode * ash= CCSpriteBatchNode::create("ash1.png", 100);
+//    human= new Human();
+//    human->initialize(ash, world, b2Vec2(200, 200), 20, b2Vec2(19, 23), "human");
+//    addChild(human);
     
-    human= new Human();
-    human->initialize(ash, world, b2Vec2(200, 200), 20, b2Vec2(19, 23), "human");
-    addChild(human);
-    
-    Tower *t = new Tower();
-    CCSpriteBatchNode * tow= CCSpriteBatchNode::create("tower1.png", 100);
-    t->initialize(tow, world,  b2Vec2(200, 600), 20, b2Vec2(97, 67), "tower");
-    
-    addChild(t);
+  
     
     
 
@@ -94,11 +90,11 @@ HelloWorld::HelloWorld()
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
     player= new Player(hello,world);
     addChild(player);
-   //player->setFlipX(true);
-    
+      
     CCSpriteBatchNode *castle = CCSpriteBatchNode::create("castle.png", 100);
     base = new Base(castle,world);
     addChild(base);
+    
     baseButton= new BaseButton(CCPoint(892, 580));
     addChild(baseButton);
     
@@ -129,7 +125,7 @@ HelloWorld::HelloWorld()
     win->setPosition(ccp(515, 345));
     win->setOpacity(0);
    
-    loose = CCLabelTTF::create("You loose!", "Marker Felt", 32);
+    loose = CCLabelTTF::create("You lose!", "Marker Felt", 32);
     addChild(loose, 1);
     loose->setColor(ccc3(255,0,0));
     loose->setPosition(ccp(515, 345));
@@ -287,7 +283,11 @@ void HelloWorld::update(float dt)
     
     int velocityIterations = 8;
     int positionIterations = 1;
-       if(eManager->EnemyCount<=6){
+    
+    
+   
+    
+    if(eManager->EnemyCount<=25){
         eManager->update();
         
     }
@@ -301,6 +301,7 @@ void HelloWorld::update(float dt)
         }
     }
     if(player->health<=0){
+        player->health=0;
         loose->setOpacity(100);
         win2->setOpacity(100);
         pCloseItem->setOpacity(100);
@@ -308,20 +309,55 @@ void HelloWorld::update(float dt)
     }
     else{
         
+        if(baseButton->hb->build){
+            baseButton->hb->build=false;
+            if(eManager->coins>=50){
+                eManager->coins=eManager->coins-50;
+                
+                Tower *t = new Tower();
+                CCSpriteBatchNode * tow= CCSpriteBatchNode::create("tower1.png", 100);
+                t->initialize(tow, world,baseButton->hb->buildPoint, 20, b2Vec2(97, 67), "tower");
+                addChild(t);
+                towers.push_back(t);
+            }
+        }
+        if(towers.size()!=0){
+            for (int i=0; i<towers.size(); i++){
+                Tower  *b = static_cast<Tower *>(towers[i]);
+                b->update(world,eManager->enemys,this,world);
+                
+            }
+        }
+        
         player->update(analog->getDirection());
         eManager->destroy();
         eManager->moveEnemy(b2Vec2(player->m_pBody->GetPosition().x, player->m_pBody->GetPosition().y));
         
         if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
-            if(firecount>gun->fireRate){
-                bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
-                addChild(bulletSprite);
-                Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
-                b->fire(analog2->getDirection());
-                bulletSprite->addChild(b);
-                bullets->addObject(b);
-                firecount=0;
+           
+            if(wep->handgun){
+                if(firecount>gun->fireRate){
+                    bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
+                    addChild(bulletSprite);
+                    Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
+                    b->fire(analog2->getDirection());
+                    bulletSprite->addChild(b);
+                    bullets->addObject(b);
+                    firecount=0;
                 
+                }
+            }
+            else if(wep->assaultrifle){
+                if(firecount>assaultgun->fireRate){
+                    bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
+                    addChild(bulletSprite);
+                    Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
+                    b->fire(analog2->getDirection());
+                    bulletSprite->addChild(b);
+                    bullets->addObject(b);
+                    firecount=0;
+                    
+                }
             }
             firecount++;
             if(analog2->getDirection().x<0){
@@ -344,7 +380,7 @@ void HelloWorld::update(float dt)
     if(bullets->count()!=0){
         for (int i=0; i<bullets->count(); i++){
             Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
-            b->update(player->m_pBody);
+            b->update();
             if(b->timetolive > 60*2){
                 bullets->removeObjectAtIndex(i);
                 world->DestroyBody(b->m_pBody);

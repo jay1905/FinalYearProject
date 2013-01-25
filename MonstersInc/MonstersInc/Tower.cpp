@@ -14,10 +14,10 @@ using namespace cocos2d;
 
 Tower::Tower(){
     
-    
-    fixyureDef.density=1.0f;
-    bodyDef.type=b2_staticBody;
-    
+    fireRate=14;
+    bullets=new CCArray();
+    range = 5;
+    builed=true;
 }
 
 
@@ -27,9 +27,47 @@ void Tower::move(){
     
     
 }
-void Tower::Shoot(){
+void Tower::update(b2World* world, std::vector<Enemy*> enemys,cocos2d::CCLayer* lay,b2World* wor){
     
     
+     for(int i = 0; i<enemys.size();i++){  
+         b2Vec2 len = enemys[i]->getPos()-m_pBody->GetPosition();
+         float length=sqrt(len.x*len.x +len.y*len.y);  
+         if(length<range){
+             Shoot(lay, wor, len);
+         }
+     }
+
+    if(bullets->count()!=0){
+        for (int i=0; i<bullets->count(); i++){
+            Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
+            b->update();
+            if(b->timetolive > 60*2){
+                bullets->removeObjectAtIndex(i);
+                world->DestroyBody(b->m_pBody);
+                b->removeChild(b, true);
+            }
+        }
+    }
+
     
+}
+void Tower::Shoot(cocos2d::CCLayer* lay ,b2World* world, b2Vec2 dir){
+    
+    if(firecount> fireRate){
+        
+        bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
+        lay->addChild(bulletSprite);
+        Bullet *b = new Bullet(bulletSprite,world,m_pBody->GetPosition());
+  
+        b->fire(dir);
+   
+        bulletSprite->addChild(b);
+   
+        bullets->addObject(b);
+  
+        firecount=0;
+    }
+    firecount++;
     
 }

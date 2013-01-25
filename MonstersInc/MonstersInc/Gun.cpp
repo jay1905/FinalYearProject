@@ -15,9 +15,9 @@ using namespace cocos2d;
 
 Gun::Gun(){
     
-    damage=10;
+    damage=5;
     
-    fireRate=7;
+    fireRate=13;
     
     reloadSpeed=0.5;
     ammoCapacity=30;

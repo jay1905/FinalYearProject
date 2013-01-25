@@ -46,9 +46,9 @@ bool HumanButton::init()
         CC_BREAK_IF(!CCLayer::init());
         this->setTouchEnabled(true);
         velocity = CCPointZero;         
-        bg = CCSprite::spriteWithFile("Icon.png");
+        bg = CCSprite::spriteWithFile("tower1btn.png");
         bg->setPosition(CCPoint(position.x+(SQUARE_WIDTH /2),position.y-(SQUARE_HEIGHT/2)));
-        bg->setOpacity(50);
+        bg->setOpacity(0);
         this->addChild(bg,0);
         direction= b2Vec2(0, 0);
         bRet=true;
@@ -78,45 +78,31 @@ void HumanButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
     point = convertCoordinate(point);
     if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
         isPressed = true;
-        bg->setOpacity(100);
+        bg->setOpacity(50);
+        activated=true;
+        buttontouch=true;
         
+    }
+    else{
+        
+        if(activated==true){
+            
+            
+            activated=false;
+            build=true;
+            buildPoint= b2Vec2(point.x,point.y);
+            
+            
+        }
+        
+        bg->setOpacity(200);
+
         
     }
 }
 void HumanButton::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
 {
-    if(isPressed){
-        CCArray *allTouches =   this->allTouchesFromSet(pTouches);
-        if (allTouches->count() > 1)
-        {
-            CCTouch *fingerOne = static_cast<CCTouch* >(allTouches->objectAtIndex(0));
-            CCTouch *fingerTwo = static_cast<CCTouch* >(allTouches->objectAtIndex(1));
-            CCPoint  pointOne =fingerOne->locationInView();            
-            CCPoint  pointTwo =fingerTwo->locationInView(); 
-            pointOne= convertCoordinate(pointOne);
-            pointTwo= convertCoordinate(pointTwo);
-            if(isPointInSquare(pointOne,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-            }
-            if(isPointInSquare(pointTwo,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-                
-            }
-        }
-        else{
-            CCTouch *touch = (CCTouch*)pTouches->anyObject();
-            CCPoint point = touch->locationInView();
-            point = convertCoordinate(point);
-            if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-                
-            }
-            if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-                
-            }
-        }
-    }
+   
 }
 void HumanButton::ccTouchCancelled( CCTouch *pTouch, CCEvent *pEvent )
 {
@@ -125,7 +111,7 @@ void HumanButton::ccTouchCancelled( CCTouch *pTouch, CCEvent *pEvent )
 void HumanButton::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )
 {
     this->handleLastTouch();
-    bg->setOpacity(10);
+   // bg->setOpacity(10);
     // thumb->setOpacity(0);
 }
 CCArray* HumanButton::allTouchesFromSet(CCSet *touches)

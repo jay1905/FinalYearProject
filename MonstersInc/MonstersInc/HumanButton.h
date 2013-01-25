@@ -23,7 +23,11 @@ public:
     b2Vec2 getDirection(){return -direction;}
     cocos2d::CCSprite *bg;
     cocos2d::CCSprite *thumb;
+    bool activated;
+    bool build;
+    bool buttontouch;
     
+    b2Vec2 buildPoint;
 private:
     
     cocos2d::CCPoint position;

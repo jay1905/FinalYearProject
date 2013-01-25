@@ -53,6 +53,7 @@ bool BaseButton::init()
         bRet=true;
         hb=new HumanButton(CCPoint(position.x, position.y));
         this->addChild(hb);
+        castleTouch=false;
     }while(0);
     return bRet;
 }
@@ -77,46 +78,27 @@ void BaseButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
         CCPoint point = touch->locationInView();
         point = convertCoordinate(point);
         if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
-            isPressed = true;
-             bg->setOpacity(100);
+            
+            if(activated ==false){
+                isPressed = true;
+                bg->setOpacity(100);
+                hb->bg->setOpacity(200);
+                activated=true;
+                castleTouch=true;
+            }
                    
-        
-    }
+        }
+        else{
+            
+            activated=false;
+            bg->setOpacity(0);
+            hb->bg->setOpacity(0);
+            
+        }
 }
 void BaseButton::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
 {
-    if(isPressed){
-        CCArray *allTouches =   this->allTouchesFromSet(pTouches);
-        if (allTouches->count() > 1)
-        {
-            CCTouch *fingerOne = static_cast<CCTouch* >(allTouches->objectAtIndex(0));
-            CCTouch *fingerTwo = static_cast<CCTouch* >(allTouches->objectAtIndex(1));
-            CCPoint  pointOne =fingerOne->locationInView();            
-            CCPoint  pointTwo =fingerTwo->locationInView(); 
-            pointOne= convertCoordinate(pointOne);
-            pointTwo= convertCoordinate(pointTwo);
-            if(isPointInSquare(pointOne,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-                           }
-            if(isPointInSquare(pointTwo,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-               
-            }
-        }
-        else{
-            CCTouch *touch = (CCTouch*)pTouches->anyObject();
-            CCPoint point = touch->locationInView();
-            point = convertCoordinate(point);
-            if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-               
-            }
-            if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-               
-            }
-        }
-    }
+    
 }
 void BaseButton::ccTouchCancelled( CCTouch *pTouch, CCEvent *pEvent )
 {

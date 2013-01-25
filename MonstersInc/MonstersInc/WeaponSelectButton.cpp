@@ -18,12 +18,11 @@ using namespace cocos2d;
 static CCPoint convertCoordinate(CCPoint point){
     return CCDirector::sharedDirector()->convertToGL(point);
 }
-static bool isPointInSquare(CCPoint point, CCPoint pos, float radius){
-    if(point.x>pos.x&&point.x<pos.x+(SQUARE_WIDTH)){
+static bool isPointInSquare(CCPoint point, CCPoint pos,float width,float height){
+    if(point.x>pos.x&&point.x<pos.x+(width)){
         
         
-        if(point.y<pos.y&&point.y>pos.y-(SQUARE_HEIGHT)){
-            
+        if(point.y<pos.y&&point.y>pos.y-(height)){
             return true;
         }
         
@@ -45,15 +44,27 @@ bool WeaponSelectButton::init()
         this->setTouchEnabled(true);
         bg = CCSprite::spriteWithFile("weaponBackground.png");
         bg->setPosition(CCPoint(position.x+(SQUARE_WIDTH /2),position.y-(SQUARE_HEIGHT/2)));
-        bg->setOpacity(50);
+        bg->setOpacity(100);
         this->addChild(bg,0);
         handGun=CCSprite::spriteWithFile("handGun.png");
         handGun->setPosition(CCPoint(position.x+25, position.y-25));
        // handGun->setOpacity(100);
         this->addChild(handGun,0);
         assaultRifle=CCSprite::spriteWithFile("assaultRifle.png");
-        assaultRifle->setPosition(CCPoint(position.x+70, position.y-25));
+        assaultRifle->setPosition(CCPoint(position.x+80, position.y-25));
         this->addChild(assaultRifle);
+        
+        handGunSelect=CCSprite::spriteWithFile("handGunSelect.png");
+        handGunSelect->setPosition(CCPoint(position.x+25, position.y-25));
+        this->addChild(handGunSelect,0);
+        handGunSelect->setOpacity(50);
+        
+        assaultRifleSelect=CCSprite::spriteWithFile("assaultRifleSelect.png");
+        assaultRifleSelect->setPosition(CCPoint(position.x+80, position.y-25));
+        this->addChild(assaultRifleSelect,0);
+        assaultRifleSelect->setOpacity(0);
+        handgun=true;
+        assaultrifle=false;
        
         bRet=true;
         
@@ -76,47 +87,33 @@ void WeaponSelectButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
     CCTouch *touch = (CCTouch*)pTouches->anyObject();
     CCPoint point = touch->locationInView();
     point = convertCoordinate(point);
-    if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
+    if(isPointInSquare(point,position,SQUARE_WIDTH,SQUARE_HEIGHT)){
         isPressed = true;
-        bg->setOpacity(100);
+        
+        if(isPointInSquare(point,CCPoint(position.x, position.y),40,40)){
+            
+            handGunSelect->setOpacity(50);
+            assaultRifleSelect->setOpacity(0);
+            
+            handgun=true;
+            assaultrifle=false;
+        }
+        if(isPointInSquare(point,CCPoint(position.x+40, position.y),70,40)){
+            
+            handGunSelect->setOpacity(0);
+            assaultRifleSelect->setOpacity(50);
+            handgun=false;
+            assaultrifle=true;
+            
+            
+        }
         
         
     }
 }
 void WeaponSelectButton::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )
 {
-    if(isPressed){
-        CCArray *allTouches =   this->allTouchesFromSet(pTouches);
-        if (allTouches->count() > 1)
-        {
-            CCTouch *fingerOne = static_cast<CCTouch* >(allTouches->objectAtIndex(0));
-            CCTouch *fingerTwo = static_cast<CCTouch* >(allTouches->objectAtIndex(1));
-            CCPoint  pointOne =fingerOne->locationInView();            
-            CCPoint  pointTwo =fingerTwo->locationInView(); 
-            pointOne= convertCoordinate(pointOne);
-            pointTwo= convertCoordinate(pointTwo);
-            if(isPointInSquare(pointOne,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-            }
-            if(isPointInSquare(pointTwo,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-                
-            }
-        }
-        else{
-            CCTouch *touch = (CCTouch*)pTouches->anyObject();
-            CCPoint point = touch->locationInView();
-            point = convertCoordinate(point);
-            if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-                
-            }
-            if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
-                isPressed = true;
-                
-            }
-        }
-    }
+    
 }
 void WeaponSelectButton::ccTouchCancelled( CCTouch *pTouch, CCEvent *pEvent )
 {

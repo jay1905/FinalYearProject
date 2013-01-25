@@ -216,6 +216,9 @@
 		E083C85B1649B9F2002EE487 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E083C85A1649B9F1002EE487 /* Bullet.cpp */; };
 		E083C85E1649BA60002EE487 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E083C85D1649BA60002EE487 /* Base.cpp */; };
 		E08730CE16398B1300C4935D /* Analogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08730CD16398B1300C4935D /* Analogue.cpp */; };
+		E087AD6116A959E20005089E /* tower1btn.png in Resources */ = {isa = PBXBuildFile; fileRef = E087AD6016A959E20005089E /* tower1btn.png */; };
+		E087AD6516A973A30005089E /* thum1.png in Resources */ = {isa = PBXBuildFile; fileRef = E087AD6316A973A30005089E /* thum1.png */; };
+		E087AD6616A973A30005089E /* thum2.png in Resources */ = {isa = PBXBuildFile; fileRef = E087AD6416A973A30005089E /* thum2.png */; };
 		E0882F891635E11D00DCE071 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F881635E11D00DCE071 /* Player.cpp */; };
 		E0882F8C1635E34A00DCE071 /* PhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */; };
 		E088769516A5E79E00023C48 /* HumanButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E088769416A5E79E00023C48 /* HumanButton.cpp */; };
@@ -303,6 +306,10 @@
 		E08FC6CA16A7409C001E3BA2 /* weaponBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C616A7409C001E3BA2 /* weaponBackground.png */; };
 		E08FC6CE16A7455B001E3BA2 /* WeaponSelectButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08FC6CD16A7455B001E3BA2 /* WeaponSelectButton.cpp */; };
 		E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = E09094C9164AABAE00E744D8 /* License.mobileprovision */; };
+		E0A4FDB916A874A100D9941B /* assaultRifleSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A4FDB716A874A100D9941B /* assaultRifleSelect.png */; };
+		E0A4FDBA16A874A100D9941B /* handGunSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A4FDB816A874A100D9941B /* handGunSelect.png */; };
+		E0A4FDBE16A88AA100D9941B /* AssaultRifle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4FDBD16A88AA100D9941B /* AssaultRifle.cpp */; };
+		E0A4FDC116A8903700D9941B /* StaticEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4FDC016A8903700D9941B /* StaticEntity.cpp */; };
 		E0AECBA01630919900C1FD48 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB971630919900C1FD48 /* blocks.png */; };
 		E0AECBA11630919900C1FD48 /* drink.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB981630919900C1FD48 /* drink.png */; };
 		E0AECBA21630919900C1FD48 /* hamburger.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB991630919900C1FD48 /* hamburger.png */; };
@@ -768,6 +775,9 @@
 		E083C85D1649BA60002EE487 /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
 		E08730CC16398AFD00C4935D /* Analogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analogue.h; sourceTree = "<group>"; };
 		E08730CD16398B1300C4935D /* Analogue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Analogue.cpp; sourceTree = "<group>"; };
+		E087AD6016A959E20005089E /* tower1btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tower1btn.png; path = Resources/tower1btn.png; sourceTree = "<group>"; };
+		E087AD6316A973A30005089E /* thum1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thum1.png; path = Resources/thum1.png; sourceTree = "<group>"; };
+		E087AD6416A973A30005089E /* thum2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thum2.png; path = Resources/thum2.png; sourceTree = "<group>"; };
 		E0882F871635E10400DCE071 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		E0882F881635E11D00DCE071 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E0882F8A1635E32400DCE071 /* PhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
@@ -914,6 +924,12 @@
 		E08FC6CC16A74538001E3BA2 /* WeaponSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponSelectButton.h; sourceTree = "<group>"; };
 		E08FC6CD16A7455B001E3BA2 /* WeaponSelectButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponSelectButton.cpp; sourceTree = "<group>"; };
 		E09094C9164AABAE00E744D8 /* License.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = License.mobileprovision; sourceTree = "<group>"; };
+		E0A4FDB716A874A100D9941B /* assaultRifleSelect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = assaultRifleSelect.png; path = Resources/assaultRifleSelect.png; sourceTree = "<group>"; };
+		E0A4FDB816A874A100D9941B /* handGunSelect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = handGunSelect.png; path = Resources/handGunSelect.png; sourceTree = "<group>"; };
+		E0A4FDBC16A88A8600D9941B /* AssaultRifle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssaultRifle.h; sourceTree = "<group>"; };
+		E0A4FDBD16A88AA100D9941B /* AssaultRifle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssaultRifle.cpp; sourceTree = "<group>"; };
+		E0A4FDBF16A8902200D9941B /* StaticEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticEntity.h; sourceTree = "<group>"; };
+		E0A4FDC016A8903700D9941B /* StaticEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaticEntity.cpp; sourceTree = "<group>"; };
 		E0A65971166D0D5E00A21872 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
 		E0AECB971630919900C1FD48 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		E0AECB981630919900C1FD48 /* drink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drink.png; path = Resources/drink.png; sourceTree = "<group>"; };
@@ -1001,9 +1017,12 @@
 				E088CD4E16767EBD006786C0 /* axeBaby1.png */,
 				E088CD4F16767EBD006786C0 /* axeBaby2.png */,
 				E08AE83E1677C70B005AA3AE /* backgrounddetailed1.png */,
+				E087AD6016A959E20005089E /* tower1btn.png */,
 				E088CD5016767EBD006786C0 /* axeBaby3.png */,
 				E08AE8421677D03C005AA3AE /* game_background.png */,
 				E088CD5116767EBD006786C0 /* axeBaby4.png */,
+				E087AD6316A973A30005089E /* thum1.png */,
+				E087AD6416A973A30005089E /* thum2.png */,
 				E088CD5216767EBD006786C0 /* axeBabyAttack.png */,
 				E088CD5316767EBD006786C0 /* pikachu1.png */,
 				E08922FC1679220100121FB8 /* monsters-inc.png */,
@@ -1037,6 +1056,8 @@
 				E08FC6C516A7409C001E3BA2 /* tower1.png */,
 				E08FC6C616A7409C001E3BA2 /* weaponBackground.png */,
 				E0300C4E162F06340075BBBE /* CloseSelected.png */,
+				E0A4FDB716A874A100D9941B /* assaultRifleSelect.png */,
+				E0A4FDB816A874A100D9941B /* handGunSelect.png */,
 				E0300C50162F06340075BBBE /* Default.png */,
 				E0892302167927FD00121FB8 /* Tutorial.png */,
 				E0300C52162F06340075BBBE /* HelloWorld.png */,
@@ -1907,6 +1928,10 @@
 				E088769416A5E79E00023C48 /* HumanButton.cpp */,
 				E08FC6CC16A74538001E3BA2 /* WeaponSelectButton.h */,
 				E08FC6CD16A7455B001E3BA2 /* WeaponSelectButton.cpp */,
+				E0A4FDBC16A88A8600D9941B /* AssaultRifle.h */,
+				E0A4FDBD16A88AA100D9941B /* AssaultRifle.cpp */,
+				E0A4FDBF16A8902200D9941B /* StaticEntity.h */,
+				E0A4FDC016A8903700D9941B /* StaticEntity.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2171,6 +2196,11 @@
 				E08FC6C816A7409C001E3BA2 /* handGun.png in Resources */,
 				E08FC6C916A7409C001E3BA2 /* tower1.png in Resources */,
 				E08FC6CA16A7409C001E3BA2 /* weaponBackground.png in Resources */,
+				E0A4FDB916A874A100D9941B /* assaultRifleSelect.png in Resources */,
+				E0A4FDBA16A874A100D9941B /* handGunSelect.png in Resources */,
+				E087AD6116A959E20005089E /* tower1btn.png in Resources */,
+				E087AD6516A973A30005089E /* thum1.png in Resources */,
+				E087AD6616A973A30005089E /* thum2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2422,6 +2452,8 @@
 				E08955F616A489B6000361A4 /* BaseButton.cpp in Sources */,
 				E088769516A5E79E00023C48 /* HumanButton.cpp in Sources */,
 				E08FC6CE16A7455B001E3BA2 /* WeaponSelectButton.cpp in Sources */,
+				E0A4FDBE16A88AA100D9941B /* AssaultRifle.cpp in Sources */,
+				E0A4FDC116A8903700D9941B /* StaticEntity.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

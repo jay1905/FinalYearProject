@@ -25,7 +25,7 @@ public:
     void drawStuf();
     void move(b2Vec2 playerPos);
     void setPosition(b2Vec2 pos);
-    
+    b2Vec2 getPos();
 private:
    
    

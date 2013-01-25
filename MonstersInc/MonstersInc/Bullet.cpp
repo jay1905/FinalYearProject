@@ -34,7 +34,7 @@ Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos){
     body->SetUserData(this);
     
 }
-void Bullet::update(b2Body* b){
+void Bullet::update(){
     
     timetolive++;
     

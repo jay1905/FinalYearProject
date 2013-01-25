@@ -22,7 +22,7 @@ public:
     Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos);
     
     
-    void update(b2Body* b);
+    void update();
     void drawStuf();
     void fire(b2Vec2 direction);
     

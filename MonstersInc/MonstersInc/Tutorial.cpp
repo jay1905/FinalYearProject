@@ -38,29 +38,29 @@ void Tutorial::init(){
         world->SetAllowSleeping(true);
         world->SetContinuousPhysics(true);
     
-        label = CCLabelTTF::create("touch and move to move", "Marker Felt", 32);
+        label = CCLabelTTF::create("great now you can buy a tower", "Marker Felt", 32);
         addChild(label, 1);
         label->setColor(ccc3(0,255,255));
-        label->setPosition(ccp( 155, 90));
+        label->setPosition(ccp( 755, 490));
 
-        label2 = CCLabelTTF::create("touch and move to shoot", "Marker Felt", 32);
+        label2 = CCLabelTTF::create("touch the castle!", "Marker Felt", 32);
         addChild(label2, 1);
         label2->setColor(ccc3(0,255,255));
-        label2->setPosition(ccp( 870, 90));
+        label2->setPosition(ccp( 770, 460));
     
-    
-        label3 = CCLabelTTF::create("click exit when your ready", "Marker Felt", 32);
-        addChild(label3, 1);
-        label3->setColor(ccc3(200,255,200));
-        label3->setPosition(ccp( 470, 320));
-    
+//    
+//        label3 = CCLabelTTF::create("click exit when your ready", "Marker Felt", 32);
+//        addChild(label3, 1);
+//        label3->setColor(ccc3(200,255,200));
+//        label3->setPosition(ccp( 470, 320));
+//    
         label4 = CCLabelTTF::create("exit", "Marker Felt", 32);
         addChild(label4, 1);
         label4->setColor(ccc3(200,255,200));
         label4->setPosition(ccp( 965, 740));
     
     
-        label5 = CCLabelTTF::create("try shooting the enemy", "Marker Felt", 32);
+        label5 = CCLabelTTF::create("try killing the enemy", "Marker Felt", 32);
         addChild(label5, 1);
         label5->setColor(ccc3(0,255,255));
         label5->setPosition(ccp( 165, 645));
@@ -85,31 +85,36 @@ void Tutorial::init(){
     label9->setColor(ccc3(255,255,55));
     label9->setPosition(ccp(315, 745));
     
-    label10 = CCLabelTTF::create("when you kill enemys you get coins", "Marker Felt", 32);
+    label10 = CCLabelTTF::create("touch the turret", "Marker Felt", 32);
     addChild(label10, 1);
-    label10->setColor(ccc3(255,255,55));
-    label10->setPosition(ccp(440, 710));
+    label10->setColor(ccc3(0,255,255));
+    label10->setPosition(ccp(790, 550));
     
-    label11 = CCLabelTTF::create("the enemy will chase you and attack you", "Marker Felt", 32);
+    label11 = CCLabelTTF::create("now touch where you want it", "Marker Felt", 32);
     addChild(label11, 1);
-    label11->setColor(ccc3(255,0,0));
-    label11->setPosition(ccp(275, 555));
+    label11->setColor(ccc3(0,255,255));
+    label11->setPosition(ccp(520, 335));
 
-    label12 = CCLabelTTF::create("you will loose health and eventually die", "Marker Felt", 32);
+    label12 = CCLabelTTF::create("Great! now exit", "Marker Felt", 32);
     addChild(label12, 1);
-    label12->setColor(ccc3(255,0,0));
-    label12->setPosition(ccp(265, 525));
-    label13 = CCLabelTTF::create("analogues wont be visible at first in game", "Marker Felt", 32);
-    addChild(label13, 1);
-    label13->setColor(ccc3(20,200,200));
-    label13->setPosition(ccp(515,50));
-    label14 = CCLabelTTF::create("only visible after touched", "Marker Felt", 32);
-    addChild(label14, 1);
-    label14->setColor(ccc3(20,200,200));
-    label14->setPosition(ccp(515,20));
+    label12->setColor(ccc3(0,255,255));
+    label12->setPosition(ccp(520, 335));
     
-
-
+    label13 = CCLabelTTF::create("shoot", "Marker Felt", 32);
+    addChild(label13, 1);
+    label13->setColor(ccc3(0,255,255));
+    label13->setPosition(ccp(915,150));
+    
+    label14 = CCLabelTTF::create("move", "Marker Felt", 32);
+    addChild(label14, 1);
+    label14->setColor(ccc3(0,255,255));
+    label14->setPosition(ccp(100,150));
+    
+    label->setOpacity(0);
+    label2->setOpacity(0);
+    label10->setOpacity(0);
+        label11->setOpacity(0);
+        label12->setOpacity(0);
     
     
         cocos2d::CCSprite * jaime = CCSprite::create("game_background.png");
@@ -117,9 +122,14 @@ void Tutorial::init(){
         addChild(jaime);
     
         analog = new Analogue(CCPoint(100, 95));
+    analog->bg->setOpacity(200);
+    analog->thumb->setOpacity(200);
         this->addChild(analog);
+   
     
         analog2 = new Analogue(CCPoint(s.width-100, 95));
+    analog2->bg->setOpacity(200);
+    analog2->thumb->setOpacity(200);
         this->addChild(analog2);
     
         CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
@@ -133,7 +143,30 @@ void Tutorial::init(){
     
         eMan=new EnemyManager(world, this);   
         eMan->addEnemy(b2Vec2(120,600));
+    eMan->coins=45;
+    assaultgun= new AssaultRifle();
+
+    thumb1 = CCSprite::create("thum1.png");
+    thumb1->setPosition(CCPointMake(120, 100));
+    thumb1->setOpacity(70);
+    addChild(thumb1);
     
+    thumb2 = CCSprite::create("thum2.png");
+    thumb2->setPosition(CCPointMake(920, 100));
+    thumb2->setOpacity(70);
+    addChild(thumb2);
+    
+    
+    CCSpriteBatchNode *castle = CCSpriteBatchNode::create("castle.png", 100);
+    base = new Base(castle,world);
+    addChild(base);
+    
+    baseButton= new BaseButton(CCPoint(892, 580));
+    addChild(baseButton);
+
+    wep= new WeaponSelectButton(CCPoint(500, 750));
+    addChild(wep);
+    builed=false;
     
         world->SetContactListener(&mycontact);
     count=0;
@@ -204,29 +237,98 @@ void Tutorial::update(float dt){
         
     }
     
+    if( eMan->coins>50){
+        
+        
+        label->setOpacity(100);
+        label2->setOpacity(100);
+        label5->setOpacity(0);
+        
+        
+    }
+    if(baseButton->castleTouch==true){
+        
+        label->setOpacity(0);
+        label2->setOpacity(0);
+        label10->setOpacity(100);
+    
+    }
+    if(baseButton->hb->buttontouch==true){
+        
+          label10->setOpacity(0);
+          label11->setOpacity(100);
+        
+    }
+    if(builed==true){
+        
+         label11->setOpacity(0);
+         label12->setOpacity(100);
+    }
+    
+    
     
     if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
-        if(fireCount>gun->fireRate){
-
-        bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
-        addChild(bulletSprite);
-        Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
-        b->fire(analog2->getDirection());
-        bulletSprite->addChild(b);
-        bullets->addObject(b);
-            fireCount=0;
+        if(wep->handgun){
+            if(fireCount>gun->fireRate){
+                bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
+                addChild(bulletSprite);
+                Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
+                b->fire(analog2->getDirection());
+                bulletSprite->addChild(b);
+                bullets->addObject(b);
+                fireCount=0;
+                
+            }
+        }
+        else if(wep->assaultrifle){
+            if(fireCount>assaultgun->fireRate){
+                bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
+                addChild(bulletSprite);
+                Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
+                b->fire(analog2->getDirection());
+                bulletSprite->addChild(b);
+                bullets->addObject(b);
+                fireCount=0;
+                
+            }
         }
         fireCount++;
+        if(analog2->getDirection().x<0){
+            player->setFlipX(false);
+        }
+        else{
+            player->setFlipX(true);
+        }
     }
     if(bullets->count()!=0){
         for (int i=0; i<bullets->count(); i++){
             Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
-            b->update(player->m_pBody);
+            b->update();
             if(b->timetolive > 60*2){
                 bullets->removeObjectAtIndex(i);
                 world->DestroyBody(b->m_pBody);
                 b->removeChild(b, true);
             }
+        }
+    }
+    if(baseButton->hb->build){
+        baseButton->hb->build=false;
+        if(eMan->coins>=50){
+            eMan->coins=eMan->coins-50;
+            builed=true;
+            Tower *t = new Tower();
+            CCSpriteBatchNode * tow= CCSpriteBatchNode::create("tower1.png", 100);
+            t->initialize(tow, world,baseButton->hb->buildPoint, 20, b2Vec2(97, 67), "tower");
+            
+            addChild(t);
+            towers.push_back(t);
+        }
+    }
+    if(towers.size()!=0){
+        for (int i=0; i<towers.size(); i++){
+            Tower  *b = static_cast<Tower *>(towers[i]);
+            b->update(world,eMan->enemys,this,world);
+            
         }
     }
     

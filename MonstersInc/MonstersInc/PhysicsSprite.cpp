@@ -68,3 +68,14 @@ b2Body PhysicsSprite::getBody(){
     
     return *m_pBody;
 }
+void PhysicsSprite::die(){
+    
+    if(dieing==true){
+        
+        health-=1;
+        
+    
+    }
+    
+    
+}

@@ -19,14 +19,20 @@ EnemyManager::EnemyManager(b2World* w,cocos2d::CCLayer* lay){
     count=0;
     EnemyCount=0;
     enemyCurrent=0;
+    spawn=100;
     
 }
 void EnemyManager::update(){
    
-    if(count>120){
+    if(count>110){
         
-        addEnemy(b2Vec2(20, 400));
+        addEnemy(b2Vec2(20, spawn));
+        spawn+=200;
         count=0;
+        if(spawn>600){
+            spawn=100;
+            
+        }
     }
     count++;
     
@@ -42,7 +48,7 @@ void EnemyManager::destroy(){
             //enemys[i]->removeChild(enemys[i], true);
             layer->removeChild(enemys[i], true);
             enemys.erase(enemys.begin()+i);
-            coins+=10;
+            coins+=6;
             enemyCurrent--;
         }
     

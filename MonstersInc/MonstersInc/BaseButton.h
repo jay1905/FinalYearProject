@@ -25,16 +25,19 @@ public:
     b2Vec2 getDirection(){return -direction;}
     cocos2d::CCSprite *bg;
     cocos2d::CCSprite *thumb;
+    HumanButton* hb;
+    bool castleTouch;
     
 private:
     
     cocos2d::CCPoint position;
     
     bool isPressed;
+    bool activated;
     
     cocos2d::CCPoint velocity;
     b2Vec2 direction;
-    HumanButton* hb;
+   
     
     cocos2d::CCArray* allTouchesFromSet(cocos2d::CCSet *touches);
     

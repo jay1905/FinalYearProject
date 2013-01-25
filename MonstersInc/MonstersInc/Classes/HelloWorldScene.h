@@ -17,6 +17,7 @@
 #include "BaseButton.h"
 #include "Tower.h"
 #include "WeaponSelectButton.h"
+#include "AssaultRifle.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -55,7 +56,12 @@ private:
     cocos2d::CCSprite *jaime;
     cocos2d::CCArray *bullets;
     cocos2d::CCSpriteBatchNode *bulletSprite;
+    AssaultRifle * assaultgun;
+    WeaponSelectButton * wep;
   
+    
+    std::vector<Tower*> towers;
+    
     MyContactListener mycontact;
     EnemyManager *eManager;
     Gun *gun;

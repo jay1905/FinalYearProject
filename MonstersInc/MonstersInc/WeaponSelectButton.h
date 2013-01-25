@@ -22,13 +22,15 @@ public:
     cocos2d::CCSprite *bg;
     cocos2d::CCSprite *handGun;
     cocos2d::CCSprite *assaultRifle;
-    
+    cocos2d::CCSprite *handGunSelect;
+    cocos2d::CCSprite *assaultRifleSelect;
+    bool handgun;
+    bool assaultrifle;
 private:
     
     cocos2d::CCPoint position;
     
-    bool isPressed;
-    
+    bool isPressed;    
     
     cocos2d::CCArray* allTouchesFromSet(cocos2d::CCSet *touches);
     

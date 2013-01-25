@@ -34,6 +34,7 @@ public:
     int coins;
     int EnemyCount;
     int enemyCurrent;
+    int spawn;
     
 private:
     

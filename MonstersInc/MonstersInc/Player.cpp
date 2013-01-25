@@ -43,6 +43,7 @@ void Player::update(b2Vec2 direction){
     direction=b2Vec2(direction.x*speed, direction.y*speed);
      this->m_pBody->SetLinearVelocity(direction);
     this->m_pBody->SetAngularVelocity(0);
+    die();
 
 }
 void Player::drawStuf(){
