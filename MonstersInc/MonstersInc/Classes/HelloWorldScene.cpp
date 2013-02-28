@@ -60,6 +60,9 @@ HelloWorld::HelloWorld()
     eManager->addEnemy(b2Vec2(200, 300));
 
     
+    bulletMan = new BulletManager(world);
+    addChild(bulletMan);
+    
     
 //    CCSpriteBatchNode * ash= CCSpriteBatchNode::create("ash1.png", 100);
 //    human= new Human();
@@ -226,54 +229,6 @@ void HelloWorld::draw()
 //    
 //    kmGLPopMatrix();
 }
-
-void HelloWorld::move(){
-    
-  
-      
-    
-}
-void HelloWorld::addNewSpriteAtPosition(CCPoint p)
-{
-    CCLOG("Add sprite %0.2f x %02.f",p.x,p.y);
-    CCNode* parent = getChildByTag(kTagParentNode);
-    
-    //We have a 64x64 sprite sheet with 4 different 32x32 images.  The following code is
-    //just randomly picking one of the images
-    int idx = (CCRANDOM_0_1() > .5 ? 0:1);
-    int idy = (CCRANDOM_0_1() > .5 ? 0:1);
-    PhysicsSprite *sprite = new PhysicsSprite();
-    sprite->initWithTexture(m_pSpriteTexture, CCRectMake(32 * idx,32 * idy,32,32));
-    sprite->autorelease();
-    
-    parent->addChild(sprite);
-    
-    sprite->setPosition( CCPointMake( p.x, p.y) );
-    
-    // Define the dynamic body.
-    //Set up a 1m squared box in the physics world
-    b2BodyDef bodyDef;
-    bodyDef.type = b2_dynamicBody;
-    bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
-    
-    b2Body *body = world->CreateBody(&bodyDef);
-    
-    // Define another box shape for our dynamic body.
-    b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox(.5f, .5f);//These are mid points for our 1m box
-    
-    // Define the dynamic body fixture.
-    b2FixtureDef fixtureDef;
-    fixtureDef.shape = &dynamicBox;    
-    fixtureDef.density = 1.0f;
-    fixtureDef.friction = 0.3f;
-    body->CreateFixture(&fixtureDef);
-    
-    sprite->setPhysicsBody(body);
-   
-}
-
-
 void HelloWorld::update(float dt)
 {
     //It is recommended that a fixed time step is used with Box2D for stability
@@ -332,29 +287,24 @@ void HelloWorld::update(float dt)
         player->update(analog->getDirection());
         eManager->destroy();
         eManager->moveEnemy(b2Vec2(player->m_pBody->GetPosition().x, player->m_pBody->GetPosition().y));
+        bulletMan->update();
         
         if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
            
             if(wep->handgun){
                 if(firecount>gun->fireRate){
-                    bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
-                    addChild(bulletSprite);
-                    Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
-                    b->fire(analog2->getDirection());
-                    bulletSprite->addChild(b);
-                    bullets->addObject(b);
+                    
+                    
+                    bulletMan->create(player->returnpos(), analog2->getDirection());
+                
                     firecount=0;
                 
                 }
             }
             else if(wep->assaultrifle){
                 if(firecount>assaultgun->fireRate){
-                    bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
-                    addChild(bulletSprite);
-                    Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
-                    b->fire(analog2->getDirection());
-                    bulletSprite->addChild(b);
-                    bullets->addObject(b);
+                    
+                    bulletMan->create(player->returnpos(), analog2->getDirection());
                     firecount=0;
                     
                 }
@@ -376,18 +326,6 @@ void HelloWorld::update(float dt)
     char helth[100];
     snprintf(helth, 100, "%i",player->health);
     label4->setString(helth);
-    
-    if(bullets->count()!=0){
-        for (int i=0; i<bullets->count(); i++){
-            Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
-            b->update();
-            if(b->timetolive > 60*2){
-                bullets->removeObjectAtIndex(i);
-                world->DestroyBody(b->m_pBody);
-                b->removeChild(b, true);
-            }
-        }
-    }
 
     world->Step(dt, velocityIterations, positionIterations);
 

@@ -319,6 +319,9 @@
 		E0AECBA61630919900C1FD48 /* icecream3.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB9D1630919900C1FD48 /* icecream3.png */; };
 		E0AECBA71630919900C1FD48 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB9E1630919900C1FD48 /* orange.png */; };
 		E0AECBA81630919900C1FD48 /* shapedefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB9F1630919900C1FD48 /* shapedefs.plist */; };
+		E0E2C35216DFE895005441EB /* BulletManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0E2C35116DFE895005441EB /* BulletManager.cpp */; };
+		E0E2C35516DFE944005441EB /* UpgradeScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0E2C35416DFE944005441EB /* UpgradeScreen.cpp */; };
+		E0E2C35816DFF638005441EB /* WeaponManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0E2C35716DFF637005441EB /* WeaponManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -940,6 +943,12 @@
 		E0AECB9D1630919900C1FD48 /* icecream3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icecream3.png; path = Resources/icecream3.png; sourceTree = "<group>"; };
 		E0AECB9E1630919900C1FD48 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange.png; path = Resources/orange.png; sourceTree = "<group>"; };
 		E0AECB9F1630919900C1FD48 /* shapedefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = shapedefs.plist; path = Resources/shapedefs.plist; sourceTree = "<group>"; };
+		E0E2C34F16DFE87C005441EB /* BulletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletManager.h; sourceTree = "<group>"; };
+		E0E2C35116DFE895005441EB /* BulletManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BulletManager.cpp; sourceTree = "<group>"; };
+		E0E2C35316DFE93A005441EB /* UpgradeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeScreen.h; sourceTree = "<group>"; };
+		E0E2C35416DFE944005441EB /* UpgradeScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UpgradeScreen.cpp; sourceTree = "<group>"; };
+		E0E2C35616DFF622005441EB /* WeaponManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponManager.h; sourceTree = "<group>"; };
+		E0E2C35716DFF637005441EB /* WeaponManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponManager.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1932,6 +1941,12 @@
 				E0A4FDBD16A88AA100D9941B /* AssaultRifle.cpp */,
 				E0A4FDBF16A8902200D9941B /* StaticEntity.h */,
 				E0A4FDC016A8903700D9941B /* StaticEntity.cpp */,
+				E0E2C34F16DFE87C005441EB /* BulletManager.h */,
+				E0E2C35116DFE895005441EB /* BulletManager.cpp */,
+				E0E2C35316DFE93A005441EB /* UpgradeScreen.h */,
+				E0E2C35416DFE944005441EB /* UpgradeScreen.cpp */,
+				E0E2C35616DFF622005441EB /* WeaponManager.h */,
+				E0E2C35716DFF637005441EB /* WeaponManager.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2454,6 +2469,9 @@
 				E08FC6CE16A7455B001E3BA2 /* WeaponSelectButton.cpp in Sources */,
 				E0A4FDBE16A88AA100D9941B /* AssaultRifle.cpp in Sources */,
 				E0A4FDC116A8903700D9941B /* StaticEntity.cpp in Sources */,
+				E0E2C35216DFE895005441EB /* BulletManager.cpp in Sources */,
+				E0E2C35516DFE944005441EB /* UpgradeScreen.cpp in Sources */,
+				E0E2C35816DFF638005441EB /* WeaponManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,8 +26,9 @@ Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos){
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=1.0f;
     fixyureDef.friction=2.0f;
-    fixyureDef.filter.groupIndex = -1; // for example
+    fixyureDef.filter.groupIndex = -1; 
     body->CreateFixture(&fixyureDef);
+    body->SetBullet(true);
     this->setPhysicsBody(body);
     speed = 30;
     timetolive=60;

@@ -47,13 +47,7 @@ void Tutorial::init(){
         addChild(label2, 1);
         label2->setColor(ccc3(0,255,255));
         label2->setPosition(ccp( 770, 460));
-    
-//    
-//        label3 = CCLabelTTF::create("click exit when your ready", "Marker Felt", 32);
-//        addChild(label3, 1);
-//        label3->setColor(ccc3(200,255,200));
-//        label3->setPosition(ccp( 470, 320));
-//    
+        
         label4 = CCLabelTTF::create("exit", "Marker Felt", 32);
         addChild(label4, 1);
         label4->setColor(ccc3(200,255,200));
