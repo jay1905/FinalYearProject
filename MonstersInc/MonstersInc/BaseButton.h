@@ -13,7 +13,7 @@
 #include "Box2D.h"
 #include "HumanButton.h"
 
-class BaseButton:public cocos2d::CCLayer//, cocos2d::CCTargetedTouchDelegate
+class BaseButton:public cocos2d::CCLayer
 {
 public:
     BaseButton(cocos2d::CCPoint centre);

@@ -106,8 +106,6 @@ void Analogue::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
             point = convertCoordinate(point);
             if(isPointInCircle(point,kCenter,JOYSTICK_RADIUS)){
                     isPressed = true;
-                   // bg->setOpacity(50);
-                   // thumb->setOpacity(50);
                     this->updateVelocity(point);
             }
     }

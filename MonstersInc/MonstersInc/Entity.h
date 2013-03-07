@@ -23,6 +23,7 @@ public:
     void initialize(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos,float speed,b2Vec2 size,  std::string name);
     b2FixtureDef fixyureDef;
     b2BodyDef bodyDef;
+    float speed;
 private:
     
     b2Body* body;
@@ -30,7 +31,7 @@ private:
     
     cocos2d::CCAnimation * anim;    
     cocos2d::CCAnimate *theAnim ;
-    float speed;
+    
 };
 
 #endif

@@ -19,7 +19,7 @@ using namespace cocos2d;
 static CCPoint convertCoordinate(CCPoint point){
     return CCDirector::sharedDirector()->convertToGL(point);
 }
-static bool isPointInSquare(CCPoint point, CCPoint pos, float radius){
+static bool isPointInSquare(CCPoint point, CCPoint pos){
     if(point.x>pos.x&&point.x<pos.x+(SQUARE_WIDTH)){
         
     
@@ -77,7 +77,7 @@ void BaseButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
         CCTouch *touch = (CCTouch*)pTouches->anyObject();
         CCPoint point = touch->locationInView();
         point = convertCoordinate(point);
-        if(isPointInSquare(point,position,JOYSTICK_RADIUS)){
+        if(isPointInSquare(point,position)){
             
             if(activated ==false){
                 isPressed = true;

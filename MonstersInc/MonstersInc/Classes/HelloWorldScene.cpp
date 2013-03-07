@@ -64,10 +64,9 @@ HelloWorld::HelloWorld()
     addChild(bulletMan);
     
     
-//    CCSpriteBatchNode * ash= CCSpriteBatchNode::create("ash1.png", 100);
-//    human= new Human();
-//    human->initialize(ash, world, b2Vec2(200, 200), 20, b2Vec2(19, 23), "human");
-//    addChild(human);
+    
+    human= new Human(world, b2Vec2(200, 200), 10, b2Vec2(19, 23),this);
+    addChild(human);
     
   
     
@@ -241,7 +240,7 @@ void HelloWorld::update(float dt)
     
     
    
-    
+    human->update();
     if(eManager->EnemyCount<=25){
         eManager->update();
         
@@ -331,7 +330,16 @@ void HelloWorld::update(float dt)
 
     
 }
-
+void HelloWorld::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
+{
+    
+    human->ccTouchesBegan(pTouches, pEvent);
+//    CCArray *allTouches =   this->allTouchesFromSet(pTouches);
+//    
+//    CCTouch *touch = (CCTouch*)pTouches->anyObject();
+//    CCPoint point = touch->locationInView();
+     
+}
 void HelloWorld::ccTouchesEnded(CCSet* touches, CCEvent* event)
 {
     //Add a new body/atlas sprite at the touched location

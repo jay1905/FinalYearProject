@@ -119,11 +119,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Analogue.cpp"
-         timestampString = "376946978.508602"
+         timestampString = "384379396.589851"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "205"
-         endingLineNumber = "205">
+         startingLineNumber = "203"
+         endingLineNumber = "203">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -197,11 +197,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Analogue.cpp"
-         timestampString = "376946978.508602"
+         timestampString = "384379396.589851"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "190"
-         endingLineNumber = "190">
+         startingLineNumber = "188"
+         endingLineNumber = "188">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -223,11 +223,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Analogue.cpp"
-         timestampString = "376946103.321963"
+         timestampString = "384379396.589851"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "126"
-         endingLineNumber = "126"
+         startingLineNumber = "124"
+         endingLineNumber = "124"
          landmarkName = "Analogue::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
@@ -251,11 +251,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Analogue.cpp"
-         timestampString = "376946103.321963"
+         timestampString = "384379396.589851"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "156"
-         endingLineNumber = "156"
+         startingLineNumber = "154"
+         endingLineNumber = "154"
          landmarkName = "Analogue::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
@@ -265,11 +265,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Analogue.cpp"
-         timestampString = "376946095.569396"
+         timestampString = "384379396.589851"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "150"
-         endingLineNumber = "150"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
          landmarkName = "Analogue::ccTouchesMoved( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
@@ -279,11 +279,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Analogue.cpp"
-         timestampString = "376946267.060266"
+         timestampString = "384379396.589851"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "168"
-         endingLineNumber = "168"
+         startingLineNumber = "166"
+         endingLineNumber = "166"
          landmarkName = "Analogue::allTouchesFromSet(CCSet *touches)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -307,11 +307,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "383775794.541736"
+         timestampString = "384370720.572387"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "153"
-         endingLineNumber = "153"
+         startingLineNumber = "152"
+         endingLineNumber = "152"
          landmarkName = "HelloWorld::HelloWorld()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -363,11 +363,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "383775794.541736"
+         timestampString = "384370720.572387"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "243"
-         endingLineNumber = "243"
+         startingLineNumber = "242"
+         endingLineNumber = "242"
          landmarkName = "HelloWorld::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -495,6 +495,62 @@
          startingLineNumber = "40"
          endingLineNumber = "40"
          landmarkName = "BeginContact(b2Contact* contact)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/Human.cpp"
+         timestampString = "384380679.870072"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "91"
+         endingLineNumber = "91"
+         landmarkName = "Human::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/Human.cpp"
+         timestampString = "384380447.872325"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "51"
+         endingLineNumber = "51"
+         landmarkName = "Human::update()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/Human.cpp"
+         timestampString = "384380679.870072"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "93"
+         endingLineNumber = "93"
+         landmarkName = "Human::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/Human.cpp"
+         timestampString = "384380679.870072"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "87"
+         endingLineNumber = "87"
+         landmarkName = "Human::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
