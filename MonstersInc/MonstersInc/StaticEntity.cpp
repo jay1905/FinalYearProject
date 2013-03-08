@@ -33,6 +33,8 @@ void StaticEntity::initialize(cocos2d::CCSpriteBatchNode *hello,b2World *world,b
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=0.0f;
     fixyureDef.friction=0.0f;
+    
+    
     fixyureDef.filter.groupIndex = -1; 
     
     body->CreateFixture(&fixyureDef);

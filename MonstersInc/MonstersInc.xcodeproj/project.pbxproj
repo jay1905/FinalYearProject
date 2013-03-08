@@ -296,6 +296,8 @@
 		E08B4BB816305A3E002B3858 /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8716305A3E002B3858 /* b2WeldJoint.cpp */; };
 		E08B4BB916305A3E002B3858 /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8916305A3E002B3858 /* b2WheelJoint.cpp */; };
 		E08B4BBA16305A3E002B3858 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08B4B8C16305A3E002B3858 /* b2Rope.cpp */; };
+		E08BB30E16EA63B900E27405 /* Barrier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08BB30D16EA63B800E27405 /* Barrier.cpp */; };
+		E08BB31016EA66E000E27405 /* lava_001.png in Resources */ = {isa = PBXBuildFile; fileRef = E08BB30F16EA66E000E27405 /* lava_001.png */; };
 		E08CDB8B16641A3D0003BADF /* Gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08CDB8A16641A3D0003BADF /* Gun.cpp */; };
 		E08DFB5A1679CCD800184E11 /* Level2.png in Resources */ = {isa = PBXBuildFile; fileRef = E08DFB591679CCD800184E11 /* Level2.png */; };
 		E08DFB5C1679CCE000184E11 /* Level1.png in Resources */ = {isa = PBXBuildFile; fileRef = E08DFB5B1679CCE000184E11 /* Level1.png */; };
@@ -915,6 +917,9 @@
 		E08B4B8A16305A3E002B3858 /* b2WheelJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2WheelJoint.h; sourceTree = "<group>"; };
 		E08B4B8C16305A3E002B3858 /* b2Rope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2Rope.cpp; sourceTree = "<group>"; };
 		E08B4B8D16305A3E002B3858 /* b2Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Rope.h; sourceTree = "<group>"; };
+		E08BB30B16EA63AB00E27405 /* Barrier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barrier.h; sourceTree = "<group>"; };
+		E08BB30D16EA63B800E27405 /* Barrier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Barrier.cpp; sourceTree = "<group>"; };
+		E08BB30F16EA66E000E27405 /* lava_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lava_001.png; path = Resources/lava_001.png; sourceTree = "<group>"; };
 		E08CDB8816641A2D0003BADF /* Gun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gun.h; sourceTree = "<group>"; };
 		E08CDB8A16641A3D0003BADF /* Gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gun.cpp; sourceTree = "<group>"; };
 		E08DFB591679CCD800184E11 /* Level2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Level2.png; path = Resources/Level2.png; sourceTree = "<group>"; };
@@ -1072,6 +1077,7 @@
 				E0300C52162F06340075BBBE /* HelloWorld.png */,
 				E0300C54162F06340075BBBE /* Icon-72.png */,
 				E0300C56162F06340075BBBE /* Icon-Small-50.png */,
+				E08BB30F16EA66E000E27405 /* lava_001.png */,
 				E0300C58162F06340075BBBE /* Icon-Small.png */,
 				E0300C5A162F06340075BBBE /* Icon-Small@2x.png */,
 				E0300C5C162F06340075BBBE /* Icon.png */,
@@ -1947,6 +1953,8 @@
 				E0E2C35416DFE944005441EB /* UpgradeScreen.cpp */,
 				E0E2C35616DFF622005441EB /* WeaponManager.h */,
 				E0E2C35716DFF637005441EB /* WeaponManager.cpp */,
+				E08BB30B16EA63AB00E27405 /* Barrier.h */,
+				E08BB30D16EA63B800E27405 /* Barrier.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2216,6 +2224,7 @@
 				E087AD6116A959E20005089E /* tower1btn.png in Resources */,
 				E087AD6516A973A30005089E /* thum1.png in Resources */,
 				E087AD6616A973A30005089E /* thum2.png in Resources */,
+				E08BB31016EA66E000E27405 /* lava_001.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2472,6 +2481,7 @@
 				E0E2C35216DFE895005441EB /* BulletManager.cpp in Sources */,
 				E0E2C35516DFE944005441EB /* UpgradeScreen.cpp in Sources */,
 				E0E2C35816DFF638005441EB /* WeaponManager.cpp in Sources */,
+				E08BB30E16EA63B900E27405 /* Barrier.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

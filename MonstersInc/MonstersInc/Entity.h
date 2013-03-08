@@ -24,6 +24,8 @@ public:
     b2FixtureDef fixyureDef;
     b2BodyDef bodyDef;
     float speed;
+   
+
 private:
     
     b2Body* body;

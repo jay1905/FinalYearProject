@@ -79,3 +79,9 @@ void PhysicsSprite::die(){
     
     
 }
+void PhysicsSprite::slow(float x){
+    
+    speed*=x;
+    
+    
+}

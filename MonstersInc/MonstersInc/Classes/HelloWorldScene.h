@@ -19,6 +19,7 @@
 #include "WeaponSelectButton.h"
 #include "AssaultRifle.h"
 #include "BulletManager.h"
+#include "Barrier.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -60,7 +61,7 @@ private:
     AssaultRifle * assaultgun;
     WeaponSelectButton * wep;
     BulletManager * bulletMan;
-  
+    Barrier * lava;
     
     std::vector<Tower*> towers;
     

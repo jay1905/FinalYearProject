@@ -46,6 +46,18 @@ class MyContactListener : public b2ContactListener{
             else if (name2=="bullet"){
                 p2->timetolive=500;  
             }
+            else if(name1=="lavaPit"&&name2=="Enemy"){
+                
+                p2->health-=40;
+                
+            }
+            else if(name1=="Enemy"&&name2=="lavaPit"){
+                
+                p1->dieing=true;
+                
+                
+                
+            }
         }
         bodyUserData = contact->GetFixtureB()->GetBody()->GetUserData();
         if ( bodyUserData ){

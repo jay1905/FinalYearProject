@@ -57,7 +57,7 @@ HelloWorld::HelloWorld()
     world->SetContactListener(&mycontact);
     
     eManager = new EnemyManager(world,this);
-    eManager->addEnemy(b2Vec2(200, 300));
+  
 
     
     bulletMan = new BulletManager(world);
@@ -65,11 +65,14 @@ HelloWorld::HelloWorld()
     
     
     
-    human= new Human(world, b2Vec2(200, 200), 10, b2Vec2(19, 23),this);
+    human= new Human(world, b2Vec2(200, 200), 5, b2Vec2(19, 23),this);
     addChild(human);
     
   
-    
+    lava = new Barrier();
+    CCSpriteBatchNode *moat = CCSpriteBatchNode::create("lava_001.png", 100);
+    lava->initialize(moat, world, b2Vec2(400, s.height/2), 0, b2Vec2(256, 768), "lavaPit");
+    addChild(lava);
     
 
 ///////////////////////////////////////////////////////////////////animation

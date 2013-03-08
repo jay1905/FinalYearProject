@@ -47,6 +47,7 @@ void Enemy::move(b2Vec2 playerPos){
    
     
 }
+
 void Enemy::update(){
     
     

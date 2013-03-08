@@ -28,7 +28,9 @@ public:
     int health;
     bool dieing;
     void die();
-
+    float speed;
+    void slow(float);
+    
 private:
    };
 

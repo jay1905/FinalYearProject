@@ -45,7 +45,6 @@ void EnemyManager::destroy(){
         if(enemys[i]->health<=0){
             
             world->DestroyBody(enemys[i]->m_pBody);
-            //enemys[i]->removeChild(enemys[i], true);
             layer->removeChild(enemys[i], true);
             enemys.erase(enemys.begin()+i);
             coins+=6;

@@ -24,6 +24,7 @@ public:
     void tutorialLevel();
     void level1();
     void level2();
+    void test();
     
     
 private:
@@ -36,7 +37,8 @@ private:
 
 
     cocos2d::CCSprite *jaime;
-
+    
+     cocos2d::CCLabelTTF *label;
     
 };
 

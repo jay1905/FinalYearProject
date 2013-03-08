@@ -50,9 +50,9 @@ void Human::update(){
     this->m_pBody->SetLinearVelocity(direction);
     position=this->m_pBody->GetPosition();
     position*=32;
-    if(position.x>destination.x&position.x>destination.x+20){
+    if(position.x>destination.x-20&&position.x<destination.x+20){
             
-        if(position.y>destination.y&position.y>destination.y+20){
+        if(position.y>destination.y-20&&position.y<destination.y+20){
         
             direction= b2Vec2_zero;
         
