@@ -10,7 +10,9 @@
 #define MonstersInc_MainMenu_h
 
 #include "cocos2d.h"
-
+#include "Box2D.h"
+#include <CCEditBox.h>
+#include "SaveFileData.h"
 
 class MainMenu: public cocos2d::CCLayer
 {
@@ -25,20 +27,31 @@ public:
     void level1();
     void level2();
     void test();
+    void update(float t);
+    void newPlayer();
+    void enterPlayer();
     
     
 private:
-    
+      b2World* world;
         
     cocos2d::CCMenuItemImage *pCloseItem;
     cocos2d::CCMenuItemImage *tutorial;
     cocos2d::CCMenuItemImage *level1btn;
     cocos2d::CCMenuItemImage *level2btn;
-
+    cocos2d::CCMenuItemImage *newGame;
+     cocos2d::CCMenuItemImage *enter;
 
     cocos2d::CCSprite *jaime;
     
      cocos2d::CCLabelTTF *label;
+     cocos2d::extension::CCScale9Sprite *pNormal9SpriteBg;
+    cocos2d::extension::CCEditBox *m_pEditName;
+    
+    SaveFileData* savedData;
+    
+     char name[100];
+     char gold[100];
     
 };
 

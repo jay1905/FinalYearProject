@@ -13,6 +13,7 @@
 
 #include <CCUserDefault.h>
 
+
 using namespace cocos2d;
 
 MainMenu::MainMenu(){
@@ -23,7 +24,8 @@ MainMenu::MainMenu(){
 }
 void MainMenu::init(){
     
-    
+    world = new b2World(b2Vec2_zero);
+
     
     pCloseItem = CCMenuItemImage::create("CloseNormal.png","CloseSelected.png",this,menu_selector(MainMenu::test));
     pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width - 20, 20));
@@ -60,7 +62,77 @@ void MainMenu::init(){
     addChild(label, 1);
     label->setColor(ccc3(0,0,255));
     label->setPosition(ccp( 60, 745));
+    
+    newGame=CCMenuItemImage::create("HandGunSelect.png", "HandGunSelect.png", this, menu_selector(MainMenu::newPlayer));
+    newGame->setPosition(CCPoint(400, 500));
+    CCMenu *newFile=CCMenu::create(newGame,NULL);
+    newFile->setPosition(CCPointZero);
+    addChild(newFile,1);
+    
+   
+        
+    
+    pNormal9SpriteBg= cocos2d::extension::CCScale9Sprite::create("assaultRifleSelect.png");
+    m_pEditName = cocos2d::extension::CCEditBox::create(CCSize(250, 30), pNormal9SpriteBg);
+    m_pEditName->setPosition(ccp(1400, 200));
+    m_pEditName->setFontColor(ccBLUE);
+    m_pEditName->setPlaceHolder("Name:");
+    m_pEditName->setMaxLength(8);
+    addChild(m_pEditName);
+    
+    enter=CCMenuItemImage::create("blocks.png", "blocks.png", this, menu_selector(MainMenu::enterPlayer));
+    enter->setPosition(CCPoint(1400, 400));
+    CCMenu *enterB=CCMenu::create(enter,NULL);
+    enterB->setPosition(CCPointZero);
+    addChild(enterB,1);
+    
+    
+    
+   
+  
+    savedData= new SaveFileData();
+    
+    scheduleUpdate();
        
+}
+void MainMenu::enterPlayer(){
+    
+    
+    level2btn->setPosition(CCPoint(100, 300));
+    level1btn->setPosition(CCPoint(100, 400));
+    tutorial->setPosition(CCPoint(100, 500));
+    m_pEditName->setPosition(ccp(1400, 200));
+    enter->setPosition(CCPoint(1400, 400));
+    newGame->setPosition(CCPoint(400, 500));
+    
+    savedData->newPlayer(m_pEditName->getText());
+    
+    
+    
+    
+}
+void MainMenu::newPlayer(){
+    level2btn->setPosition(CCPoint(1400, 400));
+    level1btn->setPosition(CCPoint(1400, 400));
+    tutorial->setPosition(CCPoint(1400, 400));
+    m_pEditName->setPosition(ccp(400, 200));
+    enter->setPosition(CCPoint(400, 400));
+    newGame->setPosition(CCPoint(1400, 500));
+    
+ 
+}
+void MainMenu::update(float dt){
+    int velocityIterations = 8;
+    int positionIterations = 1;
+    
+    
+    const char * c = savedData->name.c_str();
+    label->setString(c);
+    
+    
+    
+    world->Step(dt, velocityIterations, positionIterations);
+
 }
 void MainMenu::test(){
     
@@ -85,10 +157,6 @@ void MainMenu::level1(){
 }
 void MainMenu::level2(){
     
-    
-    CCUserDefault::sharedUserDefault()->setIntegerForKey("highScore", 40);
-    CCUserDefault::sharedUserDefault()->setFloatForKey("helth", 98);
-    CCUserDefault::sharedUserDefault()->flush();
     
     
 }

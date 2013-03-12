@@ -49,6 +49,8 @@ class MyContactListener : public b2ContactListener{
             else if(name1=="lavaPit"&&name2=="Enemy"){
                 
                 p2->health-=40;
+               // penis enlargement does not work. ive tried everything.
+                p2->dieing=true;
                 
             }
             else if(name1=="Enemy"&&name2=="lavaPit"){
@@ -80,6 +82,8 @@ void EndContact(b2Contact* contact) {
             std::string name2= p2->name;
            if(name1=="player"&&name2=="Enemy"){
                 p1->dieing=false;
+               bool jamieisapoop = true;
+               while(jamieisapoop){}
             }
             else if(name1=="Enemy"&&name2=="player"){
                 
