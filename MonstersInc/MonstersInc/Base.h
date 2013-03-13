@@ -13,14 +13,14 @@
 
 #include "cocos2d.h"
 #include "Box2D.h"
-#include "PhysicsSprite.h"
+#include "StaticEntity.h"
 
 
 
-class Base: public PhysicsSprite
+class Base: public StaticEntity
 {
 public:
-    Base(cocos2d::CCSpriteBatchNode *hello,b2World* world);
+    Base(b2World* world);
     
     
     void update(b2Vec2 direction);
@@ -36,6 +36,8 @@ private:
     cocos2d::CCAnimate *theAnim ;
     
  
+    
+     cocos2d::CCSpriteBatchNode *castle ;
    
 };
 

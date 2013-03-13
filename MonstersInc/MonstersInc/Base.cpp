@@ -14,28 +14,16 @@ using namespace cocos2d;
 using namespace CocosDenshion;
 
 
-Base::Base(cocos2d::CCSpriteBatchNode *hello,b2World* world){
+Base::Base(b2World* world){
     
     
-    this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 404, 134));
-    //this->autorelease();
-    bodyDef.type=b2_staticBody;
-    bodyDef.position.Set(15, 15);
-    body=world->CreateBody(&bodyDef);
-    body->SetTransform(b2Vec2(30, 12), -1.56);
-    name="base";
-    float x=404/32;
-    float y = 134/32;
-    dynamicBox.SetAsBox(x/1.8, y/1.8);
-    fixyureDef.shape=&dynamicBox;
-    fixyureDef.density=1.0f;
-    fixyureDef.friction=2.0f;
-    body->CreateFixture(&fixyureDef);
-    body->SetUserData(this);
-    this->setPhysicsBody(body);
     
-   
+    
+    castle = CCSpriteBatchNode::create("castle.png", 100);
+    
+    this->initialize(castle, world, b2Vec2 (500,500), 0, b2Vec2 (404,134),"base");
 
+   this->m_pBody->SetTransform(b2Vec2(30, 12), -1.56);
 
     
 }

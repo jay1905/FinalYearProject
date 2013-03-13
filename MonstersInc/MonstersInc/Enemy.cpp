@@ -30,7 +30,8 @@ Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 pos,float s
     fixyureDef.shape=&dynamicBox;
     fixyureDef.density=0.0f;
     fixyureDef.friction=0.0f;
-     fixyureDef.filter.groupIndex = -2; 
+     fixyureDef.filter.groupIndex = -2;
+    fixyureDef.filter.categoryBits=12;
     body->CreateFixture(&fixyureDef);
     this->setPhysicsBody(body);
     speed =spd;

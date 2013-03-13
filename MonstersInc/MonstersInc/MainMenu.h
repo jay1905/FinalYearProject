@@ -44,14 +44,17 @@ private:
 
     cocos2d::CCSprite *jaime;
     
-     cocos2d::CCLabelTTF *label;
+    cocos2d::CCLabelTTF *label;
+    cocos2d::CCLabelTTF *goldlabel;
+    cocos2d::CCLabelTTF *Namelabel;
+    cocos2d::CCLabelTTF *goldlabel2;
+    
      cocos2d::extension::CCScale9Sprite *pNormal9SpriteBg;
     cocos2d::extension::CCEditBox *m_pEditName;
     
     SaveFileData* savedData;
     
-     char name[100];
-     char gold[100];
+     char ttt[100];
     
 };
 

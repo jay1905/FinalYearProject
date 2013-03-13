@@ -36,8 +36,8 @@ void SaveFileData::newPlayer(std::string n){
 }
 void SaveFileData::updateGold(int newgold){
     
-    
-     CCUserDefault::sharedUserDefault()->setIntegerForKey("gold", newgold);
+     gold+=newgold;
+     CCUserDefault::sharedUserDefault()->setIntegerForKey("gold", gold);
      CCUserDefault::sharedUserDefault()->flush();
     
 }

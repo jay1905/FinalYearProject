@@ -58,12 +58,30 @@ void MainMenu::init(){
     jaime->setPosition(CCPointMake(510, 380));
     addChild(jaime);
     
-    label = CCLabelTTF::create("health:", "Marker Felt", 32);
+    label = CCLabelTTF::create("", "Marker Felt", 32);
     addChild(label, 1);
     label->setColor(ccc3(0,0,255));
-    label->setPosition(ccp( 60, 745));
+    label->setPosition(ccp( 160, 745));
     
-    newGame=CCMenuItemImage::create("HandGunSelect.png", "HandGunSelect.png", this, menu_selector(MainMenu::newPlayer));
+    Namelabel = CCLabelTTF::create("Name:", "Marker Felt", 32);
+    addChild(Namelabel, 1);
+    Namelabel->setColor(ccc3(0,0,255));
+    Namelabel->setPosition(ccp( 60, 745));
+
+    
+    goldlabel=CCLabelTTF::create("gold:", "Marker Felt", 32);
+    addChild(goldlabel,1);
+    goldlabel->setColor(ccc3(0,0,255));
+    goldlabel->setPosition(ccp( 360, 745));
+    
+    goldlabel2=CCLabelTTF::create("", "Marker Felt", 32);
+    addChild(goldlabel2,1);
+    goldlabel2->setColor(ccc3(0,0,255));
+    goldlabel2->setPosition(ccp(430, 745));
+    
+    
+    
+    newGame=CCMenuItemImage::create("NewGame.png", "NewGame.png", this, menu_selector(MainMenu::newPlayer));
     newGame->setPosition(CCPoint(400, 500));
     CCMenu *newFile=CCMenu::create(newGame,NULL);
     newFile->setPosition(CCPointZero);
@@ -80,7 +98,7 @@ void MainMenu::init(){
     m_pEditName->setMaxLength(8);
     addChild(m_pEditName);
     
-    enter=CCMenuItemImage::create("blocks.png", "blocks.png", this, menu_selector(MainMenu::enterPlayer));
+    enter=CCMenuItemImage::create("Enter.png", "Enter.png", this, menu_selector(MainMenu::enterPlayer));
     enter->setPosition(CCPoint(1400, 400));
     CCMenu *enterB=CCMenu::create(enter,NULL);
     enterB->setPosition(CCPointZero);
@@ -105,8 +123,11 @@ void MainMenu::enterPlayer(){
     enter->setPosition(CCPoint(1400, 400));
     newGame->setPosition(CCPoint(400, 500));
     
-    savedData->newPlayer(m_pEditName->getText());
+    if(m_pEditName->getText()!=NULL){
+        
+        savedData->newPlayer(m_pEditName->getText());
     
+    }
     
     
     
@@ -115,7 +136,7 @@ void MainMenu::newPlayer(){
     level2btn->setPosition(CCPoint(1400, 400));
     level1btn->setPosition(CCPoint(1400, 400));
     tutorial->setPosition(CCPoint(1400, 400));
-    m_pEditName->setPosition(ccp(400, 200));
+    m_pEditName->setPosition(ccp(400, 500));
     enter->setPosition(CCPoint(400, 400));
     newGame->setPosition(CCPoint(1400, 500));
     
@@ -128,6 +149,8 @@ void MainMenu::update(float dt){
     
     const char * c = savedData->name.c_str();
     label->setString(c);
+    snprintf(ttt, 100, "%i",savedData->gold);
+    goldlabel2->setString(ttt);
     
     
     
@@ -136,10 +159,7 @@ void MainMenu::update(float dt){
 }
 void MainMenu::test(){
     
-    int highScore = CCUserDefault::sharedUserDefault()->getIntegerForKey("highScore");
-    char helth[100];
-    snprintf(helth, 100, "%i",highScore);
-    label->setString(helth);
+   
 }
 void MainMenu::tutorialLevel(){;
     

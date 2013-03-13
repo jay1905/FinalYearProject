@@ -151,8 +151,8 @@ void Tutorial::init(){
     addChild(thumb2);
     
     
-    CCSpriteBatchNode *castle = CCSpriteBatchNode::create("castle.png", 100);
-    base = new Base(castle,world);
+    
+    base = new Base(world);
     addChild(base);
     
     baseButton= new BaseButton(CCPoint(892, 580));

@@ -57,7 +57,7 @@ HelloWorld::HelloWorld()
     world->SetContactListener(&mycontact);
     
     eManager = new EnemyManager(world,this);
-  
+    savedData = new SaveFileData();
 
     
     bulletMan = new BulletManager(world);
@@ -96,9 +96,11 @@ HelloWorld::HelloWorld()
     player= new Player(hello,world);
     addChild(player);
       
-    CCSpriteBatchNode *castle = CCSpriteBatchNode::create("castle.png", 100);
-    base = new Base(castle,world);
+    
+    base = new Base(world);
     addChild(base);
+    
+    
     
     baseButton= new BaseButton(CCPoint(892, 580));
     addChild(baseButton);
@@ -164,7 +166,7 @@ HelloWorld::~HelloWorld()
 }
 void HelloWorld::exitMainMenu(){
     
-    
+    savedData->updateGold(eManager->coins);
     CCScene *pScene1= MainMenu::scene();
     CCDirector::sharedDirector()->replaceScene(pScene1);
 

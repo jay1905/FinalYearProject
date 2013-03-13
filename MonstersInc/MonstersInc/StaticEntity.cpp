@@ -36,6 +36,7 @@ void StaticEntity::initialize(cocos2d::CCSpriteBatchNode *hello,b2World *world,b
     
     
     fixyureDef.filter.groupIndex = -1; 
+    fixyureDef.filter.categoryBits=12;
     
     body->CreateFixture(&fixyureDef);
     this->setPhysicsBody(body);

@@ -20,6 +20,7 @@
 #include "AssaultRifle.h"
 #include "BulletManager.h"
 #include "Barrier.h"
+#include "SaveFileData.h"
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -62,6 +63,7 @@ private:
     WeaponSelectButton * wep;
     BulletManager * bulletMan;
     Barrier * lava;
+    SaveFileData * savedData;
     
     std::vector<Tower*> towers;
     
