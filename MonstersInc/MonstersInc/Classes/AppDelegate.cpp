@@ -11,6 +11,7 @@
 #include "cocos2d.h"
 #include "HelloWorldScene.h"
 #include "MainMenu.h"
+#include "UpgradeScreen.h"
 
 USING_NS_CC;
 
@@ -40,7 +41,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // create a scene. it's an autorelease object
     //CCScene *pScene = HelloWorld::scene();
-    CCScene *pScene = MainMenu::scene();
+   // CCScene *pScene = MainMenu::scene();
+    CCScene *pScene = UpgradeScreen::scene();
 
     // run
     pDirector->runWithScene(pScene);

@@ -13,18 +13,21 @@
 
 
 
-class UpgradeScreen{
+class UpgradeScreen :public cocos2d::CCLayer{
     
 public:
     UpgradeScreen();
-    
+    static cocos2d::CCScene* scene();
+
     
     
 private:
     
+     cocos2d::CCSprite *background;
+    cocos2d::CCSprite *gunwheel;
+    std::vector<cocos2d::CCPoint*> handGunSelect;
     
-    
-    
+    //cocos2d::CCPointArray test;
 };
 
 #endif

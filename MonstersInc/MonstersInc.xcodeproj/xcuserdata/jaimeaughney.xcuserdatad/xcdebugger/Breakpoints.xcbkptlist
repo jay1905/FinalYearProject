@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Classes/AppDelegate.cpp"
-         timestampString = "377034709.506564"
+         timestampString = "384984785.082534"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
          landmarkName = "AppDelegate::applicationDidFinishLaunching()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -607,6 +607,20 @@
          startingLineNumber = "154"
          endingLineNumber = "154"
          landmarkName = "MainMenu::update(float dt)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/UpgradeScreen.cpp"
+         timestampString = "384986137.073018"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "28"
+         endingLineNumber = "28"
+         landmarkName = "UpgradeScreen::UpgradeScreen()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
