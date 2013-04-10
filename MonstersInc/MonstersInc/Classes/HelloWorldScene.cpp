@@ -10,6 +10,7 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 #include "MainMenu.h"
+#include "curl.h"
 
 
 using namespace cocos2d;
@@ -39,6 +40,10 @@ HelloWorld::HelloWorld()
     jaime->setPosition(CCPointMake(500, 380));
     addChild(jaime);
     
+    lava = new Barrier();
+    CCSpriteBatchNode *moat = CCSpriteBatchNode::create("lava_001.png", 100);
+    lava->initialize(moat, world, b2Vec2(400, s.height/2), 0, b2Vec2(256, 768), "lavaPit");
+    addChild(lava);
     
     analog = new Analogue(CCPoint(100, 95));
     this->addChild(analog);
@@ -62,17 +67,11 @@ HelloWorld::HelloWorld()
     
     bulletMan = new BulletManager(world);
     addChild(bulletMan);
-    
-    
-    
     human= new Human(world, b2Vec2(200, 200), 5, b2Vec2(19, 23),this);
     addChild(human);
     
   
-    lava = new Barrier();
-    CCSpriteBatchNode *moat = CCSpriteBatchNode::create("lava_001.png", 100);
-    lava->initialize(moat, world, b2Vec2(400, s.height/2), 0, b2Vec2(256, 768), "lavaPit");
-    addChild(lava);
+    
     
 
 ///////////////////////////////////////////////////////////////////animation

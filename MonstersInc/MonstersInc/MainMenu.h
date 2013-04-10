@@ -30,7 +30,9 @@ public:
     void update(float t);
     void newPlayer();
     void enterPlayer();
-    
+    void disassembleCurl(std::string);
+    void saveWithCurl(std::string, int);
+        
     
 private:
       b2World* world;
@@ -41,6 +43,7 @@ private:
     cocos2d::CCMenuItemImage *level2btn;
     cocos2d::CCMenuItemImage *newGame;
      cocos2d::CCMenuItemImage *enter;
+    
 
     cocos2d::CCSprite *jaime;
     
@@ -49,12 +52,34 @@ private:
     cocos2d::CCLabelTTF *Namelabel;
     cocos2d::CCLabelTTF *goldlabel2;
     
+     cocos2d::CCLabelTTF *data;
+    
      cocos2d::extension::CCScale9Sprite *pNormal9SpriteBg;
     cocos2d::extension::CCEditBox *m_pEditName;
     
     SaveFileData* savedData;
     
+    cocos2d::CCLabelTTF *profile;
+    cocos2d::CCLabelTTF *profile1;
+    cocos2d::CCLabelTTF *profile2;
+    cocos2d::CCLabelTTF *profile3;
+    cocos2d::CCLabelTTF *profile4;
+    cocos2d::CCLabelTTF *profile5;
+    cocos2d::CCLabelTTF *profile6;
+    cocos2d::CCLabelTTF *profile7;
+    cocos2d::CCLabelTTF *profile8;
+    cocos2d::CCLabelTTF *profile9;
+    
+    cocos2d::CCLabelTTF *profiles[10];
+    
+    cocos2d::CCLabelTTF *Name;
+    cocos2d::CCLabelTTF *Score;
+
      char ttt[100];
+    int sizeOfPlayers;
+    
+    std::string Players[10];
+    int Scores[10];
     
 };
 
