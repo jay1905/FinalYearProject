@@ -13,6 +13,8 @@
 #include "Box2D.h"
 #include <CCEditBox.h>
 #include "SaveFileData.h"
+#include "LevelManager.h"
+#include "curl.h"
 
 class MainMenu: public cocos2d::CCLayer
 {
@@ -32,6 +34,7 @@ public:
     void enterPlayer();
     void disassembleCurl(std::string);
     void saveWithCurl(std::string, int);
+    void checkMultiPlayer();
         
     
 private:
@@ -59,16 +62,7 @@ private:
     
     SaveFileData* savedData;
     
-    cocos2d::CCLabelTTF *profile;
-    cocos2d::CCLabelTTF *profile1;
-    cocos2d::CCLabelTTF *profile2;
-    cocos2d::CCLabelTTF *profile3;
-    cocos2d::CCLabelTTF *profile4;
-    cocos2d::CCLabelTTF *profile5;
-    cocos2d::CCLabelTTF *profile6;
-    cocos2d::CCLabelTTF *profile7;
-    cocos2d::CCLabelTTF *profile8;
-    cocos2d::CCLabelTTF *profile9;
+    
     
     cocos2d::CCLabelTTF *profiles[10];
     
@@ -80,6 +74,13 @@ private:
     
     std::string Players[10];
     int Scores[10];
+    
+    bool multiplayer;
+    bool connected;
+    int wait;
+   
+     std::string multi="";
+    
     
 };
 

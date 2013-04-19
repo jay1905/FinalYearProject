@@ -43,6 +43,38 @@ void Entity::initialize(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 
     body->SetUserData(this);
     
     
+    isdefending=false;
     
+}
+void Entity::attack(b2Vec2 playerPos){
     
+    //cheack length 
+    //if length is shorter than set do this 
+    b2Vec2 dir = b2Vec2(m_pBody->GetPosition().x-playerPos.x, m_pBody->GetPosition().y-playerPos.y);
+    dir.Normalize();
+    
+    this->body->SetLinearVelocity(b2Vec2(-dir.x*speed, -dir.y*speed));
+    //else 
+    //move in (1,0);    
+}
+void Entity::defend(b2Vec2 pos){
+    
+    defendPos=pos;
+    isdefending=true;
+    
+}
+void Entity::update(){
+    
+    if(isdefending==true){
+        
+        if(body->GetPosition().x>defendPos.x&&body->GetPosition().x>defendPos.x+20){
+            
+            if(body->GetPosition().y>defendPos.y&&body->GetPosition().y>defendPos.y+20){
+                
+                //stop moving
+                
+            }
+            
+        }
+    }
 }

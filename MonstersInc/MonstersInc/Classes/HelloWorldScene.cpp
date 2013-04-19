@@ -40,10 +40,10 @@ HelloWorld::HelloWorld()
     jaime->setPosition(CCPointMake(500, 380));
     addChild(jaime);
     
-    lava = new Barrier();
-    CCSpriteBatchNode *moat = CCSpriteBatchNode::create("lava_001.png", 100);
-    lava->initialize(moat, world, b2Vec2(400, s.height/2), 0, b2Vec2(256, 768), "lavaPit");
-    addChild(lava);
+    //lava = new Barrier();
+    //CCSpriteBatchNode *moat = CCSpriteBatchNode::create("lava_001.png", 100);
+    //lava->initialize(moat, world, b2Vec2(400, s.height/2), 0, b2Vec2(256, 768), "lavaPit");
+    //addChild(lava);
     
     analog = new Analogue(CCPoint(100, 95));
     this->addChild(analog);
@@ -67,42 +67,51 @@ HelloWorld::HelloWorld()
     
     bulletMan = new BulletManager(world);
     addChild(bulletMan);
-    human= new Human(world, b2Vec2(200, 200), 5, b2Vec2(19, 23),this);
-    addChild(human);
+
+    
+       
+    
+    float minSpawn=10;
+    float maxSpawn=10;
+    int numEnemyOne=2;
+    int numEnemyTwo=2;
+    int numEnemyThree=2;
+    int numEnemyFour=2;
+    int numEnemyFive=2;
+    
+    
+    
+    currentLevel=0;/////this needs to be saved
     
   
     
     
+    for (int i = 0;i<10;i++){
+        Level * l = new Level(minSpawn,maxSpawn,numEnemyOne,numEnemyTwo,numEnemyThree,numEnemyFour,numEnemyFive);
+        levels.push_back(l);
+       // minSpawn-=20;
+       // maxSpawn-=25;
+        numEnemyOne+=2;
+        numEnemyTwo+=2;
+        numEnemyThree+=2;
+        numEnemyFour+=2;
+        numEnemyFive+=2;
+    }
+    eManager->setEnemiesToBeAdded( levels[currentLevel]->enemies,levels[currentLevel]->minSpawnTime,levels[currentLevel]->maxSpawnTime);
 
-///////////////////////////////////////////////////////////////////animation
-//    cocos2d::CCAnimation * anim = CCAnimation::animation();
-//    anim->addSpriteFrameWithFileName("GreenZombie1.png");
-//    anim->addSpriteFrameWithFileName("GreenZombie2.png");
-//    anim->addSpriteFrameWithFileName("GreenZombie3.png");
-//    anim->addSpriteFrameWithFileName("GreenZombie4.png");
-//    anim->setDelayPerUnit(.5f);
-//    CCAnimate *theAnim = cocos2d::CCAnimate::actionWithAnimation(anim);// CCAnimate::a  actionWithDuration(1.8f,anim,true); 
-//    CCAction *jumpAct = CCRepeatForever::create(theAnim);
-//    cocos2d::CCSprite*  pSprite=CCSprite::spriteWithFile("GreenZombie1.png");//  createWithSpriteFrame((CCSpriteFrame*) anim->getFrames()->objectAtIndex(0));
-//    pSprite->setPosition(CCPoint(500, 300));
-//    this->addChild(pSprite);
-//    pSprite->runAction(jumpAct);
-///////////////////////////////////////////////////////////////////////animation
-    
-    
     
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
     player= new Player(hello,world);
     addChild(player);
       
-    
-    base = new Base(world);
-    addChild(base);
-    
-    
-    
-    baseButton= new BaseButton(CCPoint(892, 580));
-    addChild(baseButton);
+//    
+//    base = new Base(world);
+//    addChild(base);
+//    
+//    
+//    
+//    baseButton= new BaseButton(CCPoint(892, 580));
+//    addChild(baseButton);
     
     
     label = CCLabelTTF::create("health:", "Marker Felt", 32);
@@ -152,7 +161,9 @@ HelloWorld::HelloWorld()
         addChild(pMenu, 1);
         pCloseItem->setOpacity(0);
        
-        
+    upgradeScn=new UpgradeScreen();
+    addChild(upgradeScn);
+
     scheduleUpdate();
 }
 
@@ -242,94 +253,100 @@ void HelloWorld::update(float dt)
     int velocityIterations = 8;
     int positionIterations = 1;
     
-    
+   if (upgradeScn->StartLevel==true){ 
    
-    human->update();
-    if(eManager->EnemyCount<=25){
-        eManager->update();
-        
-    }
-    else{
-        
-        if(eManager->enemyCurrent==0){
-        
-            win->setOpacity(100);
-            win2->setOpacity(100);
-            pCloseItem->setOpacity(100);
-        }
-    }
-    if(player->health<=0){
-        player->health=0;
-        loose->setOpacity(100);
-        win2->setOpacity(100);
-        pCloseItem->setOpacity(100);
-    
-    }
-    else{
-        
-        if(baseButton->hb->build){
-            baseButton->hb->build=false;
-            if(eManager->coins>=50){
-                eManager->coins=eManager->coins-50;
+           if( eManager->totalEnemys==0){
+               
+                   currentLevel++;
+                   eManager->setEnemiesToBeAdded(levels[currentLevel]->enemies,levels[currentLevel]->minSpawnTime,levels[currentLevel]->maxSpawnTime);
+                   upgradeScn->show();
+               
+           }
+
                 
-                Tower *t = new Tower();
-                CCSpriteBatchNode * tow= CCSpriteBatchNode::create("tower1.png", 100);
-                t->initialize(tow, world,baseButton->hb->buildPoint, 20, b2Vec2(97, 67), "tower");
-                addChild(t);
-                towers.push_back(t);
-            }
-        }
-        if(towers.size()!=0){
-            for (int i=0; i<towers.size(); i++){
-                Tower  *b = static_cast<Tower *>(towers[i]);
-                b->update(world,eManager->enemys,this,world);
-                
-            }
-        }
+            
+            
         
-        player->update(analog->getDirection());
-        eManager->destroy();
-        eManager->moveEnemy(b2Vec2(player->m_pBody->GetPosition().x, player->m_pBody->GetPosition().y));
-        bulletMan->update();
-        
-        if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
-           
-            if(wep->handgun){
-                if(firecount>gun->fireRate){
-                    
-                    
-                    bulletMan->create(player->returnpos(), analog2->getDirection());
-                
-                    firecount=0;
-                
-                }
-            }
-            else if(wep->assaultrifle){
-                if(firecount>assaultgun->fireRate){
-                    
-                    bulletMan->create(player->returnpos(), analog2->getDirection());
-                    firecount=0;
-                    
-                }
-            }
-            firecount++;
-            if(analog2->getDirection().x<0){
-                player->setFlipX(false);
+//            if(eManager->enemyCurrent==0){
+//            
+//                win->setOpacity(100);
+//                win2->setOpacity(100);
+//                pCloseItem->setOpacity(100);
+//            }
+       
+            if(player->health<=0){
+                    player->health=0;
+                    loose->setOpacity(100);
+                    win2->setOpacity(100);
+                    pCloseItem->setOpacity(100);
+            
             }
             else{
-                player->setFlipX(true);
+                
+            //        if(baseButton->hb->build){
+            //            baseButton->hb->build=false;
+            //            if(eManager->coins>=50){
+            //                eManager->coins=eManager->coins-50;
+            //                
+            //                Tower *t = new Tower();
+            //                CCSpriteBatchNode * tow= CCSpriteBatchNode::create("tower1.png", 100);
+            //                t->initialize(tow, world,baseButton->hb->buildPoint, 20, b2Vec2(97, 67), "tower");
+            //                addChild(t);
+            //                towers.push_back(t);
+            //            }
+            //        }
+            //        if(towers.size()!=0){
+            //            for (int i=0; i<towers.size(); i++){
+            //                Tower  *b = static_cast<Tower *>(towers[i]);
+            //                b->update(world,eManager->enemys,this,world);
+            //                
+            //            }
+            //        }
+                    
+                    player->update(analog->getDirection());
+                    eManager->moveEnemy(b2Vec2(player->m_pBody->GetPosition().x, player->m_pBody->GetPosition().y));
+                    eManager->update();
+                    bulletMan->update();
+                    
+                    if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
+                       
+                            if(wep->handgun){
+                                if(firecount>gun->fireRate){
+                                    
+                                    
+                                    bulletMan->create(player->returnpos(), analog2->getDirection());
+                                
+                                    firecount=0;
+                                
+                                }
+                            }
+                            else if(wep->assaultrifle){
+                                if(firecount>assaultgun->fireRate){
+                                    
+                                    bulletMan->create(player->returnpos(), analog2->getDirection());
+                                    firecount=0;
+                                    
+                                }
+                            }
+                            firecount++;
+                            if(analog2->getDirection().x<0){
+                                player->setFlipX(false);
+                            }
+                            else{
+                                player->setFlipX(true);
+                            }
+                    }
             }
-        }
-    }
-    char coin[100];
-    snprintf(coin, 100, "%d",eManager->coins);
-    label3->setString(coin);
-    
-    
-    char helth[100];
-    snprintf(helth, 100, "%i",player->health);
-    label4->setString(helth);
+            char coin[100];
+            snprintf(coin, 100, "%d",eManager->coins);
+            label3->setString(coin);
+            
+            
+            char helth[100];
+            snprintf(helth, 100, "%i",player->health);
+            label4->setString(helth);
 
+   }
     world->Step(dt, velocityIterations, positionIterations);
 
     
@@ -337,7 +354,7 @@ void HelloWorld::update(float dt)
 void HelloWorld::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
 {
     
-    human->ccTouchesBegan(pTouches, pEvent);
+    //human->ccTouchesBegan(pTouches, pEvent);
 //    CCArray *allTouches =   this->allTouchesFromSet(pTouches);
 //    
 //    CCTouch *touch = (CCTouch*)pTouches->anyObject();
@@ -361,9 +378,7 @@ void HelloWorld::ccTouchesEnded(CCSet* touches, CCEvent* event)
         
         location = CCDirector::sharedDirector()->convertToGL(location);
         
-      //  addNewSpriteAtPosition( location );
-        // jaime->setPosition(CCPointMake(300, 300));
-        
+           
         
     }
 }

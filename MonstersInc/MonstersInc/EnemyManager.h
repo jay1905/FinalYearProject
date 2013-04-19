@@ -11,6 +11,11 @@
 
 #include "cocos2d.h"
 #include "Enemy.h"
+#include "Box2D.h"
+#include "AxeBaby.h"
+#include "Pikachu.h"
+#include "Sully.h"
+#include "Metroid.h"
 
 
 class EnemyManager
@@ -19,30 +24,40 @@ class EnemyManager
 public:
     
     
-    EnemyManager(b2World*  world,cocos2d::CCLayer * layer);
+    EnemyManager(b2World* ,cocos2d::CCLayer * );
     
     
     void update();
     void addEnemy(b2Vec2 pos);
-    void addPikachu();
-    void addAxeBaby();
+    void addPikachu(b2Vec2 pos);
+    void addAxeBaby(b2Vec2 pos);
+    void addSully(b2Vec2 pos);
+    void addMetroid(b2Vec2 pos);
     void moveEnemy(b2Vec2 pos);
     void destroy();
-    
+    void setEnemiesToBeAdded( int enemies[],int minSpawn,int maxSpawn);
     
     std::vector<Enemy*> enemys;
     int coins;
     int EnemyCount;
     int enemyCurrent;
     int spawn;
+    int enemiesToBeAdded[5];
+    bool levelCompleted;
+    bool test;
+    int totalEnemys;
     
 private:
     
     b2World * world;
     cocos2d::CCLayer * layer;
     int count;
-    
-    
+    int minSpawn;
+    int maxSpawn;
+    int addcount;
+  
+     
+       
     
 };
 

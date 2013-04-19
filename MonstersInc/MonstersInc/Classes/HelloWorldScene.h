@@ -21,6 +21,9 @@
 #include "BulletManager.h"
 #include "Barrier.h"
 #include "SaveFileData.h"
+#include "UpgradeScreen.h"
+#include "Level.h"
+
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -66,6 +69,11 @@ private:
     SaveFileData * savedData;
     
     std::vector<Tower*> towers;
+    
+    std::vector<Level*> levels;
+    int currentLevel;
+    UpgradeScreen *upgradeScn;
+     
     
     MyContactListener mycontact;
     EnemyManager *eManager;

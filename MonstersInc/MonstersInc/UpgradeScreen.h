@@ -10,22 +10,26 @@
 #define MonstersInc_UpgradeScreen_h
 
 #include "cocos2d.h"
-
+//#include "MainMenu.h"
 
 
 class UpgradeScreen :public cocos2d::CCLayer{
     
 public:
     UpgradeScreen();
-    static cocos2d::CCScene* scene();
+    void hide();
+    void show();
+    void exit();
+    
+    bool StartLevel;
 
-    
-    
 private:
     
-     cocos2d::CCSprite *background;
+    cocos2d::CCSprite *background;
     cocos2d::CCSprite *gunwheel;
-    std::vector<cocos2d::CCPoint*> handGunSelect;
+    cocos2d::CCMenuItemImage *play;
+    cocos2d::CCMenuItemImage *quit;
+   // std::vector<cocos2d::CCPoint*> handGunSelect;
     
     //cocos2d::CCPointArray test;
 };

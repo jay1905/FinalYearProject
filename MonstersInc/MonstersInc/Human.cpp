@@ -41,7 +41,7 @@ Human::Human(b2World* world, b2Vec2 pos, float speed, b2Vec2 size, cocos2d::CCLa
     position=pos;
     isSelected=false;
     direction=b2Vec2_zero;
-   
+    arrived = true;
 }
 
 
@@ -55,11 +55,19 @@ void Human::update(){
         if(position.y>destination.y-20&&position.y<destination.y+20){
         
             direction= b2Vec2_zero;
-        
+            arrived= true; 
         }
         
     }
-    
+    if(arrived==true){
+        
+        if(toBuild==true){
+            //build the fuckin tower
+            //when built tobuild = false
+            
+        }
+        
+    }    
 }
 void Human::move( CCPoint point){
     
@@ -70,8 +78,13 @@ void Human::move( CCPoint point){
     
     
 }
-void Human::build(){
-    
+void Human::build(CCPoint point){
+    move(point);
+    arrived =false;
+    toBuild= true;
+    //when arrived start building
+    //when finished building 
+    //return home    
     
 }
 void Human::defend(){

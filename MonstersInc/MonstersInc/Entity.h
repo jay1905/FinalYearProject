@@ -24,12 +24,16 @@ public:
     b2FixtureDef fixyureDef;
     b2BodyDef bodyDef;
     float speed;
-   
-
+    void defend(b2Vec2 pos);
+    void update();
+    void attack(b2Vec2 playerPos);
+    b2Vec2 size;
 private:
     
     b2Body* body;
     b2PolygonShape dynamicBox;
+    b2Vec2 defendPos;
+    bool isdefending;
     
     cocos2d::CCAnimation * anim;    
     cocos2d::CCAnimate *theAnim ;

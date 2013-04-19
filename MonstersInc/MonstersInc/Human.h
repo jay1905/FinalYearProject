@@ -22,7 +22,7 @@ public:
     
     Human(b2World* world, b2Vec2, float, b2Vec2, cocos2d::CCLayer * );
     void move( cocos2d::CCPoint point);
-    void build();
+    void build(cocos2d::CCPoint point);
     void defend();
     void update();
     void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
@@ -37,6 +37,9 @@ private:
     float height;
     float width;
     bool isSelected;
+    bool toBuild;
+    bool arrived;
+    bool built;
     b2Vec2 direction;
     cocos2d::CCPoint destination;
     

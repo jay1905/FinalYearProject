@@ -26,10 +26,10 @@ class MyContactListener : public b2ContactListener{
             std::string name2= p2->name;
             if(name1=="bullet"&& name2=="Enemy"){
                 p1->timetolive=500;
-                p2->health-=7;
+                p2->health-=57;
             }
             else if(name2=="bullet"&&name1=="Enemy"){
-                p1->health-=7;
+                p1->health-=57;
                 p2->timetolive=500;
             }
             else if(name1=="player"&&name2=="Enemy"){
@@ -82,8 +82,6 @@ void EndContact(b2Contact* contact) {
             std::string name2= p2->name;
            if(name1=="player"&&name2=="Enemy"){
                 p1->dieing=false;
-               bool jamieisapoop = true;
-               while(jamieisapoop){}
             }
             else if(name1=="Enemy"&&name2=="player"){
                 

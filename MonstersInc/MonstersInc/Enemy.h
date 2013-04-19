@@ -11,33 +11,24 @@
 
 #include "cocos2d.h"
 #include "Box2D.h"
-#include "PhysicsSprite.h"
+#include "Entity.h"
 
 
-
-class Enemy: public PhysicsSprite
+class Enemy: public Entity
 {
 public:
-    Enemy(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos,float speed,b2Vec2 size);
-    
+    Enemy(b2World* world,b2Vec2 pos,float speed);
+    Enemy();
     
     void update();
     void drawStuf();
-    void move(b2Vec2 playerPos);
     void setPosition(b2Vec2 pos);
     b2Vec2 getPos();
-    
+   
 private:
    
    
-    b2BodyDef bodyDef;
-    b2Body* body;
-    b2PolygonShape dynamicBox;
-    b2FixtureDef fixyureDef;
-    cocos2d::CCAnimation * anim;    
-    cocos2d::CCAnimate *theAnim ;
-    
-    float speed;
+      float speed;
     
     
 };

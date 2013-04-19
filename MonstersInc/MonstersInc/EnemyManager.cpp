@@ -11,7 +11,7 @@
 
 using namespace cocos2d;
 
-EnemyManager::EnemyManager(b2World* w,cocos2d::CCLayer* lay){
+EnemyManager::EnemyManager(b2World *w,cocos2d::CCLayer* lay){
     
     world= w;
     layer = lay;
@@ -20,21 +20,75 @@ EnemyManager::EnemyManager(b2World* w,cocos2d::CCLayer* lay){
     EnemyCount=0;
     enemyCurrent=0;
     spawn=100;
-    
+    minSpawn=0;
+    maxSpawn=0;
+    for(int i=0;i<5;i++){
+        enemiesToBeAdded[i]=0;
+    }
+    addcount=0;
+    levelCompleted=false;
+    test=false;
+    totalEnemys=0;
+
 }
 void EnemyManager::update(){
    
-    if(count>110){
-        
-        addEnemy(b2Vec2(20, spawn));
-        spawn+=200;
-        count=0;
-        if(spawn>600){
-            spawn=100;
+    
+   
+        if( enemiesToBeAdded[addcount]!=0)
+        {
+            if(count>minSpawn){
             
+            //random generate 1 in 5 chance then count = maxspawn
+                if(count>maxSpawn){
+               
+                switch (addcount) {
+                    case 0:
+                        addEnemy(b2Vec2(20, spawn));
+                        break;
+                    case 1:
+                        addAxeBaby(b2Vec2(20, spawn));
+                        break;
+                    case 2:
+                        addPikachu(b2Vec2(20, spawn));
+                        break;
+                    case 3:
+                        addSully(b2Vec2(20, spawn));
+                        break;
+                    case 4:
+                        addMetroid(b2Vec2(20, spawn));
+                        break;  
+                    }
+                
+                    enemiesToBeAdded[addcount]-=1;
+                    spawn+=200;
+                    count=0;
+                    if(spawn>600){
+                        spawn=100;
+                    }
+                }
+            }
+            count++;
         }
+        else{
+        
+            addcount++;
+        }
+        
+       
+    
+     destroy();
+    
+}
+void EnemyManager::setEnemiesToBeAdded( int enemies[],int min,int max){
+    
+    minSpawn=min;
+    maxSpawn=max;
+    addcount=0;
+    for(int i=0;i<5;i++){
+        enemiesToBeAdded[i]=enemies[i];
+        totalEnemys+=enemies[i];
     }
-    count++;
     
     
 }
@@ -49,6 +103,7 @@ void EnemyManager::destroy(){
             enemys.erase(enemys.begin()+i);
             coins+=6;
             enemyCurrent--;
+            totalEnemys--;
         }
     
     }
@@ -59,38 +114,55 @@ void EnemyManager::moveEnemy(b2Vec2 pos){
      for(int i = 0; i<enemys.size();i++){
       
          
-         enemys[i]->move(pos);
+         enemys[i]->attack(pos);
          
      }
     
     
 }
 void EnemyManager::addEnemy(b2Vec2 pos){
-    
-    EnemyCount++;
-    enemyCurrent++;
    
-    CCSpriteBatchNode *enemy1 = CCSpriteBatchNode::create("GreenZombie1.png", 100);
-    Enemy * enemy = new Enemy(enemy1,world,b2Vec2(pos.x, pos.y),2,b2Vec2(59,64));
-    layer->addChild(enemy);
-    enemys.push_back(enemy);
-    
-}
-void EnemyManager::addPikachu(){
-    
-    
-    CCSpriteBatchNode *enemy1 = CCSpriteBatchNode::create("pikachu1.png", 100);
-    Enemy * enemy = new Enemy(enemy1,world,b2Vec2(10, 11),1.75,b2Vec2(19,18));
+
+   
+    Enemy * enemy = new Enemy(world,b2Vec2(pos.x, pos.y),2);
     layer->addChild(enemy);
     enemys.push_back(enemy);
     
     
+}
+void EnemyManager::addPikachu(b2Vec2 pos){
+    
+    
+ 
+    Pikachu * enemy = new Pikachu(world,b2Vec2(pos.x, pos.y),4);
+    layer->addChild(enemy);
+    enemys.push_back(enemy);
+    
+    
     
 }
-void EnemyManager::addAxeBaby(){
+void EnemyManager::addAxeBaby(b2Vec2 pos){
     
-    CCSpriteBatchNode *enemy1 = CCSpriteBatchNode::create("axeBaby1.png", 100);
-    Enemy * enemy = new Enemy(enemy1,world,b2Vec2(10, 12),1,b2Vec2(11,30));
+  
+    AxeBaby * enemy = new AxeBaby(world,b2Vec2(pos.x, pos.y),1);
+    layer->addChild(enemy);
+    enemys.push_back(enemy);
+    
+    
+}
+void EnemyManager::addSully(b2Vec2 pos){
+    
+    
+    Sully * enemy = new Sully(world,b2Vec2(pos.x, pos.y),2);
+    layer->addChild(enemy);
+    enemys.push_back(enemy);
+    
+    
+}
+void EnemyManager::addMetroid(b2Vec2 pos){
+    
+    
+    Metroid * enemy = new Metroid(world,b2Vec2(pos.x, pos.y),2);
     layer->addChild(enemy);
     enemys.push_back(enemy);
     

@@ -11,7 +11,7 @@
 #include "MainMenu.h"
 #include "HelloWorldScene.h"
 #include "Tutorial.h"
-#include "curl.h"
+
 
 #include <CCUserDefault.h>
 
@@ -121,56 +121,21 @@ void MainMenu::init(){
     Score->setPosition(ccp(1850, 600));
 
     
-    profile=CCLabelTTF::create("", "Marker Felt", 32);
-    addChild(profile,1);
-    profile->setColor(ccc3(0,0,255));
-    profile->setPosition(ccp(850, 550));
-    profile1=CCLabelTTF::create("", "Marker Felt", 32);
-    addChild(profile1,1);
-    profile1->setColor(ccc3(0,0,255));
-    profile1->setPosition(ccp(850, 500));
-    profile2=CCLabelTTF::create("", "Marker Felt", 32);
-    addChild(profile2,1);
-    profile2->setColor(ccc3(0,0,255));
-    profile2->setPosition(ccp(850, 450));
-    profile3=CCLabelTTF::create("", "Marker Felt", 32);
-    addChild(profile3,1);
-    profile3->setColor(ccc3(0,0,255));
-    profile3->setPosition(ccp(850, 400));
-    profile4=CCLabelTTF::create("", "Marker Felt", 32);
-    addChild(profile4,1);
-    profile4->setColor(ccc3(0,0,255));
-    profile4->setPosition(ccp(850, 350));
-    profile5=CCLabelTTF::create("", "Marker Felt", 32);
-    addChild(profile5,1);
-    profile5->setColor(ccc3(0,0,255));
-    profile5->setPosition(ccp(850, 300));
-    profile6=CCLabelTTF::create("", "Marker Felt", 32);
-    addChild(profile6,1);
-    profile6->setColor(ccc3(0,0,255));
-    profile6->setPosition(ccp(850, 250));
-    profile7=CCLabelTTF::create("", "Marker Felt", 32);
-    addChild(profile7,1);
-    profile7->setColor(ccc3(0,0,255));
-    profile7->setPosition(ccp(850, 200));
-    profile8=CCLabelTTF::create("", "Marker Felt", 32);
-    addChild(profile8,1);
-    profile8->setColor(ccc3(0,0,255));
-    profile8->setPosition(ccp(850, 150));
-    profile9=CCLabelTTF::create("", "Marker Felt", 32);
-    addChild(profile9,1);
-    profile9->setColor(ccc3(0,0,255));
-    profile9->setPosition(ccp(850, 100));
-    profiles[0]=profile;
-    profiles[1]=profile1;
-    profiles[2]=profile2;
-    profiles[3]=profile3;
-    profiles[4]=profile4;
-    profiles[5]=profile5;
-    profiles[6]=profile6;
-    profiles[7]=profile7;
-    profiles[8]=profile8;
-    profiles[9]=profile9;
+   
+    
+    int yPos=550;
+    for(int i=0;i<10;i++){
+    
+        cocos2d::CCLabelTTF *profile;
+        profile=CCLabelTTF::create("", "Marker Felt", 32);
+        addChild(profile,1);
+        profile->setColor(ccc3(0,0,255));
+        profile->setPosition(ccp(850, yPos));
+        profiles[i]=profile;
+        yPos-=50;
+        
+        
+    }
     
     newGame=CCMenuItemImage::create("NewGame.png", "NewGame.png", this, menu_selector(MainMenu::newPlayer));
     newGame->setPosition(CCPoint(400, 500));
@@ -199,40 +164,10 @@ void MainMenu::init(){
    
   
     savedData= new SaveFileData();
-    
-    
-//    CURL *curl;
-//    CURLcode res;
-//    std::string datab;
-//    curl = curl_easy_init();
-//    if (curl) 
-//    {
-//        curl_easy_setopt(curl,   CURLOPT_URL, "http://10.40.8.226:8080/getScore/");
-//        curl_easy_setopt(curl,   CURLOPT_NOPROGRESS  ,1);
-//        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_to_string);
-//        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &datab);
-//       
-//        res = curl_easy_perform(curl);
-//        
-//        /* always cleanup */
-//        curl_easy_cleanup(curl);
-//        if (res == 0)
-//        {
-//            CCLOG("0 response (success)");
-//        }
-//        else
-//        {
-//            CCLog("code: %i",res);
-//        }
-//    } 
-//    else 
-//    {
-//        CCLOG("no curl");
-//    } 
-//     disassembleCurl(datab);
-//     const char * c = datab.c_str();
-//     data->setString(c);
-    
+     wait=0;
+    multiplayer=false;
+    connected=false;
+     
     scheduleUpdate();
        
 }
@@ -338,9 +273,21 @@ void MainMenu::update(float dt){
     snprintf(ttt, 100, "%i",savedData->gold);
     goldlabel2->setString(ttt);
     
-    const char * p = Players[1].c_str();
-    data->setString(p);
-    
+    //const char * p = Players[1].c_str();
+    //data->setString(p);
+    if(multiplayer){
+        
+        
+       
+      
+            if(wait>120){
+                checkMultiPlayer();
+               
+            }
+            wait++;
+        
+        
+    }
     
     world->Step(dt, velocityIterations, positionIterations);
 
@@ -349,11 +296,89 @@ void MainMenu::test(){
     
    
 }
+void MainMenu::checkMultiPlayer(){
+    CURL *curl;
+    CURLcode res;
+    multi="";
+    curl = curl_easy_init();
+    if (curl) 
+    {
+        curl_easy_setopt(curl,   CURLOPT_URL, "http://10.40.8.226:8080/getSession/");
+        curl_easy_setopt(curl,   CURLOPT_NOPROGRESS  ,1);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_to_string);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &multi);
+        
+        res = curl_easy_perform(curl);
+        
+        curl_easy_cleanup(curl);
+        if (res == 0)
+        {
+            CCLOG("0 response (success)");
+        }
+        else
+        {
+            CCLog("code: %i",res);
+        }
+    } 
+    else 
+    {
+        CCLOG("no curl");
+    } 
+    std::string scor;
+    const char * c;
+    for (int i=0; i<multi.length(); i++) {
+        if (multi[i]=='3') {
+            c= new char(multi[i]);
+            scor.append(c);
+            
+        }
+    }
+    if(scor.length()>1){
+        
+        data->setString("Ready");
+
+        
+    }
+    
+}
 void MainMenu::tutorialLevel(){;
     
+    level2btn->setPosition(CCPoint(1400, 400));
+    level1btn->setPosition(CCPoint(1400, 400));
+    tutorial->setPosition(CCPoint(1400, 400));
 
-    CCScene *pScene = Tutorial::scene();
-    CCDirector::sharedDirector()->replaceScene(pScene);    
+    CURL *curl;
+    CURLcode res;
+    std::string datab="";
+    curl = curl_easy_init();
+    if (curl) 
+    {
+        curl_easy_setopt(curl,   CURLOPT_URL, "http://10.40.8.226:8080/SearchForSession/");
+        curl_easy_setopt(curl,   CURLOPT_NOPROGRESS  ,1);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_to_string);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &datab);
+        
+        res = curl_easy_perform(curl);
+        
+        /* always cleanup */
+        curl_easy_cleanup(curl);
+        if (res == 0)
+        {
+            CCLOG("0 response (success)");
+        }
+        else
+        {
+            CCLog("code: %i",res);
+        }
+    } 
+    else 
+    {
+        CCLOG("no curl");
+    } 
+    const char * test = datab.c_str();
+    data->setString(test);
+
+    multiplayer=true;
     
 }
 void MainMenu::level1(){
@@ -370,7 +395,7 @@ void MainMenu::level2(){
 
     CURL *curl;
     CURLcode res;
-    std::string datab;
+    std::string datab="";
     curl = curl_easy_init();
     if (curl) 
     {

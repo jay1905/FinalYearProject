@@ -219,6 +219,29 @@
 		E087AD6116A959E20005089E /* tower1btn.png in Resources */ = {isa = PBXBuildFile; fileRef = E087AD6016A959E20005089E /* tower1btn.png */; };
 		E087AD6516A973A30005089E /* thum1.png in Resources */ = {isa = PBXBuildFile; fileRef = E087AD6316A973A30005089E /* thum1.png */; };
 		E087AD6616A973A30005089E /* thum2.png in Resources */ = {isa = PBXBuildFile; fileRef = E087AD6416A973A30005089E /* thum2.png */; };
+		E087D340171C6D6900E3E09C /* AxeBaby.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E087D33F171C6D6800E3E09C /* AxeBaby.cpp */; };
+		E087D343171C7C0C00E3E09C /* Pikachu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E087D342171C7C0B00E3E09C /* Pikachu.cpp */; };
+		E087D346171C851200E3E09C /* Sully.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E087D345171C851100E3E09C /* Sully.cpp */; };
+		E087D349171C853500E3E09C /* Metroid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E087D348171C853500E3E09C /* Metroid.cpp */; };
+		E087D355171C86F600E3E09C /* metroid1.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D34A171C86F600E3E09C /* metroid1.png */; };
+		E087D356171C86F600E3E09C /* metroid2.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D34B171C86F600E3E09C /* metroid2.png */; };
+		E087D357171C86F600E3E09C /* metroid3.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D34C171C86F600E3E09C /* metroid3.png */; };
+		E087D358171C86F600E3E09C /* metroid4.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D34D171C86F600E3E09C /* metroid4.png */; };
+		E087D359171C86F600E3E09C /* metroid5.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D34E171C86F600E3E09C /* metroid5.png */; };
+		E087D35A171C86F600E3E09C /* metroid6.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D34F171C86F600E3E09C /* metroid6.png */; };
+		E087D35B171C86F600E3E09C /* metroid7.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D350171C86F600E3E09C /* metroid7.png */; };
+		E087D35C171C86F600E3E09C /* metroid8.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D351171C86F600E3E09C /* metroid8.png */; };
+		E087D35D171C86F600E3E09C /* metroid9.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D352171C86F600E3E09C /* metroid9.png */; };
+		E087D35E171C86F600E3E09C /* metroid10.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D353171C86F600E3E09C /* metroid10.png */; };
+		E087D35F171C86F600E3E09C /* metroidStand.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D354171C86F600E3E09C /* metroidStand.png */; };
+		E087D368171C874300E3E09C /* skully1.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D360171C874300E3E09C /* skully1.png */; };
+		E087D369171C874300E3E09C /* skully2.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D361171C874300E3E09C /* skully2.png */; };
+		E087D36A171C874300E3E09C /* skully3.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D362171C874300E3E09C /* skully3.png */; };
+		E087D36B171C874300E3E09C /* skully4.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D363171C874300E3E09C /* skully4.png */; };
+		E087D36C171C874300E3E09C /* skully5.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D364171C874300E3E09C /* skully5.png */; };
+		E087D36D171C874300E3E09C /* skully6.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D365171C874300E3E09C /* skully6.png */; };
+		E087D36E171C874300E3E09C /* skully7.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D366171C874300E3E09C /* skully7.png */; };
+		E087D36F171C874300E3E09C /* skully8.png in Resources */ = {isa = PBXBuildFile; fileRef = E087D367171C874300E3E09C /* skully8.png */; };
 		E0882F891635E11D00DCE071 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F881635E11D00DCE071 /* Player.cpp */; };
 		E0882F8C1635E34A00DCE071 /* PhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */; };
 		E088769516A5E79E00023C48 /* HumanButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E088769416A5E79E00023C48 /* HumanButton.cpp */; };
@@ -312,6 +335,8 @@
 		E08FC6C916A7409C001E3BA2 /* tower1.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C516A7409C001E3BA2 /* tower1.png */; };
 		E08FC6CA16A7409C001E3BA2 /* weaponBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C616A7409C001E3BA2 /* weaponBackground.png */; };
 		E08FC6CE16A7455B001E3BA2 /* WeaponSelectButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08FC6CD16A7455B001E3BA2 /* WeaponSelectButton.cpp */; };
+		E0901DFB1717533400C7E11B /* LevelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0901DFA1717533400C7E11B /* LevelManager.cpp */; };
+		E0901DFE1717539A00C7E11B /* Grenade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0901DFD1717539A00C7E11B /* Grenade.cpp */; };
 		E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = E09094C9164AABAE00E744D8 /* License.mobileprovision */; };
 		E0A4FDB916A874A100D9941B /* assaultRifleSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A4FDB716A874A100D9941B /* assaultRifleSelect.png */; };
 		E0A4FDBA16A874A100D9941B /* handGunSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A4FDB816A874A100D9941B /* handGunSelect.png */; };
@@ -326,6 +351,10 @@
 		E0AECBA61630919900C1FD48 /* icecream3.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB9D1630919900C1FD48 /* icecream3.png */; };
 		E0AECBA71630919900C1FD48 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB9E1630919900C1FD48 /* orange.png */; };
 		E0AECBA81630919900C1FD48 /* shapedefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB9F1630919900C1FD48 /* shapedefs.plist */; };
+		E0AF9B491718777C003DCEA9 /* play.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF9B471718777C003DCEA9 /* play.bmp */; };
+		E0AF9B4A1718777C003DCEA9 /* playdown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF9B481718777C003DCEA9 /* playdown.bmp */; };
+		E0AF9B4E1718836D003DCEA9 /* quitenabled.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF9B4C1718836C003DCEA9 /* quitenabled.bmp */; };
+		E0AF9B4F1718836D003DCEA9 /* quitenableddown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF9B4D1718836D003DCEA9 /* quitenableddown.bmp */; };
 		E0E2C35216DFE895005441EB /* BulletManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0E2C35116DFE895005441EB /* BulletManager.cpp */; };
 		E0E2C35516DFE944005441EB /* UpgradeScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0E2C35416DFE944005441EB /* UpgradeScreen.cpp */; };
 		E0E2C35816DFF638005441EB /* WeaponManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0E2C35716DFF637005441EB /* WeaponManager.cpp */; };
@@ -788,6 +817,33 @@
 		E087AD6016A959E20005089E /* tower1btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tower1btn.png; path = Resources/tower1btn.png; sourceTree = "<group>"; };
 		E087AD6316A973A30005089E /* thum1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thum1.png; path = Resources/thum1.png; sourceTree = "<group>"; };
 		E087AD6416A973A30005089E /* thum2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thum2.png; path = Resources/thum2.png; sourceTree = "<group>"; };
+		E087D33D171C6D5A00E3E09C /* AxeBaby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxeBaby.h; sourceTree = "<group>"; };
+		E087D33F171C6D6800E3E09C /* AxeBaby.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AxeBaby.cpp; sourceTree = "<group>"; };
+		E087D341171C7BFC00E3E09C /* Pikachu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pikachu.h; sourceTree = "<group>"; };
+		E087D342171C7C0B00E3E09C /* Pikachu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pikachu.cpp; sourceTree = "<group>"; };
+		E087D344171C84FF00E3E09C /* Sully.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sully.h; sourceTree = "<group>"; };
+		E087D345171C851100E3E09C /* Sully.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sully.cpp; sourceTree = "<group>"; };
+		E087D347171C852500E3E09C /* Metroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Metroid.h; sourceTree = "<group>"; };
+		E087D348171C853500E3E09C /* Metroid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Metroid.cpp; sourceTree = "<group>"; };
+		E087D34A171C86F600E3E09C /* metroid1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroid1.png; path = Resources/metroid1.png; sourceTree = "<group>"; };
+		E087D34B171C86F600E3E09C /* metroid2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroid2.png; path = Resources/metroid2.png; sourceTree = "<group>"; };
+		E087D34C171C86F600E3E09C /* metroid3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroid3.png; path = Resources/metroid3.png; sourceTree = "<group>"; };
+		E087D34D171C86F600E3E09C /* metroid4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroid4.png; path = Resources/metroid4.png; sourceTree = "<group>"; };
+		E087D34E171C86F600E3E09C /* metroid5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroid5.png; path = Resources/metroid5.png; sourceTree = "<group>"; };
+		E087D34F171C86F600E3E09C /* metroid6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroid6.png; path = Resources/metroid6.png; sourceTree = "<group>"; };
+		E087D350171C86F600E3E09C /* metroid7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroid7.png; path = Resources/metroid7.png; sourceTree = "<group>"; };
+		E087D351171C86F600E3E09C /* metroid8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroid8.png; path = Resources/metroid8.png; sourceTree = "<group>"; };
+		E087D352171C86F600E3E09C /* metroid9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroid9.png; path = Resources/metroid9.png; sourceTree = "<group>"; };
+		E087D353171C86F600E3E09C /* metroid10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroid10.png; path = Resources/metroid10.png; sourceTree = "<group>"; };
+		E087D354171C86F600E3E09C /* metroidStand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metroidStand.png; path = Resources/metroidStand.png; sourceTree = "<group>"; };
+		E087D360171C874300E3E09C /* skully1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skully1.png; path = Resources/skully1.png; sourceTree = "<group>"; };
+		E087D361171C874300E3E09C /* skully2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skully2.png; path = Resources/skully2.png; sourceTree = "<group>"; };
+		E087D362171C874300E3E09C /* skully3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skully3.png; path = Resources/skully3.png; sourceTree = "<group>"; };
+		E087D363171C874300E3E09C /* skully4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skully4.png; path = Resources/skully4.png; sourceTree = "<group>"; };
+		E087D364171C874300E3E09C /* skully5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skully5.png; path = Resources/skully5.png; sourceTree = "<group>"; };
+		E087D365171C874300E3E09C /* skully6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skully6.png; path = Resources/skully6.png; sourceTree = "<group>"; };
+		E087D366171C874300E3E09C /* skully7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skully7.png; path = Resources/skully7.png; sourceTree = "<group>"; };
+		E087D367171C874300E3E09C /* skully8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skully8.png; path = Resources/skully8.png; sourceTree = "<group>"; };
 		E0882F871635E10400DCE071 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		E0882F881635E11D00DCE071 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		E0882F8A1635E32400DCE071 /* PhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
@@ -942,6 +998,10 @@
 		E08FC6C616A7409C001E3BA2 /* weaponBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = weaponBackground.png; path = Resources/weaponBackground.png; sourceTree = "<group>"; };
 		E08FC6CC16A74538001E3BA2 /* WeaponSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponSelectButton.h; sourceTree = "<group>"; };
 		E08FC6CD16A7455B001E3BA2 /* WeaponSelectButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponSelectButton.cpp; sourceTree = "<group>"; };
+		E0901DF81717530D00C7E11B /* LevelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelManager.h; sourceTree = "<group>"; };
+		E0901DFA1717533400C7E11B /* LevelManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelManager.cpp; sourceTree = "<group>"; };
+		E0901DFC1717537E00C7E11B /* Grenade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grenade.h; sourceTree = "<group>"; };
+		E0901DFD1717539A00C7E11B /* Grenade.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grenade.cpp; sourceTree = "<group>"; };
 		E09094C9164AABAE00E744D8 /* License.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = License.mobileprovision; sourceTree = "<group>"; };
 		E0A4FDB716A874A100D9941B /* assaultRifleSelect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = assaultRifleSelect.png; path = Resources/assaultRifleSelect.png; sourceTree = "<group>"; };
 		E0A4FDB816A874A100D9941B /* handGunSelect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = handGunSelect.png; path = Resources/handGunSelect.png; sourceTree = "<group>"; };
@@ -959,6 +1019,10 @@
 		E0AECB9D1630919900C1FD48 /* icecream3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icecream3.png; path = Resources/icecream3.png; sourceTree = "<group>"; };
 		E0AECB9E1630919900C1FD48 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange.png; path = Resources/orange.png; sourceTree = "<group>"; };
 		E0AECB9F1630919900C1FD48 /* shapedefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = shapedefs.plist; path = Resources/shapedefs.plist; sourceTree = "<group>"; };
+		E0AF9B471718777C003DCEA9 /* play.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = play.bmp; path = Resources/play.bmp; sourceTree = "<group>"; };
+		E0AF9B481718777C003DCEA9 /* playdown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = playdown.bmp; path = Resources/playdown.bmp; sourceTree = "<group>"; };
+		E0AF9B4C1718836C003DCEA9 /* quitenabled.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = quitenabled.bmp; path = Resources/quitenabled.bmp; sourceTree = "<group>"; };
+		E0AF9B4D1718836D003DCEA9 /* quitenableddown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = quitenableddown.bmp; path = Resources/quitenableddown.bmp; sourceTree = "<group>"; };
 		E0E2C34F16DFE87C005441EB /* BulletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletManager.h; sourceTree = "<group>"; };
 		E0E2C35116DFE895005441EB /* BulletManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BulletManager.cpp; sourceTree = "<group>"; };
 		E0E2C35316DFE93A005441EB /* UpgradeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeScreen.h; sourceTree = "<group>"; };
@@ -1039,27 +1103,50 @@
 				E08955F716A495D6000361A4 /* red.png */,
 				E08AD250169B2D43000E2AF6 /* ash2.png */,
 				E08AB01A164B09B0006DFD76 /* Bullet.png */,
-				E088CD4E16767EBD006786C0 /* axeBaby1.png */,
-				E088CD4F16767EBD006786C0 /* axeBaby2.png */,
 				E08AE83E1677C70B005AA3AE /* backgrounddetailed1.png */,
 				E087AD6016A959E20005089E /* tower1btn.png */,
+				E088CD4E16767EBD006786C0 /* axeBaby1.png */,
+				E088CD4F16767EBD006786C0 /* axeBaby2.png */,
 				E088CD5016767EBD006786C0 /* axeBaby3.png */,
-				E08AE8421677D03C005AA3AE /* game_background.png */,
 				E088CD5116767EBD006786C0 /* axeBaby4.png */,
+				E087D34A171C86F600E3E09C /* metroid1.png */,
+				E087D34B171C86F600E3E09C /* metroid2.png */,
+				E087D34C171C86F600E3E09C /* metroid3.png */,
+				E087D34D171C86F600E3E09C /* metroid4.png */,
+				E087D34E171C86F600E3E09C /* metroid5.png */,
+				E087D34F171C86F600E3E09C /* metroid6.png */,
+				E087D350171C86F600E3E09C /* metroid7.png */,
+				E087D351171C86F600E3E09C /* metroid8.png */,
+				E087D352171C86F600E3E09C /* metroid9.png */,
+				E087D353171C86F600E3E09C /* metroid10.png */,
+				E087D354171C86F600E3E09C /* metroidStand.png */,
+				E087D360171C874300E3E09C /* skully1.png */,
+				E087D361171C874300E3E09C /* skully2.png */,
+				E087D362171C874300E3E09C /* skully3.png */,
+				E087D363171C874300E3E09C /* skully4.png */,
+				E087D364171C874300E3E09C /* skully5.png */,
+				E087D365171C874300E3E09C /* skully6.png */,
+				E087D366171C874300E3E09C /* skully7.png */,
+				E087D367171C874300E3E09C /* skully8.png */,
+				E08AE8421677D03C005AA3AE /* game_background.png */,
 				E087AD6316A973A30005089E /* thum1.png */,
 				E087AD6416A973A30005089E /* thum2.png */,
 				E088CD5216767EBD006786C0 /* axeBabyAttack.png */,
-				E088CD5316767EBD006786C0 /* pikachu1.png */,
 				E08922FC1679220100121FB8 /* monsters-inc.png */,
+				E088CD5316767EBD006786C0 /* pikachu1.png */,
 				E088CD5416767EBD006786C0 /* pikachu2.png */,
-				E08AE8441677D12B005AA3AE /* BigCircle.png */,
 				E088CD5516767EBD006786C0 /* pikachu3.png */,
+				E08AE8441677D12B005AA3AE /* BigCircle.png */,
 				E08AB017164B09AB006DFD76 /* castle.png */,
 				E08DFB5D1679CD1700184E11 /* Play.png */,
 				E08DFB5B1679CCE000184E11 /* Level1.png */,
 				E08DFB591679CCD800184E11 /* Level2.png */,
 				E083C8571649AF68002EE487 /* Player.png */,
 				E08AE8461677D12F005AA3AE /* SmallCircle.png */,
+				E0AF9B471718777C003DCEA9 /* play.bmp */,
+				E0AF9B481718777C003DCEA9 /* playdown.bmp */,
+				E0AF9B4C1718836C003DCEA9 /* quitenabled.bmp */,
+				E0AF9B4D1718836D003DCEA9 /* quitenableddown.bmp */,
 				E083C84B16499073002EE487 /* GreenZombie1.png */,
 				E083C84C16499073002EE487 /* GreenZombie2.png */,
 				E083C84D16499073002EE487 /* GreenZombie3.png */,
@@ -1925,12 +2012,11 @@
 				E0300EEC162F06370075BBBE /* HelloWorldScene.cpp */,
 				E0882F871635E10400DCE071 /* Player.h */,
 				E0882F881635E11D00DCE071 /* Player.cpp */,
+				E093B308171DC48600272A3B /* enemies */,
 				E0882F8A1635E32400DCE071 /* PhysicsSprite.h */,
 				E0882F8B1635E34A00DCE071 /* PhysicsSprite.cpp */,
 				E08730CC16398AFD00C4935D /* Analogue.h */,
 				E08730CD16398B1300C4935D /* Analogue.cpp */,
-				E083C84116482EC5002EE487 /* Enemy.h */,
-				E083C84216482EE4002EE487 /* Enemy.cpp */,
 				E083C8591649B9E1002EE487 /* Bullet.h */,
 				E083C85A1649B9F1002EE487 /* Bullet.cpp */,
 				E083C85C1649BA52002EE487 /* Base.h */,
@@ -1966,12 +2052,16 @@
 				E0E2C35116DFE895005441EB /* BulletManager.cpp */,
 				E0E2C35316DFE93A005441EB /* UpgradeScreen.h */,
 				E0E2C35416DFE944005441EB /* UpgradeScreen.cpp */,
-				E0E2C35616DFF622005441EB /* WeaponManager.h */,
-				E0E2C35716DFF637005441EB /* WeaponManager.cpp */,
 				E08BB30B16EA63AB00E27405 /* Barrier.h */,
 				E08BB30D16EA63B800E27405 /* Barrier.cpp */,
+				E0E2C35716DFF637005441EB /* WeaponManager.cpp */,
+				E0E2C35616DFF622005441EB /* WeaponManager.h */,
 				E08E8D3816EFBCB500E0E984 /* SaveFileData.h */,
 				E08E8D3A16EFBCCA00E0E984 /* SaveFileData.cpp */,
+				E0901DF81717530D00C7E11B /* LevelManager.h */,
+				E0901DFA1717533400C7E11B /* LevelManager.cpp */,
+				E0901DFC1717537E00C7E11B /* Grenade.h */,
+				E0901DFD1717539A00C7E11B /* Grenade.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2131,6 +2221,23 @@
 			path = Rope;
 			sourceTree = "<group>";
 		};
+		E093B308171DC48600272A3B /* enemies */ = {
+			isa = PBXGroup;
+			children = (
+				E083C84116482EC5002EE487 /* Enemy.h */,
+				E083C84216482EE4002EE487 /* Enemy.cpp */,
+				E087D33D171C6D5A00E3E09C /* AxeBaby.h */,
+				E087D33F171C6D6800E3E09C /* AxeBaby.cpp */,
+				E087D341171C7BFC00E3E09C /* Pikachu.h */,
+				E087D342171C7C0B00E3E09C /* Pikachu.cpp */,
+				E087D344171C84FF00E3E09C /* Sully.h */,
+				E087D345171C851100E3E09C /* Sully.cpp */,
+				E087D347171C852500E3E09C /* Metroid.h */,
+				E087D348171C853500E3E09C /* Metroid.cpp */,
+			);
+			name = enemies;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2246,6 +2353,29 @@
 				E08E8D3F16F11FC000E0E984 /* NewGame.png in Resources */,
 				E08E8D4116F265A700E0E984 /* UpgradeMenu.png in Resources */,
 				E08E8D4316F2677800E0E984 /* HandGuns.png in Resources */,
+				E0AF9B491718777C003DCEA9 /* play.bmp in Resources */,
+				E0AF9B4A1718777C003DCEA9 /* playdown.bmp in Resources */,
+				E0AF9B4E1718836D003DCEA9 /* quitenabled.bmp in Resources */,
+				E0AF9B4F1718836D003DCEA9 /* quitenableddown.bmp in Resources */,
+				E087D355171C86F600E3E09C /* metroid1.png in Resources */,
+				E087D356171C86F600E3E09C /* metroid2.png in Resources */,
+				E087D357171C86F600E3E09C /* metroid3.png in Resources */,
+				E087D358171C86F600E3E09C /* metroid4.png in Resources */,
+				E087D359171C86F600E3E09C /* metroid5.png in Resources */,
+				E087D35A171C86F600E3E09C /* metroid6.png in Resources */,
+				E087D35B171C86F600E3E09C /* metroid7.png in Resources */,
+				E087D35C171C86F600E3E09C /* metroid8.png in Resources */,
+				E087D35D171C86F600E3E09C /* metroid9.png in Resources */,
+				E087D35E171C86F600E3E09C /* metroid10.png in Resources */,
+				E087D35F171C86F600E3E09C /* metroidStand.png in Resources */,
+				E087D368171C874300E3E09C /* skully1.png in Resources */,
+				E087D369171C874300E3E09C /* skully2.png in Resources */,
+				E087D36A171C874300E3E09C /* skully3.png in Resources */,
+				E087D36B171C874300E3E09C /* skully4.png in Resources */,
+				E087D36C171C874300E3E09C /* skully5.png in Resources */,
+				E087D36D171C874300E3E09C /* skully6.png in Resources */,
+				E087D36E171C874300E3E09C /* skully7.png in Resources */,
+				E087D36F171C874300E3E09C /* skully8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2504,6 +2634,12 @@
 				E0E2C35816DFF638005441EB /* WeaponManager.cpp in Sources */,
 				E08BB30E16EA63B900E27405 /* Barrier.cpp in Sources */,
 				E08E8D3B16EFBCCA00E0E984 /* SaveFileData.cpp in Sources */,
+				E0901DFB1717533400C7E11B /* LevelManager.cpp in Sources */,
+				E0901DFE1717539A00C7E11B /* Grenade.cpp in Sources */,
+				E087D340171C6D6900E3E09C /* AxeBaby.cpp in Sources */,
+				E087D343171C7C0C00E3E09C /* Pikachu.cpp in Sources */,
+				E087D346171C851200E3E09C /* Sully.cpp in Sources */,
+				E087D349171C853500E3E09C /* Metroid.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

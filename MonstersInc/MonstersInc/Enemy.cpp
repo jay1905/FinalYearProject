@@ -13,41 +13,31 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
-Enemy::Enemy(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 pos,float spd,b2Vec2 size){
+Enemy::Enemy( b2World *world,b2Vec2 pos,float spd){
     
+    size= b2Vec2(59,64);
+    cocos2d::CCAnimation * anim = CCAnimation::animation();
+    anim->addSpriteFrameWithFileName("GreenZombie1.png");
+    anim->addSpriteFrameWithFileName("GreenZombie2.png");
+    anim->addSpriteFrameWithFileName("GreenZombie3.png");
+    anim->addSpriteFrameWithFileName("GreenZombie4.png");
+    anim->setDelayPerUnit(.2f);
+    CCAnimate *theAnim = cocos2d::CCAnimate::actionWithAnimation(anim);
+    CCAction *jumpAct = CCRepeatForever::create(theAnim);
+    cocos2d::CCSpriteBatchNode *pSprite= cocos2d::CCSpriteBatchNode::create("GreenZombie1.png");
+  
+    this->initWithFile("GreenZombie1.png", CCRectMake(0, 0, size.x, size.y));
+    this->initialize(pSprite, world, pos, spd, size, "Enemy");
+    this->CCSprite::m_pActionManager->addAction(jumpAct, this, false);
 
-    this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, size.x, size.y));
-    this->autorelease();
-    bodyDef.type=b2_dynamicBody;
-    bodyDef.position.Set(pos.x/32,pos.y/32);
-    name="Enemy";
-    health= 100;
-    body=world->CreateBody(&bodyDef);
-    
-    float x=size.x/32;
-    float y =size.y/32;
-    dynamicBox.SetAsBox(x/1.8, y/1.8);
-    fixyureDef.shape=&dynamicBox;
-    fixyureDef.density=0.0f;
-    fixyureDef.friction=0.0f;
-     fixyureDef.filter.groupIndex = -2;
-    fixyureDef.filter.categoryBits=12;
-    body->CreateFixture(&fixyureDef);
-    this->setPhysicsBody(body);
-    speed =spd;
-    body->SetUserData(this);
-       
 
 }
-void Enemy::move(b2Vec2 playerPos){
+Enemy::Enemy(){
     
- 
-    b2Vec2 dir = b2Vec2(m_pBody->GetPosition().x-playerPos.x, m_pBody->GetPosition().y-playerPos.y);
-    dir.Normalize();
-    this->m_pBody->SetLinearVelocity(b2Vec2(-dir.x*speed, -dir.y*speed));
-   
+      
     
 }
+
 
 void Enemy::update(){
     
