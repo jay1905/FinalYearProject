@@ -11,6 +11,7 @@
 #include "MainMenu.h"
 #include "HelloWorldScene.h"
 #include "Tutorial.h"
+#include "SimpleAudioEngine.h"
 
 
 #include <CCUserDefault.h>
@@ -18,6 +19,7 @@
 
 using namespace cocos2d;
 using namespace std;
+using namespace CocosDenshion;
 
 
 static size_t curl_to_string(void *ptr, size_t size, size_t nmemb, void *data)
@@ -120,8 +122,8 @@ void MainMenu::init(){
     Score->setColor(ccc3(0,0,255));
     Score->setPosition(ccp(1850, 600));
 
-    
-   
+    SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("Final Fantasy 7 Music - Aerith's Theme.mp3");
+    //SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Final Fantasy 7 Music - Aerith's Theme.mp3", true);
     
     int yPos=550;
     for(int i=0;i<10;i++){

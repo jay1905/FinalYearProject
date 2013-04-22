@@ -114,6 +114,13 @@ HelloWorld::HelloWorld()
 //    addChild(baseButton);
     
     
+    
+    SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("Final Fantasy VII - Birth of a God [HQ].mp3");
+    //SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Final Fantasy VII - Birth of a God [HQ].mp3", true);
+    //SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(70);
+    SimpleAudioEngine::sharedEngine()->preloadEffect("ie_shot_gun-luminalace-770179786.mp3");
+     SimpleAudioEngine::sharedEngine()->preloadEffect("M1 Garand Single-SoundBible.com-1941178963.mp3");
+    
     label = CCLabelTTF::create("health:", "Marker Felt", 32);
     addChild(label, 1);
     label->setColor(ccc3(0,0,255));
@@ -315,7 +322,7 @@ void HelloWorld::update(float dt)
                                     
                                     
                                     bulletMan->create(player->returnpos(), analog2->getDirection());
-                                
+                                    SimpleAudioEngine::sharedEngine()->playEffect("ie_shot_gun-luminalace-770179786.mp3");
                                     firecount=0;
                                 
                                 }
@@ -324,6 +331,7 @@ void HelloWorld::update(float dt)
                                 if(firecount>assaultgun->fireRate){
                                     
                                     bulletMan->create(player->returnpos(), analog2->getDirection());
+                                    SimpleAudioEngine::sharedEngine()->playEffect("M1 Garand Single-SoundBible.com-1941178963.mp3");
                                     firecount=0;
                                     
                                 }

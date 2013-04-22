@@ -329,9 +329,7 @@
 		E08E8D3E16F11FC000E0E984 /* Enter.png in Resources */ = {isa = PBXBuildFile; fileRef = E08E8D3C16F11FC000E0E984 /* Enter.png */; };
 		E08E8D3F16F11FC000E0E984 /* NewGame.png in Resources */ = {isa = PBXBuildFile; fileRef = E08E8D3D16F11FC000E0E984 /* NewGame.png */; };
 		E08E8D4116F265A700E0E984 /* UpgradeMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = E08E8D4016F265A700E0E984 /* UpgradeMenu.png */; };
-		E08E8D4316F2677800E0E984 /* HandGuns.png in Resources */ = {isa = PBXBuildFile; fileRef = E08E8D4216F2677700E0E984 /* HandGuns.png */; };
 		E08FC6C716A7409C001E3BA2 /* assaultRifle.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C316A7409C001E3BA2 /* assaultRifle.png */; };
-		E08FC6C816A7409C001E3BA2 /* handGun.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C416A7409C001E3BA2 /* handGun.png */; };
 		E08FC6C916A7409C001E3BA2 /* tower1.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C516A7409C001E3BA2 /* tower1.png */; };
 		E08FC6CA16A7409C001E3BA2 /* weaponBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E08FC6C616A7409C001E3BA2 /* weaponBackground.png */; };
 		E08FC6CE16A7455B001E3BA2 /* WeaponSelectButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08FC6CD16A7455B001E3BA2 /* WeaponSelectButton.cpp */; };
@@ -342,6 +340,21 @@
 		E0A4FDBA16A874A100D9941B /* handGunSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A4FDB816A874A100D9941B /* handGunSelect.png */; };
 		E0A4FDBE16A88AA100D9941B /* AssaultRifle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4FDBD16A88AA100D9941B /* AssaultRifle.cpp */; };
 		E0A4FDC116A8903700D9941B /* StaticEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4FDC016A8903700D9941B /* StaticEntity.cpp */; };
+		E0AE6EA7172588C1009678B1 /* Final Fantasy 7 Music - Aerith's Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EA6172588C1009678B1 /* Final Fantasy 7 Music - Aerith's Theme.mp3 */; };
+		E0AE6EA917258FE4009678B1 /* Final Fantasy VII - Birth of a God [HQ].mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EA817258FE4009678B1 /* Final Fantasy VII - Birth of a God [HQ].mp3 */; };
+		E0AE6EAB17259238009678B1 /* block_down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EAA17259238009678B1 /* block_down.mp3 */; };
+		E0AE6EB51725A81D009678B1 /* BigGuns.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EAC1725A81C009678B1 /* BigGuns.png */; };
+		E0AE6EB61725A81D009678B1 /* blueGun.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EAD1725A81C009678B1 /* blueGun.png */; };
+		E0AE6EB71725A81D009678B1 /* EnergyGuns.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EAE1725A81C009678B1 /* EnergyGuns.png */; };
+		E0AE6EB81725A81D009678B1 /* highlight-green.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EAF1725A81C009678B1 /* highlight-green.png */; };
+		E0AE6EB91725A81D009678B1 /* highlight-red.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EB01725A81D009678B1 /* highlight-red.png */; };
+		E0AE6EBA1725A81D009678B1 /* MachineGuns.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EB11725A81D009678B1 /* MachineGuns.png */; };
+		E0AE6EBB1725A81D009678B1 /* RPGs.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EB21725A81D009678B1 /* RPGs.png */; };
+		E0AE6EBC1725A81D009678B1 /* Shotguns.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EB31725A81D009678B1 /* Shotguns.png */; };
+		E0AE6EBD1725A81D009678B1 /* SniperRifles.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EB41725A81D009678B1 /* SniperRifles.png */; };
+		E0AE6EC11725A8A0009678B1 /* HandGuns.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EC01725A8A0009678B1 /* HandGuns.png */; };
+		E0AE6EC51725CAC2009678B1 /* ie_shot_gun-luminalace-770179786.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EC31725CAC2009678B1 /* ie_shot_gun-luminalace-770179786.mp3 */; };
+		E0AE6EC61725CAC2009678B1 /* M1 Garand Single-SoundBible.com-1941178963.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0AE6EC41725CAC2009678B1 /* M1 Garand Single-SoundBible.com-1941178963.mp3 */; };
 		E0AECBA01630919900C1FD48 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB971630919900C1FD48 /* blocks.png */; };
 		E0AECBA11630919900C1FD48 /* drink.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB981630919900C1FD48 /* drink.png */; };
 		E0AECBA21630919900C1FD48 /* hamburger.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB991630919900C1FD48 /* hamburger.png */; };
@@ -991,9 +1004,7 @@
 		E08E8D3C16F11FC000E0E984 /* Enter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Enter.png; path = Resources/Enter.png; sourceTree = "<group>"; };
 		E08E8D3D16F11FC000E0E984 /* NewGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewGame.png; path = Resources/NewGame.png; sourceTree = "<group>"; };
 		E08E8D4016F265A700E0E984 /* UpgradeMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpgradeMenu.png; path = Resources/UpgradeMenu.png; sourceTree = "<group>"; };
-		E08E8D4216F2677700E0E984 /* HandGuns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HandGuns.png; path = Resources/HandGuns.png; sourceTree = "<group>"; };
 		E08FC6C316A7409C001E3BA2 /* assaultRifle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = assaultRifle.png; path = Resources/assaultRifle.png; sourceTree = "<group>"; };
-		E08FC6C416A7409C001E3BA2 /* handGun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = handGun.png; path = Resources/handGun.png; sourceTree = "<group>"; };
 		E08FC6C516A7409C001E3BA2 /* tower1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tower1.png; path = Resources/tower1.png; sourceTree = "<group>"; };
 		E08FC6C616A7409C001E3BA2 /* weaponBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = weaponBackground.png; path = Resources/weaponBackground.png; sourceTree = "<group>"; };
 		E08FC6CC16A74538001E3BA2 /* WeaponSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponSelectButton.h; sourceTree = "<group>"; };
@@ -1010,6 +1021,21 @@
 		E0A4FDBF16A8902200D9941B /* StaticEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticEntity.h; sourceTree = "<group>"; };
 		E0A4FDC016A8903700D9941B /* StaticEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaticEntity.cpp; sourceTree = "<group>"; };
 		E0A65971166D0D5E00A21872 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
+		E0AE6EA6172588C1009678B1 /* Final Fantasy 7 Music - Aerith's Theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Final Fantasy 7 Music - Aerith's Theme.mp3"; path = "Resources/Final Fantasy 7 Music - Aerith's Theme.mp3"; sourceTree = "<group>"; };
+		E0AE6EA817258FE4009678B1 /* Final Fantasy VII - Birth of a God [HQ].mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Final Fantasy VII - Birth of a God [HQ].mp3"; path = "Resources/Final Fantasy VII - Birth of a God [HQ].mp3"; sourceTree = "<group>"; };
+		E0AE6EAA17259238009678B1 /* block_down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = block_down.mp3; path = Resources/block_down.mp3; sourceTree = "<group>"; };
+		E0AE6EAC1725A81C009678B1 /* BigGuns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BigGuns.png; path = Resources/BigGuns.png; sourceTree = "<group>"; };
+		E0AE6EAD1725A81C009678B1 /* blueGun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueGun.png; path = Resources/blueGun.png; sourceTree = "<group>"; };
+		E0AE6EAE1725A81C009678B1 /* EnergyGuns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EnergyGuns.png; path = Resources/EnergyGuns.png; sourceTree = "<group>"; };
+		E0AE6EAF1725A81C009678B1 /* highlight-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "highlight-green.png"; path = "Resources/highlight-green.png"; sourceTree = "<group>"; };
+		E0AE6EB01725A81D009678B1 /* highlight-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "highlight-red.png"; path = "Resources/highlight-red.png"; sourceTree = "<group>"; };
+		E0AE6EB11725A81D009678B1 /* MachineGuns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MachineGuns.png; path = Resources/MachineGuns.png; sourceTree = "<group>"; };
+		E0AE6EB21725A81D009678B1 /* RPGs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RPGs.png; path = Resources/RPGs.png; sourceTree = "<group>"; };
+		E0AE6EB31725A81D009678B1 /* Shotguns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shotguns.png; path = Resources/Shotguns.png; sourceTree = "<group>"; };
+		E0AE6EB41725A81D009678B1 /* SniperRifles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SniperRifles.png; path = Resources/SniperRifles.png; sourceTree = "<group>"; };
+		E0AE6EC01725A8A0009678B1 /* HandGuns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HandGuns.png; path = Resources/HandGuns.png; sourceTree = "<group>"; };
+		E0AE6EC31725CAC2009678B1 /* ie_shot_gun-luminalace-770179786.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "ie_shot_gun-luminalace-770179786.mp3"; path = "Resources/ie_shot_gun-luminalace-770179786.mp3"; sourceTree = "<group>"; };
+		E0AE6EC41725CAC2009678B1 /* M1 Garand Single-SoundBible.com-1941178963.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "M1 Garand Single-SoundBible.com-1941178963.mp3"; path = "Resources/M1 Garand Single-SoundBible.com-1941178963.mp3"; sourceTree = "<group>"; };
 		E0AECB971630919900C1FD48 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		E0AECB981630919900C1FD48 /* drink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drink.png; path = Resources/drink.png; sourceTree = "<group>"; };
 		E0AECB991630919900C1FD48 /* hamburger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hamburger.png; path = Resources/hamburger.png; sourceTree = "<group>"; };
@@ -1099,43 +1125,33 @@
 		E0300C4B162F06340075BBBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E0AE6EC21725A8AC009678B1 /* enemies */,
+				E0AE6EAC1725A81C009678B1 /* BigGuns.png */,
+				E0AE6EC01725A8A0009678B1 /* HandGuns.png */,
+				E0AE6EAD1725A81C009678B1 /* blueGun.png */,
+				E0AE6EAE1725A81C009678B1 /* EnergyGuns.png */,
+				E0AE6EAF1725A81C009678B1 /* highlight-green.png */,
+				E0AE6EB01725A81D009678B1 /* highlight-red.png */,
+				E0AE6EB11725A81D009678B1 /* MachineGuns.png */,
+				E0AE6EB21725A81D009678B1 /* RPGs.png */,
+				E0AE6EB31725A81D009678B1 /* Shotguns.png */,
+				E0AE6EB41725A81D009678B1 /* SniperRifles.png */,
 				E08AD24F169B2D43000E2AF6 /* ash1.png */,
 				E08955F716A495D6000361A4 /* red.png */,
 				E08AD250169B2D43000E2AF6 /* ash2.png */,
 				E08AB01A164B09B0006DFD76 /* Bullet.png */,
 				E08AE83E1677C70B005AA3AE /* backgrounddetailed1.png */,
+				E0AE6EA6172588C1009678B1 /* Final Fantasy 7 Music - Aerith's Theme.mp3 */,
+				E0AE6EA817258FE4009678B1 /* Final Fantasy VII - Birth of a God [HQ].mp3 */,
+				E0AE6EAA17259238009678B1 /* block_down.mp3 */,
+				E0AE6EC31725CAC2009678B1 /* ie_shot_gun-luminalace-770179786.mp3 */,
+				E0AE6EC41725CAC2009678B1 /* M1 Garand Single-SoundBible.com-1941178963.mp3 */,
 				E087AD6016A959E20005089E /* tower1btn.png */,
-				E088CD4E16767EBD006786C0 /* axeBaby1.png */,
-				E088CD4F16767EBD006786C0 /* axeBaby2.png */,
-				E088CD5016767EBD006786C0 /* axeBaby3.png */,
-				E088CD5116767EBD006786C0 /* axeBaby4.png */,
-				E087D34A171C86F600E3E09C /* metroid1.png */,
-				E087D34B171C86F600E3E09C /* metroid2.png */,
-				E087D34C171C86F600E3E09C /* metroid3.png */,
-				E087D34D171C86F600E3E09C /* metroid4.png */,
-				E087D34E171C86F600E3E09C /* metroid5.png */,
-				E087D34F171C86F600E3E09C /* metroid6.png */,
-				E087D350171C86F600E3E09C /* metroid7.png */,
-				E087D351171C86F600E3E09C /* metroid8.png */,
-				E087D352171C86F600E3E09C /* metroid9.png */,
-				E087D353171C86F600E3E09C /* metroid10.png */,
-				E087D354171C86F600E3E09C /* metroidStand.png */,
-				E087D360171C874300E3E09C /* skully1.png */,
-				E087D361171C874300E3E09C /* skully2.png */,
-				E087D362171C874300E3E09C /* skully3.png */,
-				E087D363171C874300E3E09C /* skully4.png */,
-				E087D364171C874300E3E09C /* skully5.png */,
-				E087D365171C874300E3E09C /* skully6.png */,
-				E087D366171C874300E3E09C /* skully7.png */,
-				E087D367171C874300E3E09C /* skully8.png */,
 				E08AE8421677D03C005AA3AE /* game_background.png */,
 				E087AD6316A973A30005089E /* thum1.png */,
 				E087AD6416A973A30005089E /* thum2.png */,
 				E088CD5216767EBD006786C0 /* axeBabyAttack.png */,
 				E08922FC1679220100121FB8 /* monsters-inc.png */,
-				E088CD5316767EBD006786C0 /* pikachu1.png */,
-				E088CD5416767EBD006786C0 /* pikachu2.png */,
-				E088CD5516767EBD006786C0 /* pikachu3.png */,
 				E08AE8441677D12B005AA3AE /* BigCircle.png */,
 				E08AB017164B09AB006DFD76 /* castle.png */,
 				E08DFB5D1679CD1700184E11 /* Play.png */,
@@ -1147,10 +1163,6 @@
 				E0AF9B481718777C003DCEA9 /* playdown.bmp */,
 				E0AF9B4C1718836C003DCEA9 /* quitenabled.bmp */,
 				E0AF9B4D1718836D003DCEA9 /* quitenableddown.bmp */,
-				E083C84B16499073002EE487 /* GreenZombie1.png */,
-				E083C84C16499073002EE487 /* GreenZombie2.png */,
-				E083C84D16499073002EE487 /* GreenZombie3.png */,
-				E083C84E16499073002EE487 /* GreenZombie4.png */,
 				E08B333F16404CBD002048EF /* Zombie2.png */,
 				E0AECB971630919900C1FD48 /* blocks.png */,
 				E0AECB981630919900C1FD48 /* drink.png */,
@@ -1164,7 +1176,6 @@
 				E0AECB9F1630919900C1FD48 /* shapedefs.plist */,
 				E0300C4C162F06340075BBBE /* CloseNormal.png */,
 				E08FC6C316A7409C001E3BA2 /* assaultRifle.png */,
-				E08FC6C416A7409C001E3BA2 /* handGun.png */,
 				E08FC6C516A7409C001E3BA2 /* tower1.png */,
 				E08FC6C616A7409C001E3BA2 /* weaponBackground.png */,
 				E0300C4E162F06340075BBBE /* CloseSelected.png */,
@@ -1180,7 +1191,6 @@
 				E0300C5A162F06340075BBBE /* Icon-Small@2x.png */,
 				E08E8D3C16F11FC000E0E984 /* Enter.png */,
 				E08E8D4016F265A700E0E984 /* UpgradeMenu.png */,
-				E08E8D4216F2677700E0E984 /* HandGuns.png */,
 				E08E8D3D16F11FC000E0E984 /* NewGame.png */,
 				E0300C5C162F06340075BBBE /* Icon.png */,
 				E0300C5E162F06340075BBBE /* Icon@2x.png */,
@@ -2238,6 +2248,43 @@
 			name = enemies;
 			sourceTree = "<group>";
 		};
+		E0AE6EC21725A8AC009678B1 /* enemies */ = {
+			isa = PBXGroup;
+			children = (
+				E083C84B16499073002EE487 /* GreenZombie1.png */,
+				E083C84C16499073002EE487 /* GreenZombie2.png */,
+				E083C84D16499073002EE487 /* GreenZombie3.png */,
+				E083C84E16499073002EE487 /* GreenZombie4.png */,
+				E088CD5316767EBD006786C0 /* pikachu1.png */,
+				E088CD5416767EBD006786C0 /* pikachu2.png */,
+				E088CD5516767EBD006786C0 /* pikachu3.png */,
+				E088CD4E16767EBD006786C0 /* axeBaby1.png */,
+				E088CD4F16767EBD006786C0 /* axeBaby2.png */,
+				E088CD5016767EBD006786C0 /* axeBaby3.png */,
+				E088CD5116767EBD006786C0 /* axeBaby4.png */,
+				E087D34A171C86F600E3E09C /* metroid1.png */,
+				E087D34B171C86F600E3E09C /* metroid2.png */,
+				E087D34C171C86F600E3E09C /* metroid3.png */,
+				E087D34D171C86F600E3E09C /* metroid4.png */,
+				E087D34E171C86F600E3E09C /* metroid5.png */,
+				E087D34F171C86F600E3E09C /* metroid6.png */,
+				E087D350171C86F600E3E09C /* metroid7.png */,
+				E087D351171C86F600E3E09C /* metroid8.png */,
+				E087D352171C86F600E3E09C /* metroid9.png */,
+				E087D353171C86F600E3E09C /* metroid10.png */,
+				E087D354171C86F600E3E09C /* metroidStand.png */,
+				E087D360171C874300E3E09C /* skully1.png */,
+				E087D361171C874300E3E09C /* skully2.png */,
+				E087D362171C874300E3E09C /* skully3.png */,
+				E087D363171C874300E3E09C /* skully4.png */,
+				E087D364171C874300E3E09C /* skully5.png */,
+				E087D365171C874300E3E09C /* skully6.png */,
+				E087D366171C874300E3E09C /* skully7.png */,
+				E087D367171C874300E3E09C /* skully8.png */,
+			);
+			name = enemies;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2340,7 +2387,6 @@
 				E08AD252169B2D43000E2AF6 /* ash2.png in Resources */,
 				E08955F816A495D6000361A4 /* red.png in Resources */,
 				E08FC6C716A7409C001E3BA2 /* assaultRifle.png in Resources */,
-				E08FC6C816A7409C001E3BA2 /* handGun.png in Resources */,
 				E08FC6C916A7409C001E3BA2 /* tower1.png in Resources */,
 				E08FC6CA16A7409C001E3BA2 /* weaponBackground.png in Resources */,
 				E0A4FDB916A874A100D9941B /* assaultRifleSelect.png in Resources */,
@@ -2352,7 +2398,6 @@
 				E08E8D3E16F11FC000E0E984 /* Enter.png in Resources */,
 				E08E8D3F16F11FC000E0E984 /* NewGame.png in Resources */,
 				E08E8D4116F265A700E0E984 /* UpgradeMenu.png in Resources */,
-				E08E8D4316F2677800E0E984 /* HandGuns.png in Resources */,
 				E0AF9B491718777C003DCEA9 /* play.bmp in Resources */,
 				E0AF9B4A1718777C003DCEA9 /* playdown.bmp in Resources */,
 				E0AF9B4E1718836D003DCEA9 /* quitenabled.bmp in Resources */,
@@ -2376,6 +2421,21 @@
 				E087D36D171C874300E3E09C /* skully6.png in Resources */,
 				E087D36E171C874300E3E09C /* skully7.png in Resources */,
 				E087D36F171C874300E3E09C /* skully8.png in Resources */,
+				E0AE6EA7172588C1009678B1 /* Final Fantasy 7 Music - Aerith's Theme.mp3 in Resources */,
+				E0AE6EA917258FE4009678B1 /* Final Fantasy VII - Birth of a God [HQ].mp3 in Resources */,
+				E0AE6EAB17259238009678B1 /* block_down.mp3 in Resources */,
+				E0AE6EB51725A81D009678B1 /* BigGuns.png in Resources */,
+				E0AE6EB61725A81D009678B1 /* blueGun.png in Resources */,
+				E0AE6EB71725A81D009678B1 /* EnergyGuns.png in Resources */,
+				E0AE6EB81725A81D009678B1 /* highlight-green.png in Resources */,
+				E0AE6EB91725A81D009678B1 /* highlight-red.png in Resources */,
+				E0AE6EBA1725A81D009678B1 /* MachineGuns.png in Resources */,
+				E0AE6EBB1725A81D009678B1 /* RPGs.png in Resources */,
+				E0AE6EBC1725A81D009678B1 /* Shotguns.png in Resources */,
+				E0AE6EBD1725A81D009678B1 /* SniperRifles.png in Resources */,
+				E0AE6EC11725A8A0009678B1 /* HandGuns.png in Resources */,
+				E0AE6EC51725CAC2009678B1 /* ie_shot_gun-luminalace-770179786.mp3 in Resources */,
+				E0AE6EC61725CAC2009678B1 /* M1 Garand Single-SoundBible.com-1941178963.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

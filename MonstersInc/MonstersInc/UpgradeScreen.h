@@ -26,10 +26,16 @@ public:
 private:
     
     cocos2d::CCSprite *background;
-    cocos2d::CCSprite *gunwheel;
+    //cocos2d::CCSprite *gunwheel;
     cocos2d::CCMenuItemImage *play;
     cocos2d::CCMenuItemImage *quit;
-   // std::vector<cocos2d::CCPoint*> handGunSelect;
+    std::vector<cocos2d::CCSprite*> gunBars;
+    std::vector<cocos2d::CCPoint> gunbarPositions;
+    
+    
+    std::vector<cocos2d::CCSprite*> unlocked;
+    std::vector<cocos2d::CCSprite*> locked;
+    std::vector<cocos2d::CCPoint> lockedUnlockedPositions;
     
     //cocos2d::CCPointArray test;
 };
