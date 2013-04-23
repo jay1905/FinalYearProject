@@ -33,8 +33,8 @@ void LevelManager::initialize(){
     
     CCSize s = CCDirector::sharedDirector()->getWinSize();
     
-	jaime = CCSprite::create("game_background.png");
-    jaime->setPosition(CCPointMake(500, 380));
+	jaime = CCSprite::create("game_background_Level1.png");
+    jaime->setPosition(CCPointMake(420, 380));
     addChild(jaime);
     
     castle = new Base(world);
@@ -43,41 +43,60 @@ void LevelManager::initialize(){
     
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
     player= new Player(hello,world);
+    player->setPosition(CCPoint(1050, 350));
     addChild(player);
     
-      
-    
-    analog = new Analogue(CCPoint(100, 95));
-    this->addChild(analog);
-    
+
+    eman=new EnemyManager(world,this);
     analog2 = new Analogue(CCPoint(s.width-100, 95));
     this->addChild(analog2);
     
     upgradeScn = new UpgradeScreen();
     this->addChild(upgradeScn);
     
-    float minSpawn=2.0;
-    float maxSpawn=5.0;
-    float numEnemyOne=10;
-    float numEnemyTwo=0;
+    
+    float minSpawn=10;
+   float maxSpawn=100;
+    int numEnemyOne=2;
+    int numEnemyTwo=2;
+    int numEnemyThree=2;
+    int numEnemyFour=2;
+    int numEnemyFive=2;
+    std::vector<b2Vec2 *> path1;
     
     
+    b2Vec2 * a= new b2Vec2(150/32, 560/32);
+    path1.push_back( a);
+    
+    b2Vec2 * b= new b2Vec2(120/32, 90/32);
+    path1.push_back( b);
+    
+    b2Vec2 * c= new b2Vec2(700/32, 90/32);
+    path1.push_back( c);
+
+    b2Vec2 * d= new b2Vec2(700/32, 500/32);
+    path1.push_back(d);
+
     
     currentLevel=0;/////this needs to be saved
+
     
-    eman = new EnemyManager(world, this);
-    
-    
-//    for (int i = 0;i<10;i++){
-//        Level * l = new Level(minSpawn,maxSpawn,numEnemyOne,numEnemyTwo);
-//        levels.push_back(l);
-//        minSpawn-=0.2;
-//        maxSpawn-=0.2;
-//        numEnemyOne+=5;
-//        numEnemyTwo+=5;
-//    }
-   // eman->setEnemiesToBeAdded(levels[currentLevel]->enemies,levels[currentLevel]->minSpawnTime,levels[currentLevel]->maxSpawnTime);
-       
+    for (int i = 0;i<10;i++){
+        Level * l = new Level(minSpawn,maxSpawn,numEnemyOne,numEnemyTwo,numEnemyThree,numEnemyFour,numEnemyFive);
+        l->setPath(path1);
+        levels.push_back(l);
+        
+        // minSpawn-=20;
+        // maxSpawn-=25;
+        numEnemyOne+=2;
+        numEnemyTwo+=2;
+        numEnemyThree+=2;
+        numEnemyFour+=2;
+        numEnemyFive+=2;
+    }
+    eman->setEnemiesToBeAdded( levels[currentLevel]->enemies,levels[currentLevel]->minSpawnTime,levels[currentLevel]->maxSpawnTime);
+    eman->setPath(levels[currentLevel]->path);
+    eman->towerLevel=true;
     scheduleUpdate();
     
 }
@@ -87,24 +106,25 @@ void LevelManager::update(float dt){
     
     
        
-//    if (upgradeScn->StartLevel==true){
-//        
-//        
-//        if(levels[currentLevel]->finishedLevel==true){
-//            
-//            currentLevel++;
-//          //  eman->setEnemiesToBeAdded(levels[currentLevel]->enemies,levels[currentLevel]->minSpawnTime,levels[currentLevel]->maxSpawnTime);
-//            upgradeScn->StartLevel=false;
-//            
-//        }
-//        else{
-//            
-//            eman->update();
-//            
-//            player->update(analog->getDirection());
-//            
-//        }
-//    }
+    if (upgradeScn->StartLevel==true){
+        
+        
+        if(eman->totalEnemys==0){
+            
+            
+            currentLevel++;
+            eman->setEnemiesToBeAdded(levels[currentLevel]->enemies,levels[currentLevel]->minSpawnTime,levels[currentLevel]->maxSpawnTime);
+            upgradeScn->show();
+            
+            
+        }
+        else{
+            
+            eman->update();
+            eman->movePath();
+            
+        }
+    }
     
       
     
@@ -130,14 +150,6 @@ void LevelManager::ccTouchesEnded(CCSet* touches, CCEvent* event)
         
         if(!touch)
             break;
-        
-       // location = touch->getLocationInView();
-        
-       // location = CCDirector::sharedDirector()->convertToGL(location);
-        
-        //  addNewSpriteAtPosition( location );
-        // jaime->setPosition(CCPointMake(300, 300));
-        
         
     }
 }

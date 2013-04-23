@@ -66,69 +66,50 @@ UpgradeScreen::UpgradeScreen(){
     
     int count=150;
     for (int i=0; i<13; i++) {
-        
-        cocos2d::CCSprite *l=CCSprite::create("highlight-green.png");
-        addChild(l);
-        l->setPosition(CCPointMake(count, 600));
-        locked.push_back(l);
+        lockedUnlockedPositions.push_back(CCPoint(count, 600));
         count+=60;
-        
     }
-    // l->setPosition(CCPointMake(165, 550));
-    //l->setPosition(CCPointMake(225, 550));
-    // l->setPosition(CCPointMake(290, 550));
-    // l->setPosition(CCPointMake(365, 550));
-    //l->setPosition(CCPointMake(435, 550));
-    //l->setPosition(CCPointMake(500, 550));
-    // l->setPosition(CCPointMake(585, 550));
-    //l->setPosition(CCPointMake(660, 550));
-    //l->setPosition(CCPointMake(725, 550));
-    //l->setPosition(CCPointMake(785, 550));
-    //l->setPosition(CCPointMake(850, 550));
-
-     //l->setPosition(CCPointMake(460, 500));
-    //l->setPosition(CCPointMake(545, 500));
-
-    //l->setPosition(CCPointMake(350, 450));
-    //l->setPosition(CCPointMake(405, 450));
-    //l->setPosition(CCPointMake(460, 450));
-    //l->setPosition(CCPointMake(515, 450));
-    //l->setPosition(CCPointMake(595, 450));
-    //l->setPosition(CCPointMake(660, 450));
-    
-    //l->setPosition(CCPointMake(510, 400));
-
-
-    count=165;
-//    for (int i=0; i<11; i++) {
-//        //assault layer
-//        cocos2d::CCSprite *l=CCSprite::create("highlight-green.png");
-//        addChild(l);
-//        l->setPosition(CCPointMake(count, 550));
-//        locked.push_back(l);
-//        count+=60;
-//        
-//    }
-    
-    cocos2d::CCSprite *l=CCSprite::create("highlight-green.png");
-    addChild(l);
-    l->setPosition(CCPointMake(510, 400));
-    
-    
-    
-    count =60;
+    lockedUnlockedPositions.push_back(CCPointMake(165, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(225, 550));//l->setPosition(CCPointMake(225, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(290, 550));// l->setPosition(CCPointMake(290, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(365, 550));// l->setPosition(CCPointMake(365, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(435, 550));//l->setPosition(CCPointMake(435, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(500, 550));//l->setPosition(CCPointMake(500, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(585, 550));// l->setPosition(CCPointMake(585, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(660, 550));//l->setPosition(CCPointMake(660, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(725, 550));//l->setPosition(CCPointMake(725, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(785, 550));//l->setPosition(CCPointMake(785, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(850, 550));//l->setPosition(CCPointMake(850, 550));
+    lockedUnlockedPositions.push_back(CCPointMake(460, 500));//l->setPosition(CCPointMake(460, 500));
+    lockedUnlockedPositions.push_back(CCPointMake(545, 500));//l->setPosition(CCPointMake(545, 500));
+    lockedUnlockedPositions.push_back(CCPointMake(350, 450));//l->setPosition(CCPointMake(350, 450));
+    lockedUnlockedPositions.push_back(CCPointMake(405, 450));//l->setPosition(CCPointMake(405, 450));
+    lockedUnlockedPositions.push_back(CCPointMake(460, 450));//l->setPosition(CCPointMake(460, 450));
+    lockedUnlockedPositions.push_back(CCPointMake(515, 450));//l->setPosition(CCPointMake(515, 450));
+    lockedUnlockedPositions.push_back(CCPointMake(595, 450));//l->setPosition(CCPointMake(595, 450));
+    lockedUnlockedPositions.push_back(CCPointMake(660, 450));//l->setPosition(CCPointMake(660, 450));
+    lockedUnlockedPositions.push_back(CCPointMake(510, 400));//l->setPosition(CCPointMake(510, 400));
+    lockedUnlockedPositions.push_back(CCPointMake(450, 350));// l->setPosition(CCPointMake(450, 350));
+    lockedUnlockedPositions.push_back(CCPointMake(555, 350));//l->setPosition(CCPointMake(555, 350));
+    lockedUnlockedPositions.push_back(CCPointMake(460, 300));//l->setPosition(CCPointMake(460, 300));
+    lockedUnlockedPositions.push_back(CCPointMake(560, 300));//l->setPosition(CCPointMake(560, 300));
     for (int i =0; i<37; i++) {
      
         cocos2d::CCSprite *l=CCSprite::create("highlight-red.png");
         addChild(l);
-        l->setPosition(CCPointMake(count, 200));
-        unlocked.push_back(l);
+        l->setPosition(lockedUnlockedPositions[i]);
+        locked.push_back(l);
         count+=20;
         
     }
-
-
-    
+    for (int i =0; i<37; i++) {
+        
+        cocos2d::CCSprite *l=CCSprite::create("highlight-green.png");
+        addChild(l);
+        l->setPosition(lockedUnlockedPositions[i]);
+        unlocked.push_back(l);
+               
+    }
     play = CCMenuItemImage::create("play.bmp","playdown.bmp",this,menu_selector(UpgradeScreen::hide));
     play->setPosition( 250, 100);
     CCMenu* pMenu = CCMenu::create(play, NULL);
@@ -153,6 +134,11 @@ void UpgradeScreen::hide(){
         gunBars[i]->setPosition(ccp(2000, 380));
     
     }
+    for (int i =0; i<locked.size(); i++) {
+        
+        locked[i]->setPosition(CCPoint(3000, 3000));
+        unlocked[i]->setPosition(CCPoint(3000, 3000));
+    }
     play->setPosition(ccp(2000, 380));
     quit->setPosition(ccp(2000, 380));
     StartLevel=true;
@@ -167,6 +153,11 @@ void UpgradeScreen::show(){
         
         gunBars[i]->setPosition(gunbarPositions[i]);
         
+    }
+    for (int i =0; i<locked.size(); i++) {
+        
+        locked[i]->setPosition(lockedUnlockedPositions[i]);
+        unlocked[i]->setPosition(lockedUnlockedPositions[i]);
     }
     play->setPosition(ccp(300, 200));
     quit->setPosition(ccp(800, 200));

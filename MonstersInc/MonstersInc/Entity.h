@@ -26,8 +26,12 @@ public:
     float speed;
     void defend(b2Vec2 pos);
     void update();
-    void attack(b2Vec2 playerPos);
+    void moveTo(b2Vec2 playerPos);
+    void walkPath();
+    bool arrived(b2Vec2, b2Vec2);
     b2Vec2 size;
+    void setPath(std::vector<b2Vec2*>);
+    void setPosition(b2Vec2);
 private:
     
     b2Body* body;
@@ -37,6 +41,8 @@ private:
     
     cocos2d::CCAnimation * anim;    
     cocos2d::CCAnimate *theAnim ;
+    std::vector<b2Vec2*> path;
+    int pathCount;
     
 };
 

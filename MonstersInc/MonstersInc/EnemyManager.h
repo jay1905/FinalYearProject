@@ -35,7 +35,9 @@ public:
     void addMetroid(b2Vec2 pos);
     void moveEnemy(b2Vec2 pos);
     void destroy();
-    void setEnemiesToBeAdded( int enemies[],int minSpawn,int maxSpawn);
+    void setEnemiesToBeAdded( int enemies[],float minSpawn,float maxSpawn);
+    void setPath(  std::vector<b2Vec2*>);
+    void movePath();
     
     std::vector<Enemy*> enemys;
     int coins;
@@ -44,8 +46,9 @@ public:
     int spawn;
     int enemiesToBeAdded[5];
     bool levelCompleted;
-    bool test;
+    bool towerLevel;
     int totalEnemys;
+    
     
 private:
     
@@ -55,6 +58,7 @@ private:
     int minSpawn;
     int maxSpawn;
     int addcount;
+    std::vector<b2Vec2 *> path;
   
      
        

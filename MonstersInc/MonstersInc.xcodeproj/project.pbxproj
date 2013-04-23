@@ -336,6 +336,25 @@
 		E0901DFB1717533400C7E11B /* LevelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0901DFA1717533400C7E11B /* LevelManager.cpp */; };
 		E0901DFE1717539A00C7E11B /* Grenade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0901DFD1717539A00C7E11B /* Grenade.cpp */; };
 		E09094CA164AABAE00E744D8 /* License.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = E09094C9164AABAE00E744D8 /* License.mobileprovision */; };
+		E09887831726E0DE00A283C4 /* bullet1.png in Resources */ = {isa = PBXBuildFile; fileRef = E098877D1726E0DE00A283C4 /* bullet1.png */; };
+		E09887841726E0DE00A283C4 /* bullet5.png in Resources */ = {isa = PBXBuildFile; fileRef = E098877E1726E0DE00A283C4 /* bullet5.png */; };
+		E09887851726E0DE00A283C4 /* game_background_Level1.png in Resources */ = {isa = PBXBuildFile; fileRef = E098877F1726E0DE00A283C4 /* game_background_Level1.png */; };
+		E09887861726E0DE00A283C4 /* game_background_Level2.png in Resources */ = {isa = PBXBuildFile; fileRef = E09887801726E0DE00A283C4 /* game_background_Level2.png */; };
+		E09887871726E0DE00A283C4 /* shrapnelRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E09887811726E0DE00A283C4 /* shrapnelRed.png */; };
+		E09887881726E0DE00A283C4 /* shrapnelYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E09887821726E0DE00A283C4 /* shrapnelYellow.png */; };
+		E098878A1726E13400A283C4 /* castlebig.png in Resources */ = {isa = PBXBuildFile; fileRef = E09887891726E13300A283C4 /* castlebig.png */; };
+		E09887981726E2EB00A283C4 /* baseButton.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E098878C1726E2EB00A283C4 /* baseButton.bmp */; };
+		E09887991726E2EB00A283C4 /* baseButtonDown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E098878D1726E2EB00A283C4 /* baseButtonDown.bmp */; };
+		E098879A1726E2EB00A283C4 /* loadGame.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E098878E1726E2EB00A283C4 /* loadGame.bmp */; };
+		E098879B1726E2EB00A283C4 /* loadGameDown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E098878F1726E2EB00A283C4 /* loadGameDown.bmp */; };
+		E098879C1726E2EB00A283C4 /* NewGame.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E09887901726E2EB00A283C4 /* NewGame.bmp */; };
+		E098879D1726E2EB00A283C4 /* NewGameDown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E09887911726E2EB00A283C4 /* NewGameDown.bmp */; };
+		E098879E1726E2EB00A283C4 /* playerButton.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E09887921726E2EB00A283C4 /* playerButton.bmp */; };
+		E098879F1726E2EB00A283C4 /* playerButtonDown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E09887931726E2EB00A283C4 /* playerButtonDown.bmp */; };
+		E09887A01726E2EB00A283C4 /* TowersButton.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E09887941726E2EB00A283C4 /* TowersButton.bmp */; };
+		E09887A11726E2EB00A283C4 /* TowersButtonDown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E09887951726E2EB00A283C4 /* TowersButtonDown.bmp */; };
+		E09887A21726E2EB00A283C4 /* weaponButton.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E09887961726E2EB00A283C4 /* weaponButton.bmp */; };
+		E09887A31726E2EB00A283C4 /* weaponButtonPressed.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E09887971726E2EB00A283C4 /* weaponButtonPressed.bmp */; };
 		E0A4FDB916A874A100D9941B /* assaultRifleSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A4FDB716A874A100D9941B /* assaultRifleSelect.png */; };
 		E0A4FDBA16A874A100D9941B /* handGunSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A4FDB816A874A100D9941B /* handGunSelect.png */; };
 		E0A4FDBE16A88AA100D9941B /* AssaultRifle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4FDBD16A88AA100D9941B /* AssaultRifle.cpp */; };
@@ -1014,6 +1033,25 @@
 		E0901DFC1717537E00C7E11B /* Grenade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grenade.h; sourceTree = "<group>"; };
 		E0901DFD1717539A00C7E11B /* Grenade.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grenade.cpp; sourceTree = "<group>"; };
 		E09094C9164AABAE00E744D8 /* License.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = License.mobileprovision; sourceTree = "<group>"; };
+		E098877D1726E0DE00A283C4 /* bullet1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullet1.png; path = Resources/bullet1.png; sourceTree = "<group>"; };
+		E098877E1726E0DE00A283C4 /* bullet5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullet5.png; path = Resources/bullet5.png; sourceTree = "<group>"; };
+		E098877F1726E0DE00A283C4 /* game_background_Level1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_background_Level1.png; path = Resources/game_background_Level1.png; sourceTree = "<group>"; };
+		E09887801726E0DE00A283C4 /* game_background_Level2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_background_Level2.png; path = Resources/game_background_Level2.png; sourceTree = "<group>"; };
+		E09887811726E0DE00A283C4 /* shrapnelRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shrapnelRed.png; path = Resources/shrapnelRed.png; sourceTree = "<group>"; };
+		E09887821726E0DE00A283C4 /* shrapnelYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shrapnelYellow.png; path = Resources/shrapnelYellow.png; sourceTree = "<group>"; };
+		E09887891726E13300A283C4 /* castlebig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = castlebig.png; path = Resources/castlebig.png; sourceTree = "<group>"; };
+		E098878C1726E2EB00A283C4 /* baseButton.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = baseButton.bmp; path = Resources/baseButton.bmp; sourceTree = "<group>"; };
+		E098878D1726E2EB00A283C4 /* baseButtonDown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = baseButtonDown.bmp; path = Resources/baseButtonDown.bmp; sourceTree = "<group>"; };
+		E098878E1726E2EB00A283C4 /* loadGame.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = loadGame.bmp; path = Resources/loadGame.bmp; sourceTree = "<group>"; };
+		E098878F1726E2EB00A283C4 /* loadGameDown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = loadGameDown.bmp; path = Resources/loadGameDown.bmp; sourceTree = "<group>"; };
+		E09887901726E2EB00A283C4 /* NewGame.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = NewGame.bmp; path = Resources/NewGame.bmp; sourceTree = "<group>"; };
+		E09887911726E2EB00A283C4 /* NewGameDown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = NewGameDown.bmp; path = Resources/NewGameDown.bmp; sourceTree = "<group>"; };
+		E09887921726E2EB00A283C4 /* playerButton.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = playerButton.bmp; path = Resources/playerButton.bmp; sourceTree = "<group>"; };
+		E09887931726E2EB00A283C4 /* playerButtonDown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = playerButtonDown.bmp; path = Resources/playerButtonDown.bmp; sourceTree = "<group>"; };
+		E09887941726E2EB00A283C4 /* TowersButton.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = TowersButton.bmp; path = Resources/TowersButton.bmp; sourceTree = "<group>"; };
+		E09887951726E2EB00A283C4 /* TowersButtonDown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = TowersButtonDown.bmp; path = Resources/TowersButtonDown.bmp; sourceTree = "<group>"; };
+		E09887961726E2EB00A283C4 /* weaponButton.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = weaponButton.bmp; path = Resources/weaponButton.bmp; sourceTree = "<group>"; };
+		E09887971726E2EB00A283C4 /* weaponButtonPressed.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = weaponButtonPressed.bmp; path = Resources/weaponButtonPressed.bmp; sourceTree = "<group>"; };
 		E0A4FDB716A874A100D9941B /* assaultRifleSelect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = assaultRifleSelect.png; path = Resources/assaultRifleSelect.png; sourceTree = "<group>"; };
 		E0A4FDB816A874A100D9941B /* handGunSelect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = handGunSelect.png; path = Resources/handGunSelect.png; sourceTree = "<group>"; };
 		E0A4FDBC16A88A8600D9941B /* AssaultRifle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssaultRifle.h; sourceTree = "<group>"; };
@@ -1125,14 +1163,22 @@
 		E0300C4B162F06340075BBBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E098878B1726E27000A283C4 /* buttons */,
 				E0AE6EC21725A8AC009678B1 /* enemies */,
 				E0AE6EAC1725A81C009678B1 /* BigGuns.png */,
+				E098877D1726E0DE00A283C4 /* bullet1.png */,
+				E098877E1726E0DE00A283C4 /* bullet5.png */,
+				E098877F1726E0DE00A283C4 /* game_background_Level1.png */,
+				E09887801726E0DE00A283C4 /* game_background_Level2.png */,
+				E09887811726E0DE00A283C4 /* shrapnelRed.png */,
+				E09887821726E0DE00A283C4 /* shrapnelYellow.png */,
 				E0AE6EC01725A8A0009678B1 /* HandGuns.png */,
 				E0AE6EAD1725A81C009678B1 /* blueGun.png */,
 				E0AE6EAE1725A81C009678B1 /* EnergyGuns.png */,
 				E0AE6EAF1725A81C009678B1 /* highlight-green.png */,
 				E0AE6EB01725A81D009678B1 /* highlight-red.png */,
 				E0AE6EB11725A81D009678B1 /* MachineGuns.png */,
+				E09887891726E13300A283C4 /* castlebig.png */,
 				E0AE6EB21725A81D009678B1 /* RPGs.png */,
 				E0AE6EB31725A81D009678B1 /* Shotguns.png */,
 				E0AE6EB41725A81D009678B1 /* SniperRifles.png */,
@@ -2248,6 +2294,25 @@
 			name = enemies;
 			sourceTree = "<group>";
 		};
+		E098878B1726E27000A283C4 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E098878C1726E2EB00A283C4 /* baseButton.bmp */,
+				E098878D1726E2EB00A283C4 /* baseButtonDown.bmp */,
+				E098878E1726E2EB00A283C4 /* loadGame.bmp */,
+				E098878F1726E2EB00A283C4 /* loadGameDown.bmp */,
+				E09887901726E2EB00A283C4 /* NewGame.bmp */,
+				E09887911726E2EB00A283C4 /* NewGameDown.bmp */,
+				E09887921726E2EB00A283C4 /* playerButton.bmp */,
+				E09887931726E2EB00A283C4 /* playerButtonDown.bmp */,
+				E09887941726E2EB00A283C4 /* TowersButton.bmp */,
+				E09887951726E2EB00A283C4 /* TowersButtonDown.bmp */,
+				E09887961726E2EB00A283C4 /* weaponButton.bmp */,
+				E09887971726E2EB00A283C4 /* weaponButtonPressed.bmp */,
+			);
+			name = buttons;
+			sourceTree = "<group>";
+		};
 		E0AE6EC21725A8AC009678B1 /* enemies */ = {
 			isa = PBXGroup;
 			children = (
@@ -2436,6 +2501,25 @@
 				E0AE6EC11725A8A0009678B1 /* HandGuns.png in Resources */,
 				E0AE6EC51725CAC2009678B1 /* ie_shot_gun-luminalace-770179786.mp3 in Resources */,
 				E0AE6EC61725CAC2009678B1 /* M1 Garand Single-SoundBible.com-1941178963.mp3 in Resources */,
+				E09887831726E0DE00A283C4 /* bullet1.png in Resources */,
+				E09887841726E0DE00A283C4 /* bullet5.png in Resources */,
+				E09887851726E0DE00A283C4 /* game_background_Level1.png in Resources */,
+				E09887861726E0DE00A283C4 /* game_background_Level2.png in Resources */,
+				E09887871726E0DE00A283C4 /* shrapnelRed.png in Resources */,
+				E09887881726E0DE00A283C4 /* shrapnelYellow.png in Resources */,
+				E098878A1726E13400A283C4 /* castlebig.png in Resources */,
+				E09887981726E2EB00A283C4 /* baseButton.bmp in Resources */,
+				E09887991726E2EB00A283C4 /* baseButtonDown.bmp in Resources */,
+				E098879A1726E2EB00A283C4 /* loadGame.bmp in Resources */,
+				E098879B1726E2EB00A283C4 /* loadGameDown.bmp in Resources */,
+				E098879C1726E2EB00A283C4 /* NewGame.bmp in Resources */,
+				E098879D1726E2EB00A283C4 /* NewGameDown.bmp in Resources */,
+				E098879E1726E2EB00A283C4 /* playerButton.bmp in Resources */,
+				E098879F1726E2EB00A283C4 /* playerButtonDown.bmp in Resources */,
+				E09887A01726E2EB00A283C4 /* TowersButton.bmp in Resources */,
+				E09887A11726E2EB00A283C4 /* TowersButtonDown.bmp in Resources */,
+				E09887A21726E2EB00A283C4 /* weaponButton.bmp in Resources */,
+				E09887A31726E2EB00A283C4 /* weaponButtonPressed.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -256,6 +256,8 @@ void HelloWorld::update(float dt)
     //of the simulation, however, we are using a variable time step here.
     //You need to make an informed choice, the following URL is useful
     //http://gafferongames.com/game-physics/fix-your-timestep/
+    CCSize s = CCDirector::sharedDirector()->getWinSize();
+
     
     int velocityIterations = 8;
     int positionIterations = 1;
@@ -269,18 +271,13 @@ void HelloWorld::update(float dt)
                    upgradeScn->show();
                
            }
-
-                
-            
-            
-        
 //            if(eManager->enemyCurrent==0){
 //            
 //                win->setOpacity(100);
 //                win2->setOpacity(100);
 //                pCloseItem->setOpacity(100);
 //            }
-       
+
             if(player->health<=0){
                     player->health=0;
                     loose->setOpacity(100);
@@ -289,7 +286,6 @@ void HelloWorld::update(float dt)
             
             }
             else{
-                
             //        if(baseButton->hb->build){
             //            baseButton->hb->build=false;
             //            if(eManager->coins>=50){
@@ -314,7 +310,18 @@ void HelloWorld::update(float dt)
                     eManager->moveEnemy(b2Vec2(player->m_pBody->GetPosition().x, player->m_pBody->GetPosition().y));
                     eManager->update();
                     bulletMan->update();
-                    
+                
+                    CCPoint centre= CCPoint(s.width/2, s.height/2);
+                    CCPoint playerpos= CCPoint(player->returnpos().x*PTM_RATIO, player->returnpos().y*PTM_RATIO);
+                
+                    CCPoint camerapos = ccpSub(centre, playerpos);
+                
+                    this->setPosition(camerapos);
+                    CCPoint an = CCPoint(analog->getPosition());
+                    CCPoint an1= ccpSub(an, camerapos);
+                    analog->setPosition(an1);
+                
+                
                     if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
                        
                             if(wep->handgun){
@@ -348,8 +355,6 @@ void HelloWorld::update(float dt)
             char coin[100];
             snprintf(coin, 100, "%d",eManager->coins);
             label3->setString(coin);
-            
-            
             char helth[100];
             snprintf(helth, 100, "%i",player->health);
             label4->setString(helth);

@@ -35,6 +35,7 @@ public:
     void disassembleCurl(std::string);
     void saveWithCurl(std::string, int);
     void checkMultiPlayer();
+    void towerDefence();
         
     
 private:
@@ -46,6 +47,7 @@ private:
     cocos2d::CCMenuItemImage *level2btn;
     cocos2d::CCMenuItemImage *newGame;
      cocos2d::CCMenuItemImage *enter;
+     cocos2d::CCMenuItemImage *towerGame;
     
 
     cocos2d::CCSprite *jaime;

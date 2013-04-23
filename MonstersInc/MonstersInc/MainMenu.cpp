@@ -82,6 +82,15 @@ void MainMenu::init(){
     lev2->setPosition(CCPointZero);
     addChild(lev2,1);
     
+    
+    towerGame=CCMenuItemImage::create("TowersButton.bmp", "TowersButtonDown.bmp", this, menu_selector(MainMenu::towerDefence));
+    towerGame->setPosition(CCPoint(100, 100));
+    CCMenu *towergame=CCMenu::create(towerGame,NULL);
+    towergame->setPosition(CCPointZero);
+    addChild(towergame,1);
+    
+    
+    
     jaime = CCSprite::create("MonstersInc.jpg");
     jaime->setPosition(CCPointMake(510, 380));
     addChild(jaime);
@@ -386,6 +395,13 @@ void MainMenu::tutorialLevel(){;
 void MainMenu::level1(){
     
     CCScene *pScene1= HelloWorld::scene();
+    CCDirector::sharedDirector()->replaceScene(pScene1);
+    
+    
+}
+void MainMenu::towerDefence(){
+    
+    CCScene *pScene1= LevelManager::scene();
     CCDirector::sharedDirector()->replaceScene(pScene1);
     
     

@@ -41,21 +41,67 @@ void Entity::initialize(cocos2d::CCSpriteBatchNode *hello,b2World *world,b2Vec2 
     this->setPhysicsBody(body);
     speed =spd;
     body->SetUserData(this);
-    
+    pathCount=0;
     
     isdefending=false;
     
 }
-void Entity::attack(b2Vec2 playerPos){
+void Entity::setPosition(b2Vec2 pos){
     
-    //cheack length 
-    //if length is shorter than set do this 
+    
+    
+}
+void Entity::setPath(std::vector<b2Vec2*> p){
+    
+    for (int i = 0; i<p.size(); i++) {
+        path.push_back(p[i]);
+    }
+    
+    
+}
+void Entity::walkPath(){
+    
+    if(pathCount< path.size()){
+        
+        moveTo(*path[pathCount]);
+        if(arrived(m_pBody->GetPosition(),*path[pathCount])){
+            
+            
+            pathCount++;
+            
+        }
+        
+    }
+    else{
+        
+        this->body->SetLinearVelocity(b2Vec2(0,0));
+
+        
+    }
+    
+    
+}
+bool Entity::arrived(b2Vec2 pos, b2Vec2 destination){
+    
+    if(pos.x>destination.x-1&&pos.x<destination.x+1){
+        
+        if(pos.y>destination.y-1&&pos.y<destination.y+1){
+            return true;
+        }
+        
+    }
+    return false;
+               
+               
+}
+void Entity::moveTo(b2Vec2 playerPos){
+    
+   
     b2Vec2 dir = b2Vec2(m_pBody->GetPosition().x-playerPos.x, m_pBody->GetPosition().y-playerPos.y);
     dir.Normalize();
     
     this->body->SetLinearVelocity(b2Vec2(-dir.x*speed, -dir.y*speed));
-    //else 
-    //move in (1,0);    
+      
 }
 void Entity::defend(b2Vec2 pos){
     

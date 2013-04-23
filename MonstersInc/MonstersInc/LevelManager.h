@@ -44,7 +44,7 @@ private:
     Base * castle;
     Player* player;
     EnemyManager *eman;
-    Analogue * analog;
+   
     Analogue * analog2;    
        UpgradeScreen *upgradeScn;
     

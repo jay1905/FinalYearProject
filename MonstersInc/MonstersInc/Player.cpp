@@ -19,7 +19,7 @@ Player::Player(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     this->initWithTexture(hello->getTexture(), CCRectMake(0, 0, 54, 44));
     this->autorelease();
     bodyDef.type=b2_dynamicBody;
-    bodyDef.position.Set(20, 19);
+    bodyDef.position.Set(31, 12);
     playerbody=world->CreateBody(&bodyDef);
     float x=54/32;
     float y = 44/32;

@@ -28,9 +28,11 @@ Level::Level(float minSpawn,float maxSpawn,int enemyOne,int enemyTwo,int enemyTh
     enemies[4]=enemyFive;
     
 }
-void Level::initialize(){
+void Level::setPath(std::vector<b2Vec2*> p){
     
-    
+    for (int i =0; i<p.size(); i++) {
+        path.push_back(p[i]);
+    }
     
     
 }
