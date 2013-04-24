@@ -42,6 +42,7 @@ public:
     virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     virtual  void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
     void update(float dt);
+    void updateUI();
 
     void exitMainMenu();
 

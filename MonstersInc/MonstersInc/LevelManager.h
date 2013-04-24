@@ -18,6 +18,7 @@
 #include "Level.h"
 #include "MainMenu.h"
 #include "UpgradeScreen.h"
+#include "TowerManager.h"
 
 class LevelManager : public cocos2d::CCLayer
 {
@@ -44,6 +45,7 @@ private:
     Base * castle;
     Player* player;
     EnemyManager *eman;
+    TowerManager * towerMan;
    
     Analogue * analog2;    
        UpgradeScreen *upgradeScn;

@@ -54,6 +54,7 @@ void LevelManager::initialize(){
     upgradeScn = new UpgradeScreen();
     this->addChild(upgradeScn);
     
+    towerMan= new TowerManager();
     
     float minSpawn=10;
    float maxSpawn=100;

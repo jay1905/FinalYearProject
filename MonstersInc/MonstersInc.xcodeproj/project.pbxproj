@@ -215,6 +215,9 @@
 		E083C8581649AF68002EE487 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = E083C8571649AF68002EE487 /* Player.png */; };
 		E083C85B1649B9F2002EE487 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E083C85A1649B9F1002EE487 /* Bullet.cpp */; };
 		E083C85E1649BA60002EE487 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E083C85D1649BA60002EE487 /* Base.cpp */; };
+		E086C25417284CA000E2E73E /* GrassBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E086C25317284CA000E2E73E /* GrassBackground.png */; };
+		E086C25717286BBA00E2E73E /* TowerManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E086C25617286BBA00E2E73E /* TowerManager.cpp */; };
+		E086C25A1728733400E2E73E /* TileSquare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E086C2591728733300E2E73E /* TileSquare.cpp */; };
 		E08730CE16398B1300C4935D /* Analogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E08730CD16398B1300C4935D /* Analogue.cpp */; };
 		E087AD6116A959E20005089E /* tower1btn.png in Resources */ = {isa = PBXBuildFile; fileRef = E087AD6016A959E20005089E /* tower1btn.png */; };
 		E087AD6516A973A30005089E /* thum1.png in Resources */ = {isa = PBXBuildFile; fileRef = E087AD6316A973A30005089E /* thum1.png */; };
@@ -844,6 +847,11 @@
 		E083C85A1649B9F1002EE487 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		E083C85C1649BA52002EE487 /* Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
 		E083C85D1649BA60002EE487 /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
+		E086C25317284CA000E2E73E /* GrassBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GrassBackground.png; path = Resources/GrassBackground.png; sourceTree = "<group>"; };
+		E086C25517286B9F00E2E73E /* TowerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TowerManager.h; sourceTree = "<group>"; };
+		E086C25617286BBA00E2E73E /* TowerManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TowerManager.cpp; sourceTree = "<group>"; };
+		E086C2581728732800E2E73E /* TileSquare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileSquare.h; sourceTree = "<group>"; };
+		E086C2591728733300E2E73E /* TileSquare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileSquare.cpp; sourceTree = "<group>"; };
 		E08730CC16398AFD00C4935D /* Analogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analogue.h; sourceTree = "<group>"; };
 		E08730CD16398B1300C4935D /* Analogue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Analogue.cpp; sourceTree = "<group>"; };
 		E087AD6016A959E20005089E /* tower1btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tower1btn.png; path = Resources/tower1btn.png; sourceTree = "<group>"; };
@@ -1165,6 +1173,7 @@
 			children = (
 				E098878B1726E27000A283C4 /* buttons */,
 				E0AE6EC21725A8AC009678B1 /* enemies */,
+				E086C25317284CA000E2E73E /* GrassBackground.png */,
 				E0AE6EAC1725A81C009678B1 /* BigGuns.png */,
 				E098877D1726E0DE00A283C4 /* bullet1.png */,
 				E098877E1726E0DE00A283C4 /* bullet5.png */,
@@ -2118,6 +2127,10 @@
 				E0901DFA1717533400C7E11B /* LevelManager.cpp */,
 				E0901DFC1717537E00C7E11B /* Grenade.h */,
 				E0901DFD1717539A00C7E11B /* Grenade.cpp */,
+				E086C25517286B9F00E2E73E /* TowerManager.h */,
+				E086C25617286BBA00E2E73E /* TowerManager.cpp */,
+				E086C2581728732800E2E73E /* TileSquare.h */,
+				E086C2591728733300E2E73E /* TileSquare.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2520,6 +2533,7 @@
 				E09887A11726E2EB00A283C4 /* TowersButtonDown.bmp in Resources */,
 				E09887A21726E2EB00A283C4 /* weaponButton.bmp in Resources */,
 				E09887A31726E2EB00A283C4 /* weaponButtonPressed.bmp in Resources */,
+				E086C25417284CA000E2E73E /* GrassBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2784,6 +2798,8 @@
 				E087D343171C7C0C00E3E09C /* Pikachu.cpp in Sources */,
 				E087D346171C851200E3E09C /* Sully.cpp in Sources */,
 				E087D349171C853500E3E09C /* Metroid.cpp in Sources */,
+				E086C25717286BBA00E2E73E /* TowerManager.cpp in Sources */,
+				E086C25A1728733400E2E73E /* TileSquare.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

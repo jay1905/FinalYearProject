@@ -235,7 +235,7 @@ void MainMenu::saveWithCurl(std::string n, int s){
    
     
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://10.40.8.226:8080/insertScore/");
+        curl_easy_setopt(curl, CURLOPT_URL, "http://10.40.8.117:8080/insertScore/");
         curl_easy_setopt(curl, CURLOPT_POST, 1);
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, use);
         res = curl_easy_perform(curl);
@@ -314,7 +314,7 @@ void MainMenu::checkMultiPlayer(){
     curl = curl_easy_init();
     if (curl) 
     {
-        curl_easy_setopt(curl,   CURLOPT_URL, "http://10.40.8.226:8080/getSession/");
+        curl_easy_setopt(curl,   CURLOPT_URL, "http://10.40.8.117:8080/getSession/");
         curl_easy_setopt(curl,   CURLOPT_NOPROGRESS  ,1);
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_to_string);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &multi);
@@ -364,7 +364,7 @@ void MainMenu::tutorialLevel(){;
     curl = curl_easy_init();
     if (curl) 
     {
-        curl_easy_setopt(curl,   CURLOPT_URL, "http://10.40.8.226:8080/SearchForSession/");
+        curl_easy_setopt(curl,   CURLOPT_URL, "http://10.40.8.117:8080/SearchForSession/");
         curl_easy_setopt(curl,   CURLOPT_NOPROGRESS  ,1);
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_to_string);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &datab);
@@ -417,7 +417,7 @@ void MainMenu::level2(){
     curl = curl_easy_init();
     if (curl) 
     {
-        curl_easy_setopt(curl,   CURLOPT_URL, "http://10.40.8.226:8080/getScore/");
+        curl_easy_setopt(curl,   CURLOPT_URL, "http://10.40.8.117:8080/getScore/");
         curl_easy_setopt(curl,   CURLOPT_NOPROGRESS  ,1);
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_to_string);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &datab);

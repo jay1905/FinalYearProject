@@ -18,6 +18,7 @@ PhysicsSprite::PhysicsSprite()
 : m_pBody(NULL)
 {
     name = "object";
+    dieing=false;
  
 }
 

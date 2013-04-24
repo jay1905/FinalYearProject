@@ -36,14 +36,10 @@ HelloWorld::HelloWorld()
     
     addChild(parent, 0, kTagParentNode);
   
-    jaime = CCSprite::create("game_background.png");
-    jaime->setPosition(CCPointMake(500, 380));
+    jaime = CCSprite::create("GrassBackground.png");
+    jaime->setPosition(CCPointMake(0, 0));
     addChild(jaime);
     
-    //lava = new Barrier();
-    //CCSpriteBatchNode *moat = CCSpriteBatchNode::create("lava_001.png", 100);
-    //lava->initialize(moat, world, b2Vec2(400, s.height/2), 0, b2Vec2(256, 768), "lavaPit");
-    //addChild(lava);
     
     analog = new Analogue(CCPoint(100, 95));
     this->addChild(analog);
@@ -104,15 +100,6 @@ HelloWorld::HelloWorld()
     player= new Player(hello,world);
     addChild(player);
       
-//    
-//    base = new Base(world);
-//    addChild(base);
-//    
-//    
-//    
-//    baseButton= new BaseButton(CCPoint(892, 580));
-//    addChild(baseButton);
-    
     
     
     SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("Final Fantasy VII - Birth of a God [HQ].mp3");
@@ -217,19 +204,19 @@ void HelloWorld::initPhysics()
     
     // bottom
     
-    groundBox.Set(b2Vec2(0,0), b2Vec2(s.width/PTM_RATIO,0));
+    groundBox.Set(b2Vec2(-1000/PTM_RATIO,-1000/PTM_RATIO), b2Vec2(1000/PTM_RATIO,-1000/PTM_RATIO));
     groundBody->CreateFixture(&groundBox,0);
     
     // top
-    groundBox.Set(b2Vec2(0,s.height/PTM_RATIO), b2Vec2(s.width/PTM_RATIO,s.height/PTM_RATIO));
+    groundBox.Set(b2Vec2(-1000/PTM_RATIO,1000/PTM_RATIO), b2Vec2(1000/PTM_RATIO,1000/PTM_RATIO));
     groundBody->CreateFixture(&groundBox,0);
     
     // left
-    groundBox.Set(b2Vec2(0,s.height/PTM_RATIO), b2Vec2(0,0));
+    groundBox.Set(b2Vec2(-1000/PTM_RATIO,1000/PTM_RATIO), b2Vec2(-1000/PTM_RATIO,-1000/PTM_RATIO));
     groundBody->CreateFixture(&groundBox,0);
     
     // right  
-    groundBox.Set(b2Vec2(s.width/PTM_RATIO,s.height/PTM_RATIO), b2Vec2(s.width/PTM_RATIO,0));
+    groundBox.Set(b2Vec2(1000/PTM_RATIO,1000/PTM_RATIO), b2Vec2(1000/PTM_RATIO,-1000/PTM_RATIO));
     groundBody->CreateFixture(&groundBox,0);
 }
 
@@ -256,8 +243,7 @@ void HelloWorld::update(float dt)
     //of the simulation, however, we are using a variable time step here.
     //You need to make an informed choice, the following URL is useful
     //http://gafferongames.com/game-physics/fix-your-timestep/
-    CCSize s = CCDirector::sharedDirector()->getWinSize();
-
+   
     
     int velocityIterations = 8;
     int positionIterations = 1;
@@ -311,15 +297,7 @@ void HelloWorld::update(float dt)
                     eManager->update();
                     bulletMan->update();
                 
-                    CCPoint centre= CCPoint(s.width/2, s.height/2);
-                    CCPoint playerpos= CCPoint(player->returnpos().x*PTM_RATIO, player->returnpos().y*PTM_RATIO);
-                
-                    CCPoint camerapos = ccpSub(centre, playerpos);
-                
-                    this->setPosition(camerapos);
-                    CCPoint an = CCPoint(analog->getPosition());
-                    CCPoint an1= ccpSub(an, camerapos);
-                    analog->setPosition(an1);
+                    updateUI();
                 
                 
                     if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
@@ -362,6 +340,65 @@ void HelloWorld::update(float dt)
    }
     world->Step(dt, velocityIterations, positionIterations);
 
+    
+}
+void HelloWorld::updateUI(){
+    
+    CCSize s = CCDirector::sharedDirector()->getWinSize();
+
+    
+    CCPoint centre= CCPoint(s.width/2, s.height/2);
+    CCPoint playerpos= CCPoint(player->returnpos().x*PTM_RATIO, player->returnpos().y*PTM_RATIO);
+    CCPoint camerapos = ccpSub(centre, playerpos);
+    
+    float gameedgeright=19;
+    if(camerapos.x<=gameedgeright){
+        
+        camerapos.x=gameedgeright;
+        
+    }
+    float gameedgeleft=1000;
+    if(camerapos.x>=gameedgeleft){
+        
+        camerapos.x=gameedgeleft;
+        
+    }
+    float gameedgetop=-239;
+    if(camerapos.y<=gameedgetop){
+        
+        camerapos.y=gameedgetop;
+        
+    }
+    float gameedgebottom=1000;
+    if(camerapos.y>=gameedgebottom){
+        
+        camerapos.y=gameedgebottom;
+        
+    }
+    this->setPosition(camerapos);
+    
+    
+    
+    CCPoint an = CCPoint(0,0);
+    CCPoint an1= ccpSub(an, camerapos);
+    analog->setPosition(an1);
+    analog2->setPosition(an1);
+    CCPoint l3= CCPoint(325, 745);
+    CCPoint lab3 = ccpSub(l3, camerapos);
+    label3->setPosition(lab3);
+    CCPoint l4= CCPoint(130, 745);
+    CCPoint lab4 = ccpSub(l4, camerapos);
+    label4->setPosition(lab4);
+    CCPoint l1= CCPoint(60, 745);
+    CCPoint lab1 = ccpSub(l1, camerapos);
+    label->setPosition(lab1);
+    
+    CCPoint l2= CCPoint(260, 745);
+    CCPoint lab2 = ccpSub(l2, camerapos);
+    label2->setPosition(lab2);
+
+
+    
     
 }
 void HelloWorld::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
