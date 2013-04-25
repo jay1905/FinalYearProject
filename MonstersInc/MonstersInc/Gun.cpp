@@ -13,14 +13,11 @@
 
 using namespace cocos2d;
 
-Gun::Gun(){
+Gun::Gun(int d,int fr,int cost, std::string n){
     
-    damage=5;
-    
-    fireRate=13;
-    
-    reloadSpeed=0.5;
-    ammoCapacity=30;
-    currentAmmo=30;
-    
+    damage=d;
+    fireRate=fr;
+    name=n;
+    locked=true;
+    price=cost;
 }

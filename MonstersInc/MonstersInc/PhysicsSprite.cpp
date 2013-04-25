@@ -19,6 +19,7 @@ PhysicsSprite::PhysicsSprite()
 {
     name = "object";
     dieing=false;
+    health=100;
  
 }
 

@@ -33,12 +33,17 @@ void LevelManager::initialize(){
     
     CCSize s = CCDirector::sharedDirector()->getWinSize();
     
-	jaime = CCSprite::create("game_background_Level1.png");
-    jaime->setPosition(CCPointMake(420, 380));
-    addChild(jaime);
+	background = CCSprite::create("game_background_Level1.png");
+    background->setPosition(CCPointMake(470, 380));
+    addChild(background);
     
     castle = new Base(world);
     addChild(castle);
+   cocos2d::CCSprite *castleSprite = CCSprite::create("castle.png");
+    castleSprite->setPosition(CCPointMake(950, 380));
+    castleSprite->setRotation(90);
+    castleSprite->setScale(1.6);
+    addChild(castleSprite);
     
     
     CCSpriteBatchNode *hello = CCSpriteBatchNode::create("Player.png", 100);
@@ -51,13 +56,21 @@ void LevelManager::initialize(){
     analog2 = new Analogue(CCPoint(s.width-100, 95));
     this->addChild(analog2);
     
+    world->SetContactListener(&mycontact);
+
+    
+    baseButton= new BaseButton(CCPoint(900, 750));
+    this->addChild(baseButton);
+    
+    
     upgradeScn = new UpgradeScreen();
     this->addChild(upgradeScn);
     
     towerMan= new TowerManager();
+   
     
     float minSpawn=10;
-   float maxSpawn=100;
+    float maxSpawn=100;
     int numEnemyOne=2;
     int numEnemyTwo=2;
     int numEnemyThree=2;
@@ -66,17 +79,20 @@ void LevelManager::initialize(){
     std::vector<b2Vec2 *> path1;
     
     
-    b2Vec2 * a= new b2Vec2(150/32, 560/32);
+    b2Vec2 * a= new b2Vec2(200/PTM_RATIO, 560/PTM_RATIO);
     path1.push_back( a);
     
-    b2Vec2 * b= new b2Vec2(120/32, 90/32);
+    b2Vec2 * b= new b2Vec2(200/PTM_RATIO, 60/PTM_RATIO);
     path1.push_back( b);
     
-    b2Vec2 * c= new b2Vec2(700/32, 90/32);
+    b2Vec2 * c= new b2Vec2(770/PTM_RATIO, 60/PTM_RATIO);
     path1.push_back( c);
 
-    b2Vec2 * d= new b2Vec2(700/32, 500/32);
+    b2Vec2 * d= new b2Vec2(770/PTM_RATIO, 475/PTM_RATIO);
     path1.push_back(d);
+    
+    b2Vec2 * e= new b2Vec2(950/PTM_RATIO, 475/PTM_RATIO);
+    path1.push_back(e);
 
     
     currentLevel=0;/////this needs to be saved
@@ -123,6 +139,13 @@ void LevelManager::update(float dt){
             
             eman->update();
             eman->movePath();
+            towerMan->update(eman->enemys, world, this);
+            if(baseButton->hb->build==true){
+                
+                baseButton->hb->build=false;
+                
+                towerMan->createTower(baseButton->hb->buildPoint, this, world);
+            }
             
         }
     }

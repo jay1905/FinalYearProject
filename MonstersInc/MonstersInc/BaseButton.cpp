@@ -14,7 +14,7 @@
 #define JOYSTICK_RADIUS 96.0f
 #define THUMB_RADIUS 70.0f
 #define SQUARE_WIDTH 134.0f
-#define SQUARE_HEIGHT 404.0f
+#define SQUARE_HEIGHT 143.0f
 using namespace cocos2d;
 static CCPoint convertCoordinate(CCPoint point){
     return CCDirector::sharedDirector()->convertToGL(point);
@@ -45,15 +45,16 @@ bool BaseButton::init()
         CC_BREAK_IF(!CCLayer::init());
         this->setTouchEnabled(true);
         velocity = CCPointZero;         
-        bg = CCSprite::spriteWithFile("red.png");
-        bg->setPosition(CCPoint(67+position.x,position.y-202));
-        bg->setOpacity(0);
+        bg = CCSprite::spriteWithFile("red2.png");
+        bg->setPosition(CCPoint(67+position.x,position.y-72));
+        bg->setOpacity(50);
         this->addChild(bg,0);
         direction= b2Vec2(0, 0);
         bRet=true;
         hb=new HumanButton(CCPoint(position.x, position.y));
         this->addChild(hb);
-        castleTouch=false;
+        activated=false;
+       
     }while(0);
     return bRet;
 }
@@ -79,20 +80,20 @@ void BaseButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
         point = convertCoordinate(point);
         if(isPointInSquare(point,position)){
             
-            if(activated ==false){
+            //if(activated ==false){
                 isPressed = true;
-                bg->setOpacity(100);
-                hb->bg->setOpacity(200);
+                //bg->setOpacity(100);
+            //    hb->bg->setOpacity(200);
                 activated=true;
-                castleTouch=true;
-            }
+                
+            //}
                    
         }
         else{
             
             activated=false;
-            bg->setOpacity(0);
-            hb->bg->setOpacity(0);
+            bg->setOpacity(50);
+            //hb->bg->setOpacity(40);
             
         }
 }

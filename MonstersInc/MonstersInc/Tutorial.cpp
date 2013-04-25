@@ -132,14 +132,12 @@ void Tutorial::init(){
 
         bullets=new CCArray();
         createBounds();
-        gun= new Gun();
         fireCount=20;
     
         eMan=new EnemyManager(world, this);   
         eMan->addEnemy(b2Vec2(120,600));
     eMan->coins=45;
-    assaultgun= new AssaultRifle();
-
+   
     thumb1 = CCSprite::create("thum1.png");
     thumb1->setPosition(CCPointMake(120, 100));
     thumb1->setOpacity(70);
@@ -158,8 +156,7 @@ void Tutorial::init(){
     baseButton= new BaseButton(CCPoint(892, 580));
     addChild(baseButton);
 
-    wep= new WeaponSelectButton(CCPoint(500, 750));
-    addChild(wep);
+   
     builed=false;
     
         world->SetContactListener(&mycontact);
@@ -240,13 +237,13 @@ void Tutorial::update(float dt){
         
         
     }
-    if(baseButton->castleTouch==true){
-        
-        label->setOpacity(0);
-        label2->setOpacity(0);
-        label10->setOpacity(100);
-    
-    }
+//    if(baseButton->castleTouch==true){
+//        
+//        label->setOpacity(0);
+//        label2->setOpacity(0);
+//        label10->setOpacity(100);
+//    
+//    }
     if(baseButton->hb->buttontouch==true){
         
           label10->setOpacity(0);
@@ -262,30 +259,30 @@ void Tutorial::update(float dt){
     
     
     if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
-        if(wep->handgun){
-            if(fireCount>gun->fireRate){
-                bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
-                addChild(bulletSprite);
-                Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
-                b->fire(analog2->getDirection());
-                bulletSprite->addChild(b);
-                bullets->addObject(b);
-                fireCount=0;
-                
-            }
-        }
-        else if(wep->assaultrifle){
-            if(fireCount>assaultgun->fireRate){
-                bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
-                addChild(bulletSprite);
-                Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
-                b->fire(analog2->getDirection());
-                bulletSprite->addChild(b);
-                bullets->addObject(b);
-                fireCount=0;
-                
-            }
-        }
+//        if(wep->handgun){
+//            if(fireCount>gun->fireRate){
+//                bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
+//                addChild(bulletSprite);
+//                Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
+//                b->fire(analog2->getDirection());
+//                bulletSprite->addChild(b);
+//                bullets->addObject(b);
+//                fireCount=0;
+//                
+//            }
+//        }
+       // else if(wep->assaultrifle){
+//            if(fireCount>assaultgun->fireRate){
+//                bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
+//                addChild(bulletSprite);
+//                Bullet *b = new Bullet(bulletSprite,world,player->returnpos());
+//                b->fire(analog2->getDirection());
+//                bulletSprite->addChild(b);
+//                bullets->addObject(b);
+//                fireCount=0;
+//                
+//            }
+        //}
         fireCount++;
         if(analog2->getDirection().x<0){
             player->setFlipX(false);
@@ -294,38 +291,38 @@ void Tutorial::update(float dt){
             player->setFlipX(true);
         }
     }
-    if(bullets->count()!=0){
-        for (int i=0; i<bullets->count(); i++){
-            Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
-            b->update();
-            if(b->timetolive > 60*2){
-                bullets->removeObjectAtIndex(i);
-                world->DestroyBody(b->m_pBody);
-                b->removeChild(b, true);
-            }
-        }
-    }
-    if(baseButton->hb->build){
-        baseButton->hb->build=false;
-        if(eMan->coins>=50){
-            eMan->coins=eMan->coins-50;
-            builed=true;
-            Tower *t = new Tower();
-            CCSpriteBatchNode * tow= CCSpriteBatchNode::create("tower1.png", 100);
-            t->initialize(tow, world,baseButton->hb->buildPoint, 20, b2Vec2(97, 67), "tower");
-            
-            addChild(t);
-            towers.push_back(t);
-        }
-    }
-    if(towers.size()!=0){
-        for (int i=0; i<towers.size(); i++){
-            Tower  *b = static_cast<Tower *>(towers[i]);
-            b->update(world,eMan->enemys,this,world);
-            
-        }
-    }
-    
+//    if(bullets->count()!=0){
+//        for (int i=0; i<bullets->count(); i++){
+//            Bullet  *b = static_cast<Bullet *>(bullets->objectAtIndex(i));
+//            b->update();
+//            if(b->timetolive > 60*2){
+//                bullets->removeObjectAtIndex(i);
+//                world->DestroyBody(b->m_pBody);
+//                b->removeChild(b, true);
+//            }
+//        }
+//    }
+//    if(baseButton->hb->build){
+//        baseButton->hb->build=false;
+//        if(eMan->coins>=50){
+//            eMan->coins=eMan->coins-50;
+//            builed=true;
+//            Tower *t = new Tower();
+//            CCSpriteBatchNode * tow= CCSpriteBatchNode::create("tower1.png", 100);
+//            t->initialize(tow, world,baseButton->hb->buildPoint, 20, b2Vec2(97, 67), "tower");
+//            
+//            addChild(t);
+//            towers.push_back(t);
+//        }
+//    }
+//    if(towers.size()!=0){
+//        for (int i=0; i<towers.size(); i++){
+//            Tower  *b = static_cast<Tower *>(towers[i]);
+//            b->update(world,eMan->enemys,this);
+//            
+//        }
+//    }
+
     world->Step(dt, velocityIterations, positionIterations);
     
     

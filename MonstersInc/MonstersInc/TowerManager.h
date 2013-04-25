@@ -22,7 +22,7 @@ public:
     
     TowerManager();
     void createTower(b2Vec2 ,cocos2d::CCLayer*,b2World* world);
-    void update();
+    void update(std::vector<Enemy*> ,b2World* world,cocos2d::CCLayer*);
     
     
 private:

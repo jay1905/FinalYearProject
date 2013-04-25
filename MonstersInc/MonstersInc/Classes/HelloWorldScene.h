@@ -16,10 +16,9 @@
 #include "Human.h"
 #include "BaseButton.h"
 #include "Tower.h"
-#include "WeaponSelectButton.h"
-#include "AssaultRifle.h"
+
 #include "BulletManager.h"
-#include "Barrier.h"
+
 #include "SaveFileData.h"
 #include "UpgradeScreen.h"
 #include "Level.h"
@@ -63,10 +62,9 @@ private:
     cocos2d::CCSprite *jaime;
     cocos2d::CCArray *bullets;
     cocos2d::CCSpriteBatchNode *bulletSprite;
-    AssaultRifle * assaultgun;
-    WeaponSelectButton * wep;
+   
     BulletManager * bulletMan;
-    Barrier * lava;
+   
     SaveFileData * savedData;
     
     std::vector<Tower*> towers;

@@ -19,6 +19,8 @@
 #include "MainMenu.h"
 #include "UpgradeScreen.h"
 #include "TowerManager.h"
+#include "BaseButton.h"
+#include "MyContactListener.h"
 
 class LevelManager : public cocos2d::CCLayer
 {
@@ -41,14 +43,16 @@ public:
 private:
     int currentLevel;
     b2World* world;
-    cocos2d::CCSprite *jaime;
+    cocos2d::CCSprite *background;
     Base * castle;
     Player* player;
     EnemyManager *eman;
     TowerManager * towerMan;
+     BaseButton *baseButton;
    
     Analogue * analog2;    
        UpgradeScreen *upgradeScn;
+     MyContactListener mycontact;
     
     
     std::vector<Level*> levels;

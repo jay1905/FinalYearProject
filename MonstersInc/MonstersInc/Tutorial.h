@@ -21,8 +21,8 @@
 #include "Base.h"
 #include "BaseButton.h"
 #include "Tower.h"
-#include "WeaponSelectButton.h"
-#include "AssaultRifle.h"
+
+
 
 class Tutorial: public cocos2d::CCLayer
 {
@@ -36,9 +36,8 @@ public:
     void update(float t);
     void createBounds();
     void exit();
-    WeaponSelectButton * wep;
-     AssaultRifle * assaultgun;
     
+        
 private:
     b2World* world;
 

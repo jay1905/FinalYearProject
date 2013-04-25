@@ -14,14 +14,13 @@
 class Gun{
     
 public:
-    Gun();
+    Gun(int,int,int, std::string name);
     float damage;
     int fireRate;
-    float reloadSpeed;
-    float ammoCapacity;
-    float currentAmmo;
-
-    
+   
+    bool locked;
+    std::string name;
+    int price;
 private:
       
     

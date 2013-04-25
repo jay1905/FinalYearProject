@@ -19,8 +19,10 @@ public:
     
     std::string name;
     int gold;
+    int currentLevel;
     void newPlayer(std::string);
     void updateGold(int );
+    void updateLevel(int);
 private:
     
     

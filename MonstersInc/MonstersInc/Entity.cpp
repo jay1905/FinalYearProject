@@ -100,8 +100,15 @@ void Entity::moveTo(b2Vec2 playerPos){
     b2Vec2 dir = b2Vec2(m_pBody->GetPosition().x-playerPos.x, m_pBody->GetPosition().y-playerPos.y);
     dir.Normalize();
     
+    if(dir.x<0){
+        this->setFlipX(false);
+    }
+    else{
+        this->setFlipX(true);
+    }
+    
     this->body->SetLinearVelocity(b2Vec2(-dir.x*speed, -dir.y*speed));
-      
+    
 }
 void Entity::defend(b2Vec2 pos){
     

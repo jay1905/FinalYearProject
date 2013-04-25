@@ -25,16 +25,64 @@ EnemyManager::EnemyManager(b2World *w,cocos2d::CCLayer* lay){
     for(int i=0;i<5;i++){
         enemiesToBeAdded[i]=0;
     }
+    
+    int posx=-950;
+    int posy=950;
+    
+    for (int i=0; i<19; i++) {
+        
+        spawnPos.push_back(b2Vec2(posx, posy));
+        posy-=100;
+    }
+     posx=-950;
+     posy=-950;
+    
+    for (int i=0; i<19; i++) {
+        
+        spawnPos.push_back(b2Vec2(posx, posy));
+        posx+=100;
+    }
+    posx=950;
+    posy=-950;
+    
+    for (int i=0; i<19; i++) {
+        
+        spawnPos.push_back(b2Vec2(posx, posy));
+        posy+=100;
+    }
+    posx=950;
+    posy=950;
+    
+    for (int i=0; i<19; i++) {
+        
+        spawnPos.push_back(b2Vec2(posx, posy));
+        posx-=100;
+    }
     addcount=0;
     levelCompleted=false;
     totalEnemys=0;
     towerLevel=false;
+    srand (time(NULL));
+    spawnpoint=b2Vec2(0,0);
+    
 
 }
 void EnemyManager::update(){
    
     
-   
+    if(towerLevel==true){
+        
+        spawnpoint=b2Vec2(20,550);
+
+    }
+    else{
+        
+        int ran = rand() % 76;
+        spawnpoint=spawnPos[ran];
+        
+    }
+    
+    
         if( enemiesToBeAdded[addcount]!=0)
         {
             if(count>minSpawn){
@@ -44,30 +92,24 @@ void EnemyManager::update(){
                
                 switch (addcount) {
                     case 0:
-                        addEnemy(b2Vec2(20, spawn));
+                        addEnemy(spawnpoint);
                         break;
                     case 1:
-                        addAxeBaby(b2Vec2(20, spawn));
+                        addAxeBaby(spawnpoint);
                         break;
                     case 2:
-                        addPikachu(b2Vec2(20, spawn));
+                        addPikachu(spawnpoint);
                         break;
                     case 3:
-                        addSully(b2Vec2(20, spawn));
+                        addSully(spawnpoint);
                         break;
                     case 4:
-                        addMetroid(b2Vec2(20, spawn));
+                        addMetroid(spawnpoint);
                         break;  
                     }
                 
                     enemiesToBeAdded[addcount]-=1;
-                    if(towerLevel==false){
-                        spawn+=200;
-                    }
-                    count=0;
-                    if(spawn>600){
-                        spawn=100;
-                    }
+                     count=0;
                 }
             }
             count++;
@@ -143,7 +185,7 @@ void EnemyManager::addEnemy(b2Vec2 pos){
    
 
    
-    Enemy * enemy = new Enemy(world,b2Vec2(pos.x, pos.y),2);
+    Enemy * enemy = new Enemy(world,b2Vec2(pos.x, pos.y),2.5);
     enemy->setPath(path);
     layer->addChild(enemy);
     enemys.push_back(enemy);
@@ -154,7 +196,7 @@ void EnemyManager::addPikachu(b2Vec2 pos){
     
     
  
-    Pikachu * enemy = new Pikachu(world,b2Vec2(pos.x, pos.y),4);
+    Pikachu * enemy = new Pikachu(world,b2Vec2(pos.x, pos.y),4.3);
      enemy->setPath(path);
     layer->addChild(enemy);
     enemys.push_back(enemy);
@@ -165,7 +207,7 @@ void EnemyManager::addPikachu(b2Vec2 pos){
 void EnemyManager::addAxeBaby(b2Vec2 pos){
     
   
-    AxeBaby * enemy = new AxeBaby(world,b2Vec2(pos.x, pos.y),1);
+    AxeBaby * enemy = new AxeBaby(world,b2Vec2(pos.x, pos.y),4);
      enemy->setPath(path);
     layer->addChild(enemy);
     enemys.push_back(enemy);
@@ -175,7 +217,7 @@ void EnemyManager::addAxeBaby(b2Vec2 pos){
 void EnemyManager::addSully(b2Vec2 pos){
     
     
-    Sully * enemy = new Sully(world,b2Vec2(pos.x, pos.y),2);
+    Sully * enemy = new Sully(world,b2Vec2(pos.x, pos.y),3.2);
      enemy->setPath(path);
     layer->addChild(enemy);
     enemys.push_back(enemy);
@@ -185,7 +227,7 @@ void EnemyManager::addSully(b2Vec2 pos){
 void EnemyManager::addMetroid(b2Vec2 pos){
     
     
-    Metroid * enemy = new Metroid(world,b2Vec2(pos.x, pos.y),2);
+    Metroid * enemy = new Metroid(world,b2Vec2(pos.x, pos.y),3);
      enemy->setPath(path);
     layer->addChild(enemy);
     enemys.push_back(enemy);

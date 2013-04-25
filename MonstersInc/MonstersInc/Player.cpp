@@ -34,7 +34,7 @@ Player::Player(cocos2d::CCSpriteBatchNode *hello,b2World* world){
     speed = 5 ;
     m_pBody->SetLinearVelocity(b2Vec2(0, 0));
     playerbody->SetUserData(this);
-    coins=0;
+   
     health=100;
        
 }
@@ -46,9 +46,10 @@ void Player::update(b2Vec2 direction){
     die();
 
 }
-void Player::drawStuf(){
+void Player::reset(b2Vec2 pos){
     
-    
+    //this->bodyDef.position.Set(pos.x, pos.y);
+    m_pBody->SetTransform(pos, 0);
     
 }
 b2Vec2 Player::returnpos(){

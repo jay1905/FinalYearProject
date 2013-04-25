@@ -48,10 +48,11 @@ bool HumanButton::init()
         velocity = CCPointZero;         
         bg = CCSprite::spriteWithFile("tower1btn.png");
         bg->setPosition(CCPoint(position.x+(SQUARE_WIDTH /2),position.y-(SQUARE_HEIGHT/2)));
-        bg->setOpacity(0);
+        bg->setOpacity(200);
         this->addChild(bg,0);
         direction= b2Vec2(0, 0);
         bRet=true;
+        build=false;
         
     }while(0);
     return bRet;

@@ -22,7 +22,7 @@ public:
     Tower();
     void move();
     void Shoot(cocos2d::CCLayer *,b2World* , b2Vec2 );
-    void update(b2World* world, std::vector<Enemy*>,cocos2d::CCLayer* lay,b2World* wor);
+    void update(b2World* world, std::vector<Enemy*>,cocos2d::CCLayer* lay);
     bool builed;
 private:
     

@@ -31,10 +31,7 @@ HelloWorld::HelloWorld()
     CCSize s = CCDirector::sharedDirector()->getWinSize();
     this->initPhysics();
     
-    CCSpriteBatchNode *parent = CCSpriteBatchNode::create("blocks.png", 100);
-    m_pSpriteTexture = parent->getTexture();
     
-    addChild(parent, 0, kTagParentNode);
   
     jaime = CCSprite::create("GrassBackground.png");
     jaime->setPosition(CCPointMake(0, 0));
@@ -47,13 +44,9 @@ HelloWorld::HelloWorld()
     analog2 = new Analogue(CCPoint(s.width-100, 95));
     this->addChild(analog2);
     bullets=new CCArray();
-    gun =new Gun();
-    assaultgun= new AssaultRifle();
-    firecount=20;
-    enemyCount=0;
+    
+          
 
-    wep= new WeaponSelectButton(CCPoint(500, 750));
-    addChild(wep);
 
     world->SetContactListener(&mycontact);
     
@@ -77,7 +70,7 @@ HelloWorld::HelloWorld()
     
     
     
-    currentLevel=0;/////this needs to be saved
+    currentLevel=0;
     
   
     
@@ -103,9 +96,9 @@ HelloWorld::HelloWorld()
     
     
     SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("Final Fantasy VII - Birth of a God [HQ].mp3");
-    //SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Final Fantasy VII - Birth of a God [HQ].mp3", true);
-    //SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(70);
-    SimpleAudioEngine::sharedEngine()->preloadEffect("ie_shot_gun-luminalace-770179786.mp3");
+    SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Final Fantasy VII - Birth of a God [HQ].mp3", true);
+    SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(70);
+    //SimpleAudioEngine::sharedEngine()->preloadEffect("ie_shot_gun-luminalace-770179786.mp3");
      SimpleAudioEngine::sharedEngine()->preloadEffect("M1 Garand Single-SoundBible.com-1941178963.mp3");
     
     label = CCLabelTTF::create("health:", "Marker Felt", 32);
@@ -140,23 +133,23 @@ HelloWorld::HelloWorld()
     loose->setPosition(ccp(515, 345));
     loose->setOpacity(0);
    
-    win2 = CCLabelTTF::create("press the exit button", "Marker Felt", 32);
+    win2 = CCLabelTTF::create("press here", "Marker Felt", 32);
     addChild(win2, 1);
     win2->setColor(ccc3(255,0,0));
     win2->setPosition(ccp(500, 320));
     win2->setOpacity(0);
 
-
-    
-       pCloseItem = CCMenuItemImage::create("CloseNormal.png","CloseSelected.png",this,menu_selector(HelloWorld::exitMainMenu));
-        pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width - 20,  740));
+    eManager->coins=savedData->gold;
+    upgradeScn=new UpgradeScreen();
+    addChild(upgradeScn);
+       pCloseItem = CCMenuItemImage::create("quitenabled.bmp","quitenableddown.bmp",this,menu_selector(HelloWorld::exitMainMenu));
+        pCloseItem->setPosition(2000,  740);
         CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
         pMenu->setPosition( CCPointZero );
         addChild(pMenu, 1);
-        pCloseItem->setOpacity(0);
+       // pCloseItem->setOpacity(0);
        
-    upgradeScn=new UpgradeScreen();
-    addChild(upgradeScn);
+    
 
     scheduleUpdate();
 }
@@ -171,6 +164,7 @@ HelloWorld::~HelloWorld()
 void HelloWorld::exitMainMenu(){
     
     savedData->updateGold(eManager->coins);
+    savedData->updateLevel(currentLevel);
     CCScene *pScene1= MainMenu::scene();
     CCDirector::sharedDirector()->replaceScene(pScene1);
 
@@ -243,7 +237,8 @@ void HelloWorld::update(float dt)
     //of the simulation, however, we are using a variable time step here.
     //You need to make an informed choice, the following URL is useful
     //http://gafferongames.com/game-physics/fix-your-timestep/
-   
+    CCSize s = CCDirector::sharedDirector()->getWinSize();
+
     
     int velocityIterations = 8;
     int positionIterations = 1;
@@ -257,41 +252,29 @@ void HelloWorld::update(float dt)
                    upgradeScn->show();
                
            }
-//            if(eManager->enemyCurrent==0){
-//            
-//                win->setOpacity(100);
-//                win2->setOpacity(100);
-//                pCloseItem->setOpacity(100);
-//            }
+
 
             if(player->health<=0){
+                CCPoint centre= CCPoint(s.width/2, s.height/2);
+                CCPoint playerpos= CCPoint(player->returnpos().x*PTM_RATIO, player->returnpos().y*PTM_RATIO);
+                CCPoint camerapos = ccpSub(centre, this->getPosition());
+
                     player->health=0;
-                    loose->setOpacity(100);
-                    win2->setOpacity(100);
-                    pCloseItem->setOpacity(100);
+                    loose->setOpacity(200);
+                loose->setPosition(CCPoint(camerapos.x, camerapos.y+50));
+                    win2->setOpacity(200);
+                win2->setPosition(CCPoint(camerapos.x, camerapos.y));
+                
+                // pCloseItem->setOpacity(200);
+                pCloseItem->setPosition(CCPoint(camerapos.x, camerapos.y-50));
+                
             
+
+                
             }
             else{
-            //        if(baseButton->hb->build){
-            //            baseButton->hb->build=false;
-            //            if(eManager->coins>=50){
-            //                eManager->coins=eManager->coins-50;
-            //                
-            //                Tower *t = new Tower();
-            //                CCSpriteBatchNode * tow= CCSpriteBatchNode::create("tower1.png", 100);
-            //                t->initialize(tow, world,baseButton->hb->buildPoint, 20, b2Vec2(97, 67), "tower");
-            //                addChild(t);
-            //                towers.push_back(t);
-            //            }
-            //        }
-            //        if(towers.size()!=0){
-            //            for (int i=0; i<towers.size(); i++){
-            //                Tower  *b = static_cast<Tower *>(towers[i]);
-            //                b->update(world,eManager->enemys,this,world);
-            //                
-            //            }
-            //        }
-                    
+         
+                    pCloseItem->setPosition(CCPoint(2000,100));
                     player->update(analog->getDirection());
                     eManager->moveEnemy(b2Vec2(player->m_pBody->GetPosition().x, player->m_pBody->GetPosition().y));
                     eManager->update();
@@ -302,25 +285,17 @@ void HelloWorld::update(float dt)
                 
                     if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
                        
-                            if(wep->handgun){
-                                if(firecount>gun->fireRate){
+                           
+                                if(firecount>upgradeScn->guns[upgradeScn->GunEquipNum]->fireRate){
                                     
                                     
                                     bulletMan->create(player->returnpos(), analog2->getDirection());
-                                    SimpleAudioEngine::sharedEngine()->playEffect("ie_shot_gun-luminalace-770179786.mp3");
+                                    //SimpleAudioEngine::sharedEngine()->playEffect("ie_shot_gun-luminalace-770179786.mp3");
+                                    SimpleAudioEngine::sharedEngine()->playEffect("M1 Garand Single-SoundBible.com-1941178963.mp3");
                                     firecount=0;
                                 
                                 }
-                            }
-                            else if(wep->assaultrifle){
-                                if(firecount>assaultgun->fireRate){
-                                    
-                                    bulletMan->create(player->returnpos(), analog2->getDirection());
-                                    SimpleAudioEngine::sharedEngine()->playEffect("M1 Garand Single-SoundBible.com-1941178963.mp3");
-                                    firecount=0;
-                                    
-                                }
-                            }
+   
                             firecount++;
                             if(analog2->getDirection().x<0){
                                 player->setFlipX(false);
@@ -337,6 +312,24 @@ void HelloWorld::update(float dt)
             snprintf(helth, 100, "%i",player->health);
             label4->setString(helth);
 
+   }
+   else{
+       
+       CCPoint centre= CCPoint(s.width/2, s.height/2);
+       CCPoint playerpos= CCPoint(player->returnpos().x*PTM_RATIO, player->returnpos().y*PTM_RATIO);
+       CCPoint camerapos = ccpSub(centre, this->getPosition());
+       label->setPosition(ccp( 60, 745));
+       label2->setPosition(ccp( 260, 745));
+       char coin[100];
+       snprintf(coin, 100, "%d",eManager->coins);
+       label3->setString(coin);
+       label3->setPosition(CCPoint(325, 745));
+       label4->setPosition(ccp( 130, 745));
+       this->setPosition(  upgradeScn->getPosition());
+       player->health=100;
+       player->reset(b2Vec2(0, 0));
+        pCloseItem->setPosition(CCPoint(750,100));
+       
    }
     world->Step(dt, velocityIterations, positionIterations);
 

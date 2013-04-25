@@ -9,7 +9,7 @@
 #include "Analogue.h"
 #define JOYSTICK_OFFSET_X 5.0f
 #define JOYSTICK_OFFSET_Y 5.0f
-#define JOYSTICK_RADIUS 96.0f
+#define JOYSTICK_RADIUS 150.0f
 #define THUMB_RADIUS 70.0f
 using namespace cocos2d;
 static CCPoint convertCoordinate(CCPoint point){

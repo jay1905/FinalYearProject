@@ -27,14 +27,14 @@ void Tower::move(){
     
     
 }
-void Tower::update(b2World* world, std::vector<Enemy*> enemys,cocos2d::CCLayer* lay,b2World* wor){
+void Tower::update(b2World* world, std::vector<Enemy*> enemys,cocos2d::CCLayer* lay){
     
     
      for(int i = 0; i<enemys.size();i++){  
          b2Vec2 len = enemys[i]->getPos()-m_pBody->GetPosition();
          float length=sqrt(len.x*len.x +len.y*len.y);  
          if(length<range){
-             Shoot(lay, wor, len);
+             Shoot(lay, world, len);
          }
      }
 

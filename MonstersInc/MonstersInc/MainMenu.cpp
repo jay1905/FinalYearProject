@@ -62,13 +62,13 @@ void MainMenu::init(){
     addChild(pMenu, 1);
 
     
-    tutorial=CCMenuItemImage::create("Tutorial.png", "Tutorial.png", this, menu_selector(MainMenu::tutorialLevel));
-    tutorial->setPosition(CCPoint(100, 500));
-    CCMenu *tut=CCMenu::create(tutorial,NULL);
-    tut->setPosition(CCPointZero);
-    addChild(tut,1);
+//    tutorial=CCMenuItemImage::create("Tutorial.png", "Tutorial.png", this, menu_selector(MainMenu::tutorialLevel));
+//    tutorial->setPosition(CCPoint(100, 500));
+//    CCMenu *tut=CCMenu::create(tutorial,NULL);
+//    tut->setPosition(CCPointZero);
+//    addChild(tut,1);
     
-    level1btn=CCMenuItemImage::create("Level1.png", "Level1.png", this, menu_selector(MainMenu::level1));
+    level1btn=CCMenuItemImage::create("play.bmp", "playdown.bmp", this, menu_selector(MainMenu::level1));
     level1btn->setPosition(CCPoint(100, 400));
     CCMenu *lev1=CCMenu::create(level1btn,NULL);
     lev1->setPosition(CCPointZero);
@@ -76,15 +76,15 @@ void MainMenu::init(){
     
     
     
-    level2btn=CCMenuItemImage::create("Level2.png", "Level2.png", this, menu_selector(MainMenu::level2));
-    level2btn->setPosition(CCPoint(100, 300));
-    CCMenu *lev2=CCMenu::create(level2btn,NULL);
-    lev2->setPosition(CCPointZero);
-    addChild(lev2,1);
+//    level2btn=CCMenuItemImage::create("Level2.png", "Level2.png", this, menu_selector(MainMenu::level2));
+//    level2btn->setPosition(CCPoint(100, 300));
+//    CCMenu *lev2=CCMenu::create(level2btn,NULL);
+//    lev2->setPosition(CCPointZero);
+//    addChild(lev2,1);
     
     
     towerGame=CCMenuItemImage::create("TowersButton.bmp", "TowersButtonDown.bmp", this, menu_selector(MainMenu::towerDefence));
-    towerGame->setPosition(CCPoint(100, 100));
+    towerGame->setPosition(CCPoint(100, 300));
     CCMenu *towergame=CCMenu::create(towerGame,NULL);
     towergame->setPosition(CCPointZero);
     addChild(towergame,1);
@@ -132,7 +132,7 @@ void MainMenu::init(){
     Score->setPosition(ccp(1850, 600));
 
     SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("Final Fantasy 7 Music - Aerith's Theme.mp3");
-    //SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Final Fantasy 7 Music - Aerith's Theme.mp3", true);
+    SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Final Fantasy 7 Music - Aerith's Theme.mp3", true);
     
     int yPos=550;
     for(int i=0;i<10;i++){
@@ -148,8 +148,8 @@ void MainMenu::init(){
         
     }
     
-    newGame=CCMenuItemImage::create("NewGame.png", "NewGame.png", this, menu_selector(MainMenu::newPlayer));
-    newGame->setPosition(CCPoint(400, 500));
+    newGame=CCMenuItemImage::create("NewGame.bmp", "NewGameDown.bmp", this, menu_selector(MainMenu::newPlayer));
+    newGame->setPosition(CCPoint(100, 500));
     CCMenu *newFile=CCMenu::create(newGame,NULL);
     newFile->setPosition(CCPointZero);
     addChild(newFile,1);
@@ -247,17 +247,17 @@ void MainMenu::saveWithCurl(std::string n, int s){
 void MainMenu::enterPlayer(){
     
     
-    level2btn->setPosition(CCPoint(100, 300));
+   // level2btn->setPosition(CCPoint(100, 300));
     level1btn->setPosition(CCPoint(100, 400));
-    tutorial->setPosition(CCPoint(100, 500));
+     towerGame->setPosition(CCPoint(100, 300));
     m_pEditName->setPosition(ccp(1400, 200));
     enter->setPosition(CCPoint(1400, 400));
-    newGame->setPosition(CCPoint(400, 500));
+    newGame->setPosition(CCPoint(100, 500));
     
     if(m_pEditName->getText()!=NULL){
         
         savedData->newPlayer(m_pEditName->getText());
-        saveWithCurl(m_pEditName->getText(), 200);
+       // saveWithCurl(m_pEditName->getText(), 200);
     
     }
     
@@ -265,9 +265,9 @@ void MainMenu::enterPlayer(){
     
 }
 void MainMenu::newPlayer(){
-    level2btn->setPosition(CCPoint(1400, 400));
+     towerGame->setPosition(CCPoint(1400, 400));
     level1btn->setPosition(CCPoint(1400, 400));
-    tutorial->setPosition(CCPoint(1400, 400));
+    //tutorial->setPosition(CCPoint(1400, 400));
     m_pEditName->setPosition(ccp(400, 500));
     enter->setPosition(CCPoint(400, 400));
     newGame->setPosition(CCPoint(1400, 500));

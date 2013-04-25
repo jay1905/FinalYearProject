@@ -26,8 +26,7 @@ public:
     cocos2d::CCSprite *bg;
     cocos2d::CCSprite *thumb;
     HumanButton* hb;
-    bool castleTouch;
-    
+   
 private:
     
     cocos2d::CCPoint position;

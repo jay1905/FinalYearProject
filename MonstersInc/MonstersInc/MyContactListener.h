@@ -49,7 +49,7 @@ class MyContactListener : public b2ContactListener{
             else if(name1=="lavaPit"&&name2=="Enemy"){
                 
                 p2->health-=40;
-               // penis enlargement does not work. ive tried everything.
+               
                 p2->dieing=true;
                 
             }

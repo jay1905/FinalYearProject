@@ -40,6 +40,7 @@ public:
     void movePath();
     
     std::vector<Enemy*> enemys;
+    std::vector<b2Vec2>spawnPos;
     int coins;
     int EnemyCount;
     int enemyCurrent;
@@ -59,6 +60,7 @@ private:
     int maxSpawn;
     int addcount;
     std::vector<b2Vec2 *> path;
+    b2Vec2 spawnpoint;
   
      
        
