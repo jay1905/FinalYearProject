@@ -75,7 +75,7 @@ HelloWorld::HelloWorld()
   
     
     
-    for (int i = 0;i<10;i++){
+    for (int i = 0;i<100;i++){
         Level * l = new Level(minSpawn,maxSpawn,numEnemyOne,numEnemyTwo,numEnemyThree,numEnemyFour,numEnemyFive);
         levels.push_back(l);
        // minSpawn-=20;
@@ -147,7 +147,12 @@ HelloWorld::HelloWorld()
         CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
         pMenu->setPosition( CCPointZero );
         addChild(pMenu, 1);
-       // pCloseItem->setOpacity(0);
+    
+    buy = CCMenuItemImage::create("buyBtn.bmp","buyBtnDown.bmp",this,menu_selector(HelloWorld::buyGun));
+    buy->setPosition( 2000, 100);
+    CCMenu* pbuy = CCMenu::create(buy, NULL);
+    pbuy->setPosition( CCPointZero );
+    addChild(pbuy, 1);
        
     
 
@@ -275,6 +280,8 @@ void HelloWorld::update(float dt)
             else{
          
                     pCloseItem->setPosition(CCPoint(2000,100));
+                    buy->setPosition( 2550, 100);
+
                     player->update(analog->getDirection());
                     eManager->moveEnemy(b2Vec2(player->m_pBody->GetPosition().x, player->m_pBody->GetPosition().y));
                     eManager->update();
@@ -289,7 +296,7 @@ void HelloWorld::update(float dt)
                                 if(firecount>upgradeScn->guns[upgradeScn->GunEquipNum]->fireRate){
                                     
                                     
-                                    bulletMan->create(player->returnpos(), analog2->getDirection());
+                                    bulletMan->create(player->returnpos(), analog2->getDirection(),upgradeScn->guns[upgradeScn->GunEquipNum]->damage);
                                     //SimpleAudioEngine::sharedEngine()->playEffect("ie_shot_gun-luminalace-770179786.mp3");
                                     SimpleAudioEngine::sharedEngine()->playEffect("M1 Garand Single-SoundBible.com-1941178963.mp3");
                                     firecount=0;
@@ -329,10 +336,30 @@ void HelloWorld::update(float dt)
        player->health=100;
        player->reset(b2Vec2(0, 0));
         pCloseItem->setPosition(CCPoint(750,100));
+        buy->setPosition( 550, 100);
        
    }
     world->Step(dt, velocityIterations, positionIterations);
 
+    
+}
+void HelloWorld::buyGun(){
+    
+    if (upgradeScn->gunSelectedForPurchase!=0) {
+        
+        if(upgradeScn->guns[upgradeScn->gunSelectedForPurchase]->locked==true){
+            if (eManager->coins>=upgradeScn->guns[upgradeScn->gunSelectedForPurchase]->price) {
+        
+        
+                upgradeScn->guns[upgradeScn->gunSelectedForPurchase]->locked=false;
+                eManager->coins-=upgradeScn->guns[upgradeScn->gunSelectedForPurchase]->price;
+                upgradeScn->locked[upgradeScn->gunSelectedForPurchase]->setPosition(CCPoint(3000, 3000));
+                savedData->updateGuns(upgradeScn->gunSelectedForPurchase);
+        
+            }
+        }
+    }
+    
     
 }
 void HelloWorld::updateUI(){
@@ -400,9 +427,12 @@ void HelloWorld::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
     //human->ccTouchesBegan(pTouches, pEvent);
 //    CCArray *allTouches =   this->allTouchesFromSet(pTouches);
 //    
-//    CCTouch *touch = (CCTouch*)pTouches->anyObject();
-//    CCPoint point = touch->locationInView();
-     
+    CCTouch *touch = (CCTouch*)pTouches->anyObject();
+    CCPoint point = touch->locationInView();
+    
+    if (upgradeScn->StartLevel==false){
+    upgradeScn->ccTouchesBegan(pTouches, pEvent);
+    }
 }
 void HelloWorld::ccTouchesEnded(CCSet* touches, CCEvent* event)
 {

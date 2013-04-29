@@ -28,7 +28,7 @@ public:
      BulletManager( b2World* world);
     void update();
    
-    void create(b2Vec2 pos,b2Vec2 direction);
+    void create(b2Vec2 pos,b2Vec2 direction,int );
     
 };
 

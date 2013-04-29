@@ -23,6 +23,8 @@ public:
     void newPlayer(std::string);
     void updateGold(int );
     void updateLevel(int);
+    void updateGuns(int);
+    std::vector<int>gunLocked;
 private:
     
     

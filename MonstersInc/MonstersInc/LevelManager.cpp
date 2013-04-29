@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include "LevelManager.h"
-
+#include "SimpleAudioEngine.h"
 
 
 using namespace cocos2d;
@@ -67,6 +67,16 @@ void LevelManager::initialize(){
     this->addChild(upgradeScn);
     
     towerMan= new TowerManager();
+    firecount=0;
+    
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("Final Fantasy VII - Birth of a God [HQ].mp3");
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("Final Fantasy VII - Birth of a God [HQ].mp3", true);
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(70);
+    //SimpleAudioEngine::sharedEngine()->preloadEffect("ie_shot_gun-luminalace-770179786.mp3");
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("M1 Garand Single-SoundBible.com-1941178963.mp3");
+
+    bulletMan = new BulletManager(world);
+    addChild(bulletMan);
    
     
     float minSpawn=10;
@@ -140,17 +150,39 @@ void LevelManager::update(float dt){
             eman->update();
             eman->movePath();
             towerMan->update(eman->enemys, world, this);
+            bulletMan->update();
             if(baseButton->hb->build==true){
                 
                 baseButton->hb->build=false;
                 
                 towerMan->createTower(baseButton->hb->buildPoint, this, world);
             }
+            if(analog2->getDirection().x!=0&&analog2->getDirection().y!=0){
+                
+                
+                if(firecount>upgradeScn->guns[upgradeScn->GunEquipNum]->fireRate){
+                    
+                    
+                    bulletMan->create(player->returnpos(), analog2->getDirection(),upgradeScn->guns[upgradeScn->GunEquipNum]->damage);
+                    //SimpleAudioEngine::sharedEngine()->playEffect("ie_shot_gun-luminalace-770179786.mp3");
+                    CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("M1 Garand Single-SoundBible.com-1941178963.mp3");
+                    firecount=0;
+                    
+                }
+                
+                firecount++;
+                if(analog2->getDirection().x<0){
+                    player->setFlipX(false);
+                }
+                else{
+                    player->setFlipX(true);
+                }
+            }
             
         }
     }
     
-      
+    
     
     world->Step(dt, velocityIterations, positionIterations);
     

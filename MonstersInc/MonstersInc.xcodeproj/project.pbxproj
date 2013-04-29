@@ -383,10 +383,16 @@
 		E0AECBA61630919900C1FD48 /* icecream3.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB9D1630919900C1FD48 /* icecream3.png */; };
 		E0AECBA71630919900C1FD48 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB9E1630919900C1FD48 /* orange.png */; };
 		E0AECBA81630919900C1FD48 /* shapedefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0AECB9F1630919900C1FD48 /* shapedefs.plist */; };
+		E0AF4ED6172A57D600B1AFC6 /* buyBtn.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF4ED4172A57D600B1AFC6 /* buyBtn.bmp */; };
+		E0AF4ED7172A57D600B1AFC6 /* buyBtnDown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF4ED5172A57D600B1AFC6 /* buyBtnDown.bmp */; };
+		E0AF4EDA172A655800B1AFC6 /* enterBtn.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF4ED8172A655800B1AFC6 /* enterBtn.bmp */; };
+		E0AF4EDB172A655800B1AFC6 /* enterBtnDown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF4ED9172A655800B1AFC6 /* enterBtnDown.bmp */; };
 		E0AF9B491718777C003DCEA9 /* play.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF9B471718777C003DCEA9 /* play.bmp */; };
 		E0AF9B4A1718777C003DCEA9 /* playdown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF9B481718777C003DCEA9 /* playdown.bmp */; };
 		E0AF9B4E1718836D003DCEA9 /* quitenabled.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF9B4C1718836C003DCEA9 /* quitenabled.bmp */; };
 		E0AF9B4F1718836D003DCEA9 /* quitenableddown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0AF9B4D1718836D003DCEA9 /* quitenableddown.bmp */; };
+		E0C92676172A6E6800B4A263 /* ScoresBtn.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0C92674172A6E6800B4A263 /* ScoresBtn.bmp */; };
+		E0C92677172A6E6800B4A263 /* ScoresBtnDown.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E0C92675172A6E6800B4A263 /* ScoresBtnDown.bmp */; };
 		E0E2C35216DFE895005441EB /* BulletManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0E2C35116DFE895005441EB /* BulletManager.cpp */; };
 		E0E2C35516DFE944005441EB /* UpgradeScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0E2C35416DFE944005441EB /* UpgradeScreen.cpp */; };
 		E0E2C35816DFF638005441EB /* WeaponManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0E2C35716DFF637005441EB /* WeaponManager.cpp */; };
@@ -1081,10 +1087,16 @@
 		E0AECB9D1630919900C1FD48 /* icecream3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icecream3.png; path = Resources/icecream3.png; sourceTree = "<group>"; };
 		E0AECB9E1630919900C1FD48 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange.png; path = Resources/orange.png; sourceTree = "<group>"; };
 		E0AECB9F1630919900C1FD48 /* shapedefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = shapedefs.plist; path = Resources/shapedefs.plist; sourceTree = "<group>"; };
+		E0AF4ED4172A57D600B1AFC6 /* buyBtn.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = buyBtn.bmp; path = Resources/buyBtn.bmp; sourceTree = "<group>"; };
+		E0AF4ED5172A57D600B1AFC6 /* buyBtnDown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = buyBtnDown.bmp; path = Resources/buyBtnDown.bmp; sourceTree = "<group>"; };
+		E0AF4ED8172A655800B1AFC6 /* enterBtn.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = enterBtn.bmp; path = Resources/enterBtn.bmp; sourceTree = "<group>"; };
+		E0AF4ED9172A655800B1AFC6 /* enterBtnDown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = enterBtnDown.bmp; path = Resources/enterBtnDown.bmp; sourceTree = "<group>"; };
 		E0AF9B471718777C003DCEA9 /* play.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = play.bmp; path = Resources/play.bmp; sourceTree = "<group>"; };
 		E0AF9B481718777C003DCEA9 /* playdown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = playdown.bmp; path = Resources/playdown.bmp; sourceTree = "<group>"; };
 		E0AF9B4C1718836C003DCEA9 /* quitenabled.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = quitenabled.bmp; path = Resources/quitenabled.bmp; sourceTree = "<group>"; };
 		E0AF9B4D1718836D003DCEA9 /* quitenableddown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = quitenableddown.bmp; path = Resources/quitenableddown.bmp; sourceTree = "<group>"; };
+		E0C92674172A6E6800B4A263 /* ScoresBtn.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = ScoresBtn.bmp; path = Resources/ScoresBtn.bmp; sourceTree = "<group>"; };
+		E0C92675172A6E6800B4A263 /* ScoresBtnDown.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = ScoresBtnDown.bmp; path = Resources/ScoresBtnDown.bmp; sourceTree = "<group>"; };
 		E0E2C34F16DFE87C005441EB /* BulletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletManager.h; sourceTree = "<group>"; };
 		E0E2C35116DFE895005441EB /* BulletManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BulletManager.cpp; sourceTree = "<group>"; };
 		E0E2C35316DFE93A005441EB /* UpgradeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeScreen.h; sourceTree = "<group>"; };
@@ -2297,7 +2309,13 @@
 				E098878D1726E2EB00A283C4 /* baseButtonDown.bmp */,
 				E098878E1726E2EB00A283C4 /* loadGame.bmp */,
 				E098878F1726E2EB00A283C4 /* loadGameDown.bmp */,
+				E0AF4ED4172A57D600B1AFC6 /* buyBtn.bmp */,
+				E0C92674172A6E6800B4A263 /* ScoresBtn.bmp */,
+				E0C92675172A6E6800B4A263 /* ScoresBtnDown.bmp */,
+				E0AF4ED5172A57D600B1AFC6 /* buyBtnDown.bmp */,
 				E09887901726E2EB00A283C4 /* NewGame.bmp */,
+				E0AF4ED8172A655800B1AFC6 /* enterBtn.bmp */,
+				E0AF4ED9172A655800B1AFC6 /* enterBtnDown.bmp */,
 				E09887911726E2EB00A283C4 /* NewGameDown.bmp */,
 				E09887921726E2EB00A283C4 /* playerButton.bmp */,
 				E09887931726E2EB00A283C4 /* playerButtonDown.bmp */,
@@ -2518,6 +2536,12 @@
 				E086C25417284CA000E2E73E /* GrassBackground.png in Resources */,
 				E0856F0D17296F860015071E /* red2.png in Resources */,
 				E0856F0F1729B16D0015071E /* Hand2Guns.png in Resources */,
+				E0AF4ED6172A57D600B1AFC6 /* buyBtn.bmp in Resources */,
+				E0AF4ED7172A57D600B1AFC6 /* buyBtnDown.bmp in Resources */,
+				E0AF4EDA172A655800B1AFC6 /* enterBtn.bmp in Resources */,
+				E0AF4EDB172A655800B1AFC6 /* enterBtnDown.bmp in Resources */,
+				E0C92676172A6E6800B4A263 /* ScoresBtn.bmp in Resources */,
+				E0C92677172A6E6800B4A263 /* ScoresBtnDown.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

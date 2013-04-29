@@ -26,6 +26,7 @@ public:
     std::string name;
     float timetolive;
     int health;
+    int damage;
     bool dieing;
     void die();
     float speed;

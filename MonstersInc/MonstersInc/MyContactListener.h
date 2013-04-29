@@ -26,10 +26,10 @@ class MyContactListener : public b2ContactListener{
             std::string name2= p2->name;
             if(name1=="bullet"&& name2=="Enemy"){
                 p1->timetolive=500;
-                p2->health-=57;
+                p2->health-=p1->damage;
             }
             else if(name2=="bullet"&&name1=="Enemy"){
-                p1->health-=57;
+                p1->health-=p2->damage;
                 p2->timetolive=500;
             }
             else if(name1=="player"&&name2=="Enemy"){

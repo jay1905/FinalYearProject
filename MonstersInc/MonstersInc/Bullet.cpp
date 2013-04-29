@@ -13,7 +13,7 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
-Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos){
+Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos,int dam){
     
     sprite=hello;
     this->initWithTexture(sprite->getTexture(), CCRectMake(0, 0, 11, 7));
@@ -33,6 +33,7 @@ Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos){
     speed = 30;
     timetolive=60;
     body->SetUserData(this);
+    damage=dam;
     
 }
 void Bullet::update(){

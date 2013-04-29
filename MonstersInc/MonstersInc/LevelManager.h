@@ -21,6 +21,7 @@
 #include "TowerManager.h"
 #include "BaseButton.h"
 #include "MyContactListener.h"
+#include "BulletManager.h"
 
 class LevelManager : public cocos2d::CCLayer
 {
@@ -53,8 +54,8 @@ private:
     Analogue * analog2;    
        UpgradeScreen *upgradeScn;
      MyContactListener mycontact;
-    
-    
+     int firecount;
+    BulletManager * bulletMan;
     std::vector<Level*> levels;
     
     

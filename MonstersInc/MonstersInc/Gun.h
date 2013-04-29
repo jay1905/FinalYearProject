@@ -15,7 +15,7 @@ class Gun{
     
 public:
     Gun(int,int,int, std::string name);
-    float damage;
+    int damage;
     int fireRate;
    
     bool locked;

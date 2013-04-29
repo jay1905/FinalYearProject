@@ -48,6 +48,7 @@ private:
     cocos2d::CCMenuItemImage *newGame;
      cocos2d::CCMenuItemImage *enter;
      cocos2d::CCMenuItemImage *towerGame;
+      cocos2d::CCMenuItemImage *saveName;
     
 
     cocos2d::CCSprite *jaime;

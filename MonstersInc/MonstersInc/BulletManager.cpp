@@ -36,11 +36,11 @@ void BulletManager::update(){
     
     
 }
-void BulletManager::create(b2Vec2 pos,b2Vec2 direction){
+void BulletManager::create(b2Vec2 pos,b2Vec2 direction,int damage){
     
     bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
     addChild(bulletSprite);
-    Bullet *b = new Bullet(bulletSprite,world,pos);
+    Bullet *b = new Bullet(bulletSprite,world,pos,damage);
     b->fire(direction);
     bulletSprite->addChild(b);
     bullets->addObject(b);

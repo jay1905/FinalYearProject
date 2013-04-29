@@ -136,7 +136,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "23"
          endingLineNumber = "23"
-         landmarkName = "Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos)"
+         landmarkName = "Bullet::Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos,int dam)"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -145,11 +145,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Bullet.cpp"
-         timestampString = "383772686.526431"
+         timestampString = "388654292.779434"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
          landmarkName = "Bullet::update()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -307,11 +307,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "388606744.56806"
+         timestampString = "388651865.082394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "155"
-         endingLineNumber = "155"
+         startingLineNumber = "160"
+         endingLineNumber = "160"
          landmarkName = "HelloWorld::HelloWorld()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -571,11 +571,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657341.688079"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "286"
-         endingLineNumber = "286"
+         startingLineNumber = "292"
+         endingLineNumber = "292"
          landmarkName = "MainMenu::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -585,11 +585,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657341.688079"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "182"
-         endingLineNumber = "182"
+         startingLineNumber = "188"
+         endingLineNumber = "188"
          landmarkName = "MainMenu::init()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -599,11 +599,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657341.688079"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "224"
-         endingLineNumber = "224"
+         startingLineNumber = "230"
+         endingLineNumber = "230"
          landmarkName = "MainMenu::disassembleCurl(std::string data)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -613,21 +613,7 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "205"
-         endingLineNumber = "205"
-         landmarkName = "MainMenu::disassembleCurl(std::string data)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657341.688079"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "211"
@@ -641,25 +627,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657341.688079"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "453"
-         endingLineNumber = "453"
-         landmarkName = "MainMenu::level2()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "190"
-         endingLineNumber = "190"
+         startingLineNumber = "217"
+         endingLineNumber = "217"
          landmarkName = "MainMenu::disassembleCurl(std::string data)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -669,11 +641,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657521.570198"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "450"
-         endingLineNumber = "450"
+         startingLineNumber = "463"
+         endingLineNumber = "463"
          landmarkName = "MainMenu::level2()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -683,11 +655,25 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657341.688079"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "421"
-         endingLineNumber = "421"
+         startingLineNumber = "196"
+         endingLineNumber = "196"
+         landmarkName = "MainMenu::disassembleCurl(std::string data)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/MainMenu.cpp"
+         timestampString = "388657521.570198"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "460"
+         endingLineNumber = "460"
          landmarkName = "MainMenu::level2()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -697,11 +683,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657521.570198"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "442"
-         endingLineNumber = "442"
+         startingLineNumber = "431"
+         endingLineNumber = "431"
          landmarkName = "MainMenu::level2()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -711,11 +697,25 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657521.570198"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "187"
-         endingLineNumber = "187"
+         startingLineNumber = "452"
+         endingLineNumber = "452"
+         landmarkName = "MainMenu::level2()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "MonstersInc/MainMenu.cpp"
+         timestampString = "388657341.688079"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "193"
+         endingLineNumber = "193"
          landmarkName = "MainMenu::disassembleCurl(std::string data)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -921,11 +921,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657521.570198"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "390"
-         endingLineNumber = "390"
+         startingLineNumber = "398"
+         endingLineNumber = "398"
          landmarkName = "MainMenu::tutorialLevel()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -935,11 +935,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657521.570198"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "342"
-         endingLineNumber = "342"
+         startingLineNumber = "350"
+         endingLineNumber = "350"
          landmarkName = "MainMenu::checkMultiPlayer()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -949,11 +949,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MonstersInc/MainMenu.cpp"
-         timestampString = "388424640.351728"
+         timestampString = "388657521.570198"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "347"
-         endingLineNumber = "347"
+         startingLineNumber = "355"
+         endingLineNumber = "355"
          landmarkName = "MainMenu::checkMultiPlayer()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -962,11 +962,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "388613963.890505"
+         timestampString = "388651865.082394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "251"
-         endingLineNumber = "251"
+         startingLineNumber = "256"
+         endingLineNumber = "256"
          landmarkName = "HelloWorld::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -975,11 +975,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "388613963.890505"
+         timestampString = "388651865.082394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "249"
-         endingLineNumber = "249"
+         startingLineNumber = "254"
+         endingLineNumber = "254"
          landmarkName = "HelloWorld::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -988,11 +988,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "388613963.890505"
+         timestampString = "388651865.082394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "250"
-         endingLineNumber = "250"
+         startingLineNumber = "255"
+         endingLineNumber = "255"
          landmarkName = "HelloWorld::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1001,11 +1001,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "388613963.890505"
+         timestampString = "388651865.082394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "248"
-         endingLineNumber = "248"
+         startingLineNumber = "253"
+         endingLineNumber = "253"
          landmarkName = "HelloWorld::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1105,11 +1105,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/LevelManager.cpp"
-         timestampString = "388601032.176989"
+         timestampString = "388655247.345079"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "114"
-         endingLineNumber = "114"
+         startingLineNumber = "124"
+         endingLineNumber = "124"
          landmarkName = "LevelManager::initialize()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1209,11 +1209,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "388614822.068443"
+         timestampString = "388652383.38674"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "284"
-         endingLineNumber = "284"
+         startingLineNumber = "291"
+         endingLineNumber = "291"
          landmarkName = "HelloWorld::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1222,11 +1222,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "388614822.068443"
+         timestampString = "388653896.707294"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "371"
-         endingLineNumber = "371"
+         startingLineNumber = "398"
+         endingLineNumber = "398"
          landmarkName = "HelloWorld::updateUI()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1235,11 +1235,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "388614822.068443"
+         timestampString = "388653896.707294"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "350"
-         endingLineNumber = "350"
+         startingLineNumber = "377"
+         endingLineNumber = "377"
          landmarkName = "HelloWorld::updateUI()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1248,11 +1248,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "388614822.068443"
+         timestampString = "388653896.707294"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "348"
-         endingLineNumber = "348"
+         startingLineNumber = "375"
+         endingLineNumber = "375"
          landmarkName = "HelloWorld::updateUI()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1261,11 +1261,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
-         timestampString = "388614822.068443"
+         timestampString = "388653896.707294"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "351"
-         endingLineNumber = "351"
+         startingLineNumber = "378"
+         endingLineNumber = "378"
          landmarkName = "HelloWorld::updateUI()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1339,11 +1339,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/LevelManager.cpp"
-         timestampString = "388601032.176989"
+         timestampString = "388655446.502492"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "145"
-         endingLineNumber = "145"
+         startingLineNumber = "156"
+         endingLineNumber = "156"
          landmarkName = "LevelManager::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1378,11 +1378,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MonstersInc/LevelManager.cpp"
-         timestampString = "388601032.176989"
+         timestampString = "388655446.502492"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "147"
-         endingLineNumber = "147"
+         startingLineNumber = "158"
+         endingLineNumber = "158"
          landmarkName = "LevelManager::update(float dt)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1475,6 +1475,32 @@
          startingLineNumber = "81"
          endingLineNumber = "81"
          landmarkName = "EnemyManager::update()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MonstersInc/UpgradeScreen.cpp"
+         timestampString = "388649826.003477"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "26"
+         endingLineNumber = "26"
+         landmarkName = "isPointInSquare(CCPoint point, b2Vec2 pos)"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MonstersInc/Classes/HelloWorldScene.cpp"
+         timestampString = "388653896.707294"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "434"
+         endingLineNumber = "434"
+         landmarkName = "HelloWorld::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

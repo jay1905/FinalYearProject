@@ -68,6 +68,8 @@ UpgradeScreen::UpgradeScreen(){
     gunBars.push_back(bigWheel);
     gunbarPositions.push_back(CCPointMake(510, 450));
     
+    savedData = new SaveFileData();
+
    
     
     int count=150;
@@ -105,7 +107,7 @@ UpgradeScreen::UpgradeScreen(){
     for (int i=0; i<13; i++) {
         Gun * g = new Gun(d,fr,price,"Handgun");
         guns.push_back(g);
-        damage+=2;
+        d+=2;
         price +=50;
         
     }
@@ -115,7 +117,7 @@ UpgradeScreen::UpgradeScreen(){
     for (int i=0; i<11; i++) {
         Gun * g = new Gun(d,fr,price,"MachineGun");
         guns.push_back(g);
-        damage+=2;
+        d+=2;
         price +=60;
         
     }
@@ -131,8 +133,20 @@ UpgradeScreen::UpgradeScreen(){
     
     guns[0]->locked=false;
     locked[0]->setPosition(CCPoint(3000, 3000));
-    
+    for (int i = 0; i<savedData->gunLocked.size(); i++) {
+        
+        
+        
+        if(savedData->gunLocked[i]==1){
+            
+            
+            guns[i]->locked=false;
+            locked[i]->setPosition(CCPoint(3000, 3000));
+            
+        }
+    }
     GunEquipNum=0;
+    gunSelectedForPurchase=0;
     equipedGun=CCSprite::create("highlight-green.png");
     equipedGun->setPosition(lockedUnlockedPositions[0]);
     addChild(equipedGun);
@@ -143,26 +157,51 @@ UpgradeScreen::UpgradeScreen(){
     pMenu->setPosition( CCPointZero );
     addChild(pMenu, 1);
     
+    
+   
+
+    
     name = CCLabelTTF::create("Name:", "Marker Felt", 32);
     addChild(name, 1);
     name->setColor(ccc3(0,0,255));
-    name->setPosition(ccp( 450, 350));
+    name->setPosition(ccp( 420, 350));
     
     damage = CCLabelTTF::create("damage:", "Marker Felt", 32);
     addChild(damage, 1);
     damage->setColor(ccc3(0,0,255));
-    damage->setPosition(ccp( 450, 300));
+    damage->setPosition(ccp( 420, 300));
     
     firerate = CCLabelTTF::create("firerate:", "Marker Felt", 32);
     addChild(firerate, 1);
     firerate->setColor(ccc3(0,0,255));
-    firerate->setPosition(ccp( 450, 250));
+    firerate->setPosition(ccp( 420, 250));
     
     cost = CCLabelTTF::create("cost:", "Marker Felt", 32);
     addChild(cost, 1);
     cost->setColor(ccc3(0,0,255));
-    cost->setPosition(ccp( 450, 200));
+    cost->setPosition(ccp( 420, 200));
     
+    
+    
+    name2 = CCLabelTTF::create("0", "Marker Felt", 32);
+    addChild(name2, 1);
+    name2->setColor(ccc3(0,255,0));
+    name2->setPosition(ccp( 550, 350));
+    
+    damage2 = CCLabelTTF::create("0", "Marker Felt", 32);
+    addChild(damage2, 1);
+    damage2->setColor(ccc3(0,255,0));
+    damage2->setPosition(ccp( 550, 300));
+    
+    firerate2 = CCLabelTTF::create("0", "Marker Felt", 32);
+    addChild(firerate2, 1);
+    firerate2->setColor(ccc3(0,255,0));
+    firerate2->setPosition(ccp( 550, 250));
+    
+    cost2 = CCLabelTTF::create("0", "Marker Felt", 32);
+    addChild(cost2, 1);
+    cost2->setColor(ccc3(0,255,0));
+    cost2->setPosition(ccp( 550, 200));
     
     
     StartLevel=false;
@@ -188,9 +227,14 @@ void UpgradeScreen::hide(){
     damage->setPosition(ccp(2000, 380));
     firerate->setPosition(ccp(2000, 380));
     cost->setPosition(ccp(2000, 380));
+    name2->setPosition(ccp(2000, 380));
+    damage2->setPosition(ccp(2000, 380));
+    firerate2->setPosition(ccp(2000, 380));
+    cost2->setPosition(ccp(2000, 380));
     StartLevel=true;
     
 }
+
 void UpgradeScreen::show(){
     
     
@@ -207,11 +251,16 @@ void UpgradeScreen::show(){
         }
     }
     equipedGun->setPosition(lockedUnlockedPositions[GunEquipNum]);
-    play->setPosition(ccp(450, 100));
-    name->setPosition(ccp(450, 350));
-    damage->setPosition(ccp(450, 300));
-    firerate->setPosition(ccp(450, 250));
-    cost->setPosition(ccp(450, 200));
+    
+    play->setPosition(ccp(250, 100));
+    name->setPosition(ccp(420, 350));
+    damage->setPosition(ccp(420, 300));
+    firerate->setPosition(ccp(420, 250));
+    cost->setPosition(ccp(420, 200));
+    name2->setPosition(ccp(550, 350));
+    damage2->setPosition(ccp(550, 300));
+    firerate2->setPosition(ccp(550, 250));
+    cost2->setPosition(ccp(550, 200));
     StartLevel=false;
     
 }
@@ -221,8 +270,59 @@ void UpgradeScreen::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
     //human->ccTouchesBegan(pTouches, pEvent);
     //    CCArray *allTouches =   this->allTouchesFromSet(pTouches);
     //
-    //    CCTouch *touch = (CCTouch*)pTouches->anyObject();
-    //    CCPoint point = touch->locationInView();
+    CCSize s = CCDirector::sharedDirector()->getWinSize();
+
+        CCTouch *touch = (CCTouch*)pTouches->anyObject();
+        CCPoint point = touch->locationInView();
+    
+    for (int i =0; i<lockedUnlockedPositions.size(); i++) {
+        
+        if(isPointInSquare(point, b2Vec2(lockedUnlockedPositions[i].x, s.height-lockedUnlockedPositions[i].y))){
+            
+            if(guns[i]->locked==true){
+                const char * use =guns[i]->name.c_str();
+                name2->setString(use);
+                char dam[100];
+                snprintf(dam, 100, "%i",guns[i]->damage);
+                damage2->setString(dam);
+                
+                char fire[100];
+                snprintf(fire, 100, "%i",guns[i]->fireRate);
+                firerate2->setString(fire);
+                
+                char coin[100];
+                snprintf(coin, 100, "%i",guns[i]->price);
+                cost2->setString(coin);
+                gunSelectedForPurchase=i;
+                
+            }
+            else{
+                
+                const char * use =guns[i]->name.c_str();
+                name2->setString(use);
+                char dam[100];
+                snprintf(dam, 100, "%i",guns[i]->damage);
+                damage2->setString(dam);
+                
+                char fire[100];
+                snprintf(fire, 100, "%i",guns[i]->fireRate);
+                firerate2->setString(fire);
+                gunSelectedForPurchase=0;
+
+                GunEquipNum=i;
+                equipedGun->setPosition(lockedUnlockedPositions[i]);
+                
+                
+            }
+            
+            
+            
+            
+        }
+        
+        
+        
+    }
     
 }
 void UpgradeScreen::exit(){

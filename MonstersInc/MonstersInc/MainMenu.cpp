@@ -55,7 +55,7 @@ void MainMenu::init(){
     world = new b2World(b2Vec2_zero);
 
     
-    pCloseItem = CCMenuItemImage::create("CloseNormal.png","CloseSelected.png",this,menu_selector(MainMenu::test));
+    pCloseItem = CCMenuItemImage::create("CloseNormal.png","CloseSelected.png",this,menu_selector(MainMenu::towerDefence));
     pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width - 20, 20));
     CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
     pMenu->setPosition( CCPointZero );
@@ -76,19 +76,19 @@ void MainMenu::init(){
     
     
     
-//    level2btn=CCMenuItemImage::create("Level2.png", "Level2.png", this, menu_selector(MainMenu::level2));
-//    level2btn->setPosition(CCPoint(100, 300));
-//    CCMenu *lev2=CCMenu::create(level2btn,NULL);
-//    lev2->setPosition(CCPointZero);
-//    addChild(lev2,1);
+    level2btn=CCMenuItemImage::create("ScoresBtn.bmp", "ScoresBtnDown.bmp", this, menu_selector(MainMenu::level2));
+    level2btn->setPosition(CCPoint(100, 300));
+    CCMenu *lev2=CCMenu::create(level2btn,NULL);
+    lev2->setPosition(CCPointZero);
+    addChild(lev2,1);
     
     
-    towerGame=CCMenuItemImage::create("TowersButton.bmp", "TowersButtonDown.bmp", this, menu_selector(MainMenu::towerDefence));
-    towerGame->setPosition(CCPoint(100, 300));
-    CCMenu *towergame=CCMenu::create(towerGame,NULL);
-    towergame->setPosition(CCPointZero);
-    addChild(towergame,1);
-    
+//    towerGame=CCMenuItemImage::create("TowersButton.bmp", "TowersButtonDown.bmp", this, menu_selector(MainMenu::towerDefence));
+//    towerGame->setPosition(CCPoint(100, 300));
+//    CCMenu *towergame=CCMenu::create(towerGame,NULL);
+//    towergame->setPosition(CCPointZero);
+//    addChild(towergame,1);
+//    
     
     
     jaime = CCSprite::create("MonstersInc.jpg");
@@ -154,6 +154,12 @@ void MainMenu::init(){
     newFile->setPosition(CCPointZero);
     addChild(newFile,1);
     
+    saveName=CCMenuItemImage::create("enterBtn.bmp", "enterBtnDown.bmp", this, menu_selector(MainMenu::test));
+    saveName->setPosition(CCPoint(2500, 500));
+    CCMenu *saveFile=CCMenu::create(saveName,NULL);
+    saveFile->setPosition(CCPointZero);
+    addChild(saveFile,1);
+    
    
         
     
@@ -165,7 +171,7 @@ void MainMenu::init(){
     m_pEditName->setMaxLength(8);
     addChild(m_pEditName);
     
-    enter=CCMenuItemImage::create("Enter.png", "Enter.png", this, menu_selector(MainMenu::enterPlayer));
+    enter=CCMenuItemImage::create("enterBtn.bmp", "enterBtnDown.bmp", this, menu_selector(MainMenu::enterPlayer));
     enter->setPosition(CCPoint(1400, 400));
     CCMenu *enterB=CCMenu::create(enter,NULL);
     enterB->setPosition(CCPointZero);
@@ -247,9 +253,9 @@ void MainMenu::saveWithCurl(std::string n, int s){
 void MainMenu::enterPlayer(){
     
     
-   // level2btn->setPosition(CCPoint(100, 300));
+    level2btn->setPosition(CCPoint(100, 300));
     level1btn->setPosition(CCPoint(100, 400));
-     towerGame->setPosition(CCPoint(100, 300));
+    // towerGame->setPosition(CCPoint(100, 300));
     m_pEditName->setPosition(ccp(1400, 200));
     enter->setPosition(CCPoint(1400, 400));
     newGame->setPosition(CCPoint(100, 500));
@@ -265,7 +271,7 @@ void MainMenu::enterPlayer(){
     
 }
 void MainMenu::newPlayer(){
-     towerGame->setPosition(CCPoint(1400, 400));
+    level2btn->setPosition(CCPoint(1400, 400));
     level1btn->setPosition(CCPoint(1400, 400));
     //tutorial->setPosition(CCPoint(1400, 400));
     m_pEditName->setPosition(ccp(400, 500));
@@ -305,7 +311,9 @@ void MainMenu::update(float dt){
 }
 void MainMenu::test(){
     
-   
+    saveWithCurl(savedData->name, savedData->gold);
+    level2();
+    
 }
 void MainMenu::checkMultiPlayer(){
     CURL *curl;
@@ -410,6 +418,8 @@ void MainMenu::level2(){
     
     Name->setPosition(ccp(800, 600));
     Score->setPosition(ccp(900, 600));
+    saveName->setPosition(CCPoint(650, 600));
+
 
     CURL *curl;
     CURLcode res;

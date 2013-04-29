@@ -58,7 +58,7 @@ void Tower::Shoot(cocos2d::CCLayer* lay ,b2World* world, b2Vec2 dir){
         
         bulletSprite=CCSpriteBatchNode::create("Bullet.png", 100);
         lay->addChild(bulletSprite);
-        Bullet *b = new Bullet(bulletSprite,world,m_pBody->GetPosition());
+        Bullet *b = new Bullet(bulletSprite,world,m_pBody->GetPosition(),6);
   
         b->fire(dir);
    

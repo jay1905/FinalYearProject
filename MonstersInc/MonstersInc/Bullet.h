@@ -19,7 +19,7 @@
 class Bullet: public PhysicsSprite
 {
 public:
-    Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos);
+    Bullet(cocos2d::CCSpriteBatchNode *hello,b2World* world,b2Vec2 pos,int);
     
     
     void update();

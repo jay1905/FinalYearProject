@@ -42,6 +42,7 @@ public:
     virtual  void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
     void update(float dt);
     void updateUI();
+     void buyGun();
 
     void exitMainMenu();
 
@@ -62,6 +63,7 @@ private:
     cocos2d::CCSprite *jaime;
     cocos2d::CCArray *bullets;
     cocos2d::CCSpriteBatchNode *bulletSprite;
+     cocos2d::CCMenuItemImage *buy;
    
     BulletManager * bulletMan;
    
